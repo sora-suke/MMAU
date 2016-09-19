@@ -1,0 +1,177 @@
+﻿
+itemGroup.mmautab=MMAU
+itemGroup.mmautoolstab=MMAUTools
+
+
+text.negi.tooltip=Inedible!ヾ(ﾟ□ﾟ＠)
+text.silver.tooltip=Antibacterial!
+
+
+tile.MMAU_negi_ore.name=Negi Ore
+tile.MMAU_negi_block.name=Block of Negi
+tile.MMAU_crystal_ore.name=Crystal Ore
+tile.MMAU_crystal_block.name=Block of Crystal
+tile.MMAU_bronze_block.name=Block of Bronze
+tile.MMAU_cobalt_ore.name=Cobalt Ore
+tile.MMAU_cobalt_block.name=Block of Cobalt
+tile.MMAU_orichalcum_ore.name=Orichalcum Ore
+tile.MMAU_orichalcum_block.name=Block of Orichalcum
+tile.MMAU_silver_ore.name=Silver Ore
+tile.MMAU_silver_block.name=Block of Silver
+tile.MMAU_platinum_ore.name=Platinum Ore
+tile.MMAU_platinum_block.name=Block of Platinum
+tile.MMAU_steel_block.name=Block of Steel
+tile.MMAU_copper_ore.name=Copper Ore
+tile.MMAU_copper_block.name=Block of Copper
+tile.MMAU_tin_ore.name=Tin Ore
+tile.MMAU_tin_block.name=Block of Tin
+tile.MMAU_zinc_ore.name=Zinc Ore
+tile.MMAU_zinc_block.name=Block of Zinc
+tile.MMAU_lead_ore.name=Lead Ore
+tile.MMAU_lead_block.name=Block of Lead
+tile.MMAU_brass_block.name=Block of Brass
+
+
+item.MMAU_negi.name=Negi
+item.MMAU_negi_pickaxe.name=Negi Pickaxe
+item.MMAU_negi_sword.name=Negi Sword
+item.MMAU_negi_axe.name=Negi Axe
+item.MMAU_negi_hoe.name=Negi Hoe
+item.MMAU_negi_shovel.name=Negi Shovel
+item.MMAU_negi_helmet.name=Negi Helmet
+item.MMAU_negi_chestplate.name=Negi Chestplate
+item.MMAU_negi_leggings.name=Negi Leggings
+item.MMAU_negi_boots.name=Negi Boots
+
+item.MMAU_crystal.name=Crystal
+item.MMAU_crystal_pickaxe.name=Crystal Pickaxe
+item.MMAU_crystal_sword.name=Crystal Sword
+item.MMAU_crystal_axe.name=Crystal Axe
+item.MMAU_crystal_hoe.name=Crystal Hoe
+item.MMAU_crystal_shovel.name=Crystal Shovel
+item.MMAU_crystal_helmet.name=Crystal Helmet
+item.MMAU_crystal_chestplate.name=Crystal Chestplate
+item.MMAU_crystal_leggings.name=Crystal Leggings
+item.MMAU_crystal_boots.name=Crystal Boots
+
+item.MMAU_bronze.name=Bronze Ingot
+item.MMAU_bronze_pickaxe.name=Bronze Pickaxe
+item.MMAU_bronze_sword.name=Bronze Sword
+item.MMAU_bronze_axe.name=Bronze Axe
+item.MMAU_bronze_hoe.name=Bronze Hoe
+item.MMAU_bronze_shovel.name=Bronze Shovel
+item.MMAU_bronze_helmet.name=Bronze Helmet
+item.MMAU_bronze_chestplate.name=Bronze Chestplate
+item.MMAU_bronze_leggings.name=Bronze Leggings
+item.MMAU_bronze_boots.name=Bronze Boots
+item.MMAU_bronze_dust.name=Bronze Dust
+item.MMAU_bronze_nugget.name=Bronze Nugget
+item.MMAU_bronze_plate.name=Bronze Plate
+
+item.MMAU_copper.name=Copper Ingot
+item.MMAU_copper_dust.name=Copper Dust
+item.MMAU_copper_nugget.name=Copper Nugget
+item.MMAU_copper_plate.name=Copper Plate
+
+item.MMAU_tin.name=Tin Ingot
+item.MMAU_tin_dust.name=Tin Dust
+item.MMAU_tin_nugget.name=Tin Nugget
+item.MMAU_tin_plate.name=Tin Plate
+
+item.MMAU_cobalt.name=Cobalt Ingot
+item.MMAU_cobalt_pickaxe.name=Cobalt Pickaxe
+item.MMAU_cobalt_sword.name=Cobalt Sword
+item.MMAU_cobalt_axe.name=Cobalt Axe
+item.MMAU_cobalt_hoe.name=Cobalt Hoe
+item.MMAU_cobalt_shovel.name=Cobalt Shovel
+item.MMAU_cobalt_helmet.name=Cobalt Helmet
+item.MMAU_cobalt_chestplate.name=Cobalt Chestplate
+item.MMAU_cobalt_leggings.name=Cobalt Leggings
+item.MMAU_cobalt_boots.name=Cobalt Boots
+item.MMAU_cobalt_dust.name=Cobalt Dust
+item.MMAU_cobalt_nugget.name=Cobalt Nugget
+item.MMAU_cobalt_plate.name=Cobalt Plate
+
+item.MMAU_orichalcum.name=Orichalcum Ingot
+item.MMAU_orichalcum_pickaxe.name=Orichalcum Pickaxe
+item.MMAU_orichalcum_sword.name=Orichalcum Sword
+item.MMAU_orichalcum_axe.name=Orichalcum Axe
+item.MMAU_orichalcum_hoe.name=Orichalcum Hoe
+item.MMAU_orichalcum_shovel.name=Orichalcum Shovel
+item.MMAU_orichalcum_helmet.name=Orichalcum Helmet
+item.MMAU_orichalcum_chestplate.name=Orichalcum Chestplate
+item.MMAU_orichalcum_leggings.name=Orichalcum Leggings
+item.MMAU_orichalcum_boots.name=Orichalcum Boots
+item.MMAU_orichalcum_dust.name=Orichalcum Dust
+item.MMAU_orichalcum_nugget.name=Orichalcum Nugget
+item.MMAU_orichalcum_plate.name=Orichalcuj Plate
+
+item.MMAU_silver.name=Silver Ingot
+item.MMAU_silver_pickaxe.name=Silver Pickaxe
+item.MMAU_silver_sword.name=Silver Sword
+item.MMAU_silver_axe.name=Silver Axe
+item.MMAU_silver_hoe.name=Silver Hoe
+item.MMAU_silver_shovel.name=Silver Shovel
+item.MMAU_silver_helmet.name=Silver Helmet
+item.MMAU_silver_chestplate.name=Silver Chestplate
+item.MMAU_silver_leggings.name=Silver Leggings
+item.MMAU_silver_boots.name=Silver Boots
+item.MMAU_silver_dust.name=Silver Dust
+item.MMAU_silver_nugget.name=Silver Nugget
+item.MMAU_silver_plate.name=Silver Plate
+
+item.MMAU_platinum.name=Platinum Ingot
+item.MMAU_platinum_pickaxe.name=Platinum Pickaxe
+item.MMAU_platinum_sword.name=Platinum Sword
+item.MMAU_platinum_axe.name=Platinum Axe
+item.MMAU_platinum_hoe.name=Platinum Hoe
+item.MMAU_platinum_shovel.name=Platinum Shovel
+item.MMAU_platinum_helmet.name=Platinum Helmet
+item.MMAU_platinum_chestplate.name=Platinum Chestplate
+item.MMAU_platinum_leggings.name=Platinum Leggings
+item.MMAU_platinum_boots.name=Platinum Boots
+item.MMAU_platinum_dust.name=Platinum Dust
+item.MMAU_platinum_nugget.name=Platinum Nugget
+item.MMAU_platinum_plate.name=Platinum Plate
+
+item.MMAU_steel.name=Steel Ingot
+item.MMAU_steel_pickaxe.name=Steel Pickaxe
+item.MMAU_steel_sword.name=Steel Sword
+item.MMAU_steel_axe.name=Steel Axe
+item.MMAU_steel_hoe.name=Steel Hoe
+item.MMAU_steel_shovel.name=Steel Shovel
+item.MMAU_steel_helmet.name=Steel Helmet
+item.MMAU_steel_chestplate.name=Steel Chestplate
+item.MMAU_steel_leggings.name=Steel Leggings
+item.MMAU_steel_boots.name=Steel Boots
+item.MMAU_steel_dust.name=Steel Dust
+item.MMAU_steel_nugget.name=Steel Nugget
+item.MMAU_steel_plate.name=Steel Plate
+
+item.MMAU_lead.name=Lead Ingot
+item.MMAU_lead_dust.name=Lead Dust
+item.MMAU_lead_nugget.name=Lead Nugget
+item.MMAU_lead_plate.name=Lead Plate
+
+item.MMAU_zinc.name=Zinc Ingot
+item.MMAU_zinc_dust.name=Zinc Dust
+item.MMAU_zinc_nugget.name=Zinc Nugget
+item.MMAU_zinc_plate.name=Zinc Plate
+
+item.MMAU_brass.name=Brass Ingot
+item.MMAU_brass_dust.name=Brass Dust
+item.MMAU_brass_nugget.name=Brass Nugget
+item.MMAU_brass_plate.name=Brass Plate
+
+item.MMAU_iron_dust.name=Iron Dust
+item.MMAU_iron_nugget.name=Iron Nugget
+item.MMAU_iron_plate.name=Iron Plate
+
+item.MMAU_gold_dust.name=Gold Dust
+item.MMAU_gold_plate.name=Gold Plate
+
+item.MMAU_coal_dust.name=Coal Dust
+
+
+item.MMAU_iron_mortar.name=Iron Mortar
+item.MMAU_button_explosion.name=Explosion Button

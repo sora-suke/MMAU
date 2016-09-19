@@ -1,0 +1,16 @@
+[
+{
+  "modid": "MoreMaterialsAndUtilities",
+  "name": "MoreMaterialsAndUtilities",
+  "description": "更なる素材や、便利アイテムを追加する",
+  "version": "0.0.1",
+  "mcversion": "1.7.10",
+  "url": "http://sorasuke-mc.blog.jp/",
+  "updateUrl": "",
+  "authorList": ["sora_suke"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

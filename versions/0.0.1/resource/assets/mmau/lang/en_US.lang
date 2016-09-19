@@ -1,0 +1,31 @@
+﻿
+
+itemGroup.mmautab=MMAU
+
+text.negi.tooltip=Inedible!ヾ(ﾟ□ﾟ＠)
+
+tile.MMAU_negi_ore.name=Negi Ore
+tile.MMAU_negi_block.name=Block of Negi
+tile.MMAU_crystal_ore.name=Crystal Ore
+tile.MMAU_crystal_block.name=Block of Crystal
+
+item.MMAU_negi.name=Negi
+item.MMAU_negi_pickaxe.name=Negi Pickaxe
+item.MMAU_negi_sword.name=Negi Sword
+item.MMAU_negi_axe.name=Negi Axe
+item.MMAU_negi_hoe.name=Negi Hoe
+item.MMAU_negi_shovel.name=Negi Shovel
+item.MMAU_negi_helmet.name=Negi Helmet
+item.MMAU_negi_chestplate.name=Negi Chestplate
+item.MMAU_negi_leggings.name=Negi Leggings
+item.MMAU_negi_boots.name=Negi Boots
+item.MMAU_crystal.name=Crystal
+item.MMAU_crystal_pickaxe.name=Crystal Pickaxe
+item.MMAU_crystal_sword.name=Crystal Sword
+item.MMAU_crystal_axe.name=Crystal Axe
+item.MMAU_crystal_hoe.name=Crystal Hoe
+item.MMAU_crystal_shovel.name=Crystal Shovel
+item.MMAU_crystal_helmet.name=Crystal Helmet
+item.MMAU_crystal_chestplate.name=Crystal Chestplate
+item.MMAU_crystal_leggings.name=Crystal Leggings
+item.MMAU_crystal_boots.name=Crystal Boots
