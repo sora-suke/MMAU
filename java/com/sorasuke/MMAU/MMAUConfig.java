@@ -22,7 +22,7 @@ public class MMAUConfig {
 
 	public static void Load(MMAU mmau, FMLPreInitializationEvent event) {
 		
-		Logger.log("Load Config!");
+		MMAULogger.log("Load Config!");
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());
 
 		try {
@@ -42,7 +42,6 @@ public class MMAUConfig {
 					.getBoolean(true);
 			genPlatinumOre = config.get("GENERAL", "genPlatinumOre", true, "Generate platinum ores.")
 					.getBoolean(true);
-			genBrassOre = config.get("GENERAL", "genBrassOre", true, "Generate brass ores.").getBoolean(true);
 			genLeadOre = config.get("GENERAL", "genLeadOre", true, "Generate lead ores.").getBoolean(true);
 			genZincOre = config.get("GENERAL", "genZincOre", true, "Generate zinc ores.").getBoolean(true);
 
