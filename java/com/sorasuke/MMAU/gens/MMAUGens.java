@@ -1,6 +1,6 @@
 package com.sorasuke.MMAU.gens;
 
-import com.sorasuke.MMAU.Logger;
+import com.sorasuke.MMAU.MMAULogger;
 import com.sorasuke.MMAU.MMAU;
 import com.sorasuke.MMAU.MMAUConfig;
 
@@ -10,7 +10,7 @@ public class MMAUGens {
 
 	public static void registry(MMAU mod) {
 		// 鉱石の生成の登録、コンフィグのgenAllがtrueなら生成する
-		Logger.log("Registry World Generates!");
+		MMAULogger.log("Registry World Generates!");
 		if (MMAUConfig.genAll) {
 
 			if (MMAUConfig.genNegiOre) {

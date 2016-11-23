@@ -2,12 +2,11 @@ package com.sorasuke.MMAU.gens;
 
 import java.util.Random;
 
-import com.sorasuke.MMAU.blocks.MMAUBlocks;
+import com.sorasuke.MMAU.MMAURegistry;
 
 import cpw.mods.fml.common.IWorldGenerator;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldProviderSurface;
 import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 
@@ -28,7 +27,7 @@ public class OrichalcumOreGen implements IWorldGenerator {
 		int genX = x + rnd.nextInt(16);
 		int genZ = z + rnd.nextInt(16);
 		int genY = 1 + rnd.nextInt(20);
-		new WorldGenMinable(MMAUBlocks.OrichalcumOre, 0, 4, Blocks.stone).generate(world, rnd, genX, genY, genZ);
+		new WorldGenMinable(MMAURegistry.OrichalcumOre, 0, 4, Blocks.stone).generate(world, rnd, genX, genY, genZ);
 		}
 	}
 
