@@ -1,117 +1,88 @@
 package com.sorasuke.MMAU;
 
-import com.sorasuke.MMAU.blocks.MMAUBlocks;
-import com.sorasuke.MMAU.items.MMAUItems;
-
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
 public class MMAUOreDict {
 
 	public static void registry(MMAU mod){
-		
-		/* ブロック系　
-		 * 
-		 * 
-		 */
-		OreDictionary.registerOre("oreNegi", new ItemStack(MMAUBlocks.NegiOre, 1, 0));
-		OreDictionary.registerOre("blockNegi", new ItemStack(MMAUBlocks.NegiBlock, 1, 0));
-		
-		OreDictionary.registerOre("oreCrystal", new ItemStack(MMAUBlocks.CrystalOre, 1, 0));
-		OreDictionary.registerOre("blockCrystal", new ItemStack(MMAUBlocks.CrystalBlock, 1, 0));
-		
-		OreDictionary.registerOre("blockBronze", new ItemStack(MMAUBlocks.BronzeBlock, 1, 0));
-		
-		OreDictionary.registerOre("oreCobalt", new ItemStack(MMAUBlocks.CobaltOre, 1, 0));
-		OreDictionary.registerOre("blockCobalt", new ItemStack(MMAUBlocks.CobaltBlock, 1, 0));
-		
-		OreDictionary.registerOre("oreCopper", new ItemStack(MMAUBlocks.CopperOre, 1, 0));
-		OreDictionary.registerOre("blockCopper", new ItemStack(MMAUBlocks.CopperBlock, 1, 0));
-		
-		OreDictionary.registerOre("oreTin", new ItemStack(MMAUBlocks.TinOre, 1, 0));
-		OreDictionary.registerOre("blockTin", new ItemStack(MMAUBlocks.TinBlock, 1, 0));
-		
-		OreDictionary.registerOre("oreOrichalcum", new ItemStack(MMAUBlocks.OrichalcumOre, 1, 0));
-		OreDictionary.registerOre("blockOrichalcum", new ItemStack(MMAUBlocks.OrichalcumBlock, 1, 0));
-		
-		OreDictionary.registerOre("oreSilver", new ItemStack(MMAUBlocks.SilverOre, 1, 0));
-		OreDictionary.registerOre("blockSilver", new ItemStack(MMAUBlocks.SilverBlock, 1, 0));
-		
-		OreDictionary.registerOre("orePlatinum", new ItemStack(MMAUBlocks.PlatinumOre, 1, 0));
-		OreDictionary.registerOre("blockPlatinum", new ItemStack(MMAUBlocks.PlatinumBlock, 1, 0));
-		
-		OreDictionary.registerOre("blockSteel", new ItemStack(MMAUBlocks.SteelBlock, 1, 0));
-		
-		OreDictionary.registerOre("blockBrass", new ItemStack(MMAUBlocks.BrassBlock, 1, 0));
-		
-		OreDictionary.registerOre("oreLead", new ItemStack(MMAUBlocks.LeadOre, 1, 0));
-		OreDictionary.registerOre("blockLead", new ItemStack(MMAUBlocks.LeadBlock, 1, 0));
-		
-		OreDictionary.registerOre("oreZinc", new ItemStack(MMAUBlocks.ZincOre, 1, 0));
-		OreDictionary.registerOre("blockZinc", new ItemStack(MMAUBlocks.ZincBlock, 1, 0));
-		
-		
-		//アイテム系
-		OreDictionary.registerOre("gemNegi", new ItemStack(MMAUItems.Negi, 1, 0));
-		
-		OreDictionary.registerOre("gemCrystal", new ItemStack(MMAUItems.Crystal, 1, 0));
-		
-		OreDictionary.registerOre("ingotBronze", new ItemStack(MMAUItems.Bronze, 1, 0));
-		OreDictionary.registerOre("nuggetBronze", new ItemStack(MMAUItems.BronzeNugget, 1, 0));
-		OreDictionary.registerOre("dustBronze", new ItemStack(MMAUItems.BronzeDust, 1, 0));
-		
-		OreDictionary.registerOre("ingotCobalt", new ItemStack(MMAUItems.Cobalt, 1, 0));
-		OreDictionary.registerOre("nuggetCobalt", new ItemStack(MMAUItems.CobaltNugget, 1, 0));
-		OreDictionary.registerOre("dustCobalt", new ItemStack(MMAUItems.CobaltDust, 1, 0));
+		/*
+		registerMaterialsOreDictionary("null", new ItemStack(MMAURegistry.Null), new ItemStack(MMAURegistry.NullNugget), new ItemStack(MMAURegistry.NullDust)
+             , new ItemStack(MMAURegistry.NullOre), new ItemStack(MMAURegistry.NullBlock), new ItemStack(MMAURegistry.NullPlate), 0);
+         */
+        registerMaterialsOreDictionary("Negi", new ItemStack(MMAURegistry.Negi), null, null
+                , new ItemStack(MMAURegistry.NegiOre), new ItemStack(MMAURegistry.NegiBlock), null, 1);
+        registerMaterialsOreDictionary("Crystal", new ItemStack(MMAURegistry.Crystal), null, null
+                , new ItemStack(MMAURegistry.CrystalOre), new ItemStack(MMAURegistry.CrystalBlock), null, 1);
+        registerMaterialsOreDictionary("Bronze", new ItemStack(MMAURegistry.Bronze), new ItemStack(MMAURegistry.BronzeNugget), new ItemStack(MMAURegistry.BronzeDust)
+                , null, new ItemStack(MMAURegistry.BronzeBlock), new ItemStack(MMAURegistry.BronzePlate), 0);
+        registerMaterialsOreDictionary("Cobalt", new ItemStack(MMAURegistry.Cobalt), new ItemStack(MMAURegistry.CobaltNugget), new ItemStack(MMAURegistry.CobaltDust)
+                , new ItemStack(MMAURegistry.CobaltOre), new ItemStack(MMAURegistry.CobaltBlock), new ItemStack(MMAURegistry.CobaltPlate), 0);
+        registerMaterialsOreDictionary("Orichalcum", new ItemStack(MMAURegistry.Orichalcum), new ItemStack(MMAURegistry.OrichalcumNugget), new ItemStack(MMAURegistry.OrichalcumDust)
+                , new ItemStack(MMAURegistry.OrichalcumOre), new ItemStack(MMAURegistry.OrichalcumBlock), new ItemStack(MMAURegistry.OrichalcumPlate), 0);
+        registerMaterialsOreDictionary("Copper", new ItemStack(MMAURegistry.Copper), new ItemStack(MMAURegistry.CopperNugget), new ItemStack(MMAURegistry.CopperDust)
+                , new ItemStack(MMAURegistry.CopperOre), new ItemStack(MMAURegistry.CopperBlock), new ItemStack(MMAURegistry.CopperPlate), 0);
+        registerMaterialsOreDictionary("Tin", new ItemStack(MMAURegistry.Tin), new ItemStack(MMAURegistry.TinNugget), new ItemStack(MMAURegistry.TinDust)
+                , new ItemStack(MMAURegistry.TinOre), new ItemStack(MMAURegistry.TinBlock), new ItemStack(MMAURegistry.TinPlate), 0);
+        registerMaterialsOreDictionary("Silver", new ItemStack(MMAURegistry.Silver), new ItemStack(MMAURegistry.SilverNugget), new ItemStack(MMAURegistry.SilverDust)
+                , new ItemStack(MMAURegistry.SilverOre), new ItemStack(MMAURegistry.SilverBlock), new ItemStack(MMAURegistry.SilverPlate), 0);
+        registerMaterialsOreDictionary("Platinum", new ItemStack(MMAURegistry.Platinum), new ItemStack(MMAURegistry.PlatinumNugget), new ItemStack(MMAURegistry.PlatinumDust)
+                , new ItemStack(MMAURegistry.PlatinumOre), new ItemStack(MMAURegistry.PlatinumBlock), new ItemStack(MMAURegistry.PlatinumPlate), 0);
+        registerMaterialsOreDictionary("Steel", new ItemStack(MMAURegistry.Steel), new ItemStack(MMAURegistry.SteelNugget), new ItemStack(MMAURegistry.SteelDust)
+                , null, new ItemStack(MMAURegistry.SteelBlock), new ItemStack(MMAURegistry.SteelPlate), 0);
+        registerMaterialsOreDictionary("Brass", new ItemStack(MMAURegistry.Brass), new ItemStack(MMAURegistry.BrassNugget), new ItemStack(MMAURegistry.BrassDust)
+                , null, new ItemStack(MMAURegistry.BrassBlock), new ItemStack(MMAURegistry.BrassPlate), 0);
+        registerMaterialsOreDictionary("Lead", new ItemStack(MMAURegistry.Lead), new ItemStack(MMAURegistry.LeadNugget), new ItemStack(MMAURegistry.LeadDust)
+                , new ItemStack(MMAURegistry.LeadOre), new ItemStack(MMAURegistry.LeadBlock), new ItemStack(MMAURegistry.LeadPlate), 0);
+        registerMaterialsOreDictionary("Zinc", new ItemStack(MMAURegistry.Zinc), new ItemStack(MMAURegistry.ZincNugget), new ItemStack(MMAURegistry.ZincDust)
+                , new ItemStack(MMAURegistry.ZincOre), new ItemStack(MMAURegistry.ZincBlock), new ItemStack(MMAURegistry.ZincPlate), 0);
 
-		OreDictionary.registerOre("ingotOrichalcum", new ItemStack(MMAUItems.Orichalcum, 1, 0));
-		OreDictionary.registerOre("nuggetOrichalcum", new ItemStack(MMAUItems.OrichalcumNugget, 1, 0));
-		OreDictionary.registerOre("dustOrichalcum", new ItemStack(MMAUItems.OrichalcumDust, 1, 0));
-		
-		OreDictionary.registerOre("ingotSilver", new ItemStack(MMAUItems.Silver, 1, 0));
-		OreDictionary.registerOre("nuggetSilver", new ItemStack(MMAUItems.SilverNugget, 1, 0));
-		OreDictionary.registerOre("dustSilver", new ItemStack(MMAUItems.SilverDust, 1, 0));
+        OreDictionary.registerOre("nuggetIron", new ItemStack(MMAURegistry.IronNugget));
+        OreDictionary.registerOre("dustIron", new ItemStack(MMAURegistry.IronDust));
+        OreDictionary.registerOre("plateIron", new ItemStack(MMAURegistry.IronPlate));
 
-		OreDictionary.registerOre("ingotCopper", new ItemStack(MMAUItems.Copper, 1, 0));
-		OreDictionary.registerOre("nuggetCopper", new ItemStack(MMAUItems.CopperNugget, 1, 0));
-		OreDictionary.registerOre("dustCopper", new ItemStack(MMAUItems.CopperDust, 1, 0));
+        OreDictionary.registerOre("dustGold", new ItemStack(MMAURegistry.GoldDust));
+        OreDictionary.registerOre("plateGold", new ItemStack(MMAURegistry.GoldPlate));
 
-		OreDictionary.registerOre("ingotTin", new ItemStack(MMAUItems.Tin, 1, 0));
-		OreDictionary.registerOre("nuggetTin", new ItemStack(MMAUItems.TinNugget, 1, 0));
-		OreDictionary.registerOre("dustTin", new ItemStack(MMAUItems.TinDust, 1, 0));
-		
-		OreDictionary.registerOre("ingotPlatinum", new ItemStack(MMAUItems.Platinum, 1, 0));
-		OreDictionary.registerOre("nuggetPlatinum", new ItemStack(MMAUItems.PlatinumNugget, 1, 0));
-		OreDictionary.registerOre("dustPlatinum", new ItemStack(MMAUItems.PlatinumDust, 1, 0));
-		
-		OreDictionary.registerOre("ingotSteel", new ItemStack(MMAUItems.Steel, 1, 0));
-		OreDictionary.registerOre("nuggetSteel", new ItemStack(MMAUItems.SteelNugget, 1, 0));
-		OreDictionary.registerOre("dustSteel", new ItemStack(MMAUItems.SteelDust, 1, 0));
-		
-		OreDictionary.registerOre("ingotBrass", new ItemStack(MMAUItems.Brass, 1, 0));
-		OreDictionary.registerOre("nuggetBrass", new ItemStack(MMAUItems.BrassNugget, 1, 0));
-		OreDictionary.registerOre("dustBrass", new ItemStack(MMAUItems.BrassDust, 1, 0));
-		
-		OreDictionary.registerOre("ingotLead", new ItemStack(MMAUItems.Lead, 1, 0));
-		OreDictionary.registerOre("nuggetLead", new ItemStack(MMAUItems.LeadNugget, 1, 0));
-		OreDictionary.registerOre("dustLead", new ItemStack(MMAUItems.LeadDust, 1, 0));
-		
-		OreDictionary.registerOre("ingotZinc", new ItemStack(MMAUItems.Zinc, 1, 0));
-		OreDictionary.registerOre("nuggetZinc", new ItemStack(MMAUItems.ZincNugget, 1, 0));
-		OreDictionary.registerOre("dustZinc", new ItemStack(MMAUItems.ZincDust, 1, 0));
+        OreDictionary.registerOre("dustCoal", new ItemStack(MMAURegistry.CoalDust));
 
-		OreDictionary.registerOre("nuggetIron", new ItemStack(MMAUItems.IronNugget, 1, 0));
-		OreDictionary.registerOre("dustIron", new ItemStack(MMAUItems.IronDust, 1, 0));
-		
-		OreDictionary.registerOre("dustGold", new ItemStack(MMAUItems.GoldDust, 1, 0));
-		
-		OreDictionary.registerOre("dustCoal", new ItemStack(MMAUItems.CoalDust, 1, 0));
-		
-		
-		OreDictionary.registerOre("mortarL1", new ItemStack(MMAUItems.IronMortar, 1, 32767));
+        OreDictionary.registerOre("craftingToolMotor", new ItemStack(MMAURegistry.IronMortar, 1, 32767));
 		
 		
 		
+	}
+
+    /**
+     * マテリアルの鉱石辞書を一括で登録する
+     * typeは､0でインゴット､1で宝石
+     *
+     * @param materialName
+     * @param material
+     * @param nugget
+     * @param dust
+     * @param ore
+     * @param block
+     * @param plate
+     * @param type
+     */
+	public static void registerMaterialsOreDictionary(String materialName, ItemStack material, ItemStack nugget, ItemStack dust, ItemStack ore, ItemStack block, ItemStack plate, int type){
+        String[] materialType = {"ingot", "gem"};
+        OreDictionary.registerOre(materialType[type] + materialName, material);
+        if(nugget != null){
+            OreDictionary.registerOre("nugget" + materialName, nugget);
+        }
+        if(dust != null){
+            OreDictionary.registerOre("dust" + materialName, dust);
+        }
+        if(ore != null){
+            OreDictionary.registerOre("ore" + materialName, ore);
+        }
+        if(block != null){
+            OreDictionary.registerOre("block" + materialName, block);
+        }
+        if(plate != null){
+            OreDictionary.registerOre("plate" + materialName, plate);
+        }
 	}
 	
 }
