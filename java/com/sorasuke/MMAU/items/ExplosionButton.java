@@ -2,6 +2,7 @@ package com.sorasuke.MMAU.items;
 
 import com.sorasuke.MMAU.MMAU;
 
+import com.sorasuke.MMAU.MMAURegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -16,7 +17,7 @@ public class ExplosionButton extends Item implements IMMAUBaseItem{
 
 		String localname = this.name = "button_explosion";
 
-		setCreativeTab(MMAU.MMAUTOOLSTAB);
+		setCreativeTab(MMAURegistry.MMAUToolsTab);
 		setUnlocalizedName("MMAU_" + localname);
 		setTextureName("mmau:" + localname);
 

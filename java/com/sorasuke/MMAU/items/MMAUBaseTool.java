@@ -1,17 +1,19 @@
 package com.sorasuke.MMAU.items;
 
 import com.sorasuke.MMAU.MMAU;
+import com.sorasuke.MMAU.MMAURegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 import java.util.Random;
 
 /**
+ * 工具のベースクラス
  * Created by sora_suke on 2016/11/19.
  */
 public class MMAUBaseTool extends Item implements IMMAUBaseItem{
 
-    String name;
+    private String name;
 
     /**
      * MMAUの工具
@@ -24,7 +26,7 @@ public class MMAUBaseTool extends Item implements IMMAUBaseItem{
 
         String localname = name = material + "_" + toolType;
 
-        setCreativeTab(MMAU.MMAUTOOLSTAB);
+        setCreativeTab(MMAURegistry.MMAUToolsTab);
         setUnlocalizedName("MMAU_" + localname);
         setTextureName("mmau:" + localname);
         setMaxDamage(durability);

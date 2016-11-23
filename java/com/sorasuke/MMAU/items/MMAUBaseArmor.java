@@ -2,6 +2,7 @@ package com.sorasuke.MMAU.items;
 
 import com.sorasuke.MMAU.MMAU;
 
+import com.sorasuke.MMAU.MMAURegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
@@ -11,9 +12,9 @@ import net.minecraft.item.ItemStack;
 public class MMAUBaseArmor extends ItemArmor implements IMMAUBaseItem{
 
 	public String ARMORTYPE[] = { "helmet", "chestplate", "leggings", "boots" };
-	public String armorname;
-	Item repair;
-	String name;
+	private String armorname;
+	private Item repair;
+	private String name;
 
     /**
      *
@@ -28,7 +29,7 @@ public class MMAUBaseArmor extends ItemArmor implements IMMAUBaseItem{
 		this.repair = repairItem;
 		armorname = localname;
 		localname = this.name = localname + "_" + ARMORTYPE[type];
-		setCreativeTab(MMAU.MMAUTOOLSTAB);
+		setCreativeTab(MMAURegistry.MMAUToolsTab);
 		setUnlocalizedName("MMAU_" + localname);
 		setTextureName("mmau:" + localname);
 	}

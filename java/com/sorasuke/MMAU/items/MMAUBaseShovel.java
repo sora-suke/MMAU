@@ -2,6 +2,7 @@ package com.sorasuke.MMAU.items;
 
 import com.sorasuke.MMAU.MMAU;
 
+import com.sorasuke.MMAU.MMAURegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemSpade;
 
@@ -21,7 +22,7 @@ public class MMAUBaseShovel extends ItemSpade implements IMMAUBaseItem{
 		 * ツール名+ツールの種類で登録される
 		 */
         localname = this.name = localname + "_shovel";
-		setCreativeTab(MMAU.MMAUTOOLSTAB);
+		setCreativeTab(MMAURegistry.MMAUToolsTab);
 		setUnlocalizedName("MMAU_" + localname);
 		setTextureName("mmau:" + localname);
 
