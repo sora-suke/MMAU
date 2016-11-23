@@ -8,17 +8,17 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ExplosionButton extends Item {
-	
+public class ExplosionButton extends Item implements IMMAUBaseItem{
+
+	String name;
+
 	public ExplosionButton() {
 
-		String localname = "button_explosion";
+		String localname = this.name = "button_explosion";
 
 		setCreativeTab(MMAU.MMAUTOOLSTAB);
 		setUnlocalizedName("MMAU_" + localname);
 		setTextureName("mmau:" + localname);
-
-		GameRegistry.registerItem(this, localname);
 
 		
 
@@ -43,5 +43,9 @@ public class ExplosionButton extends Item {
 		return new ItemStack(itemStack.getItem(),itemStack.stackSize-1,itemStack.getItemDamage());
 		
 	}
-	
+
+	@Override
+	public String getName() {
+		return this.name;
+	}
 }
