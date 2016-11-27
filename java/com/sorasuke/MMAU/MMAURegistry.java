@@ -1,10 +1,7 @@
 package com.sorasuke.MMAU;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
-import com.sorasuke.MMAU.blocks.IMMAUBaseBlock;
-import com.sorasuke.MMAU.blocks.MMAUBaseBlock;
-import com.sorasuke.MMAU.blocks.MMAUBaseGemOre;
-import com.sorasuke.MMAU.blocks.MMAUBaseOre;
+import com.sorasuke.MMAU.blocks.*;
 import com.sorasuke.MMAU.items.*;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
@@ -308,6 +305,9 @@ public class MMAURegistry {
     public static final Block ZincBlock = new MMAUBaseBlock(Material.iron, "zinc_block", "pickaxe", 1).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal);
 
 
+    public static final Block ChickenBlock = new ChickenBlock(Material.cloth,"chicken_block").setCreativeTab(MMAUTab).setHardness(1.0F).setResistance(1.0F).setStepSound(Block.soundTypeCloth);
+
+
     /**
      * IMMAUBaseItemを継承したアイテムを登録させる
      * いちいちアイテム名入れて書いてGameRegistry書くのめんどくさかったから作った
@@ -532,6 +532,8 @@ public class MMAURegistry {
 
         registerBlock(ZincOre);
         registerBlock(ZincBlock);
+
+        registerBlock(ChickenBlock);
 
 
     }
