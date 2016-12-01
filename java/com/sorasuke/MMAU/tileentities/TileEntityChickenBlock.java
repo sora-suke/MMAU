@@ -16,13 +16,13 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
 
     private ItemStack slot;
     private int workTime;
-    private int workMax = 6000;
+    private int workMax = 20;//デバッグのために生産スピードを上げている
 
 
 
     public void updateEntity() {
         workTime++;
-        if(workMax==workTime){
+        if(workMax<=workTime){
             if(slot == null){
                 slot = new ItemStack(Items.egg);
                 workTime = 0;
@@ -31,6 +31,7 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
                 workTime = 0;
             }
         }
+        //MMAULogger.log("working!");
     }
 
     public void readFromNBT(NBTTagCompound nbt) {
@@ -49,6 +50,7 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
         NBTTagCompound compound = new NBTTagCompound();
         if(this.slot != null)this.slot.writeToNBT(compound);
         nbt.setTag("Item", compound);
+        //MMAULogger.log("テステス");
 
     }
 
@@ -65,26 +67,51 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
 
     @Override
     public boolean canExtractItem(int p_102008_1_, ItemStack p_102008_2_, int p_102008_3_) {
+        if(p_102008_3_==0){
+            return true;
+        }
         return false;
     }
 
     @Override
     public int getSizeInventory() {
-        return 0;
+        return 1;
     }
 
     @Override
     public ItemStack getStackInSlot(int p_70301_1_) {
+        if(p_70301_1_==0){
+            return slot;
+        }
         return null;
     }
 
     @Override
     public ItemStack decrStackSize(int p_70298_1_, int p_70298_2_) {
-        return null;
-    }
+        if(this.slot != null){
+            ItemStack itemStack;
+
+            if(this.slot.stackSize <= p_70298_2_){
+                itemStack = this.slot;
+                this.slot = null;
+                return itemStack;
+            }else{
+                itemStack = this.slot.splitStack(p_70298_2_);
+
+                if(this.slot.stackSize == 0){
+                    this.slot = null;
+                }
+                return itemStack;
+            }
+
+        }
+        return null;    }
 
     @Override
     public ItemStack getStackInSlotOnClosing(int p_70304_1_) {
+        if(p_70304_1_ == 0){
+            return slot;
+        }
         return null;
     }
 
@@ -110,12 +137,12 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
 
     @Override
     public boolean isUseableByPlayer(EntityPlayer p_70300_1_) {
-        return false;
+        return true;
     }
 
     @Override
     public void openInventory() {
-        MMAULogger.debug("テステス");
+        MMAULogger.log("テステス");
     }
 
     @Override
