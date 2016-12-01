@@ -1,5 +1,6 @@
 package com.sorasuke.MMAU.gui;
 
+import com.sorasuke.MMAU.MMAULogger;
 import com.sorasuke.MMAU.container.ContainerChickenBlock;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenBlock;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -13,9 +14,12 @@ import org.lwjgl.opengl.GL11;
  */
 public class GuiChickenBlock extends GuiContainer {
 
+
     public static final ResourceLocation bground = new ResourceLocation("mmau:textures/gui/container/chicken_block.png");
     public GuiChickenBlock(InventoryPlayer inventoryPlayer, TileEntityChickenBlock entity) {
         super(new ContainerChickenBlock(inventoryPlayer, entity));
+        this.xSize = 176;
+        this.ySize = 166;
     }
 
     @Override
