@@ -3,6 +3,7 @@ package com.sorasuke.MMAU;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import com.sorasuke.MMAU.blocks.*;
 import com.sorasuke.MMAU.items.*;
+import com.sorasuke.MMAU.tileentities.TileEntityChickenBlock;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -534,6 +535,9 @@ public class MMAURegistry {
         registerBlock(ZincBlock);
 
         registerBlock(ChickenBlock);
+
+
+        GameRegistry.registerTileEntity(TileEntityChickenBlock.class, "ChickenBlock");
 
 
     }
