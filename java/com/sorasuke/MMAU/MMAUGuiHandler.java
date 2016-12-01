@@ -19,10 +19,9 @@ public class MMAUGuiHandler implements IGuiHandler {
             switch(ID){
                 case MMAU.guiIdChickenBlock:
                     if(entity instanceof TileEntityChickenBlock){
-                        MMAULogger.debug("テステス");
                         return new ContainerChickenBlock(player.inventory, (TileEntityChickenBlock) entity);
                     }
-                    return null;
+                    //return null;
             }
         }
         return null;
@@ -35,10 +34,9 @@ public class MMAUGuiHandler implements IGuiHandler {
             switch(ID){
                 case MMAU.guiIdChickenBlock:
                     if(entity instanceof TileEntityChickenBlock){
-                        MMAULogger.debug("テステス");
                         return new GuiChickenBlock(player.inventory, (TileEntityChickenBlock) entity);
                     }
-                    return null;
+                    //return null;
             }
         }
         return null;
