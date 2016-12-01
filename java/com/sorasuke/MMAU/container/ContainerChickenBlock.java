@@ -6,6 +6,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.inventory.SlotFurnace;
+import net.minecraft.item.ItemStack;
 
 /**
  * Created by sora_suke on 2016/11/26.
@@ -26,6 +27,41 @@ public class ContainerChickenBlock extends Container {
         for(int i = 0; i < 9; i++) {
             this.addSlotToContainer(new Slot(inventory, i, 8 + i * 18, 142));
         }
+    }
+
+    public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int clickedIndex) {
+
+
+        Slot slot = (Slot)this.inventorySlots.get(clickedIndex);
+        if(slot == null) {
+            return null;
+        }
+
+        if(slot.getHasStack() == false) {
+            return null;
+        }
+
+        ItemStack itemStack = slot.getStack();
+        ItemStack itemStackMem = slot.getStack().copy();
+
+        if(clickedIndex == 0){
+            if(!this.mergeItemStack(itemStack, 9, 37, true)){
+                return null;
+            }
+            slot.onSlotChange(itemStack, itemStackMem);
+        }
+
+        if(itemStack.stackSize == 0){
+            slot.putStack(null);
+        }else{
+            slot.onSlotChanged();
+        }
+        if(itemStack.stackSize == itemStackMem.stackSize){
+            return null;
+        }
+        slot.onPickupFromSlot(par1EntityPlayer,itemStack);
+
+        return itemStack;
     }
 
     @Override
