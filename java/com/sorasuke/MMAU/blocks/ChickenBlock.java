@@ -9,6 +9,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
@@ -26,7 +27,7 @@ import java.util.Random;
 /**
  * Created by sora_suke on 2016/11/26.
  */
-public class ChickenBlock extends BlockContainer implements IMMAUBaseBlock{
+public class ChickenBlock extends Block implements IMMAUBaseBlock,ITileEntityProvider {
     private String name;
 
     private Random rand = new Random();
@@ -99,8 +100,9 @@ public class ChickenBlock extends BlockContainer implements IMMAUBaseBlock{
 
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer entityPlayer, int side, float hitX, float hitY, float hitZ){
         if(!world.isRemote){
-            FMLNetworkHandler.openGui(entityPlayer, MMAU.instance, MMAU.guiIdChickenBlock, world, x, y, z);
-            MMAULogger.debug("テステス");
+            //FMLNetworkHandler.openGui(entityPlayer, MMAU.instance, MMAU.guiIdChickenBlock, world, x, y, z);
+            entityPlayer.openGui(MMAU.instance, MMAU.guiIdChickenBlock, world, x, y, z);
+            MMAULogger.log("テステス");
 
         }
         return true;
@@ -111,6 +113,7 @@ public class ChickenBlock extends BlockContainer implements IMMAUBaseBlock{
     @Override
     public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
         // TODO 自動生成されたメソッド・スタブ
+        MMAULogger.log("テステス");
         return new TileEntityChickenBlock();
     }
 
