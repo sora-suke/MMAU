@@ -35,12 +35,13 @@ public class MMAU {
 		MMAURegistry.registerMMAU();// ブロック､アイテムの登録等
 		MMAUOreDict.registry(this);// 鉱石辞書登録
 
+
 	}
 
 	@EventHandler
 	public void Init(FMLInitializationEvent event) {
-        GameRegistry.registerTileEntity(TileEntityChickenBlock.class, "ChickenBlock");
         NetworkRegistry.INSTANCE.registerGuiHandler(this.instance,new MMAUGuiHandler());
+
 		MMAURecipeRegister.registry(this);// レシピ登録
 		MMAUGens.registry(this);// ワールド生成関連
 
