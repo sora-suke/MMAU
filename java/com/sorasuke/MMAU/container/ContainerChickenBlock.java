@@ -3,6 +3,7 @@ package com.sorasuke.MMAU.container;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenBlock;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.inventory.SlotFurnace;
@@ -45,7 +46,7 @@ public class ContainerChickenBlock extends Container {
         ItemStack itemStackMem = slot.getStack().copy();
 
         if(clickedIndex == 0){
-            if(!this.mergeItemStack(itemStack, 9, 37, true)){
+            if(!this.mergeItemStack(itemStack, 1, 37, false)){
                 return null;
             }
             slot.onSlotChange(itemStack, itemStackMem);
