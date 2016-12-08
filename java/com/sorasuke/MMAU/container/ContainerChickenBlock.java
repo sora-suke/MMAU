@@ -34,33 +34,28 @@ public class ContainerChickenBlock extends Container {
 
 
         Slot slot = (Slot)this.inventorySlots.get(clickedIndex);
-        if(slot == null) {
-            return null;
-        }
+        ItemStack itemStack = null;
+        if(slot != null && slot.getHasStack()) {
+            ItemStack itemStackMem = slot.getStack();
+            itemStack = itemStackMem.copy();
 
-        if(slot.getHasStack() == false) {
-            return null;
-        }
+            if (clickedIndex == 0) {
+                if (!this.mergeItemStack(itemStackMem, 1, 37, true)) {
+                    return null;
+                }
+                slot.onSlotChange(itemStackMem, itemStack);
+            }
 
-        ItemStack itemStack = slot.getStack();
-        ItemStack itemStackMem = slot.getStack().copy();
-
-        if(clickedIndex == 0){
-            if(!this.mergeItemStack(itemStack, 1, 37, false)){
+            if (itemStackMem.stackSize <= 0) {
+                slot.putStack(null);
+            } else {
+                slot.onSlotChanged();
+            }
+            if (itemStack.stackSize == itemStackMem.stackSize) {
                 return null;
             }
-            slot.onSlotChange(itemStack, itemStackMem);
+            slot.onPickupFromSlot(par1EntityPlayer, itemStackMem);
         }
-
-        if(itemStack.stackSize == 0){
-            slot.putStack(null);
-        }else{
-            slot.onSlotChanged();
-        }
-        if(itemStack.stackSize == itemStackMem.stackSize){
-            return null;
-        }
-        slot.onPickupFromSlot(par1EntityPlayer,itemStack);
 
         return itemStack;
     }
