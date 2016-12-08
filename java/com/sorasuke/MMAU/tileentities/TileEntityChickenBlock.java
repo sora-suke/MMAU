@@ -16,7 +16,7 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
 
     private ItemStack slot;
     private int workTime;
-    private int workMax = 20;//デバッグのために生産スピードを上げている
+    private int workMax = 80;//デバッグのために生産スピードを上げている
 
 
 
