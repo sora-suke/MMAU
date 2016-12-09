@@ -14,10 +14,12 @@ import org.lwjgl.opengl.GL11;
  */
 public class GuiChickenBlock extends GuiContainer {
 
+    private static TileEntityChickenBlock tileEntity;
 
     public static final ResourceLocation bground = new ResourceLocation("mmau:textures/gui/container/chicken_block.png");
     public GuiChickenBlock(InventoryPlayer inventoryPlayer, TileEntityChickenBlock entity) {
         super(new ContainerChickenBlock(inventoryPlayer, entity));
+        this.tileEntity = entity;
         this.xSize = 176;
         this.ySize = 166;
     }
@@ -29,5 +31,7 @@ public class GuiChickenBlock extends GuiContainer {
         int k = (this.width - this.xSize) / 2;
         int l = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
+
+        this.drawTexturedModalRect(71, 21, 176, 0, 24, (int)(tileEntity.getWorkingPercentage()/28));
     }
 }
