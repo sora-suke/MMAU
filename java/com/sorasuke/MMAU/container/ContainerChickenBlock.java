@@ -1,5 +1,6 @@
 package com.sorasuke.MMAU.container;
 
+import com.sorasuke.MMAU.MMAULogger;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenBlock;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -31,30 +32,38 @@ public class ContainerChickenBlock extends Container {
     }
 
     public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int clickedIndex) {
-
-
+        //MMAULogger.log("transferStackInSlot!");
+        //MMAULogger.log("0");
         Slot slot = (Slot)this.inventorySlots.get(clickedIndex);
         ItemStack itemStack = null;
         if(slot != null && slot.getHasStack()) {
             ItemStack itemStackMem = slot.getStack();
             itemStack = itemStackMem.copy();
-
+            //MMAULogger.log("1");
             if (clickedIndex == 0) {
                 if (!this.mergeItemStack(itemStackMem, 1, 37, true)) {
+                    //slot.putStack(null);
+                    //MMAULogger.log("2");
                     return null;
                 }
+                //MMAULogger.log("3");
                 slot.onSlotChange(itemStackMem, itemStack);
             }
 
             if (itemStackMem.stackSize <= 0) {
-                slot.putStack(null);
+                //slot.putStack(null);// ぬる入れちゃだめらしい
+                //MMAULogger.log("4");
             } else {
                 slot.onSlotChanged();
+                //MMAULogger.log("5");
             }
             if (itemStack.stackSize == itemStackMem.stackSize) {
+                //MMAULogger.log("6");
                 return null;
+
             }
             slot.onPickupFromSlot(par1EntityPlayer, itemStackMem);
+            //MMAULogger.log("7");
         }
 
         return itemStack;

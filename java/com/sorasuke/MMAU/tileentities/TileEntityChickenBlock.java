@@ -1,6 +1,8 @@
 package com.sorasuke.MMAU.tileentities;
 
 import com.sorasuke.MMAU.MMAULogger;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.ISidedInventory;
@@ -14,7 +16,7 @@ import net.minecraft.tileentity.TileEntity;
  */
 public class TileEntityChickenBlock extends TileEntity implements ISidedInventory {
 
-    private ItemStack slot;
+    private final ItemStack slot = new ItemStack(Items.egg,0);
     private int workTime;
     private int workMax = 80;//デバッグのために生産スピードを上げている
 
@@ -23,23 +25,21 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
     public void updateEntity() {
         workTime++;
         if(workMax<=workTime){
-            if(slot == null){
-                slot = new ItemStack(Items.egg);
-                workTime = 0;
-            }else if(slot.isItemEqual(new ItemStack(Items.egg)) && slot.getMaxStackSize() > slot.stackSize){
-                slot.stackSize++;
-                workTime = 0;
-            }
+            slot.stackSize++;
+            slot.stackSize = slot.getMaxStackSize() < slot.stackSize ? slot.getMaxStackSize() : slot.stackSize;
+            workTime = 0;
         }
-        //MMAULogger.log("working!");
+
+        if(this.getWorldObj().isRemote)MMAULogger.log("Clientslot is " + slot.stackSize);
+        else MMAULogger.log("Server slot is " + slot.stackSize);
+
     }
 
     public void readFromNBT(NBTTagCompound nbt) {
         super.readFromNBT(nbt);
         if(nbt != null)nbt = new NBTTagCompound();
         this.workMax = nbt.getShort("workTime");
-        NBTTagCompound nbt1 = nbt.getCompoundTag("Item");
-        this.slot = ItemStack.loadItemStackFromNBT(nbt1);
+        this.slot.stackSize = nbt.getInteger("ItemSize");
 
     }
 
@@ -47,10 +47,7 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
         super.writeToNBT(nbt);
         nbt.setShort("workTime", (short)this.workTime);
 
-        NBTTagCompound compound = new NBTTagCompound();
-        if(this.slot != null)this.slot.writeToNBT(compound);
-        nbt.setTag("Item", compound);
-        //MMAULogger.log("テステス");
+        nbt.setInteger("ItemSize", this.slot.stackSize);
 
     }
 
@@ -79,28 +76,25 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
     }
 
     @Override
-    public ItemStack getStackInSlot(int p_70301_1_) {
-        if(p_70301_1_==0){
-            return slot;
-        }
-        return null;
+    public ItemStack getStackInSlot(int slotNumber) {
+        if(slot.stackSize <= 0)return null;
+        else return slot;
     }
 
     @Override
-    public ItemStack decrStackSize(int p_70298_1_, int p_70298_2_) {
-        if(this.slot != null){
+    public ItemStack decrStackSize(int slot, int stack) {
+        //MMAULogger.log("decrStackSize");
+        if(this.slot.stackSize > 0){
             ItemStack itemStack;
-
-            if(this.slot.stackSize <= p_70298_2_){
-                itemStack = this.slot;
-                this.slot = null;
+            if(this.slot.stackSize <= stack){
+                //MMAULogger.log("if(this.slot.stackSize <= stack) true");
+                itemStack = this.slot.copy();
+                this.slot.stackSize = 0;
                 return itemStack;
             }else{
-                itemStack = this.slot.splitStack(p_70298_2_);
+                //MMAULogger.log("if(this.slot.stackSize <= stack) false");
+                itemStack = this.slot.splitStack(stack);
 
-                if(this.slot.stackSize == 0){
-                    this.slot = null;
-                }
                 return itemStack;
             }
 
@@ -110,7 +104,7 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
     @Override
     public ItemStack getStackInSlotOnClosing(int p_70304_1_) {
         if(p_70304_1_ == 0){
-            return slot;
+            return slot.stackSize < 0 ? null : slot;
         }
         return null;
     }
@@ -153,5 +147,9 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
     @Override
     public boolean isItemValidForSlot(int p_94041_1_, ItemStack p_94041_2_) {
         return false;
+    }
+
+    public float getWorkingPercentage(){
+        return (float)(workTime/workMax);
     }
 }
