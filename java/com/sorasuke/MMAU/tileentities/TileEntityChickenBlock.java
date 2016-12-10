@@ -15,6 +15,7 @@ import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 
 /**
+ * ニワトリブロックのTileEntity
  * Created by sora_suke on 2016/11/26.
  */
 public class TileEntityChickenBlock extends TileEntity implements ISidedInventory {
@@ -26,22 +27,22 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
 
 
     public void updateEntity() {
-        if(!worldObj.isRemote) {
+        //if(!worldObj.isRemote) {
             workTime++;
             if (workMax <= workTime) {
                 slot.stackSize++;
                 slot.stackSize = slot.getMaxStackSize() < slot.stackSize ? slot.getMaxStackSize() : slot.stackSize;
                 workTime = 0;
+                this.markDirty();
             }
 
-            if (this.getWorldObj().isRemote) MMAULogger.log("Clientslot is " + slot.stackSize);
-            else MMAULogger.log("Server slot is " + slot.stackSize);
-        }
+            //if (this.getWorldObj().isRemote) MMAULogger.log("Clientslot is " + slot.stackSize);
+            //else MMAULogger.log("Server slot is " + slot.stackSize);
+        //}
     }
 
     public void readFromNBT(NBTTagCompound nbt) {
         super.readFromNBT(nbt);
-        if(nbt == null)nbt = new NBTTagCompound();
         this.workTime = nbt.getShort("workTime");
         this.slot.stackSize = nbt.getInteger("ItemSize");
 
@@ -58,11 +59,13 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
 
     @Override
     public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
+        MMAULogger.log("onDataPacket!");
         readFromNBT(pkt.func_148857_g());
     }
 
     @Override
     public Packet getDescriptionPacket() {
+        MMAULogger.log("getDescriptionPacket!");
         NBTTagCompound tagCompound = new NBTTagCompound();
         writeToNBT(tagCompound);
         return new S35PacketUpdateTileEntity(xCoord, yCoord, zCoord, 1, tagCompound);
@@ -80,10 +83,7 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
 
     @Override
     public boolean canExtractItem(int p_102008_1_, ItemStack p_102008_2_, int p_102008_3_) {
-        if(p_102008_3_==0){
-            return true;
-        }
-        return false;
+        return p_102008_3_ == 0;
     }
 
     @Override
