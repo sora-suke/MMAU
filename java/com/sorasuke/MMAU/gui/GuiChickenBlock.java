@@ -32,6 +32,6 @@ public class GuiChickenBlock extends GuiContainer {
         int l = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
 
-        this.drawTexturedModalRect(71, 21, 176, 0, 24, (int)(tileEntity.getWorkingPercentage()/28));
+        this.drawTexturedModalRect(k+71, l+21, 176, 0, 24, (int)(tileEntity.getWorkingPercentage(28)));
     }
 }
