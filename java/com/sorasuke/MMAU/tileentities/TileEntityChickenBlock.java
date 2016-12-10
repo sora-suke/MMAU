@@ -9,6 +9,9 @@ import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.Packet;
+import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 
 /**
@@ -23,22 +26,23 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
 
 
     public void updateEntity() {
-        workTime++;
-        if(workMax<=workTime){
-            slot.stackSize++;
-            slot.stackSize = slot.getMaxStackSize() < slot.stackSize ? slot.getMaxStackSize() : slot.stackSize;
-            workTime = 0;
+        if(!worldObj.isRemote) {
+            workTime++;
+            if (workMax <= workTime) {
+                slot.stackSize++;
+                slot.stackSize = slot.getMaxStackSize() < slot.stackSize ? slot.getMaxStackSize() : slot.stackSize;
+                workTime = 0;
+            }
+
+            if (this.getWorldObj().isRemote) MMAULogger.log("Clientslot is " + slot.stackSize);
+            else MMAULogger.log("Server slot is " + slot.stackSize);
         }
-
-        if(this.getWorldObj().isRemote)MMAULogger.log("Clientslot is " + slot.stackSize);
-        else MMAULogger.log("Server slot is " + slot.stackSize);
-
     }
 
     public void readFromNBT(NBTTagCompound nbt) {
         super.readFromNBT(nbt);
-        if(nbt != null)nbt = new NBTTagCompound();
-        this.workMax = nbt.getShort("workTime");
+        if(nbt == null)nbt = new NBTTagCompound();
+        this.workTime = nbt.getShort("workTime");
         this.slot.stackSize = nbt.getInteger("ItemSize");
 
     }
@@ -51,6 +55,18 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
 
     }
 
+
+    @Override
+    public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
+        readFromNBT(pkt.func_148857_g());
+    }
+
+    @Override
+    public Packet getDescriptionPacket() {
+        NBTTagCompound tagCompound = new NBTTagCompound();
+        writeToNBT(tagCompound);
+        return new S35PacketUpdateTileEntity(xCoord, yCoord, zCoord, 1, tagCompound);
+    }
 
     @Override
     public int[] getAccessibleSlotsFromSide(int p_94128_1_) {
@@ -149,7 +165,7 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
         return false;
     }
 
-    public float getWorkingPercentage(){
-        return (float)(workTime/workMax);
+    public float getWorkingPercentage(int i){
+        return workTime * i /workMax;
     }
 }
