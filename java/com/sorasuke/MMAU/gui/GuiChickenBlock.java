@@ -4,24 +4,32 @@ import com.sorasuke.MMAU.MMAULogger;
 import com.sorasuke.MMAU.container.ContainerChickenBlock;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenBlock;
 import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 /**
+ * ニワトリブロックのGUI
  * Created by sora_suke on 2016/11/26.
  */
 public class GuiChickenBlock extends GuiContainer {
 
     private static TileEntityChickenBlock tileEntity;
 
-    public static final ResourceLocation bground = new ResourceLocation("mmau:textures/gui/container/chicken_block.png");
+    private static final ResourceLocation bground = new ResourceLocation("mmau:textures/gui/container/chicken_block.png");
     public GuiChickenBlock(InventoryPlayer inventoryPlayer, TileEntityChickenBlock entity) {
         super(new ContainerChickenBlock(inventoryPlayer, entity));
         this.tileEntity = entity;
         this.xSize = 176;
         this.ySize = 166;
+    }
+
+    public void drawGuiContainerForegroundLayer(int par1, int par2){
+        String name = this.tileEntity.hasCustomInventoryName() ? this.tileEntity.getInventoryName() : I18n.format(this.tileEntity.getInventoryName(), new Object[0]);
+        this.fontRendererObj.drawString(name, this.xSize / 2 - this.fontRendererObj.getStringWidth(name) / 2, 6, 4210752);
+        this.fontRendererObj.drawString(I18n.format("container.inventory", new Object[0]), 118, this.ySize - 96 + 2, 4210752);
     }
 
     @Override
