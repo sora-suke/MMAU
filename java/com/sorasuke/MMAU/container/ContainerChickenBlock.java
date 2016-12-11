@@ -18,7 +18,7 @@ public class ContainerChickenBlock extends Container {
     private TileEntityChickenBlock chickenBlock;
     public ContainerChickenBlock(InventoryPlayer inventory, TileEntityChickenBlock tileentity) {
         this.chickenBlock = tileentity;
-        this.addSlotToContainer(new SlotFurnace(inventory.player, this.chickenBlock, 0, 116, 35));
+        this.addSlotToContainer(new SlotFurnace(inventory.player, this.chickenBlock, 0, 80, 57));
 
         for(int i = 0; i < 3; i++) {
             for(int j = 0; j < 9; j++) {
