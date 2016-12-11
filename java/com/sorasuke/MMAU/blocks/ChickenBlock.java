@@ -11,6 +11,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.particle.EntityFX;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
@@ -21,10 +22,12 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import net.minecraftforge.common.util.ForgeDirection;
 
 import java.util.Random;
 
 /**
+ * ニワトリブロック
  * Created by sora_suke on 2016/11/26.
  */
 public class ChickenBlock extends Block implements IMMAUBaseBlock,ITileEntityProvider {
@@ -37,6 +40,9 @@ public class ChickenBlock extends Block implements IMMAUBaseBlock,ITileEntityPro
 
     @SideOnly(Side.CLIENT)
     private IIcon iconTop;
+
+    @SideOnly(Side.CLIENT)
+    private IIcon iconBottom;
 
     private static boolean keepInventory;
 
@@ -51,14 +57,18 @@ public class ChickenBlock extends Block implements IMMAUBaseBlock,ITileEntityPro
 
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister icon){
-        this.blockIcon = icon.registerIcon("mmau:chickenblock_side");
-        this.iconFront = icon.registerIcon("mmau:chickenblock_front_");
-        this.iconTop = icon.registerIcon("mmau:chickenblock_top");
+        this.blockIcon = icon.registerIcon("mmau:chicken_block_side");
+        this.iconFront = icon.registerIcon("mmau:chicken_block_front");
+        this.iconTop = icon.registerIcon("mmau:chicken_block_top");
+        this.iconBottom = icon.registerIcon("mmau:chicken_block_bottom");
     }
 
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side,int metadata){
-        return side == 1 ? this.iconTop : (side == 0 ? this.iconTop : (side != metadata ? this.blockIcon : this.iconFront));
+        return ForgeDirection.getOrientation(side)==ForgeDirection.DOWN ? this.iconBottom :
+                (ForgeDirection.getOrientation(side)==ForgeDirection.UP ? this.iconTop :
+                        (side == metadata ? this.iconFront :
+                                (metadata == 0 && ForgeDirection.getOrientation(side)==ForgeDirection.SOUTH ? this.iconFront :this.blockIcon)));
     }
 
     public void onBlockAdded(World world, int x, int y, int z){
@@ -67,7 +77,11 @@ public class ChickenBlock extends Block implements IMMAUBaseBlock,ITileEntityPro
 
     }
 
-
+    @Override
+    public void onBlockClicked(World world, int x, int y, int z, EntityPlayer player) {
+        world.playSoundEffect((double) x + 0.5D, (double) y + 0.5D, (double) z + 0.5D, "mob.chicken.hurt", 1.0F, world.rand.nextFloat() * 0.1F + 0.9F);
+        world.playSoundEffect((double) x + 0.5D, (double) y + 0.5D, (double) z + 0.5D, "game.player.hurt", 1.0F, world.rand.nextFloat() * 0.1F + 0.9F);
+    }
 
 
     private void setDefaultDirection(World world, int x, int y, int z) {
@@ -138,6 +152,8 @@ public class ChickenBlock extends Block implements IMMAUBaseBlock,ITileEntityPro
     }
 
     public void breakBlock(World world, int x, int y, int z, Block oldBlock,int oldMetaData){
+        world.playSoundEffect((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, "mob.chicken.hurt", 1.0F, world.rand.nextFloat() * 0.1F + 0.9F);
+        world.playSoundEffect((double) x + 0.5D, (double) y + 0.5D, (double) z + 0.5D, "game.player.hurt", 1.0F, world.rand.nextFloat() * 0.1F + 0.9F);
         if(!keepInventory){
             TileEntityChickenBlock tileEntity = (TileEntityChickenBlock) world.getTileEntity(x, y, z);
 
