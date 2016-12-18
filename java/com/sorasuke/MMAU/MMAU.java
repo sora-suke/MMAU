@@ -37,6 +37,8 @@ public class MMAU {
 		MMAURegistry.registerMMAU();// ブロック､アイテムの登録等
 		MMAUOreDict.registry(this);// 鉱石辞書登録
 
+        FMLCommonHandler.instance().bus().register(this);
+
 
 	}
 
@@ -46,6 +48,8 @@ public class MMAU {
 
 		MMAURecipeRegister.registry(this);// レシピ登録
 		MMAUGens.registry(this);// ワールド生成関連
+
+        //FMLCommonHandler.instance().bus().register(this);
 
 	}
 
