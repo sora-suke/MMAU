@@ -8,9 +8,11 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.event.entity.living.LivingFallEvent;
 
 @Mod(modid = MMAU.MODID, version = MMAU.VERSION)
 public class MMAU {
@@ -46,5 +48,15 @@ public class MMAU {
 		MMAUGens.registry(this);// ワールド生成関連
 
 	}
+
+
+	@SubscribeEvent
+    public void fallToFeatherBlock(LivingFallEvent event){
+        MMAULogger.log("fall!");
+
+        if(MMAURegistry.FeatherBlock.equals(event.entityLiving.worldObj.getBlock((int)event.entityLiving.posX, (int)event.entityLiving.posY-1, (int)event.entityLiving.posZ))){
+            event.setCanceled(true);
+        }
+    }
 
 }
