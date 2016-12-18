@@ -20,6 +20,13 @@ public class MMAUBaseBlock extends Block implements IMMAUBaseBlock{
         setHarvestLevel(harvestType, harvestLevel);
     }
 
+    public MMAUBaseBlock(Material material, String name){
+        super(material);
+        this.name = name;
+        setBlockName("MMAU_" + name);
+        setBlockTextureName("mmau:" + name);
+    }
+
     @Override
     public String getName() {
         return this.name;
