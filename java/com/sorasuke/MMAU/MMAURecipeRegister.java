@@ -52,6 +52,8 @@ public class MMAURecipeRegister {
 
         registerMaterialProcessingResipe("ingotBronze", "", "nuggetBronze", "dustBronze", "blockBronze"
                 , new ItemStack(MMAURegistry.Bronze), null, new ItemStack(MMAURegistry.BronzeNugget), new ItemStack(MMAURegistry.BronzeDust), new ItemStack(MMAURegistry.BronzeBlock),0.7f);
+        GameRegistry.addRecipe(
+                new ShapelessOreRecipe(new ItemStack(MMAURegistry.BronzeDust, 4, 0), "dustCopper", "dustCopper", "dustCopper", "dustTin" ));
 
         registerMaterialProcessingResipe("ingotCobalt", "oreCobalt", "nuggetCobalt", "dustCobalt", "blockCobalt"
                 , new ItemStack(MMAURegistry.Cobalt), new ItemStack(MMAURegistry.CobaltOre), new ItemStack(MMAURegistry.CobaltNugget), new ItemStack(MMAURegistry.CobaltDust), new ItemStack(MMAURegistry.CobaltBlock),0.7f);
@@ -67,6 +69,8 @@ public class MMAURecipeRegister {
 
         registerMaterialProcessingResipe("ingotSteel", "", "nuggetSteel", "dustSteel", "blockSteel"
                 , new ItemStack(MMAURegistry.Steel), null, new ItemStack(MMAURegistry.SteelNugget), new ItemStack(MMAURegistry.SteelDust), new ItemStack(MMAURegistry.SteelBlock),0.7f);
+        GameRegistry.addRecipe(
+                new ShapelessOreRecipe(new ItemStack(MMAURegistry.SteelDust, 2, 0), "dustCoal", "dustIron" ));
 
         registerMaterialProcessingResipe("ingotCopper", "oreCopper", "nuggetCopper", "dustCopper", "blockCopper"
                 , new ItemStack(MMAURegistry.Copper), new ItemStack(MMAURegistry.CopperOre), new ItemStack(MMAURegistry.CopperNugget), new ItemStack(MMAURegistry.CopperDust), new ItemStack(MMAURegistry.CopperBlock),0.7f);
@@ -76,6 +80,8 @@ public class MMAURecipeRegister {
 
         registerMaterialProcessingResipe("ingotBrass", "oreBrass", "nuggetBrass", "dustBrass", "blockBrass"
                 , new ItemStack(MMAURegistry.Brass), null, new ItemStack(MMAURegistry.BrassNugget), new ItemStack(MMAURegistry.BrassDust), new ItemStack(MMAURegistry.BrassBlock),0.7f);
+        GameRegistry.addRecipe(
+                new ShapelessOreRecipe(new ItemStack(MMAURegistry.BrassDust, 3, 0), "dustCopper", "dustCopper", "dustZinc"));
 
         registerMaterialProcessingResipe("ingotLead", "oreLead", "nuggetLead", "dustLead", "blockLead"
                 , new ItemStack(MMAURegistry.Lead), new ItemStack(MMAURegistry.LeadOre), new ItemStack(MMAURegistry.LeadNugget), new ItemStack(MMAURegistry.LeadDust), new ItemStack(MMAURegistry.LeadBlock),0.7f);
@@ -85,43 +91,43 @@ public class MMAURecipeRegister {
 
 		// 鉄系
 		GameRegistry.addRecipe(
-				new ShapelessOreRecipe(new ItemStack(MMAURegistry.IronNugget, 9, 0), new Object[] { "ingotIron" }));
+				new ShapelessOreRecipe(new ItemStack(MMAURegistry.IronNugget, 9, 0), "ingotIron" ));
 
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.iron_ingot, 1, 0),
-				new Object[] { "III", "III", "III", Character.valueOf('I'), "nuggetIron" }));
+				"III", "III", "III", 'I', "nuggetIron" ));
 
 		GameRegistry.addSmelting(MMAURegistry.IronDust, new ItemStack(Items.iron_ingot), 0.7f);
 
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MMAURegistry.IronDust, 1, 0),
-				new Object[] { "ingotIron", "craftingToolMotor" }));
+				"ingotIron", "craftingToolMotor" ));
 
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MMAURegistry.IronDust, 2, 0),
-				new Object[] { "oreIron", "craftingToolMotor" }));
+				"oreIron", "craftingToolMotor" ));
 
 		// 金系
 		GameRegistry.addSmelting(MMAURegistry.GoldDust, new ItemStack(Items.gold_ingot), 0.7f);
 
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MMAURegistry.GoldDust, 1, 0),
-				new Object[] { "ingotGold", "craftingToolMotor" }));
+				"ingotGold", "craftingToolMotor"));
 
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MMAURegistry.GoldDust, 2, 0),
-				new Object[] { "oreGold", "craftingToolMotor" }));
+				"oreGold", "craftingToolMotor"));
 
 		// 石炭系
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MMAURegistry.CoalDust, 1, 0),
-				new Object[] { "coal", "craftingToolMotor" }));
+				"coal", "craftingToolMotor" ));
 
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MMAURegistry.CoalDust, 2, 0),
-				new Object[] { "oreCoal", "craftingToolMotor" }));
+				"oreCoal", "craftingToolMotor" ));
 
 		// 工具系
 		GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MMAURegistry.IronMortar, 1, 0),
-				new Object[] { "nuggetIron", new ItemStack(Items.bowl, 1, 0) }
+				"nuggetIron", new ItemStack(Items.bowl, 1, 0)
 
 		));
 
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(MMAURegistry.ExplosionButton, 1, 0),
-				new Object[] { " B ", "ITI", Character.valueOf('I'), "ingotIron", Character.valueOf('B'), Blocks.stone_button, Character.valueOf('T'), Blocks.tnt }));
+				" B ", "ITI", 'I', "ingotIron", 'B', Blocks.stone_button, 'T', Blocks.tnt ));
 		
 
 	}
