@@ -45,6 +45,15 @@ public class MMAURegistry {
             return MMAURegistry.NegiPickaxe;
         }
     };
+
+    public static final CreativeTabs MMAUUtilsTab = new CreativeTabs("mmauutilstab"){
+        @Override
+        @SideOnly(Side.CLIENT)
+        public Item getTabIconItem() {
+
+            return Item.getItemFromBlock(MMAURegistry.ChickenBlock);
+        }
+    };
     
     
     
@@ -268,6 +277,7 @@ public class MMAURegistry {
     //便利アイテム
     public static final Item ExplosionButton = new ExplosionButton();
 
+
     //ブロック
     public static final Block NegiOre = new MMAUBaseGemOre("negi_ore", new ItemStack(Negi), 3).setCreativeTab(MMAUTab).setHardness(3.0F).setResistance(5.0F);
     public static final Block NegiBlock = new MMAUBaseBlock(Material.iron, "negi_block", "pickaxe", 1).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal);
@@ -305,8 +315,9 @@ public class MMAURegistry {
     public static final Block ZincOre = new MMAUBaseOre("zinc_ore", 1).setCreativeTab(MMAUTab).setHardness(3.0F).setResistance(5.0F);
     public static final Block ZincBlock = new MMAUBaseBlock(Material.iron, "zinc_block", "pickaxe", 1).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F).setStepSound(Block.soundTypeMetal);
 
+    public static final Block FeatherBlock = new MMAUBaseBlock(Material.cloth, "feather_block").setCreativeTab(MMAUTab).setHardness(0.8F).setStepSound(Block.soundTypeCloth);
 
-    public static final Block ChickenBlock = new ChickenBlock(Material.cloth,"chicken_block").setCreativeTab(MMAUTab).setHardness(1.0F).setResistance(1.0F).setStepSound(Block.soundTypeCloth);
+    public static final Block ChickenBlock = new ChickenBlock(Material.cloth,"chicken_block").setCreativeTab(MMAUUtilsTab).setHardness(1.0F).setResistance(1.0F).setStepSound(Block.soundTypeCloth);
 
 
     /**
@@ -497,6 +508,7 @@ public class MMAURegistry {
         registerItem(ExplosionButton);
 
 
+
         //ブロック
         registerBlock(NegiOre);
         registerBlock(NegiBlock);
@@ -533,6 +545,8 @@ public class MMAURegistry {
 
         registerBlock(ZincOre);
         registerBlock(ZincBlock);
+
+        registerBlock(FeatherBlock);
 
         registerBlock(ChickenBlock);
 
