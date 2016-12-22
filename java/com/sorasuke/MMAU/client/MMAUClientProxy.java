@@ -15,8 +15,8 @@ import net.minecraftforge.client.MinecraftForgeClient;
 public class MMAUClientProxy extends MMAUProxy{
     @Override
     public void registerRender(){
-
-        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityChickenHead.class, new ChickenHeadSpecialRender());
-        MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(MMAURegistry.ChickenHead), new ChickenHeadItemRender(new ChickenHeadSpecialRender(), new TileEntityChickenHead()));
+        ChickenHeadSpecialRender chickenHeadSpecialRender = new ChickenHeadSpecialRender();
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityChickenHead.class, chickenHeadSpecialRender);
+        MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(MMAURegistry.ChickenHead), new ChickenHeadItemRender(chickenHeadSpecialRender, new TileEntityChickenHead()));
     }
 }
