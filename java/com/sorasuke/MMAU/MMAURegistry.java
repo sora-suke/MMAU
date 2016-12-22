@@ -4,6 +4,7 @@ import com.mojang.realmsclient.gui.ChatFormatting;
 import com.sorasuke.MMAU.blocks.*;
 import com.sorasuke.MMAU.items.*;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenBlock;
+import com.sorasuke.MMAU.tileentities.TileEntityChickenHead;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -318,6 +319,7 @@ public class MMAURegistry {
     public static final Block FeatherBlock = new MMAUBaseBlock(Material.cloth, "feather_block").setCreativeTab(MMAUTab).setHardness(0.8F).setStepSound(Block.soundTypeCloth);
 
     public static final Block ChickenBlock = new ChickenBlock(Material.cloth,"chicken_block").setCreativeTab(MMAUUtilsTab).setHardness(1.0F).setResistance(1.0F).setStepSound(Block.soundTypeCloth);
+    public static final Block ChickenHead = new ChickenHead(Material.cloth, "chicken_head").setCreativeTab(MMAUUtilsTab).setHardness(1.0F).setResistance(1.0F).setStepSound(Block.soundTypeCloth);
 
 
     /**
@@ -549,9 +551,11 @@ public class MMAURegistry {
         registerBlock(FeatherBlock);
 
         registerBlock(ChickenBlock);
+        registerBlock(ChickenHead);
 
 
         GameRegistry.registerTileEntity(TileEntityChickenBlock.class, "ChickenBlock");
+        GameRegistry.registerTileEntity(TileEntityChickenHead.class, "ChickenHead");
 
 
     }
