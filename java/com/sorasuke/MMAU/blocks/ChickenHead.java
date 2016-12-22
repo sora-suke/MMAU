@@ -20,7 +20,7 @@ public class ChickenHead  extends BlockContainer implements IMMAUBaseBlock{
         super(material);
         this.name = name;
         setBlockName("MMAU_" + name);
-        setBlockTextureName("mmau:" + name);
+        setBlockTextureName("mmau:feather_block");
         this.setBlockBounds(5.5F/16F, 0F, 5.5F/16F, 10.5F/16F, 6F/16F, 10.5F/16F);
     }
 
