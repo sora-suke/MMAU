@@ -24,7 +24,11 @@ public class ChickenHeadSpecialRender extends TileEntitySpecialRenderer {
         this.bindTexture(texture);
 
         GL11.glPushMatrix();
-        GL11.glRotatef(tileentity.getBlockMetadata() * 90, 0.0F, 1.0F, 0.0F);
+        if(tileentity.blockMetadata != -1){
+            GL11.glRotatef(tileentity.getBlockMetadata() * 90, 0.0F, 1.0F, 0.0F);
+        }else{
+            GL11.glRotatef(90, 0.0F, 1.0F, 0.0F);
+        }
         //model.renderModel(0.0625f);
         model.render((Entity)null, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
         GL11.glPopMatrix();
