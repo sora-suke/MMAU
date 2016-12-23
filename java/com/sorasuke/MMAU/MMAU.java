@@ -43,7 +43,7 @@ public class MMAU {
 		MMAURegistry.registerMMAU();// ブロック､アイテムの登録等
 		MMAUOreDict.registry(this);// 鉱石辞書登録
 
-        FMLCommonHandler.instance().bus().register(this);
+        FMLCommonHandler.instance().bus().register(new MMAUEvents());
 
 
 	}
@@ -60,20 +60,6 @@ public class MMAU {
 	}
 
 
-	@SubscribeEvent
-    public void fallToFeatherBlock(LivingFallEvent event){
-        MMAULogger.log("fall!");
-        System.out.println("fall!");
-        //if(MMAURegistry.FeatherBlock.equals(event.entityLiving.worldObj.getBlock((int)event.entityLiving.posX, (int)event.entityLiving.posY-1, (int)event.entityLiving.posZ))){
-        //    event.setCanceled(true);
-        //}
-    }
 
-    @SubscribeEvent
-    public void onCraftedHook(PlayerEvent.ItemCraftedEvent event)
-    {
-        String craftedItemName = event.crafting.getDisplayName();
-        event.player.addChatComponentMessage(new ChatComponentText(craftedItemName + " has Crafted"));
-    }
 
 }
