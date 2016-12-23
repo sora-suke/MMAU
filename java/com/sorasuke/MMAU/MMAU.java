@@ -38,8 +38,6 @@ public class MMAU {
 		
 		MMAUConfig.Load(this, event);// コンフィグの読み込み
 
-        FMLCommonHandler.instance().bus().register(this);
-
 		MMAURegistry.registerMMAU();// ブロック､アイテムの登録等
 		MMAUOreDict.registry(this);// 鉱石辞書登録
 
@@ -55,7 +53,6 @@ public class MMAU {
 		MMAURecipeRegister.registry(this);// レシピ登録
 		MMAUGens.registry(this);// ワールド生成関連
 
-        //FMLCommonHandler.instance().bus().register(this);
 
 	}
 
