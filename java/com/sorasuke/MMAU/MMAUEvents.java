@@ -29,15 +29,18 @@ public class MMAUEvents {
 
     @SubscribeEvent
     public void dropChickenHead(LivingDropsEvent event){
-        MMAULogger.log("dropChickenHead!");
+        //MMAULogger.log("dropChickenHead!");
         if(!event.entityLiving.worldObj.isRemote){
             if(event.entityLiving instanceof EntityChicken){
-                MMAULogger.log("chicken!");
+                //MMAULogger.log("chicken!");
                 if(event.recentlyHit){
-                    MMAULogger.log("recentlyHit!");
+                    //MMAULogger.log("recentlyHit!");
                     EntityItem entityItem = new EntityItem(event.entity.worldObj, event.entity.posX,
                             event.entity.posY, event.entity.posZ, new ItemStack(MMAURegistry.ChickenHead));
-                    if(event.specialDropValue<5)event.drops.add(entityItem);
+
+                    //System.out.println(event.specialDropValue);
+                    if(event.specialDropValue<5 && !event.entityLiving.isChild())
+                    event.drops.add(entityItem);
                     //event.entity.dropItem(Item.getItemFromBlock(MMAURegistry.ChickenHead),0);
                 }
             }
