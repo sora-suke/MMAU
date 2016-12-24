@@ -1,45 +1,45 @@
 *Caution!
- ¥This mod is in development.
- ¥Specification of this mod may change and this mod may has some bugs!
+ ï½¥This mod is in development.
+ ï½¥Specification of this mod may change and this mod may has some bugs!
 
 *About this MOD.
- ¥This mod adds many materials,tools and utilities.
+ ï½¥This mod adds many materials,tools and utilities.
 
 *Things of added by this MOD.
 
- ¥Materials.
+ ï½¥Materials.
   (These can become tools and weapons.)
-  ¥Negi
-  ¥Crystal
-  ¥Bronze
-  ¥Cobalt
-  ¥Orichalcum
-  ¥Silver
-  ¥Platinum
-  ¥Steel
+  ï½¥Negi
+  ï½¥Crystal
+  ï½¥Bronze
+  ï½¥Cobalt
+  ï½¥Orichalcum
+  ï½¥Silver
+  ï½¥Platinum
+  ï½¥Steel
 
   (These can not beccome tools and weapons.)
-  ¥Copper
-  ¥Tin
-  ¥Brass
-  ¥Lead
-  ¥Zinc
+  ï½¥Copper
+  ï½¥Tin
+  ï½¥Brass
+  ï½¥Lead
+  ï½¥Zinc
 
- ¥Tools for crafting.
-  ¥Iron Mortar
+ ï½¥Tools for crafting.
+  ï½¥Iron Mortar
 
- ¥Utilities.
-  ¥Explosion Button
-  ¥Chicken Block
-  ¥Block of Feather
+ ï½¥Utilities.
+  ï½¥Explosion Button
+  ï½¥Chicken Block
+  ï½¥Block of Feather
 
- ¥Other.
-  ¥Chicken Head
+ ï½¥Other.
+  ï½¥Chicken Head
 
 *How to install.
- ¥Install Forge version 10.13.4.1614 or later.
- ¥Enter this jar file in the mods folder.
+ ï½¥Install Forge version 10.13.4.1614 or later.
+ ï½¥Enter this jar file in the mods folder.
 
- ¥If you use Curse client.
-  ¥Open this mod's curse project.
-  ¥Press that install button.
+ ï½¥If you use Curse client.
+  ï½¥Open this mod's curse project.
+  ï½¥Press that install button.
