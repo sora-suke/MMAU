@@ -16,6 +16,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.util.ChatComponentText;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
 
 @Mod(modid = MMAU.MODID, version = MMAU.VERSION)
@@ -41,7 +42,7 @@ public class MMAU {
 		MMAURegistry.registerMMAU();// ブロック､アイテムの登録等
 		MMAUOreDict.registry(this);// 鉱石辞書登録
 
-        FMLCommonHandler.instance().bus().register(new MMAUEvents());
+
 
 
 	}
@@ -52,7 +53,8 @@ public class MMAU {
         proxy.registerRender();
 		MMAURecipeRegister.registry(this);// レシピ登録
 		MMAUGens.registry(this);// ワールド生成関連
-
+		//FMLCommonHandler.instance().bus().register(new MMAUEvents());
+		MinecraftForge.EVENT_BUS.register(new MMAUEvents());
 
 	}
 
