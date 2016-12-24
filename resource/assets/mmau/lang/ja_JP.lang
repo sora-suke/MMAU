@@ -32,6 +32,9 @@ tile.MMAU_lead_block.name=鉛ブロック
 tile.MMAU_brass_block.name=真鍮ブロック
 
 tile.MMAU_chicken_block.name=ニワトリブロック
+tile.MMAU_chicken_head.name=ニワトリの頭
+
+tile.MMAU_feather_block.name=羽ブロック
 
 
 item.MMAU_negi.name=ネギ
