@@ -1,0 +1,45 @@
+*Caution!
+ ¥This mod is in development.
+ ¥Specification of this mod may change and this mod may has some bugs!
+
+*About this MOD.
+ ¥This mod adds many materials,tools and utilities.
+
+*Things of added by this MOD.
+
+ ¥Materials.
+  (These can become tools and weapons.)
+  ¥Negi
+  ¥Crystal
+  ¥Bronze
+  ¥Cobalt
+  ¥Orichalcum
+  ¥Silver
+  ¥Platinum
+  ¥Steel
+
+  (These can not beccome tools and weapons.)
+  ¥Copper
+  ¥Tin
+  ¥Brass
+  ¥Lead
+  ¥Zinc
+
+ ¥Tools for crafting.
+  ¥Iron Mortar
+
+ ¥Utilities.
+  ¥Explosion Button
+  ¥Chicken Block
+  ¥Block of Feather
+
+ ¥Other.
+  ¥Chicken Head
+
+*How to install.
+ ¥Install Forge version 10.13.4.1614 or later.
+ ¥Enter this jar file in the mods folder.
+
+ ¥If you use Curse client.
+  ¥Open this mod's curse project.
+  ¥Press that install button.
