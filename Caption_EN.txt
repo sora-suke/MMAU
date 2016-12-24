@@ -2,10 +2,14 @@
  ･This mod is in development.
  ･Specification of this mod may change and this mod may has some bugs!
 
+*License
+ ･Sora_suke's License For Minecraft Mod Version1.0
+
+
 *About this MOD.
  ･This mod adds many materials,tools and utilities.
 
-*Things of added by this MOD.
+*Things added by this MOD.
 
  ･Materials.
   (These can become tools and weapons.)
@@ -18,7 +22,7 @@
   ･Platinum
   ･Steel
 
-  (These can not beccome tools and weapons.)
+  (These can not become tools and weapons.)
   ･Copper
   ･Tin
   ･Brass
@@ -40,6 +44,6 @@
  ･Install Forge version 10.13.4.1614 or later.
  ･Enter this jar file in the mods folder.
 
- ･If you use Curse client.
+ ･If you use Curse client,
   ･Open this mod's curse project.
   ･Press that install button.
