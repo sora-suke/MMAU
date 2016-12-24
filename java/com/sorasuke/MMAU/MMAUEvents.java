@@ -37,8 +37,8 @@ public class MMAUEvents {
                     MMAULogger.log("recentlyHit!");
                     EntityItem entityItem = new EntityItem(event.entity.worldObj, event.entity.posX,
                             event.entity.posY, event.entity.posZ, new ItemStack(MMAURegistry.ChickenHead));
-                    event.drops.add(entityItem);
-                    event.entity.dropItem(Item.getItemFromBlock(MMAURegistry.ChickenHead),0);
+                    if(event.specialDropValue<5)event.drops.add(entityItem);
+                    //event.entity.dropItem(Item.getItemFromBlock(MMAURegistry.ChickenHead),0);
                 }
             }
         }
