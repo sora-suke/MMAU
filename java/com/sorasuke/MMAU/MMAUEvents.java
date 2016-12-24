@@ -3,6 +3,7 @@ package com.sorasuke.MMAU;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityChicken;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
@@ -33,9 +34,11 @@ public class MMAUEvents {
             if(event.entityLiving instanceof EntityChicken){
                 MMAULogger.log("chicken!");
                 if(event.recentlyHit){
-                    EntityItem entityItem = new EntityItem(event.entityLiving.worldObj);
-                    entityItem.setEntityItemStack(new ItemStack(MMAURegistry.ChickenHead));
+                    MMAULogger.log("recentlyHit!");
+                    EntityItem entityItem = new EntityItem(event.entity.worldObj, event.entity.posX,
+                            event.entity.posY, event.entity.posZ, new ItemStack(MMAURegistry.ChickenHead));
                     event.drops.add(entityItem);
+                    event.entity.dropItem(Item.getItemFromBlock(MMAURegistry.ChickenHead),0);
                 }
             }
         }
