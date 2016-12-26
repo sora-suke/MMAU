@@ -1,5 +1,5 @@
 *MoreMaterialsAndUtilities-0.1.0
- ･Producer :sora_suke
+ ･Producer :sora_suke(Twitter :@sora_suke_mc)
  ･Distribution site(Minecraft Unofficial Japan Users Forum) :http://forum.minecraftuser.jp/viewtopic.php?f=13&t=29713
   (Curse) :Comiing soon.
 
