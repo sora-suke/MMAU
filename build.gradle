@@ -30,8 +30,8 @@ tasks.withType(Jar) {
 } 
 
 archivesBaseName = "MoreMaterialsAndUtilities"
-version = "0.1.0Test-1.7.10"
-minecraft.version = "1.7.10-10.13.4.1448-1.7.10"
+version = "0.1.0-1.7.10"
+minecraft.version = "1.7.10-10.13.4.1614-1.7.10"
  
 [compileJava, compileTestJava].each {
     it.options.encoding = 'UTF-8'
