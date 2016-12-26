@@ -1,6 +1,7 @@
 ﻿*MoreMaterialsAndUtilities-0.1.0
- ･作者:sora_suke
- ･配布サイト:http://forum.minecraftuser.jp/viewtopic.php?f=13&t=29713
+ ･作者 :sora_suke
+ ･配布サイト(非公式フォーラム) :http://forum.minecraftuser.jp/viewtopic.php?f=13&t=29713
+  (Curse) :まだ
 
 *注意!
  ･このMODは開発途中です｡
@@ -61,6 +62,12 @@
   ･インストールボタンを押す｡
 
 *チェンジログ
+ ･2016/12/いつか
+  ･0.1.0リリース
+  ･ライセンスの変更
+  ･銀､プラチナ､鋼鉄､真鍮､鉛､亜鉛
+   爆発ボタン､ニワトリブロック､羽ブロック､ニワトリの頭 の追加
+
  ･2016/2/14
   ･0.0.2aリリース
   ･ライセンスの変更
