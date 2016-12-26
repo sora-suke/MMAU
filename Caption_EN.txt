@@ -4,7 +4,13 @@
 
 *License
  ･Sora_suke's License For Minecraft Mod Version1.0
+  https://github.com/sora-suke/Sora_suke-s-License-For-Minecraft-Mod-Version1.0
+ ･The license may be changed!
 
+*support
+ · Please report any bugs.
+  Please make a minimum verification before reporting.
+ · It is not necessarily correctable.
 
 *About this MOD.
  ･This mod adds many materials,tools and utilities.
@@ -39,6 +45,8 @@
 
  ･Other.
   ･Chicken Head
+
+  Please check recipes with NEI or Craft guide.
 
 *How to install.
  ･Install Forge version 10.13.4.1614 or later.
