@@ -1,7 +1,7 @@
 ﻿*MoreMaterialsAndUtilities-0.1.0
  ･作者 :sora_suke(Twitter :@sora_suke_mc)
  ･配布サイト(非公式フォーラム) :http://forum.minecraftuser.jp/viewtopic.php?f=13&t=29713
-  (Curse) :まだ
+  (Curse) :https://minecraft.curseforge.com/projects/morematerialsandutilities
 
 *注意!
  ･このMODは開発途中です｡
