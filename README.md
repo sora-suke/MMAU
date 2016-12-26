@@ -3,7 +3,7 @@ My mod of Minecraft.
 
 Distribution site
 Minecraft Unofficial Japan Users Forum :http://forum.minecraftuser.jp/viewtopic.php?f=13&t=29713
-Curse :Comming soon.
+Curse :https://minecraft.curseforge.com/projects/morematerialsandutilities
 
 License
 ﻿Sora_suke's License For Minecraft Mod Version1.0
