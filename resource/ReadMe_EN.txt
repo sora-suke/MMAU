@@ -8,8 +8,7 @@
  ･Specification of this mod may change and this mod may has some bugs!
 
 *License
- ･Sora_suke's License For Minecraft Mod Version1.0
-  https://github.com/sora-suke/Sora_suke-s-License-For-Minecraft-Mod-Version1.0
+ ･The license is written on the distribution site
  ･The license may be changed!
 
 *support
