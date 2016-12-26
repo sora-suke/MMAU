@@ -61,7 +61,7 @@
   ･Press that install button.
 
 *Change log
- ･December いつか, 2016
+ ･December 26, 2016
   ･Release ver0.1.0
   ･Add Silver, Platinum, Steel, Brass, Lead, Zinc
    Explotion Button, Chicken Block, Block of Feather, Chicken Head
