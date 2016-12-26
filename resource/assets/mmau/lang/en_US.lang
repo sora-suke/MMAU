@@ -1,10 +1,11 @@
 ﻿
 itemGroup.mmautab=MMAU
 itemGroup.mmautoolstab=MMAUTools
+itemGroup.mmauutilstab=MMAUUtils
 
 
-text.negi.tooltip=Inedible!ヾ(ﾟ□ﾟ＠)
-text.silver.tooltip=Antibacterial!
+text.negi.tooltip=This is inedible!ヾ(ﾟ□ﾟ＠)
+text.silver.tooltip=This is antibacterial!
 
 
 tile.MMAU_negi_ore.name=Negi Ore
