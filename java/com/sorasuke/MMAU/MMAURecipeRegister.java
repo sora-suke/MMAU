@@ -4,6 +4,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.ShapedRecipes;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
@@ -128,7 +129,10 @@ public class MMAURecipeRegister {
 
 		GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(MMAURegistry.ExplosionButton, 1, 0),
 				" B ", "ITI", 'I', "ingotIron", 'B', Blocks.stone_button, 'T', Blocks.tnt ));
-		
+
+        GameRegistry.addRecipe(new ItemStack(MMAURegistry.FeatherBlock), "FFF","FFF","FFF",'F', Items.feather);
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(MMAURegistry.ChickenBlock),"FHF","DED","FFF",
+                'F',MMAURegistry.FeatherBlock, 'H',MMAURegistry.ChickenHead, 'D', "gemDiamond", 'E', Items.egg));
 
 	}
 
