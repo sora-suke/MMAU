@@ -43,12 +43,12 @@
   ･Iron Mortar
 
  ･Utilities.
-  ･Explosion Button
-  ･Chicken Block
-  ･Block of Feather
+  ･Explosion Button-This explodes with right click.
+  ･Chicken Block-This lays eggs every ten minutes.
+  ･Block of Feather-Even if you fall on this you will not get damaged.
 
  ･Other.
-  ･Chicken Head
+  ･Chicken Head-A chicken drops this.
 
   Please check recipes with NEI or Craft guide.
 
