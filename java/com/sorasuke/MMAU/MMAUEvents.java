@@ -23,7 +23,7 @@ public class MMAUEvents {
     public void fallToFeatherBlock(LivingFallEvent event){
         //MMAULogger.log("fall!");//普段コレをさせておくとすごくログが
         //System.out.println("fall!");
-        int x = (int)event.entityLiving.posX-1;//なぜか取得できるX座標がずれてる なぜだ
+        int x = (int)event.entityLiving.posX;//なぜか取得できるX座標がずれてる なぜだ ←どうやら､Xの座標が+-で変わるらしい もうわけわからん キャストのさせかたが悪いっぽい いや､これもちがうっぽい?
         int y = (int)event.entityLiving.posY-1;
         int z = (int)event.entityLiving.posZ;
         Block b = event.entityLiving.worldObj.getBlock(x,y,z);
