@@ -21,7 +21,7 @@ public class MMAUEvents {
      */
     @SubscribeEvent
     public void fallToFeatherBlock(LivingFallEvent event){
-        MMAULogger.log("fall!");//普段コレをさせておくとすごくログが
+        //MMAULogger.log("fall!");//普段コレをさせておくとすごくログが
         //System.out.println("fall!");
         int x = (int)event.entityLiving.posX-1;//なぜか取得できるX座標がずれてる なぜだ
         int y = (int)event.entityLiving.posY-1;
