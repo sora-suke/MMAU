@@ -1,6 +1,7 @@
 package com.sorasuke.MMAU;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import net.minecraft.block.Block;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.item.Item;
@@ -20,9 +21,14 @@ public class MMAUEvents {
      */
     @SubscribeEvent
     public void fallToFeatherBlock(LivingFallEvent event){
-        //MMAULogger.log("fall!");//普段コレをさせておくとすごくログが
+        MMAULogger.log("fall!");//普段コレをさせておくとすごくログが
         //System.out.println("fall!");
-        if(MMAURegistry.FeatherBlock.equals(event.entityLiving.worldObj.getBlock((int)event.entityLiving.posX, (int)event.entityLiving.posY-1, (int)event.entityLiving.posZ))){
+        int x = (int)event.entityLiving.posX-1;//なぜか取得できるX座標がずれてる なぜだ
+        int y = (int)event.entityLiving.posY-1;
+        int z = (int)event.entityLiving.posZ;
+        Block b = event.entityLiving.worldObj.getBlock(x,y,z);
+        //MMAULogger.log(String.valueOf(x)+","+String.valueOf(y)+","+String.valueOf(z)+","+b.getLocalizedName());
+        if(MMAURegistry.FeatherBlock.equals(b)){
             event.distance = 0;
         }
     }
