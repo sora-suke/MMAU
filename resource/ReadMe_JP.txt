@@ -1,4 +1,4 @@
-﻿*MoreMaterialsAndUtilities-0.1.0
+﻿*MoreMaterialsAndUtilities-0.1.1
  ･作者 :sora_suke(Twitter :@sora_suke_mc)
  ･配布サイト(非公式フォーラム) :http://forum.minecraftuser.jp/viewtopic.php?f=13&t=29713
   (Curse) :https://minecraft.curseforge.com/projects/morematerialsandutilities
@@ -50,6 +50,8 @@
  ･その他
   ･ニワトリの頭-ニワトリからドロップします
 
+  ･巨大クリスタル鉱床-クリスタルブロックの大きな鉱脈
+
  レシピはNEIやクラフトガイドで確認してください｡
 
 
@@ -62,6 +64,10 @@
   ･インストールボタンを押す｡
 
 *チェンジログ
+ ･2017/1/1
+  ･0.1.1リリース
+  ･羽ブロックの落下ダメージ軽減がうまく働いてなかったのを修正
+
  ･2016/12/26
   ･0.1.0リリース
   ･ライセンスの変更
