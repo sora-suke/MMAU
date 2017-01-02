@@ -12,12 +12,12 @@ Tasks to be executed: [task ':compileApiJava', task ':processApiResources', task
 :compileApiJava
 Skipping task ':compileApiJava' as it has no source files.
 :compileApiJava UP-TO-DATE
-:compileApiJava (Thread[main,5,main]) completed. Took 0.013 secs.
+:compileApiJava (Thread[main,5,main]) completed. Took 0.011 secs.
 :processApiResources (Thread[main,5,main]) started.
 :processApiResources
 Skipping task ':processApiResources' as it has no source files.
 :processApiResources UP-TO-DATE
-:processApiResources (Thread[main,5,main]) completed. Took 0.0 secs.
+:processApiResources (Thread[main,5,main]) completed. Took 0.001 secs.
 :apiClasses (Thread[main,5,main]) started.
 :apiClasses
 Skipping task ':apiClasses' as it has no actions.
@@ -25,45 +25,39 @@ Skipping task ':apiClasses' as it has no actions.
 :apiClasses (Thread[main,5,main]) completed. Took 0.0 secs.
 :sourceMainJava (Thread[main,5,main]) started.
 :sourceMainJava
-Executing task ':sourceMainJava' (up-to-date check took 0.899 secs) due to:
-  No history is available.
-:sourceMainJava (Thread[main,5,main]) completed. Took 1.063 secs.
+Skipping task ':sourceMainJava' as it is up-to-date (took 0.039 secs).
+:sourceMainJava UP-TO-DATE
+:sourceMainJava (Thread[main,5,main]) completed. Took 0.039 secs.
 :compileJava (Thread[main,5,main]) started.
 :compileJava
 Failed to get resource: GET. [HTTP HTTP/1.1 403 Forbidden: https://libraries.minecraft.net//forgeSrc/1.7.10-10.13.4.1614-1.7.10/forgeSrc-1.7.10-10.13.4.1614-1.7.10.pom]
 Failed to get resource: GET. [HTTP HTTP/1.1 403 Forbidden: https://libraries.minecraft.net/org/scala-lang/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1.pom]
 Failed to get resource: GET. [HTTP HTTP/1.1 403 Forbidden: https://libraries.minecraft.net/org/scala-lang/scala-swing_2.11/1.0.1/scala-swing_2.11-1.0.1.pom]
 Failed to get resource: GET. [HTTP HTTP/1.1 403 Forbidden: https://libraries.minecraft.net/org/scala-lang/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.pom]
-Resource missing. [HTTP HEAD: http://files.minecraftforge.net/maven/java3d/vecmath/1.3.1/vecmath-1.3.1.pom]
-Resource missing. [HTTP HEAD: http://files.minecraftforge.net/maven/java3d/vecmath/1.3.1/vecmath-1.3.1.jar]
-Executing task ':compileJava' (up-to-date check took 13.347 secs) due to:
-  No history is available.
-All input files are considered out-of-date for incremental task ':compileJava'.
-Compiling with JDK Java compiler API.
-警告: [options] ブートストラップ・クラスパスが-source 1.7と一緒に設定されていません
-注意:C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\sources\java\com\sorasuke\MMAU\MMAURegistry.javaは非推奨のAPIを使用またはオーバーライドしています。
-注意:詳細は、-Xlint:deprecationオプションを指定して再コンパイルしてください。
-警告1個
-:compileJava (Thread[main,5,main]) completed. Took 14.776 secs.
+Skipping task ':compileJava' as it is up-to-date (took 3.796 secs).
+:compileJava UP-TO-DATE
+:compileJava (Thread[main,5,main]) completed. Took 3.798 secs.
 :processResources (Thread[main,5,main]) started.
 :processResources
-Executing task ':processResources' (up-to-date check took 0.866 secs) due to:
-  No history is available.
-:processResources (Thread[main,5,main]) completed. Took 1.576 secs.
+Executing task ':processResources' (up-to-date check took 0.151 secs) due to:
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\resources\main\ReadMe_EN.txt has changed.
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\resources\main\ReadMe_JP.txt has changed.
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\resources\main\assets\mmau\textures\items\Thumbs.db has been removed.
+:processResources (Thread[main,5,main]) completed. Took 0.837 secs.
 :classes (Thread[main,5,main]) started.
 :classes
 Skipping task ':classes' as it has no actions.
-:classes (Thread[main,5,main]) completed. Took 0.001 secs.
+:classes (Thread[main,5,main]) completed. Took 0.0 secs.
 :jar (Thread[main,5,main]) started.
 :jar
-Executing task ':jar' (up-to-date check took 0.09 secs) due to:
-  No history is available.
-:jar (Thread[main,5,main]) completed. Took 0.318 secs.
+Executing task ':jar' (up-to-date check took 0.047 secs) due to:
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\libs\MoreMaterialsAndUtilities-0.1.1-1.7.10.jar has changed.
+:jar (Thread[main,5,main]) completed. Took 0.475 secs.
 :compileTestJava (Thread[main,5,main]) started.
 :compileTestJava
 Skipping task ':compileTestJava' as it has no source files.
 :compileTestJava UP-TO-DATE
-:compileTestJava (Thread[main,5,main]) completed. Took 0.002 secs.
+:compileTestJava (Thread[main,5,main]) completed. Took 0.001 secs.
 :processTestResources (Thread[main,5,main]) started.
 :processTestResources
 Skipping task ':processTestResources' as it has no source files.
@@ -73,7 +67,7 @@ Skipping task ':processTestResources' as it has no source files.
 :testClasses
 Skipping task ':testClasses' as it has no actions.
 :testClasses UP-TO-DATE
-:testClasses (Thread[main,5,main]) completed. Took 0.0 secs.
+:testClasses (Thread[main,5,main]) completed. Took 0.001 secs.
 :test (Thread[main,5,main]) started.
 :test
 file or directory 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\classes\test', not found
@@ -82,34 +76,34 @@ Skipping task ':test' as it has no source files.
 :test (Thread[main,5,main]) completed. Took 0.001 secs.
 :extractMcpData (Thread[main,5,main]) started.
 :extractMcpData
-Executing task ':extractMcpData' (up-to-date check took 0.002 secs) due to:
-  No history is available.
-:extractMcpData (Thread[main,5,main]) completed. Took 0.019 secs.
+Skipping task ':extractMcpData' as it is up-to-date (took 0.001 secs).
+:extractMcpData UP-TO-DATE
+:extractMcpData (Thread[main,5,main]) completed. Took 0.003 secs.
 :getVersionJson (Thread[main,5,main]) started.
 :getVersionJson
 Executing task ':getVersionJson' (up-to-date check took 0.0 secs) due to:
   Task has not declared any outputs.
-:getVersionJson (Thread[main,5,main]) completed. Took 0.49 secs.
+:getVersionJson (Thread[main,5,main]) completed. Took 0.381 secs.
 :extractUserDev (Thread[main,5,main]) started.
 :extractUserDev
 Failed to get resource: GET. [HTTP HTTP/1.1 403 Forbidden: https://libraries.minecraft.net/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/forge-1.7.10-10.13.4.1614-1.7.10.pom]
-Executing task ':extractUserDev' (up-to-date check took 8.128 secs) due to:
-  No history is available.
-:extractUserDev (Thread[main,5,main]) completed. Took 8.788 secs.
+Skipping task ':extractUserDev' as it is up-to-date (took 1.631 secs).
+:extractUserDev UP-TO-DATE
+:extractUserDev (Thread[main,5,main]) completed. Took 1.632 secs.
 :genSrgs (Thread[main,5,main]) started.
 :genSrgs
 Skipping task ':genSrgs' as task onlyIf is false.
 :genSrgs SKIPPED
-:genSrgs (Thread[main,5,main]) completed. Took 0.561 secs.
+:genSrgs (Thread[main,5,main]) completed. Took 0.422 secs.
 :reobf (Thread[main,5,main]) started.
 :reobf
-Executing task ':reobf' (up-to-date check took 0.07 secs) due to:
-  No history is available.
-:reobf (Thread[main,5,main]) completed. Took 2.106 secs.
+Executing task ':reobf' (up-to-date check took 0.004 secs) due to:
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\libs\MoreMaterialsAndUtilities-0.1.1-1.7.10.jar has changed.
+:reobf (Thread[main,5,main]) completed. Took 1.028 secs.
 :assemble (Thread[main,5,main]) started.
 :assemble
 Skipping task ':assemble' as it has no actions.
-:assemble (Thread[main,5,main]) completed. Took 0.0 secs.
+:assemble (Thread[main,5,main]) completed. Took 0.001 secs.
 :check (Thread[main,5,main]) started.
 :check
 Skipping task ':check' as it has no actions.
@@ -118,8 +112,8 @@ Skipping task ':check' as it has no actions.
 :build (Thread[main,5,main]) started.
 :build
 Skipping task ':build' as it has no actions.
-:build (Thread[main,5,main]) completed. Took 0.002 secs.
+:build (Thread[main,5,main]) completed. Took 0.0 secs.
 
 BUILD SUCCESSFUL
 
-Total time: 51.547 secs
+Total time: 29.661 secs
