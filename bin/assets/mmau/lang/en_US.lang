@@ -1,10 +1,11 @@
 ﻿
 itemGroup.mmautab=MMAU
 itemGroup.mmautoolstab=MMAUTools
+itemGroup.mmauutilstab=MMAUUtils
 
 
-text.negi.tooltip=Inedible!ヾ(ﾟ□ﾟ＠)
-text.silver.tooltip=Antibacterial!
+text.negi.tooltip=This is inedible!ヾ(ﾟ□ﾟ＠)
+text.silver.tooltip=This is antibacterial!
 
 
 tile.MMAU_negi_ore.name=Negi Ore
@@ -30,6 +31,11 @@ tile.MMAU_zinc_block.name=Block of Zinc
 tile.MMAU_lead_ore.name=Lead Ore
 tile.MMAU_lead_block.name=Block of Lead
 tile.MMAU_brass_block.name=Block of Brass
+
+tile.MMAU_chicken_block.name=Chicken Block
+tile.MMAU_chicken_head.name=Chicken Head
+
+tile.MMAU_feather_block.name=Block of Feather
 
 
 item.MMAU_negi.name=Negi
@@ -175,3 +181,5 @@ item.MMAU_coal_dust.name=Coal Dust
 
 item.MMAU_iron_mortar.name=Iron Mortar
 item.MMAU_button_explosion.name=Explosion Button
+
+container.chicken_block=Chicken Block

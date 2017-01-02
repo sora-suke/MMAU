@@ -1,6 +1,7 @@
 ﻿
 itemGroup.mmautab=MMAU
 itemGroup.mmautoolstab=MMAUTools
+itemGroup.mmauutilstab=MMAUUtils
 
 
 text.negi.tooltip=食べられないよ!ヾ(ﾟ□ﾟ＠)
@@ -30,6 +31,11 @@ tile.MMAU_zinc_block.name=亜鉛ブロック
 tile.MMAU_lead_ore.name=鉛鉱石
 tile.MMAU_lead_block.name=鉛ブロック
 tile.MMAU_brass_block.name=真鍮ブロック
+
+tile.MMAU_chicken_block.name=ニワトリブロック
+tile.MMAU_chicken_head.name=ニワトリの頭
+
+tile.MMAU_feather_block.name=羽ブロック
 
 
 item.MMAU_negi.name=ネギ
@@ -175,3 +181,5 @@ item.MMAU_coal_dust.name=石炭の粉
 
 item.MMAU_iron_mortar.name=鉄のすり棒
 item.MMAU_button_explosion.name=爆発ボタン
+
+container.chicken_block=ニワトリブロック
