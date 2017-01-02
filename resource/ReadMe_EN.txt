@@ -63,7 +63,7 @@
   ･Press that install button.
 
 *Change log
- ･January 1, 2017
+ ･January 2, 2017
   ･Release ver0.1.1
   ･Fixed that the falling damage reduction of the feather block did not work well.
 
