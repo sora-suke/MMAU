@@ -1,4 +1,4 @@
-*MoreMaterialsAndUtilities-0.1.0
+*MoreMaterialsAndUtilities-0.1.1
  ･Producer :sora_suke(Twitter :@sora_suke_mc)
  ･Distribution site(Minecraft Unofficial Japan Users Forum) :http://forum.minecraftuser.jp/viewtopic.php?f=13&t=29713
   (Curse) :https://minecraft.curseforge.com/projects/morematerialsandutilities
@@ -50,6 +50,8 @@
  ･Other.
   ･Chicken Head-A chicken drops this.
 
+  ･Giant Crystal Deposit-Large vein of crystal block
+
   Please check recipes with NEI or Craft guide.
 
 *How to install.
@@ -61,6 +63,10 @@
   ･Press that install button.
 
 *Change log
+ ･January 2, 2017
+  ･Release ver0.1.1
+  ･Fixed that the falling damage reduction of the feather block did not work well.
+
  ･December 26, 2016
   ･Release ver0.1.0
   ･Add Silver, Platinum, Steel, Brass, Lead, Zinc

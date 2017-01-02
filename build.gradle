@@ -30,7 +30,7 @@ tasks.withType(Jar) {
 } 
 
 archivesBaseName = "MoreMaterialsAndUtilities"
-version = "0.1.0-1.7.10"
+version = "0.1.1-1.7.10"
 minecraft.version = "1.7.10-10.13.4.1614-1.7.10"
  
 [compileJava, compileTestJava].each {

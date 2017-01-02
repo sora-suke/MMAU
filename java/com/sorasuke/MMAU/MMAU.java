@@ -29,7 +29,7 @@ import static com.sorasuke.MMAU.MMAUCollaboration.registerEMC;
 public class MMAU {
 
     public static final String MODID = "MoreMaterialsAndUtilities";
-    public static final String VERSION = "0.1.0";
+    public static final String VERSION = "0.1.1";
     @Mod.Instance
     public static MMAU instance;
     @SidedProxy(clientSide = "com.sorasuke.MMAU.client.MMAUClientProxy", serverSide = "com.sorasuke.MMAU.common.MMAUProxy")
@@ -44,9 +44,9 @@ public class MMAU {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        
+
         MMAULogger.registry(event);//ロガーを生成
-        
+
         MMAUConfig.Load(this, event);// コンフィグの読み込み
 
         MMAURegistry.registerMMAU();// ブロック､アイテムの登録等
@@ -63,7 +63,6 @@ public class MMAU {
         proxy.registerRender();
         MMAURecipeRegister.registry(this);// レシピ登録
         MMAUGens.registry(this);// ワールド生成関連
-        FMLCommonHandler.instance().bus().register(new MMAUEvents());
         MinecraftForge.EVENT_BUS.register(new MMAUEvents());
 
     }
