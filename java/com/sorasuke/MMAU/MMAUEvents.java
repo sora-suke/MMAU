@@ -6,6 +6,8 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.MathHelper;
+import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
@@ -23,9 +25,10 @@ public class MMAUEvents {
     public void fallToFeatherBlock(LivingFallEvent event){
         //MMAULogger.log("fall!");//普段コレをさせておくとすごくログが
         //System.out.println("fall!");
-        int x = (int)event.entityLiving.posX;//なぜか取得できるX座標がずれてる なぜだ ←どうやら､Xの座標が+-で変わるらしい もうわけわからん キャストのさせかたが悪いっぽい いや､これもちがうっぽい?
-        int y = (int)event.entityLiving.posY-1;
-        int z = (int)event.entityLiving.posZ;
+
+        int x = MathHelper.floor_double(event.entityLiving.posX);//なぜか取得できるX座標がずれてる なぜだ ←どうやら､Xの座標が+-で変わるらしい もうわけわからん キャストのさせかたが悪いっぽい いや､これもちがうっぽい? マイクラのMathHelper使えば良いっぽい
+        int y = MathHelper.floor_double(event.entityLiving.posY-1);
+        int z = MathHelper.floor_double(event.entityLiving.posZ);
         Block b = event.entityLiving.worldObj.getBlock(x,y,z);
         //MMAULogger.log(String.valueOf(x)+","+String.valueOf(y)+","+String.valueOf(z)+","+b.getLocalizedName());
         if(MMAURegistry.FeatherBlock.equals(b)){
