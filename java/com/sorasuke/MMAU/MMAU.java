@@ -39,23 +39,23 @@ public class MMAU {
 
         MMAUConfig.Load(this, event);// コンフィグの読み込み
 
-		MMAURegistry.registerMMAU();// ブロック､アイテムの登録等
-		MMAUOreDict.registry(this);// 鉱石辞書登録
+        MMAURegistry.registerMMAU();// ブロック､アイテムの登録等
+        MMAUOreDict.registry(this);// 鉱石辞書登録
 
 
 
 
-	}
+    }
 
-	@EventHandler
-	public void Init(FMLInitializationEvent event) {
+    @EventHandler
+    public void Init(FMLInitializationEvent event) {
         NetworkRegistry.INSTANCE.registerGuiHandler(this.instance,new MMAUGuiHandler());
         proxy.registerRender();
         MMAURecipeRegister.registry(this);// レシピ登録
         MMAUGens.registry(this);// ワールド生成関連
         MinecraftForge.EVENT_BUS.register(new MMAUEvents());
 
-	}
+    }
 
 
 
