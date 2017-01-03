@@ -20,7 +20,7 @@ public class MMAUConfig {
 	public static boolean genLeadOre;
 	public static boolean genZincOre;
 
-	public static void Load(MMAU mmau, FMLPreInitializationEvent event) {
+	public static void Load(FMLPreInitializationEvent event) {
 		
 		MMAULogger.log("Load Config!");
 		Configuration config = new Configuration(event.getSuggestedConfigurationFile());

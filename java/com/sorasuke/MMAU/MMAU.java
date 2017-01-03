@@ -47,7 +47,7 @@ public class MMAU {
 
         MMAULogger.registry(event);//ロガーを生成
 
-        MMAUConfig.Load(this, event);// コンフィグの読み込み
+        MMAUConfig.Load(event);// コンフィグの読み込み
 
         MMAURegistry.registerMMAU();// ブロック､アイテムの登録等
         MMAUOreDict.registry(this);// 鉱石辞書登録
