@@ -4,8 +4,6 @@ package com.sorasuke.MMAU;
 import com.sorasuke.MMAU.common.MMAUProxy;
 import com.sorasuke.MMAU.gens.MMAUGens;
 
-import com.sorasuke.MMAU.tileentities.TileEntityChickenBlock;
-import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -13,15 +11,8 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
-import moze_intel.projecte.emc.mappers.APICustomEMCMapper;
-import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.util.ChatComponentText;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.living.LivingFallEvent;
 
 import static com.sorasuke.MMAU.MMAUCollaboration.registerEMC;
 
@@ -53,13 +44,11 @@ public class MMAU {
         MMAUOreDict.registry(this);// 鉱石辞書登録
 
 
-
-
     }
 
     @EventHandler
     public void Init(FMLInitializationEvent event) {
-        NetworkRegistry.INSTANCE.registerGuiHandler(this.instance,new MMAUGuiHandler());
+        NetworkRegistry.INSTANCE.registerGuiHandler(this.instance, new MMAUGuiHandler());
         proxy.registerRender();
         MMAURecipeRegister.registry(this);// レシピ登録
         MMAUGens.registry(this);// ワールド生成関連
@@ -68,17 +57,16 @@ public class MMAU {
     }
 
     @EventHandler
-    public void postInit(FMLPostInitializationEvent event){
+    public void postInit(FMLPostInitializationEvent event) {
         //連携MODが読み込まれてるか取得
         loadedProjectE = Loader.isModLoaded("ProjectE");
 
-        if(loadedProjectE){
+        if (loadedProjectE) {
             MMAULogger.log("ProjectE is Loaded!");
             registerEMC();
         }
 
     }
-
 
 
 }

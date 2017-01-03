@@ -22,7 +22,7 @@ import java.util.Random;
  */
 public class TileEntityChickenBlock extends TileEntity implements ISidedInventory {
 
-    private final ItemStack slot = new ItemStack(Items.egg,0);
+    private final ItemStack slot = new ItemStack(Items.egg, 0);
     private int workTime;
     private int workMax = 9600;//デバッグのために生産スピードを上げている
 
@@ -30,13 +30,15 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
 
     public void updateEntity() {
         Random random = new Random();
-        if(random.nextInt(300)==0)this.worldObj.playSoundEffect((double)this.xCoord + 0.5D, (double)this.yCoord + 0.5D, (double)this.zCoord + 0.5D, "mob.chicken.say", 1.0F, this.worldObj.rand.nextFloat() * 0.1F + 0.9F);
-        if(slot.stackSize<slot.getMaxStackSize())workTime++;
+        if (random.nextInt(300) == 0)
+            this.worldObj.playSoundEffect((double) this.xCoord + 0.5D, (double) this.yCoord + 0.5D, (double) this.zCoord + 0.5D, "mob.chicken.say", 1.0F, this.worldObj.rand.nextFloat() * 0.1F + 0.9F);
+        if (slot.stackSize < slot.getMaxStackSize()) workTime++;
         if (workMax <= workTime) {
             if (!this.getWorldObj().isRemote) slot.stackSize++;
-            if (!this.getWorldObj().isRemote) slot.stackSize = slot.getMaxStackSize() < slot.stackSize ? slot.getMaxStackSize() : slot.stackSize;
+            if (!this.getWorldObj().isRemote)
+                slot.stackSize = slot.getMaxStackSize() < slot.stackSize ? slot.getMaxStackSize() : slot.stackSize;
             workTime = 0;
-            this.worldObj.playSoundEffect((double)this.xCoord + 0.5D, (double)this.yCoord + 0.5D, (double)this.zCoord + 0.5D, "mob.chicken.plop", 1.0F, this.worldObj.rand.nextFloat() * 0.1F + 0.9F);
+            this.worldObj.playSoundEffect((double) this.xCoord + 0.5D, (double) this.yCoord + 0.5D, (double) this.zCoord + 0.5D, "mob.chicken.plop", 1.0F, this.worldObj.rand.nextFloat() * 0.1F + 0.9F);
             this.markDirty();
         }
         worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);//同期メソッド
@@ -44,19 +46,19 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
 
     public void readFromNBT(NBTTagCompound nbt) {
         super.readFromNBT(nbt);
-        this.workTime = (int)nbt.getShort("workTime");
+        this.workTime = (int) nbt.getShort("workTime");
         this.slot.stackSize = nbt.getInteger("ItemSize");
-        if(nbt.hasKey("CustomName")){
+        if (nbt.hasKey("CustomName")) {
             this.localizedName = nbt.getString("CustomName");
         }
     }
 
     public void writeToNBT(NBTTagCompound nbt) {
         super.writeToNBT(nbt);
-        nbt.setShort("workTime", (short)this.workTime);
+        nbt.setShort("workTime", (short) this.workTime);
 
         nbt.setInteger("ItemSize", this.slot.stackSize);
-        if(this.hasCustomInventoryName()){
+        if (this.hasCustomInventoryName()) {
             nbt.setString("CustomName", this.localizedName);
         }
     }
@@ -98,21 +100,21 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
 
     @Override
     public ItemStack getStackInSlot(int slotNumber) {
-        if(slot.stackSize <= 0)return null;
+        if (slot.stackSize <= 0) return null;
         else return slot;
     }
 
     @Override
     public ItemStack decrStackSize(int slot, int stack) {
         //MMAULogger.log("decrStackSize");
-        if(this.slot.stackSize > 0){
+        if (this.slot.stackSize > 0) {
             ItemStack itemStack;
-            if(this.slot.stackSize <= stack){
+            if (this.slot.stackSize <= stack) {
                 //MMAULogger.log("if(this.slot.stackSize <= stack) true");
                 itemStack = this.slot.copy();
                 this.slot.stackSize = 0;
                 return itemStack;
-            }else{
+            } else {
                 //MMAULogger.log("if(this.slot.stackSize <= stack) false");
                 itemStack = this.slot.splitStack(stack);
 
@@ -120,11 +122,12 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
             }
 
         }
-        return null;    }
+        return null;
+    }
 
     @Override
     public ItemStack getStackInSlotOnClosing(int p_70304_1_) {
-        if(p_70304_1_ == 0){
+        if (p_70304_1_ == 0) {
             return slot.stackSize < 0 ? null : slot;
         }
         return null;
@@ -170,7 +173,7 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
         return true;
     }
 
-    public float getWorkingPercentage(int i){
-        return workTime * i /workMax;
+    public float getWorkingPercentage(int i) {
+        return workTime * i / workMax;
     }
 }

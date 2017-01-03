@@ -16,17 +16,18 @@ import net.minecraft.item.ItemStack;
 public class ContainerChickenBlock extends Container {
 
     private TileEntityChickenBlock chickenBlock;
+
     public ContainerChickenBlock(InventoryPlayer inventory, TileEntityChickenBlock tileentity) {
         this.chickenBlock = tileentity;
         this.addSlotToContainer(new SlotFurnace(inventory.player, this.chickenBlock, 0, 80, 57));
 
-        for(int i = 0; i < 3; i++) {
-            for(int j = 0; j < 9; j++) {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 9; j++) {
                 this.addSlotToContainer(new Slot(inventory, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
             }
         }
 
-        for(int i = 0; i < 9; i++) {
+        for (int i = 0; i < 9; i++) {
             this.addSlotToContainer(new Slot(inventory, i, 8 + i * 18, 142));
         }
     }
@@ -34,9 +35,9 @@ public class ContainerChickenBlock extends Container {
     public ItemStack transferStackInSlot(EntityPlayer par1EntityPlayer, int clickedIndex) {
         //MMAULogger.log("transferStackInSlot!");
         //MMAULogger.log("0");
-        Slot slot = (Slot)this.inventorySlots.get(clickedIndex);
+        Slot slot = (Slot) this.inventorySlots.get(clickedIndex);
         ItemStack itemStack = null;
-        if(slot != null && slot.getHasStack()) {
+        if (slot != null && slot.getHasStack()) {
             ItemStack itemStackMem = slot.getStack();
             itemStack = itemStackMem.copy();
             //MMAULogger.log("1");

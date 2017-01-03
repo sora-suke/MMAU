@@ -30,7 +30,7 @@ import java.util.Random;
  * ニワトリブロック
  * Created by sora_suke on 2016/11/26.
  */
-public class ChickenBlock extends Block implements IMMAUBaseBlock,ITileEntityProvider {
+public class ChickenBlock extends Block implements IMMAUBaseBlock, ITileEntityProvider {
     private String name;
 
     private Random rand = new Random();
@@ -46,7 +46,7 @@ public class ChickenBlock extends Block implements IMMAUBaseBlock,ITileEntityPro
 
     private static boolean keepInventory;
 
-    public  ChickenBlock(Material material, String name){
+    public ChickenBlock(Material material, String name) {
         super(material);
         this.name = name;
         setBlockName("MMAU_" + name);
@@ -56,7 +56,7 @@ public class ChickenBlock extends Block implements IMMAUBaseBlock,ITileEntityPro
     }
 
     @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister icon){
+    public void registerBlockIcons(IIconRegister icon) {
         this.blockIcon = icon.registerIcon("mmau:chicken_block_side");
         this.iconFront = icon.registerIcon("mmau:chicken_block_front");
         this.iconTop = icon.registerIcon("mmau:chicken_block_top");
@@ -64,14 +64,14 @@ public class ChickenBlock extends Block implements IMMAUBaseBlock,ITileEntityPro
     }
 
     @SideOnly(Side.CLIENT)
-    public IIcon getIcon(int side,int metadata){
-        return ForgeDirection.getOrientation(side)==ForgeDirection.DOWN ? this.iconBottom :
-                (ForgeDirection.getOrientation(side)==ForgeDirection.UP ? this.iconTop :
+    public IIcon getIcon(int side, int metadata) {
+        return ForgeDirection.getOrientation(side) == ForgeDirection.DOWN ? this.iconBottom :
+                (ForgeDirection.getOrientation(side) == ForgeDirection.UP ? this.iconTop :
                         (side == metadata ? this.iconFront :
-                                (metadata == 0 && ForgeDirection.getOrientation(side)==ForgeDirection.SOUTH ? this.iconFront :this.blockIcon)));
+                                (metadata == 0 && ForgeDirection.getOrientation(side) == ForgeDirection.SOUTH ? this.iconFront : this.blockIcon)));
     }
 
-    public void onBlockAdded(World world, int x, int y, int z){
+    public void onBlockAdded(World world, int x, int y, int z) {
         super.onBlockAdded(world, x, y, z);
         this.setDefaultDirection(world, x, y, z);
 
@@ -112,8 +112,8 @@ public class ChickenBlock extends Block implements IMMAUBaseBlock,ITileEntityPro
         }
     }
 
-    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer entityPlayer, int side, float hitX, float hitY, float hitZ){
-        if(!world.isRemote){
+    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer entityPlayer, int side, float hitX, float hitY, float hitZ) {
+        if (!world.isRemote) {
             //FMLNetworkHandler.openGui(entityPlayer, MMAU.instance, MMAU.guiIdChickenBlock, world, x, y, z);
             entityPlayer.openGui(MMAU.instance, MMAU.guiIdChickenBlock, world, x, y, z);
             MMAULogger.log("テステス");
@@ -131,54 +131,53 @@ public class ChickenBlock extends Block implements IMMAUBaseBlock,ITileEntityPro
         return new TileEntityChickenBlock();
     }
 
-    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entityPlayer, ItemStack itemStack){
-        int l = MathHelper.floor_double((double)(entityPlayer.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entityPlayer, ItemStack itemStack) {
+        int l = MathHelper.floor_double((double) (entityPlayer.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
 
-        if(l == 0){
+        if (l == 0) {
             world.setBlockMetadataWithNotify(x, y, z, 2, 2);
         }
-        if(l == 1){
+        if (l == 1) {
             world.setBlockMetadataWithNotify(x, y, z, 5, 2);
         }
-        if(l == 2){
+        if (l == 2) {
             world.setBlockMetadataWithNotify(x, y, z, 3, 2);
         }
-        if(l == 3){
+        if (l == 3) {
             world.setBlockMetadataWithNotify(x, y, z, 4, 2);
         }
 
 
-
     }
 
-    public void breakBlock(World world, int x, int y, int z, Block oldBlock,int oldMetaData){
-        world.playSoundEffect((double)x + 0.5D, (double)y + 0.5D, (double)z + 0.5D, "mob.chicken.hurt", 1.0F, world.rand.nextFloat() * 0.1F + 0.9F);
+    public void breakBlock(World world, int x, int y, int z, Block oldBlock, int oldMetaData) {
+        world.playSoundEffect((double) x + 0.5D, (double) y + 0.5D, (double) z + 0.5D, "mob.chicken.hurt", 1.0F, world.rand.nextFloat() * 0.1F + 0.9F);
         world.playSoundEffect((double) x + 0.5D, (double) y + 0.5D, (double) z + 0.5D, "game.player.hurt", 1.0F, world.rand.nextFloat() * 0.1F + 0.9F);
-        if(!keepInventory){
+        if (!keepInventory) {
             TileEntityChickenBlock tileEntity = (TileEntityChickenBlock) world.getTileEntity(x, y, z);
 
-            if(tileEntity != null){
-                for(int i = 0;i < tileEntity.getSizeInventory(); i++){
+            if (tileEntity != null) {
+                for (int i = 0; i < tileEntity.getSizeInventory(); i++) {
                     ItemStack itemStack = tileEntity.getStackInSlot(i);
 
-                    if(itemStack != null){
+                    if (itemStack != null) {
                         float f = this.rand.nextFloat() * 0.8F + 0.1F;
                         float f1 = this.rand.nextFloat() * 0.8F + 0.1F;
                         float f2 = this.rand.nextFloat() * 0.8F + 0.1F;
 
-                        while(itemStack.stackSize > 0){
+                        while (itemStack.stackSize > 0) {
                             int j = this.rand.nextInt(21) + 10;
 
-                            if(j > itemStack.stackSize){
+                            if (j > itemStack.stackSize) {
                                 j = itemStack.stackSize;
                             }
 
                             itemStack.stackSize -= j;
 
-                            EntityItem item = new EntityItem(world, (double)((float)x + f), (double)((float)y + f1), (double)((float)z + f2), new ItemStack(itemStack.getItem(), j, itemStack.getItemDamage()));
+                            EntityItem item = new EntityItem(world, (double) ((float) x + f), (double) ((float) y + f1), (double) ((float) z + f2), new ItemStack(itemStack.getItem(), j, itemStack.getItemDamage()));
 
-                            if(itemStack.hasTagCompound()){
-                                item.getEntityItem().setTagCompound((NBTTagCompound)itemStack.getTagCompound().copy());
+                            if (itemStack.hasTagCompound()) {
+                                item.getEntityItem().setTagCompound((NBTTagCompound) itemStack.getTagCompound().copy());
                             }
 
                             world.spawnEntityInWorld(item);

@@ -19,6 +19,7 @@ public class GuiChickenBlock extends GuiContainer {
     private static TileEntityChickenBlock tileEntity;
 
     private static final ResourceLocation bground = new ResourceLocation("mmau:textures/gui/container/chicken_block.png");
+
     public GuiChickenBlock(InventoryPlayer inventoryPlayer, TileEntityChickenBlock entity) {
         super(new ContainerChickenBlock(inventoryPlayer, entity));
         this.tileEntity = entity;
@@ -26,7 +27,7 @@ public class GuiChickenBlock extends GuiContainer {
         this.ySize = 166;
     }
 
-    public void drawGuiContainerForegroundLayer(int par1, int par2){
+    public void drawGuiContainerForegroundLayer(int par1, int par2) {
         String name = this.tileEntity.hasCustomInventoryName() ? this.tileEntity.getInventoryName() : I18n.format(this.tileEntity.getInventoryName(), new Object[0]);
         this.fontRendererObj.drawString(name, this.xSize / 2 - this.fontRendererObj.getStringWidth(name) / 2, 6, 4210752);
         this.fontRendererObj.drawString(I18n.format("container.inventory", new Object[0]), 118, this.ySize - 96 + 2, 4210752);
@@ -40,6 +41,6 @@ public class GuiChickenBlock extends GuiContainer {
         int l = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
 
-        this.drawTexturedModalRect(k+71, l+21, 176, 0, 24, (int)(tileEntity.getWorkingPercentage(28)));
+        this.drawTexturedModalRect(k + 71, l + 21, 176, 0, 24, (int) (tileEntity.getWorkingPercentage(28)));
     }
 }

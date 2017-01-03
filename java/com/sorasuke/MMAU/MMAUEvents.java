@@ -19,37 +19,38 @@ public class MMAUEvents {
 
     /**
      * 羽ブロックに落下した時にダメージを消すイベント
+     *
      * @param event
      */
     @SubscribeEvent
-    public void fallToFeatherBlock(LivingFallEvent event){
+    public void fallToFeatherBlock(LivingFallEvent event) {
         //MMAULogger.log("fall!");//普段コレをさせておくとすごくログが
         //System.out.println("fall!");
 
         int x = MathHelper.floor_double(event.entityLiving.posX);//なぜか取得できるX座標がずれてる なぜだ ←どうやら､Xの座標が+-で変わるらしい もうわけわからん キャストのさせかたが悪いっぽい いや､これもちがうっぽい? マイクラのMathHelper使えば良いっぽい
-        int y = MathHelper.floor_double(event.entityLiving.posY-1);
+        int y = MathHelper.floor_double(event.entityLiving.posY - 1);
         int z = MathHelper.floor_double(event.entityLiving.posZ);
-        Block b = event.entityLiving.worldObj.getBlock(x,y,z);
+        Block b = event.entityLiving.worldObj.getBlock(x, y, z);
         //MMAULogger.log(String.valueOf(x)+","+String.valueOf(y)+","+String.valueOf(z)+","+b.getLocalizedName());
-        if(MMAURegistry.FeatherBlock.equals(b)){
+        if (MMAURegistry.FeatherBlock.equals(b)) {
             event.distance = 0;
         }
     }
 
     @SubscribeEvent
-    public void dropChickenHead(LivingDropsEvent event){
+    public void dropChickenHead(LivingDropsEvent event) {
         //MMAULogger.log("dropChickenHead!");
-        if(!event.entityLiving.worldObj.isRemote){
-            if(event.entityLiving instanceof EntityChicken){
+        if (!event.entityLiving.worldObj.isRemote) {
+            if (event.entityLiving instanceof EntityChicken) {
                 //MMAULogger.log("chicken!");
-                if(event.recentlyHit){
+                if (event.recentlyHit) {
                     //MMAULogger.log("recentlyHit!");
                     EntityItem entityItem = new EntityItem(event.entity.worldObj, event.entity.posX,
                             event.entity.posY, event.entity.posZ, new ItemStack(MMAURegistry.ChickenHead));
 
                     //System.out.println(event.specialDropValue);
-                    if(event.specialDropValue<5 && !event.entityLiving.isChild())
-                    event.drops.add(entityItem);
+                    if (event.specialDropValue < 5 && !event.entityLiving.isChild())
+                        event.drops.add(entityItem);
                     //event.entity.dropItem(Item.getItemFromBlock(MMAURegistry.ChickenHead),0);
                 }
             }

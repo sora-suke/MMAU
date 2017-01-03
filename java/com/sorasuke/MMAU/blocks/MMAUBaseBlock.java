@@ -6,13 +6,14 @@ import net.minecraft.block.material.Material;
 
 /**
  * Created by sora_suke on 2016/11/20.
- *
+ * <p>
  * MMAURegistry.registerBlockで登録させるためのやつ
  * コンストラクタの引数に名前を入れればその名前のテクスチャと非翻訳名にまとめて指定される
  */
-public class MMAUBaseBlock extends Block implements IMMAUBaseBlock{
+public class MMAUBaseBlock extends Block implements IMMAUBaseBlock {
     private String name;
-    public MMAUBaseBlock(Material material, String name, String harvestType, int harvestLevel){
+
+    public MMAUBaseBlock(Material material, String name, String harvestType, int harvestLevel) {
         super(material);
         this.name = name;
         setBlockName("MMAU_" + name);
@@ -20,7 +21,7 @@ public class MMAUBaseBlock extends Block implements IMMAUBaseBlock{
         setHarvestLevel(harvestType, harvestLevel);
     }
 
-    public MMAUBaseBlock(Material material, String name){
+    public MMAUBaseBlock(Material material, String name) {
         super(material);
         this.name = name;
         setBlockName("MMAU_" + name);

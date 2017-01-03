@@ -26,10 +26,10 @@ import java.util.List;
  */
 public class MMAURegistry {
 
-    
+
     //クリエイティブタブ
-    
-    public static final CreativeTabs MMAUTab = new CreativeTabs("mmautab"){
+
+    public static final CreativeTabs MMAUTab = new CreativeTabs("mmautab") {
         @Override
         @SideOnly(Side.CLIENT)
         public Item getTabIconItem() {
@@ -38,7 +38,7 @@ public class MMAURegistry {
         }
     };
 
-    public static final CreativeTabs MMAUToolsTab = new CreativeTabs("mmautoolstab"){
+    public static final CreativeTabs MMAUToolsTab = new CreativeTabs("mmautoolstab") {
         @Override
         @SideOnly(Side.CLIENT)
         public Item getTabIconItem() {
@@ -47,7 +47,7 @@ public class MMAURegistry {
         }
     };
 
-    public static final CreativeTabs MMAUUtilsTab = new CreativeTabs("mmauutilstab"){
+    public static final CreativeTabs MMAUUtilsTab = new CreativeTabs("mmauutilstab") {
         @Override
         @SideOnly(Side.CLIENT)
         public Item getTabIconItem() {
@@ -55,27 +55,38 @@ public class MMAURegistry {
             return Item.getItemFromBlock(MMAURegistry.ChickenBlock);
         }
     };
-    
-    
-    
+
+
     //アイテム類
 
     //マテリアル
 
     //インゴット/ジェム系
-    public static final Item Negi = new MMAUBaseItem("negi"){
-        @SuppressWarnings({ "unchecked", "rawtypes" }) @Override @SideOnly(Side.CLIENT)
-        public void addInformation(ItemStack itemstack, EntityPlayer player, List list, boolean advanced) {list.add(ChatFormatting.GREEN + StatCollector.translateToLocal("text.negi.tooltip"));}
+    public static final Item Negi = new MMAUBaseItem("negi") {
+        @SuppressWarnings({"unchecked", "rawtypes"})
+        @Override
+        @SideOnly(Side.CLIENT)
+        public void addInformation(ItemStack itemstack, EntityPlayer player, List list, boolean advanced) {
+            list.add(ChatFormatting.GREEN + StatCollector.translateToLocal("text.negi.tooltip"));
+        }
     }.setCreativeTab(MMAUTab).setFull3D();
     public static final Item Crystal = new MMAUBaseItem("crystal").setCreativeTab(MMAUTab);
     public static final Item Bronze = new MMAUBaseItem("bronze").setCreativeTab(MMAUTab);
     public static final Item Cobalt = new MMAUBaseItem("cobalt").setCreativeTab(MMAUTab);
     public static final Item Orichalcum = new MMAUBaseItem("orichalcum") {
-        @Override @SideOnly(Side.CLIENT) public boolean hasEffect(ItemStack p_77636_1_) {return true;}
+        @Override
+        @SideOnly(Side.CLIENT)
+        public boolean hasEffect(ItemStack p_77636_1_) {
+            return true;
+        }
     }.setCreativeTab(MMAUTab);
-    public static final Item Silver = new MMAUBaseItem("silver"){
-        @SuppressWarnings({ "unchecked", "rawtypes" }) @Override @SideOnly(Side.CLIENT)
-        public void addInformation(ItemStack itemstack, EntityPlayer player, List list, boolean advanced) {list.add(StatCollector.translateToLocal("text.silver.tooltip"));}
+    public static final Item Silver = new MMAUBaseItem("silver") {
+        @SuppressWarnings({"unchecked", "rawtypes"})
+        @Override
+        @SideOnly(Side.CLIENT)
+        public void addInformation(ItemStack itemstack, EntityPlayer player, List list, boolean advanced) {
+            list.add(StatCollector.translateToLocal("text.silver.tooltip"));
+        }
     }.setCreativeTab(MMAUTab);
     public static final Item Platinum = new MMAUBaseItem("platinum").setCreativeTab(MMAUTab);
     public static final Item Steel = new MMAUBaseItem("steel").setCreativeTab(MMAUTab);
@@ -88,8 +99,12 @@ public class MMAURegistry {
     //ナゲット
     public static final Item BronzeNugget = new MMAUBaseItem("bronze_nugget").setCreativeTab(MMAUTab);
     public static final Item CobaltNugget = new MMAUBaseItem("cobalt_nugget").setCreativeTab(MMAUTab);
-    public static final Item OrichalcumNugget = new MMAUBaseItem("orichalcum_nugget"){
-        @Override @SideOnly(Side.CLIENT) public boolean hasEffect(ItemStack p_77636_1_) {return true;}
+    public static final Item OrichalcumNugget = new MMAUBaseItem("orichalcum_nugget") {
+        @Override
+        @SideOnly(Side.CLIENT)
+        public boolean hasEffect(ItemStack p_77636_1_) {
+            return true;
+        }
     }.setCreativeTab(MMAUTab);
     public static final Item SilverNugget = new MMAUBaseItem("silver_nugget").setCreativeTab(MMAUTab);
     public static final Item PlatinumNugget = new MMAUBaseItem("platinum_nugget").setCreativeTab(MMAUTab);
@@ -104,8 +119,12 @@ public class MMAURegistry {
     //粉
     public static final Item BronzeDust = new MMAUBaseItem("bronze_dust").setCreativeTab(MMAUTab);
     public static final Item CobaltDust = new MMAUBaseItem("cobalt_dust").setCreativeTab(MMAUTab);
-    public static final Item OrichalcumDust = new MMAUBaseItem("orichalcum_dust"){
-        @Override @SideOnly(Side.CLIENT) public boolean hasEffect(ItemStack p_77636_1_) {return true;}
+    public static final Item OrichalcumDust = new MMAUBaseItem("orichalcum_dust") {
+        @Override
+        @SideOnly(Side.CLIENT)
+        public boolean hasEffect(ItemStack p_77636_1_) {
+            return true;
+        }
     }.setCreativeTab(MMAUTab);
     public static final Item SilverDust = new MMAUBaseItem("silver_dust").setCreativeTab(MMAUTab);
     public static final Item PlatinumDust = new MMAUBaseItem("platinum_dust").setCreativeTab(MMAUTab);
@@ -122,8 +141,12 @@ public class MMAURegistry {
     //板
     public static final Item BronzePlate = new MMAUBaseItem("bronze_plate").setCreativeTab(MMAUTab);
     public static final Item CobaltPlate = new MMAUBaseItem("cobalt_plate").setCreativeTab(MMAUTab);
-    public static final Item OrichalcumPlate = new MMAUBaseItem("orichalcum_plate"){
-        @Override @SideOnly(Side.CLIENT) public boolean hasEffect(ItemStack p_77636_1_) {return true;}
+    public static final Item OrichalcumPlate = new MMAUBaseItem("orichalcum_plate") {
+        @Override
+        @SideOnly(Side.CLIENT)
+        public boolean hasEffect(ItemStack p_77636_1_) {
+            return true;
+        }
     }.setCreativeTab(MMAUTab);
     public static final Item SilverPlate = new MMAUBaseItem("silver_plate").setCreativeTab(MMAUTab);
     public static final Item PlatinumPlate = new MMAUBaseItem("platinum_plate").setCreativeTab(MMAUTab);
@@ -148,22 +171,22 @@ public class MMAURegistry {
             .setRepairItem(new ItemStack(Cobalt));
     public static final ToolMaterial ORICHALCUM = EnumHelper.addToolMaterial("ORICHALCUM", 5, 8192, 32F, 28F, 42)
             .setRepairItem(new ItemStack(Orichalcum));
-    public static final ToolMaterial SILVER =EnumHelper.addToolMaterial("SILVER", 1, 82, 15.0F, 1.0F, 30)
+    public static final ToolMaterial SILVER = EnumHelper.addToolMaterial("SILVER", 1, 82, 15.0F, 1.0F, 30)
             .setRepairItem(new ItemStack(Silver));
-    public static final ToolMaterial PLATINUM =EnumHelper.addToolMaterial("PLATINUM", 2, 230, 5.5F, 2.0F, 21)
+    public static final ToolMaterial PLATINUM = EnumHelper.addToolMaterial("PLATINUM", 2, 230, 5.5F, 2.0F, 21)
             .setRepairItem(new ItemStack(Platinum));
-    public static final ToolMaterial STEEL =EnumHelper.addToolMaterial("STEEL", 3, 1500, 7.0F, 3F, 9)
+    public static final ToolMaterial STEEL = EnumHelper.addToolMaterial("STEEL", 3, 1500, 7.0F, 3F, 9)
             .setRepairItem(new ItemStack(Steel));
 
     //アーマーマテリアル
-    public static final ArmorMaterial NEGIARMOR = EnumHelper.addArmorMaterial("NEGI", 31, new int[] { 5, 5, 5, 5 }, 13);
-    public static final ArmorMaterial CRYSTALARMOR = EnumHelper.addArmorMaterial("CRYSTAL", 18, new int[] { 3, 5, 4, 2 }, 13);
-    public static final ArmorMaterial BRONZEARMOR = EnumHelper.addArmorMaterial("BRONZE", 13, new int[] { 2, 6, 5, 2 }, 8);
-    public static final ArmorMaterial COBALTARMOR = EnumHelper.addArmorMaterial("COBALT", 33, new int[] { 3, 8, 6, 3 }, 12);
-    public static final ArmorMaterial ORICHALCUMARMOR = EnumHelper.addArmorMaterial("ORICHALCUM", 256, new int[] { 5, 5, 5, 5 }, 50);
-    public static final ArmorMaterial SILVERARMOR = EnumHelper.addArmorMaterial("SILVER", 20, new int[]{3,6,4,2}, 30);
-    public static final ArmorMaterial PLATINUMARMOR = EnumHelper.addArmorMaterial("PLATINUM", 14, new int[]{2,6,5,2}, 17);
-    public static final ArmorMaterial STEELARMOR = EnumHelper.addArmorMaterial("STEEL", 32, new int[]{3,8,6,3}, 9);
+    public static final ArmorMaterial NEGIARMOR = EnumHelper.addArmorMaterial("NEGI", 31, new int[]{5, 5, 5, 5}, 13);
+    public static final ArmorMaterial CRYSTALARMOR = EnumHelper.addArmorMaterial("CRYSTAL", 18, new int[]{3, 5, 4, 2}, 13);
+    public static final ArmorMaterial BRONZEARMOR = EnumHelper.addArmorMaterial("BRONZE", 13, new int[]{2, 6, 5, 2}, 8);
+    public static final ArmorMaterial COBALTARMOR = EnumHelper.addArmorMaterial("COBALT", 33, new int[]{3, 8, 6, 3}, 12);
+    public static final ArmorMaterial ORICHALCUMARMOR = EnumHelper.addArmorMaterial("ORICHALCUM", 256, new int[]{5, 5, 5, 5}, 50);
+    public static final ArmorMaterial SILVERARMOR = EnumHelper.addArmorMaterial("SILVER", 20, new int[]{3, 6, 4, 2}, 30);
+    public static final ArmorMaterial PLATINUMARMOR = EnumHelper.addArmorMaterial("PLATINUM", 14, new int[]{2, 6, 5, 2}, 17);
+    public static final ArmorMaterial STEELARMOR = EnumHelper.addArmorMaterial("STEEL", 32, new int[]{3, 8, 6, 3}, 9);
 
 
     //ネギツール
@@ -211,62 +234,98 @@ public class MMAURegistry {
     public static final Item CobaltBoots = new MMAUBaseArmor(COBALTARMOR, 3, "cobalt", Cobalt);
 
     //オリハルコンツール
-    public static final Item OrichalcumPickaxe = new MMAUBasePickaxe(ORICHALCUM, "orichalcum"){
-        @Override @SideOnly(Side.CLIENT) public boolean hasEffect(ItemStack p_77636_1_) {return true;}
+    public static final Item OrichalcumPickaxe = new MMAUBasePickaxe(ORICHALCUM, "orichalcum") {
+        @Override
+        @SideOnly(Side.CLIENT)
+        public boolean hasEffect(ItemStack p_77636_1_) {
+            return true;
+        }
     };
-    public static final Item OrichalcumSword = new MMAUBaseSword(ORICHALCUM, "orichalcum"){
-        @Override @SideOnly(Side.CLIENT) public boolean hasEffect(ItemStack p_77636_1_) {return true;}
+    public static final Item OrichalcumSword = new MMAUBaseSword(ORICHALCUM, "orichalcum") {
+        @Override
+        @SideOnly(Side.CLIENT)
+        public boolean hasEffect(ItemStack p_77636_1_) {
+            return true;
+        }
     };
-    public static final Item OrichalcumAxe = new MMAUBaseAxe(ORICHALCUM, "orichalcum"){
-        @Override @SideOnly(Side.CLIENT) public boolean hasEffect(ItemStack p_77636_1_) {return true;}
+    public static final Item OrichalcumAxe = new MMAUBaseAxe(ORICHALCUM, "orichalcum") {
+        @Override
+        @SideOnly(Side.CLIENT)
+        public boolean hasEffect(ItemStack p_77636_1_) {
+            return true;
+        }
     };
-    public static final Item OrichalcumShovel = new MMAUBaseShovel(ORICHALCUM, "orichalcum"){
-        @Override @SideOnly(Side.CLIENT) public boolean hasEffect(ItemStack p_77636_1_) {return true;}
+    public static final Item OrichalcumShovel = new MMAUBaseShovel(ORICHALCUM, "orichalcum") {
+        @Override
+        @SideOnly(Side.CLIENT)
+        public boolean hasEffect(ItemStack p_77636_1_) {
+            return true;
+        }
     };
-    public static final Item OrichalcumHoe = new MMAUBaseHoe(ORICHALCUM, "orichalcum"){
-        @Override @SideOnly(Side.CLIENT) public boolean hasEffect(ItemStack p_77636_1_) {return true;}
+    public static final Item OrichalcumHoe = new MMAUBaseHoe(ORICHALCUM, "orichalcum") {
+        @Override
+        @SideOnly(Side.CLIENT)
+        public boolean hasEffect(ItemStack p_77636_1_) {
+            return true;
+        }
     };
-    public static final Item OrichalcumHelmet = new MMAUBaseArmor(ORICHALCUMARMOR, 0, "orichalcum", Orichalcum){
-        @Override @SideOnly(Side.CLIENT) public boolean hasEffect(ItemStack p_77636_1_) {return true;}
+    public static final Item OrichalcumHelmet = new MMAUBaseArmor(ORICHALCUMARMOR, 0, "orichalcum", Orichalcum) {
+        @Override
+        @SideOnly(Side.CLIENT)
+        public boolean hasEffect(ItemStack p_77636_1_) {
+            return true;
+        }
     };
-    public static final Item OrichalcumChestplate = new MMAUBaseArmor(ORICHALCUMARMOR, 1, "orichalcum", Orichalcum){
-        @Override @SideOnly(Side.CLIENT) public boolean hasEffect(ItemStack p_77636_1_) {return true;}
+    public static final Item OrichalcumChestplate = new MMAUBaseArmor(ORICHALCUMARMOR, 1, "orichalcum", Orichalcum) {
+        @Override
+        @SideOnly(Side.CLIENT)
+        public boolean hasEffect(ItemStack p_77636_1_) {
+            return true;
+        }
     };
-    public static final Item OrichalcumLeggings = new MMAUBaseArmor(ORICHALCUMARMOR, 2, "orichalcum", Orichalcum){
-        @Override @SideOnly(Side.CLIENT) public boolean hasEffect(ItemStack p_77636_1_) {return true;}
+    public static final Item OrichalcumLeggings = new MMAUBaseArmor(ORICHALCUMARMOR, 2, "orichalcum", Orichalcum) {
+        @Override
+        @SideOnly(Side.CLIENT)
+        public boolean hasEffect(ItemStack p_77636_1_) {
+            return true;
+        }
     };
-    public static final Item OrichalcumBoots = new MMAUBaseArmor(ORICHALCUMARMOR, 3, "orichalcum", Orichalcum){
-        @Override @SideOnly(Side.CLIENT) public boolean hasEffect(ItemStack p_77636_1_) {return true;}
+    public static final Item OrichalcumBoots = new MMAUBaseArmor(ORICHALCUMARMOR, 3, "orichalcum", Orichalcum) {
+        @Override
+        @SideOnly(Side.CLIENT)
+        public boolean hasEffect(ItemStack p_77636_1_) {
+            return true;
+        }
     };
 
     //銀ツール
-    public static final Item SilverPickaxe = new MMAUBasePickaxe(SILVER,"silver");
-    public static final Item SilverSword = new MMAUBaseSword(SILVER,"silver");
-    public static final Item SilverAxe = new MMAUBaseAxe(SILVER,"silver");
-    public static final Item SilverShovel = new MMAUBaseShovel(SILVER,"silver");
-    public static final Item SilverHoe = new MMAUBaseHoe(SILVER,"silver");
+    public static final Item SilverPickaxe = new MMAUBasePickaxe(SILVER, "silver");
+    public static final Item SilverSword = new MMAUBaseSword(SILVER, "silver");
+    public static final Item SilverAxe = new MMAUBaseAxe(SILVER, "silver");
+    public static final Item SilverShovel = new MMAUBaseShovel(SILVER, "silver");
+    public static final Item SilverHoe = new MMAUBaseHoe(SILVER, "silver");
     public static final Item SilverHelmet = new MMAUBaseArmor(SILVERARMOR, 0, "silver", Silver);
     public static final Item SilverChestplate = new MMAUBaseArmor(SILVERARMOR, 1, "silver", Silver);
     public static final Item SilverLeggings = new MMAUBaseArmor(SILVERARMOR, 2, "silver", Silver);
     public static final Item SilverBoots = new MMAUBaseArmor(SILVERARMOR, 3, "silver", Silver);
 
     //プラチナツール
-    public static final Item PlatinumPickaxe = new MMAUBasePickaxe(PLATINUM,"platinum");
-    public static final Item PlatinumSword = new MMAUBaseSword(PLATINUM,"platinum");
-    public static final Item PlatinumAxe = new MMAUBaseAxe(PLATINUM,"platinum");
-    public static final Item PlatinumShovel = new MMAUBaseShovel(PLATINUM,"platinum");
-    public static final Item PlatinumHoe = new MMAUBaseHoe(PLATINUM,"platinum");
+    public static final Item PlatinumPickaxe = new MMAUBasePickaxe(PLATINUM, "platinum");
+    public static final Item PlatinumSword = new MMAUBaseSword(PLATINUM, "platinum");
+    public static final Item PlatinumAxe = new MMAUBaseAxe(PLATINUM, "platinum");
+    public static final Item PlatinumShovel = new MMAUBaseShovel(PLATINUM, "platinum");
+    public static final Item PlatinumHoe = new MMAUBaseHoe(PLATINUM, "platinum");
     public static final Item PlatinumHelmet = new MMAUBaseArmor(PLATINUMARMOR, 0, "platinum", Platinum);
     public static final Item PlatinumChestplate = new MMAUBaseArmor(PLATINUMARMOR, 1, "platinum", Platinum);
     public static final Item PlatinumLeggings = new MMAUBaseArmor(PLATINUMARMOR, 2, "platinum", Platinum);
     public static final Item PlatinumBoots = new MMAUBaseArmor(PLATINUMARMOR, 3, "platinum", Platinum);
 
     //鋼ツール
-    public static final Item SteelPickaxe = new MMAUBasePickaxe(STEEL,"steel");
-    public static final Item SteelSword = new MMAUBaseSword(STEEL,"steel");
-    public static final Item SteelAxe = new MMAUBaseAxe(STEEL,"steel");
-    public static final Item SteelShovel = new MMAUBaseShovel(STEEL,"steel");
-    public static final Item SteelHoe = new MMAUBaseHoe(STEEL,"steel");
+    public static final Item SteelPickaxe = new MMAUBasePickaxe(STEEL, "steel");
+    public static final Item SteelSword = new MMAUBaseSword(STEEL, "steel");
+    public static final Item SteelAxe = new MMAUBaseAxe(STEEL, "steel");
+    public static final Item SteelShovel = new MMAUBaseShovel(STEEL, "steel");
+    public static final Item SteelHoe = new MMAUBaseHoe(STEEL, "steel");
     public static final Item SteelHelmet = new MMAUBaseArmor(STEELARMOR, 0, "steel", Steel);
     public static final Item SteelChestplate = new MMAUBaseArmor(STEELARMOR, 1, "steel", Steel);
     public static final Item SteelLeggings = new MMAUBaseArmor(STEELARMOR, 2, "steel", Steel);
@@ -318,7 +377,7 @@ public class MMAURegistry {
 
     public static final Block FeatherBlock = new MMAUBaseBlock(Material.cloth, "feather_block").setCreativeTab(MMAUTab).setHardness(0.8F).setStepSound(Block.soundTypeCloth);
 
-    public static final Block ChickenBlock = new ChickenBlock(Material.cloth,"chicken_block").setCreativeTab(MMAUUtilsTab).setHardness(1.0F).setResistance(1.0F).setStepSound(Block.soundTypeCloth);
+    public static final Block ChickenBlock = new ChickenBlock(Material.cloth, "chicken_block").setCreativeTab(MMAUUtilsTab).setHardness(1.0F).setResistance(1.0F).setStepSound(Block.soundTypeCloth);
     public static final Block ChickenHead = new ChickenHead(Material.cloth, "chicken_head").setCreativeTab(MMAUUtilsTab).setHardness(1.0F).setResistance(1.0F).setStepSound(Block.soundTypeCloth);
 
 
@@ -327,10 +386,10 @@ public class MMAURegistry {
      * いちいちアイテム名入れて書いてGameRegistry書くのめんどくさかったから作った
      * IMMAUBaseItemを継承させれば名前もまとめて扱える
      */
-    public static void registerItem(Item mmauBaseItem){
-        if(mmauBaseItem instanceof IMMAUBaseItem){
+    public static void registerItem(Item mmauBaseItem) {
+        if (mmauBaseItem instanceof IMMAUBaseItem) {
             GameRegistry.registerItem(mmauBaseItem, ((IMMAUBaseItem) mmauBaseItem).getName());
-        }else{
+        } else {
             MMAULogger.error(mmauBaseItem.getUnlocalizedName() + " does not inherit IMMAUBaseItem!"); //たぶんこんなこと起きないだろうけど念のため
         }
     }
@@ -340,15 +399,15 @@ public class MMAURegistry {
      * いちいちブロック名入れて書いてGameRegistry書くのめんどくさかったから作った
      * IMMAUBaseBlockを継承させれば名前もまとめて扱える
      */
-    public static void registerBlock(Block mmauBaseblock){
-        if(mmauBaseblock instanceof IMMAUBaseBlock){
+    public static void registerBlock(Block mmauBaseblock) {
+        if (mmauBaseblock instanceof IMMAUBaseBlock) {
             GameRegistry.registerBlock(mmauBaseblock, ((IMMAUBaseBlock) mmauBaseblock).getName());
-        }else{
+        } else {
             MMAULogger.error(mmauBaseblock.getUnlocalizedName() + " does not inherit IMMAUBaseBlock!"); //たぶんこんなこと起きないだろうけど念のため
         }
     }
 
-    public static void registerMMAU(){
+    public static void registerMMAU() {
 
         //アイテムの登録
 
@@ -510,7 +569,6 @@ public class MMAURegistry {
         registerItem(ExplosionButton);
 
 
-
         //ブロック
         registerBlock(NegiOre);
         registerBlock(NegiBlock);
@@ -559,7 +617,6 @@ public class MMAURegistry {
 
 
     }
-
 
 
 }

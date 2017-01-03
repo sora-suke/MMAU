@@ -15,10 +15,10 @@ public class MMAUGuiHandler implements IGuiHandler {
     @Override
     public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         TileEntity entity = world.getTileEntity(x, y, z);
-        if(entity != null){
-            switch(ID){
+        if (entity != null) {
+            switch (ID) {
                 case MMAU.guiIdChickenBlock:
-                    if(entity instanceof TileEntityChickenBlock){
+                    if (entity instanceof TileEntityChickenBlock) {
                         return new ContainerChickenBlock(player.inventory, (TileEntityChickenBlock) entity);
                     }
                     //return null;
@@ -30,10 +30,10 @@ public class MMAUGuiHandler implements IGuiHandler {
     @Override
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
         TileEntity entity = world.getTileEntity(x, y, z);
-        if(entity != null){
-            switch(ID){
+        if (entity != null) {
+            switch (ID) {
                 case MMAU.guiIdChickenBlock:
-                    if(entity instanceof TileEntityChickenBlock){
+                    if (entity instanceof TileEntityChickenBlock) {
                         return new GuiChickenBlock(player.inventory, (TileEntityChickenBlock) entity);
                     }
                     //return null;

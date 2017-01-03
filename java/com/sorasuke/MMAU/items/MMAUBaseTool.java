@@ -11,15 +11,15 @@ import java.util.Random;
  * 工具のベースクラス
  * Created by sora_suke on 2016/11/19.
  */
-public class MMAUBaseTool extends Item implements IMMAUBaseItem{
+public class MMAUBaseTool extends Item implements IMMAUBaseItem {
 
     private String name;
 
     /**
      * MMAUの工具
      *
-     * @param material ツールの素材
-     * @param toolType ツールの種類
+     * @param material   ツールの素材
+     * @param toolType   ツールの種類
      * @param durability 耐久
      */
     public MMAUBaseTool(String material, String toolType, int durability) {
@@ -31,9 +31,6 @@ public class MMAUBaseTool extends Item implements IMMAUBaseItem{
         setTextureName("mmau:" + localname);
         setMaxDamage(durability);
         setHasSubtypes(false);
-
-
-
 
 
     }

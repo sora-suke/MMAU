@@ -10,9 +10,10 @@ import java.util.Random;
 /**
  * Created by sora_suke on 2016/11/20.
  */
-public class MMAUBaseGemOre extends MMAUBaseOre implements IMMAUBaseBlock{
+public class MMAUBaseGemOre extends MMAUBaseOre implements IMMAUBaseBlock {
     private String name;
     private ItemStack drop;
+
     public MMAUBaseGemOre(String name, ItemStack drop, int harvestLevel) {
         super(name, harvestLevel);
         this.name = name;

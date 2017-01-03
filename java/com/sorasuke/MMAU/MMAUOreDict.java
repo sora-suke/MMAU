@@ -5,8 +5,8 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class MMAUOreDict {
 
-	public static void registry(MMAU mod){
-		/*
+    public static void registry(MMAU mod) {
+        /*
 		registerMaterialsOreDictionary("null", new ItemStack(MMAURegistry.Null), new ItemStack(MMAURegistry.NullNugget), new ItemStack(MMAURegistry.NullDust)
              , new ItemStack(MMAURegistry.NullOre), new ItemStack(MMAURegistry.NullBlock), new ItemStack(MMAURegistry.NullPlate), 0);
          */
@@ -47,10 +47,9 @@ public class MMAUOreDict {
         OreDictionary.registerOre("dustCoal", new ItemStack(MMAURegistry.CoalDust));
 
         OreDictionary.registerOre("craftingToolMotor", new ItemStack(MMAURegistry.IronMortar, 1, 32767));
-		
-		
-		
-	}
+
+
+    }
 
     /**
      * マテリアルの鉱石辞書を一括で登録する
@@ -65,24 +64,24 @@ public class MMAUOreDict {
      * @param plate
      * @param type
      */
-	public static void registerMaterialsOreDictionary(String materialName, ItemStack material, ItemStack nugget, ItemStack dust, ItemStack ore, ItemStack block, ItemStack plate, int type){
+    public static void registerMaterialsOreDictionary(String materialName, ItemStack material, ItemStack nugget, ItemStack dust, ItemStack ore, ItemStack block, ItemStack plate, int type) {
         String[] materialType = {"ingot", "gem"};
         OreDictionary.registerOre(materialType[type] + materialName, material);
-        if(nugget != null){
+        if (nugget != null) {
             OreDictionary.registerOre("nugget" + materialName, nugget);
         }
-        if(dust != null){
+        if (dust != null) {
             OreDictionary.registerOre("dust" + materialName, dust);
         }
-        if(ore != null){
+        if (ore != null) {
             OreDictionary.registerOre("ore" + materialName, ore);
         }
-        if(block != null){
+        if (block != null) {
             OreDictionary.registerOre("block" + materialName, block);
         }
-        if(plate != null){
+        if (plate != null) {
             OreDictionary.registerOre("plate" + materialName, plate);
         }
-	}
-	
+    }
+
 }

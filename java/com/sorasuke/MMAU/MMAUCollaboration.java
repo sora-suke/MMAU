@@ -7,7 +7,7 @@ import moze_intel.projecte.emc.mappers.APICustomEMCMapper;
  */
 public class MMAUCollaboration {
 
-    public static void registerEMC(){
+    public static void registerEMC() {
 
         APICustomEMCMapper.instance.registerCustomEMC(MMAURegistry.Negi, 4096);
         APICustomEMCMapper.instance.registerCustomEMC(MMAURegistry.Crystal, 128);

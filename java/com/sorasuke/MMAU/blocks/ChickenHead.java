@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 /**
  * Created by sora_suke on 2016/12/22.
  */
-public class ChickenHead  extends BlockContainer implements IMMAUBaseBlock{
+public class ChickenHead extends BlockContainer implements IMMAUBaseBlock {
 
     String name;
 
@@ -21,13 +21,13 @@ public class ChickenHead  extends BlockContainer implements IMMAUBaseBlock{
         this.name = name;
         setBlockName("MMAU_" + name);
         setBlockTextureName("mmau:feather_block");
-        this.setBlockBounds(5.5F/16F, 0F, 5.5F/16F, 10.5F/16F, 6F/16F, 10.5F/16F);
+        this.setBlockBounds(5.5F / 16F, 0F, 5.5F / 16F, 10.5F / 16F, 6F / 16F, 10.5F / 16F);
     }
 
-    public void onBlockAdded(World world, int i, int j, int k){
+    public void onBlockAdded(World world, int i, int j, int k) {
         EntityPlayer entity = Minecraft.getMinecraft().thePlayer;
-        if(entity!=null&&world!=null){
-            int le = MathHelper.floor_double((double)(entity.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;//�v���C���[�̌�������0~3�̃��^�f�[�^�̐����ɕϊ����Ă�
+        if (entity != null && world != null) {
+            int le = MathHelper.floor_double((double) (entity.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;//�v���C���[�̌�������0~3�̃��^�f�[�^�̐����ɕϊ����Ă�
             world.setBlockMetadataWithNotify(i, j, k, le, 2);
         }
 
@@ -35,16 +35,16 @@ public class ChickenHead  extends BlockContainer implements IMMAUBaseBlock{
 
     }
 
-    public int getRenderType(){
+    public int getRenderType() {
         return -1;
 
     }
 
-    public boolean isOpaqueCube(){
+    public boolean isOpaqueCube() {
         return false;
     }
 
-    public boolean renderAsNormalBlock(){
+    public boolean renderAsNormalBlock() {
         return false;
     }
 

@@ -19,7 +19,7 @@ public class ChickenHeadSpecialRender extends TileEntitySpecialRenderer {
         render(tileEntity, x, y, z, f, false);
     }
 
-    public void renderItem(TileEntity tileEntity, double x, double y, double z, float f){
+    public void renderItem(TileEntity tileEntity, double x, double y, double z, float f) {
         render(tileEntity, x, y, z, f, true);
     }
 
@@ -35,10 +35,10 @@ public class ChickenHeadSpecialRender extends TileEntitySpecialRenderer {
         if (isItem) {
             GL11.glRotatef(90, 0.0F, 1.0F, 0.0F);
             GL11.glTranslatef((float) x + 0.5f, (float) y + -1.0f, (float) z + 0.5f);
-            model.render((Entity)null, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.1250F);
-        }else{
+            model.render((Entity) null, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.1250F);
+        } else {
             GL11.glRotatef(tileEntity.getBlockMetadata() * 90, 0.0F, 1.0F, 0.0F);
-            model.render((Entity)null, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
+            model.render((Entity) null, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F, 0.0625F);
         }
         //model.renderModel(0.0625f);
 

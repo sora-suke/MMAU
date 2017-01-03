@@ -17,13 +17,14 @@ public class ChickenHeadItemRender implements IItemRenderer {
     private TileEntity tileEntity;
     private ChickenHeadSpecialRender tileEntitySpecialRenderer;
 
-    public ChickenHeadItemRender(TileEntitySpecialRenderer tileEntitySpecialRenderer, TileEntity tileEntity){
+    public ChickenHeadItemRender(TileEntitySpecialRenderer tileEntitySpecialRenderer, TileEntity tileEntity) {
         this.tileEntity = tileEntity;
-        this.tileEntitySpecialRenderer = (ChickenHeadSpecialRender)tileEntitySpecialRenderer;
+        this.tileEntitySpecialRenderer = (ChickenHeadSpecialRender) tileEntitySpecialRenderer;
     }
+
     @Override
     public boolean handleRenderType(ItemStack item, ItemRenderType type) {
-        switch (type){
+        switch (type) {
             case INVENTORY:
             case ENTITY:
             case EQUIPPED:
@@ -42,6 +43,6 @@ public class ChickenHeadItemRender implements IItemRenderer {
 
     @Override
     public void renderItem(ItemRenderType type, ItemStack item, Object... data) {
-        this.tileEntitySpecialRenderer.renderItem(this.tileEntity,0.0D,0.0D,0.0D,0.0f);
+        this.tileEntitySpecialRenderer.renderItem(this.tileEntity, 0.0D, 0.0D, 0.0D, 0.0f);
     }
 }
