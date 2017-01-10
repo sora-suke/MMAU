@@ -1,35 +1,41 @@
-****************************
- Powered By MCP:             
- http://modcoderpack.com/    
- Searge, ProfMobius, Fesh0r, 
- R4wk, ZeuX, IngisKahn, bspkrs
- MCP Data version : unknown
-****************************
-:compileApiJava UP-TO-DATE
-:processApiResources UP-TO-DATE
-:apiClasses UP-TO-DATE
-:sourceMainJava
-:compileJava警告: [options] ブートストラップ・クラスパスが-source 1.7と一緒に設定されていません
-注意:一部の入力ファイルは非推奨のAPIを使用またはオーバーライドしています。
-注意:詳細は、-Xlint:deprecationオプションを指定して再コンパイルしてください。
-警告1個
-
-:processResources UP-TO-DATE
-:classes
-:jar
-:compileTestJava UP-TO-DATE
-:processTestResources UP-TO-DATE
-:testClasses UP-TO-DATE
-:test UP-TO-DATE
-:extractMcpData UP-TO-DATE
+#################################################
+         ForgeGradle 2.2-SNAPSHOT-e77786c        
+  https://github.com/MinecraftForge/ForgeGradle  
+#################################################
+               Powered by MCP unknown               
+             http://modcoderpack.com             
+         by: Searge, ProfMobius, Fesh0r,         
+         R4wk, ZeuX, IngisKahn, bspkrs           
+#################################################
+:deobfCompileDummyTask
+:deobfProvidedDummyTask
 :getVersionJson
-:extractUserDev UP-TO-DATE
+:extractUserdev UP-TO-DATE
+:extractDependencyATs SKIPPED
+:extractMcpData SKIPPED
+:extractMcpMappings SKIPPED
 :genSrgs SKIPPED
-:reobf
-:assemble
-:check UP-TO-DATE
-:build
+:downloadClient SKIPPED
+:downloadServer SKIPPED
+:splitServerJar SKIPPED
+:mergeJars SKIPPED
+:deobfMcSRG SKIPPED
+:decompileMc SKIPPED
+:fixMcSources SKIPPED
+:applySourcePatches
+:remapMcSources SKIPPED
+:recompileMc SKIPPED
+:extractNatives SKIPPED
+:getAssetIndex UP-TO-DATE
+:getAssets
+Current status: 964/1112   86%
+:makeStart
+:setupDecompWorkspace
+:ideaModule
+:ideaProject
+:ideaWorkspace
+:idea
 
 BUILD SUCCESSFUL
 
-Total time: 1 mins 35.401 secs
+Total time: 24.68 secs
