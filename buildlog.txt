@@ -1,0 +1,124 @@
+Starting Build
+Settings evaluated using empty settings script.
+Projects loaded. Root project using build file 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build.gradle'.
+Included projects: [root project 'MMAU']
+Evaluating root project 'MMAU' using build file 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build.gradle'.
+****************************
+ Powered By MCP:             
+ http://modcoderpack.com/    
+ Searge, ProfMobius, Fesh0r, 
+ R4wk, ZeuX, IngisKahn, bspkrs
+ MCP Data version : unknown
+****************************
+All projects evaluated.
+Selected primary task 'DefaultTaskParameter{taskName='build',projectPath='null'}'
+Tasks to be executed: [task ':compileApiJava', task ':processApiResources', task ':apiClasses', task ':sourceMainJava', task ':compileJava', task ':processResources', task ':classes', task ':jar', task ':compileTestJava', task ':processTestResources', task ':testClasses', task ':test', task ':extractMcpData', task ':getVersionJson', task ':extractUserDev', task ':genSrgs', task ':reobf', task ':assemble', task ':check', task ':build']
+:compileApiJava (Thread[main,5,main]) started.
+:compileApiJava
+Skipping task ':compileApiJava' as it has no source files.
+:compileApiJava UP-TO-DATE
+:compileApiJava (Thread[main,5,main]) completed. Took 0.011 secs.
+:processApiResources (Thread[main,5,main]) started.
+:processApiResources
+Skipping task ':processApiResources' as it has no source files.
+:processApiResources UP-TO-DATE
+:processApiResources (Thread[main,5,main]) completed. Took 0.001 secs.
+:apiClasses (Thread[main,5,main]) started.
+:apiClasses
+Skipping task ':apiClasses' as it has no actions.
+:apiClasses UP-TO-DATE
+:apiClasses (Thread[main,5,main]) completed. Took 0.0 secs.
+:sourceMainJava (Thread[main,5,main]) started.
+:sourceMainJava
+Skipping task ':sourceMainJava' as it is up-to-date (took 0.039 secs).
+:sourceMainJava UP-TO-DATE
+:sourceMainJava (Thread[main,5,main]) completed. Took 0.039 secs.
+:compileJava (Thread[main,5,main]) started.
+:compileJava
+Failed to get resource: GET. [HTTP HTTP/1.1 403 Forbidden: https://libraries.minecraft.net//forgeSrc/1.7.10-10.13.4.1614-1.7.10/forgeSrc-1.7.10-10.13.4.1614-1.7.10.pom]
+Failed to get resource: GET. [HTTP HTTP/1.1 403 Forbidden: https://libraries.minecraft.net/org/scala-lang/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1.pom]
+Failed to get resource: GET. [HTTP HTTP/1.1 403 Forbidden: https://libraries.minecraft.net/org/scala-lang/scala-swing_2.11/1.0.1/scala-swing_2.11-1.0.1.pom]
+Failed to get resource: GET. [HTTP HTTP/1.1 403 Forbidden: https://libraries.minecraft.net/org/scala-lang/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.pom]
+Skipping task ':compileJava' as it is up-to-date (took 3.796 secs).
+:compileJava UP-TO-DATE
+:compileJava (Thread[main,5,main]) completed. Took 3.798 secs.
+:processResources (Thread[main,5,main]) started.
+:processResources
+Executing task ':processResources' (up-to-date check took 0.151 secs) due to:
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\resources\main\ReadMe_EN.txt has changed.
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\resources\main\ReadMe_JP.txt has changed.
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\resources\main\assets\mmau\textures\items\Thumbs.db has been removed.
+:processResources (Thread[main,5,main]) completed. Took 0.837 secs.
+:classes (Thread[main,5,main]) started.
+:classes
+Skipping task ':classes' as it has no actions.
+:classes (Thread[main,5,main]) completed. Took 0.0 secs.
+:jar (Thread[main,5,main]) started.
+:jar
+Executing task ':jar' (up-to-date check took 0.047 secs) due to:
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\libs\MoreMaterialsAndUtilities-0.1.1-1.7.10.jar has changed.
+:jar (Thread[main,5,main]) completed. Took 0.475 secs.
+:compileTestJava (Thread[main,5,main]) started.
+:compileTestJava
+Skipping task ':compileTestJava' as it has no source files.
+:compileTestJava UP-TO-DATE
+:compileTestJava (Thread[main,5,main]) completed. Took 0.001 secs.
+:processTestResources (Thread[main,5,main]) started.
+:processTestResources
+Skipping task ':processTestResources' as it has no source files.
+:processTestResources UP-TO-DATE
+:processTestResources (Thread[main,5,main]) completed. Took 0.001 secs.
+:testClasses (Thread[main,5,main]) started.
+:testClasses
+Skipping task ':testClasses' as it has no actions.
+:testClasses UP-TO-DATE
+:testClasses (Thread[main,5,main]) completed. Took 0.001 secs.
+:test (Thread[main,5,main]) started.
+:test
+file or directory 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\classes\test', not found
+Skipping task ':test' as it has no source files.
+:test UP-TO-DATE
+:test (Thread[main,5,main]) completed. Took 0.001 secs.
+:extractMcpData (Thread[main,5,main]) started.
+:extractMcpData
+Skipping task ':extractMcpData' as it is up-to-date (took 0.001 secs).
+:extractMcpData UP-TO-DATE
+:extractMcpData (Thread[main,5,main]) completed. Took 0.003 secs.
+:getVersionJson (Thread[main,5,main]) started.
+:getVersionJson
+Executing task ':getVersionJson' (up-to-date check took 0.0 secs) due to:
+  Task has not declared any outputs.
+:getVersionJson (Thread[main,5,main]) completed. Took 0.381 secs.
+:extractUserDev (Thread[main,5,main]) started.
+:extractUserDev
+Failed to get resource: GET. [HTTP HTTP/1.1 403 Forbidden: https://libraries.minecraft.net/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/forge-1.7.10-10.13.4.1614-1.7.10.pom]
+Skipping task ':extractUserDev' as it is up-to-date (took 1.631 secs).
+:extractUserDev UP-TO-DATE
+:extractUserDev (Thread[main,5,main]) completed. Took 1.632 secs.
+:genSrgs (Thread[main,5,main]) started.
+:genSrgs
+Skipping task ':genSrgs' as task onlyIf is false.
+:genSrgs SKIPPED
+:genSrgs (Thread[main,5,main]) completed. Took 0.422 secs.
+:reobf (Thread[main,5,main]) started.
+:reobf
+Executing task ':reobf' (up-to-date check took 0.004 secs) due to:
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\libs\MoreMaterialsAndUtilities-0.1.1-1.7.10.jar has changed.
+:reobf (Thread[main,5,main]) completed. Took 1.028 secs.
+:assemble (Thread[main,5,main]) started.
+:assemble
+Skipping task ':assemble' as it has no actions.
+:assemble (Thread[main,5,main]) completed. Took 0.001 secs.
+:check (Thread[main,5,main]) started.
+:check
+Skipping task ':check' as it has no actions.
+:check UP-TO-DATE
+:check (Thread[main,5,main]) completed. Took 0.0 secs.
+:build (Thread[main,5,main]) started.
+:build
+Skipping task ':build' as it has no actions.
+:build (Thread[main,5,main]) completed. Took 0.0 secs.
+
+BUILD SUCCESSFUL
+
+Total time: 29.661 secs
