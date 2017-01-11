@@ -5,7 +5,12 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+import java.text.MessageFormat;
+
 /**
+ * MMAU用クリエタブクラス
+ *
+ *
  * Created by sora_suke on 2017/01/11.
  */
 public class MMAUBaseTab <T>extends CreativeTabs{
@@ -14,7 +19,11 @@ public class MMAUBaseTab <T>extends CreativeTabs{
 
     public MMAUBaseTab(String title, T icon){
         super(title);
-        this.icon = icon;
+        if(icon instanceof Item || icon instanceof Block || icon instanceof ItemStack){
+            this.icon = icon;
+        }else{
+            throw new IllegalArgumentException(MessageFormat.format("Please include Item, Block, ItemStack as arguments. Item､Block､ItemStackを入れてください｡", icon));
+        }
     }
 
     @Override
