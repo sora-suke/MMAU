@@ -29,32 +29,11 @@ public class MMAURegistry {
 
     //クリエイティブタブ
 
-    public static final CreativeTabs MMAUTab = new CreativeTabs("mmautab") {
-        @Override
-        @SideOnly(Side.CLIENT)
-        public Item getTabIconItem() {
+    public static final CreativeTabs MMAUTab = new MMAUBaseTab("mmautab", MMAURegistry.Negi);
 
-            return MMAURegistry.Negi;
-        }
-    };
+    public static final CreativeTabs MMAUToolsTab = new MMAUBaseTab("mmautoolstab", MMAURegistry.NegiPickaxe);
 
-    public static final CreativeTabs MMAUToolsTab = new CreativeTabs("mmautoolstab") {
-        @Override
-        @SideOnly(Side.CLIENT)
-        public Item getTabIconItem() {
-
-            return MMAURegistry.NegiPickaxe;
-        }
-    };
-
-    public static final CreativeTabs MMAUUtilsTab = new CreativeTabs("mmauutilstab") {
-        @Override
-        @SideOnly(Side.CLIENT)
-        public Item getTabIconItem() {
-
-            return Item.getItemFromBlock(MMAURegistry.ChickenBlock);
-        }
-    };
+    public static final CreativeTabs MMAUUtilsTab = new MMAUBaseTab("mmauutilstab",MMAURegistry.ChickenBlock);
 
 
     //アイテム類

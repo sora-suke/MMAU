@@ -1,5 +1,7 @@
 package com.sorasuke.MMAU;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -27,6 +29,7 @@ public class MMAUBaseTab <T>extends CreativeTabs{
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public Item getTabIconItem() {
         if(icon instanceof Item){
             Item rIcon = (Item)icon;
@@ -40,6 +43,7 @@ public class MMAUBaseTab <T>extends CreativeTabs{
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public ItemStack getIconItemStack(){
         if(icon instanceof ItemStack){
             ItemStack rIcon = (ItemStack)icon;
