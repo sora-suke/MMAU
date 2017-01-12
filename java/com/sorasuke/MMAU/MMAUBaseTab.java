@@ -1,5 +1,6 @@
 package com.sorasuke.MMAU;
 
+import com.sun.istack.internal.NotNull;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
@@ -15,40 +16,27 @@ import java.text.MessageFormat;
  *
  * Created by sora_suke on 2017/01/11.
  */
-public class MMAUBaseTab <T>extends CreativeTabs{
+public class MMAUBaseTab extends CreativeTabs{
 
-    private T icon;
+    private ItemStack iconItem;
 
-    public MMAUBaseTab(String title, T icon){
+    public MMAUBaseTab(String title, ItemStack icon){
         super(title);
-        if(icon instanceof Item || icon instanceof Block || icon instanceof ItemStack){
-            this.icon = icon;
+        MMAULogger.log("Construct of MMAUBaseTab called!");
+        if(icon != null){
+            iconItem = icon;
         }else{
-            throw new IllegalArgumentException(MessageFormat.format("Please include Item, Block, ItemStack as arguments. Item､Block､ItemStackを入れてください｡", icon));
+            throw new IllegalArgumentException(MessageFormat.format("Please include ItemStack as arguments. ItemStackを入れてください｡", icon));
         }
     }
 
     @Override
-    @SideOnly(Side.CLIENT)
     public Item getTabIconItem() {
-        if(icon instanceof Item){
-            Item rIcon = (Item)icon;
-            return rIcon;
-        }
-        if(icon instanceof Block){
-            Item rIcon = (Item)Item.getItemFromBlock((Block)icon);
-            return rIcon;
-        }
-        return null;
+        return iconItem.getItem();
     }
 
     @Override
-    @SideOnly(Side.CLIENT)
     public ItemStack getIconItemStack(){
-        if(icon instanceof ItemStack){
-            ItemStack rIcon = (ItemStack)icon;
-            return rIcon;
-        }
-        return null;
+        return iconItem;
     }
 }

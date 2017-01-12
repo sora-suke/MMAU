@@ -29,11 +29,11 @@ public class MMAURegistry {
 
     //クリエイティブタブ
 
-    public static final CreativeTabs MMAUTab = new MMAUBaseTab("mmautab", MMAURegistry.Negi);
+    public static final CreativeTabs MMAUTab = new MMAUBaseTab("mmautab", new ItemStack(MMAURegistry.Negi));
 
-    public static final CreativeTabs MMAUToolsTab = new MMAUBaseTab("mmautoolstab", MMAURegistry.NegiPickaxe);
+    public static final CreativeTabs MMAUToolsTab = new MMAUBaseTab("mmautoolstab", new ItemStack(MMAURegistry.NegiPickaxe));
 
-    public static final CreativeTabs MMAUUtilsTab = new MMAUBaseTab("mmauutilstab",MMAURegistry.ChickenBlock);
+    public static final CreativeTabs MMAUUtilsTab = new MMAUBaseTab("mmauutilstab",new ItemStack(MMAURegistry.ChickenBlock));
 
 
     //アイテム類
