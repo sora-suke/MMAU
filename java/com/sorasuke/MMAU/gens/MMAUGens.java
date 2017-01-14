@@ -46,7 +46,7 @@ public class MMAUGens {
                 GameRegistry.registerWorldGenerator(new MMAUOreGen(MMAURegistry.LeadOre, 45, 1, 8, 8, false), 0);
             }
             if (MMAUConfig.genZincOre) {
-                GameRegistry.registerWorldGenerator(new MMAUOreGen(MMAURegistry.ZincOre, 35 1, 6, 8, false), 0);
+                GameRegistry.registerWorldGenerator(new MMAUOreGen(MMAURegistry.ZincOre, 35, 1, 6, 8, false), 0);
             }
 
         }
