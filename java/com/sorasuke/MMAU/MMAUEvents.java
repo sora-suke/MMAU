@@ -1,16 +1,21 @@
 package com.sorasuke.MMAU;
 
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+
 import net.minecraft.block.Block;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.MathHelper;
+
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+
+import java.util.Random;
 
 /**
  * Created by sora_suke on 2016/12/23.
@@ -27,30 +32,31 @@ public class MMAUEvents {
         //MMAULogger.log("fall!");//普段コレをさせておくとすごくログが
         //System.out.println("fall!");
 
-        int x = MathHelper.floor_double(event.entityLiving.posX);//なぜか取得できるX座標がずれてる なぜだ ←どうやら､Xの座標が+-で変わるらしい もうわけわからん キャストのさせかたが悪いっぽい いや､これもちがうっぽい? マイクラのMathHelper使えば良いっぽい
-        int y = MathHelper.floor_double(event.entityLiving.posY - 1);
-        int z = MathHelper.floor_double(event.entityLiving.posZ);
-        Block b = event.entityLiving.worldObj.getBlock(x, y, z);
+        int x = MathHelper.floor_double(event.getEntityLiving().posX);//なぜか取得できるX座標がずれてる なぜだ ←どうやら､Xの座標が+-で変わるらしい もうわけわからん キャストのさせかたが悪いっぽい いや､これもちがうっぽい? マイクラのMathHelper使えば良いっぽい
+        int y = MathHelper.floor_double(event.getEntityLiving().posY - 1);
+        int z = MathHelper.floor_double(event.getEntityLiving().posZ);
+        BlockPos pos = new BlockPos(x,y,z);
+        Block b = event.getEntityLiving().worldObj.getBlockState(pos).getBlock();
         //MMAULogger.log(String.valueOf(x)+","+String.valueOf(y)+","+String.valueOf(z)+","+b.getLocalizedName());
         if (MMAURegistry.FeatherBlock.equals(b)) {
-            event.distance = 0;
+            event.setDistance(0);
         }
     }
 
     @SubscribeEvent
     public void dropChickenHead(LivingDropsEvent event) {
         //MMAULogger.log("dropChickenHead!");
-        if (!event.entityLiving.worldObj.isRemote) {
-            if (event.entityLiving instanceof EntityChicken) {
+        if (!event.getEntityLiving().worldObj.isRemote) {
+            if (event.getEntityLiving() instanceof EntityChicken) {
                 //MMAULogger.log("chicken!");
-                if (event.recentlyHit) {
+                if (event.isRecentlyHit()) {
                     //MMAULogger.log("recentlyHit!");
-                    EntityItem entityItem = new EntityItem(event.entity.worldObj, event.entity.posX,
-                            event.entity.posY, event.entity.posZ, new ItemStack(MMAURegistry.ChickenHead));
+                    EntityItem entityItem = new EntityItem(event.getEntityLiving().worldObj, event.getEntityLiving().posX,
+                            event.getEntityLiving().posY, event.getEntityLiving().posZ, new ItemStack(MMAURegistry.ChickenHead));
 
                     //System.out.println(event.specialDropValue);
-                    if (event.specialDropValue < 5 && !event.entityLiving.isChild())
-                        event.drops.add(entityItem);
+                    if (new Random().nextInt(200) - event.getLootingLevel() < 5 && !event.getEntityLiving().isChild())
+                        event.getDrops().add(entityItem);
                     //event.entity.dropItem(Item.getItemFromBlock(MMAURegistry.ChickenHead),0);
                 }
             }

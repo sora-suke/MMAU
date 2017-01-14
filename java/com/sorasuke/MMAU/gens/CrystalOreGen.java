@@ -29,7 +29,7 @@ public class CrystalOreGen implements IWorldGenerator {
             int genX = x + rnd.nextInt(16);
             int genZ = z + rnd.nextInt(16);
             int genY = 1 + rnd.nextInt(49);
-            new WorldGenMinable(MMAURegistry.CrystalOre, 0, 12, Blocks.stone).generate(world, rnd, genX, genY, genZ);
+            new WorldGenMinable(MMAURegistry.CrystalOre, 0, 12, Blocks.STONE).generate(world, rnd, genX, genY, genZ);
 
         }
 

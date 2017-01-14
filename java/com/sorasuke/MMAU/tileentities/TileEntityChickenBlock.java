@@ -1,19 +1,21 @@
 package com.sorasuke.MMAU.tileentities;
 
 import com.sorasuke.MMAU.MMAULogger;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import com.sorasuke.MMAU.utils.MMAUPlaySound;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
-import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
+import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.BlockPos;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 /**
@@ -22,26 +24,33 @@ import java.util.Random;
  */
 public class TileEntityChickenBlock extends TileEntity implements ISidedInventory {
 
-    private final ItemStack slot = new ItemStack(Items.egg, 0);
+    private final ItemStack slot = new ItemStack(Items.EGG, 0);
     private int workTime;
     private int workMax = 9600;//デバッグのために生産スピードを上げている
 
     private String localizedName;
 
     public void updateEntity() {
+        BlockPos pos = this.getPos();
+        int x = pos.getX();
+        int y = pos.getY();
+        int z = pos.getZ();
         Random random = new Random();
         if (random.nextInt(300) == 0)
-            this.worldObj.playSoundEffect((double) this.xCoord + 0.5D, (double) this.yCoord + 0.5D, (double) this.zCoord + 0.5D, "mob.chicken.say", 1.0F, this.worldObj.rand.nextFloat() * 0.1F + 0.9F);
+            MMAUPlaySound.playSound(this.worldObj, pos, "entity.chicken.ambient", SoundCategory.AMBIENT);
         if (slot.stackSize < slot.getMaxStackSize()) workTime++;
         if (workMax <= workTime) {
-            if (!this.getWorldObj().isRemote) slot.stackSize++;
-            if (!this.getWorldObj().isRemote)
+            if (!this.worldObj.isRemote) slot.stackSize++;
+            if (!this.worldObj.isRemote)
                 slot.stackSize = slot.getMaxStackSize() < slot.stackSize ? slot.getMaxStackSize() : slot.stackSize;
             workTime = 0;
-            this.worldObj.playSoundEffect((double) this.xCoord + 0.5D, (double) this.yCoord + 0.5D, (double) this.zCoord + 0.5D, "mob.chicken.plop", 1.0F, this.worldObj.rand.nextFloat() * 0.1F + 0.9F);
-            this.markDirty();
+            MMAUPlaySound.playSound(this.worldObj, pos, "entity.chicken.egg", SoundCategory.AMBIENT);
+
         }
-        worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);//同期メソッド
+        this.markDirty();
+        worldObj.markBlockRangeForRenderUpdate(pos, pos);
+        //worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);//同期メソッド
+        //markDityだけでいいのかな?
     }
 
     public void readFromNBT(NBTTagCompound nbt) {
@@ -53,43 +62,44 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
         }
     }
 
-    public void writeToNBT(NBTTagCompound nbt) {
+    public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
         super.writeToNBT(nbt);
         nbt.setShort("workTime", (short) this.workTime);
 
         nbt.setInteger("ItemSize", this.slot.stackSize);
-        if (this.hasCustomInventoryName()) {
+        if (this.hasCustomName()) {
             nbt.setString("CustomName", this.localizedName);
         }
+        return nbt;
     }
 
 
     @Override
-    public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
+    public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
         //MMAULogger.log("onDataPacket!");
-        readFromNBT(pkt.func_148857_g());
+        readFromNBT(pkt.getNbtCompound());
     }
 
     @Override
-    public Packet getDescriptionPacket() {
+    public SPacketUpdateTileEntity getUpdatePacket() {
         //MMAULogger.log("getDescriptionPacket!");
         NBTTagCompound tagCompound = new NBTTagCompound();
         writeToNBT(tagCompound);
-        return new S35PacketUpdateTileEntity(xCoord, yCoord, zCoord, 1, tagCompound);
+        return new SPacketUpdateTileEntity(getPos(), this.getBlockMetadata(), tagCompound);
     }
 
-    @Override
+    /*@Override
     public int[] getAccessibleSlotsFromSide(int p_94128_1_) {
         return new int[]{0};
-    }
+    }*/
 
     @Override
-    public boolean canInsertItem(int p_102007_1_, ItemStack p_102007_2_, int p_102007_3_) {
+    public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction) {
         return false;
     }
 
     @Override
-    public boolean canExtractItem(int p_102008_1_, ItemStack p_102008_2_, int p_102008_3_) {
+    public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
         return true;
     }
 
@@ -125,13 +135,19 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
         return null;
     }
 
+    @Nullable
     @Override
+    public ItemStack removeStackFromSlot(int index) {
+        return null;
+    }
+
+    /*@Override
     public ItemStack getStackInSlotOnClosing(int p_70304_1_) {
         if (p_70304_1_ == 0) {
             return slot.stackSize < 0 ? null : slot;
         }
         return null;
-    }
+    }*/
 
     @Override
     public void setInventorySlotContents(int p_70299_1_, ItemStack p_70299_2_) {
@@ -139,12 +155,12 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
     }
 
     @Override
-    public String getInventoryName() {
-        return this.hasCustomInventoryName() ? this.localizedName : "container.chicken_block";
+    public String getName() {
+        return this.hasCustomName() ? this.localizedName : "container.chicken_block";
     }
 
     @Override
-    public boolean hasCustomInventoryName() {
+    public boolean hasCustomName() {
         return this.localizedName != null && this.localizedName.length() > 0;
     }
 
@@ -159,21 +175,42 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
     }
 
     @Override
-    public void openInventory() {
-        MMAULogger.log("テステス");
-    }
+    public void openInventory(EntityPlayer player) {}
 
     @Override
-    public void closeInventory() {
-
-    }
+    public void closeInventory(EntityPlayer player) {}
 
     @Override
     public boolean isItemValidForSlot(int p_94041_1_, ItemStack p_94041_2_) {
         return true;
     }
 
+    @Override
+    public int getField(int id) {
+        return 0;
+    }
+
+    @Override
+    public void setField(int id, int value) {
+
+    }
+
+    @Override
+    public int getFieldCount() {
+        return 0;
+    }
+
+    @Override
+    public void clear() {
+
+    }
+
     public float getWorkingPercentage(int i) {
         return workTime * i / workMax;
+    }
+
+    @Override
+    public int[] getSlotsForFace(EnumFacing side) {
+        return new int[0];
     }
 }

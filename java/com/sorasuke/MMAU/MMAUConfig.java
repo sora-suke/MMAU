@@ -1,8 +1,7 @@
 package com.sorasuke.MMAU;
 
-import cpw.mods.fml.common.FMLLog;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class MMAUConfig {
 
@@ -16,7 +15,6 @@ public class MMAUConfig {
     public static boolean genOrichalcumOre;
     public static boolean genSilverOre;
     public static boolean genPlatinumOre;
-    public static boolean genBrassOre;
     public static boolean genLeadOre;
     public static boolean genZincOre;
 
@@ -46,7 +44,7 @@ public class MMAUConfig {
             genZincOre = config.get("GENERAL", "genZincOre", true, "Generate zinc ores.").getBoolean(true);
 
         } catch (Exception e) {
-            FMLLog.severe("Config load error!");
+            MMAULogger.error("Config load error!");
         } finally {
             config.save();
         }

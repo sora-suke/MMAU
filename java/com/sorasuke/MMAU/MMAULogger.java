@@ -1,6 +1,7 @@
 package com.sorasuke.MMAU;
 
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class MMAULogger {
 

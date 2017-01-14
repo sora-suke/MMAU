@@ -3,8 +3,10 @@ package com.sorasuke.MMAU.gens;
 import com.sorasuke.MMAU.MMAULogger;
 import com.sorasuke.MMAU.MMAU;
 import com.sorasuke.MMAU.MMAUConfig;
+import com.sorasuke.MMAU.MMAURegistry;
+import net.minecraft.block.Block;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class MMAUGens {
 
@@ -14,37 +16,37 @@ public class MMAUGens {
         if (MMAUConfig.genAll) {
 
             if (MMAUConfig.genNegiOre) {
-                GameRegistry.registerWorldGenerator(new NegiOreGen(), 0);
+                GameRegistry.registerWorldGenerator(new MMAUOreGen(MMAURegistry.NegiOre, 20, 1, 2, 8, false), 0);
             }
             if (MMAUConfig.genCrystalOre) {
-                GameRegistry.registerWorldGenerator(new CrystalOreGen(), 0);
+                GameRegistry.registerWorldGenerator(new MMAUOreGen(MMAURegistry.CrystalOre, 50, 1, 3, 12, false), 0);
             }
             if (MMAUConfig.genCrystalOreB) {
-                GameRegistry.registerWorldGenerator(new CrystalOreBGen(), 0);
+                GameRegistry.registerWorldGenerator(new MMAUOreGen(MMAURegistry.CrystalOre, 20, 1, 10, 35, true), 0);
             }
             if (MMAUConfig.genCobaltOre) {
-                GameRegistry.registerWorldGenerator(new CobaltOreGen(), 0);
+                GameRegistry.registerWorldGenerator(new MMAUOreGen(MMAURegistry.CobaltOre, 20, 1, 5, 8, false), 0);
             }
             if (MMAUConfig.genCopperOre) {
-                GameRegistry.registerWorldGenerator(new CopperOreGen(), 0);
+                GameRegistry.registerWorldGenerator(new MMAUOreGen(MMAURegistry.CopperOre, 20, 1, 2, 8, false), 0);
             }
             if (MMAUConfig.genTinOre) {
-                GameRegistry.registerWorldGenerator(new TinOreGen(), 0);
+                GameRegistry.registerWorldGenerator(new MMAUOreGen(MMAURegistry.TinOre, 70, 1, 15, 8, false), 0);
             }
             if (MMAUConfig.genOrichalcumOre) {
-                GameRegistry.registerWorldGenerator(new OrichalcumOreGen(), 0);
+                GameRegistry.registerWorldGenerator(new MMAUOreGen(MMAURegistry.OrichalcumOre, 20, 1, 2, 4, false), 0);
             }
             if (MMAUConfig.genSilverOre) {
-                GameRegistry.registerWorldGenerator(new SilverOreGen(), 0);
+                GameRegistry.registerWorldGenerator(new MMAUOreGen(MMAURegistry.SilverOre, 30, 1, 7, 8, false), 0);
             }
             if (MMAUConfig.genPlatinumOre) {
-                GameRegistry.registerWorldGenerator(new PlatinumOreGen(), 0);
+                GameRegistry.registerWorldGenerator(new MMAUOreGen(MMAURegistry.PlatinumOre, 30, 1, 5, 8, false), 0);
             }
             if (MMAUConfig.genLeadOre) {
-                GameRegistry.registerWorldGenerator(new LeadOreGen(), 0);
+                GameRegistry.registerWorldGenerator(new MMAUOreGen(MMAURegistry.LeadOre, 45, 1, 8, 8, false), 0);
             }
             if (MMAUConfig.genZincOre) {
-                GameRegistry.registerWorldGenerator(new ZincOreGen(), 0);
+                GameRegistry.registerWorldGenerator(new MMAUOreGen(MMAURegistry.ZincOre, 35 1, 6, 8, false), 0);
             }
 
         }

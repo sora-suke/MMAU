@@ -1,10 +1,10 @@
 package com.sorasuke.MMAU;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.ShapedRecipes;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.ShapedOreRecipe;
 import net.minecraftforge.oredict.ShapelessOreRecipe;
 
@@ -94,10 +94,10 @@ public class MMAURecipeRegister {
         GameRegistry.addRecipe(
                 new ShapelessOreRecipe(new ItemStack(MMAURegistry.IronNugget, 9, 0), "ingotIron"));
 
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.iron_ingot, 1, 0),
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(Items.IRON_INGOT, 1, 0),
                 "III", "III", "III", 'I', "nuggetIron"));
 
-        GameRegistry.addSmelting(MMAURegistry.IronDust, new ItemStack(Items.iron_ingot), 0.7f);
+        GameRegistry.addSmelting(MMAURegistry.IronDust, new ItemStack(Items.IRON_INGOT), 0.7f);
 
         GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MMAURegistry.IronDust, 1, 0),
                 "ingotIron", "craftingToolMotor"));
@@ -106,7 +106,7 @@ public class MMAURecipeRegister {
                 "oreIron", "craftingToolMotor"));
 
         // 金系
-        GameRegistry.addSmelting(MMAURegistry.GoldDust, new ItemStack(Items.gold_ingot), 0.7f);
+        GameRegistry.addSmelting(MMAURegistry.GoldDust, new ItemStack(Items.GOLD_INGOT), 0.7f);
 
         GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MMAURegistry.GoldDust, 1, 0),
                 "ingotGold", "craftingToolMotor"));
@@ -123,16 +123,16 @@ public class MMAURecipeRegister {
 
         // 工具系
         GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(MMAURegistry.IronMortar, 1, 0),
-                "nuggetIron", new ItemStack(Items.bowl, 1, 0)
+                "nuggetIron", new ItemStack(Items.BOWL, 1, 0)
 
         ));
 
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(MMAURegistry.ExplosionButton, 1, 0),
-                " B ", "ITI", 'I', "ingotIron", 'B', Blocks.stone_button, 'T', Blocks.tnt));
+                " B ", "ITI", 'I', "ingotIron", 'B', Blocks.STONE_BUTTON, 'T', Blocks.TNT));
 
-        GameRegistry.addRecipe(new ItemStack(MMAURegistry.FeatherBlock), "FFF", "FFF", "FFF", 'F', Items.feather);
+        GameRegistry.addRecipe(new ItemStack(MMAURegistry.FeatherBlock), "FFF", "FFF", "FFF", 'F', Items.FEATHER);
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(MMAURegistry.ChickenBlock), "FHF", "DED", "FFF",
-                'F', MMAURegistry.FeatherBlock, 'H', MMAURegistry.ChickenHead, 'D', "gemDiamond", 'E', Items.egg));
+                'F', MMAURegistry.FeatherBlock, 'H', MMAURegistry.ChickenHead, 'D', "gemDiamond", 'E', Items.EGG));
 
     }
 
@@ -152,11 +152,11 @@ public class MMAURecipeRegister {
      * @param boots
      */
     public static void registerToolsRecipe(String oreDict, ItemStack pickaxe, ItemStack sword, ItemStack axe, ItemStack shovel, ItemStack hoe, ItemStack helmet, ItemStack chestPlate, ItemStack leggings, ItemStack boots) {
-        GameRegistry.addRecipe(new ShapedOreRecipe(pickaxe, "HHH", " S ", " S ", 'H', oreDict, 'S', new ItemStack(Items.stick)));
-        GameRegistry.addRecipe(new ShapedOreRecipe(sword, " H ", " H ", " S ", 'H', oreDict, 'S', new ItemStack(Items.stick)));
-        GameRegistry.addRecipe(new ShapedOreRecipe(axe, "HH ", "HS ", " S ", 'H', oreDict, 'S', new ItemStack(Items.stick)));
-        GameRegistry.addRecipe(new ShapedOreRecipe(shovel, " H ", " S ", " S ", 'H', oreDict, 'S', new ItemStack(Items.stick)));
-        GameRegistry.addRecipe(new ShapedOreRecipe(hoe, "HH ", " S ", " S ", 'H', oreDict, 'S', new ItemStack(Items.stick)));
+        GameRegistry.addRecipe(new ShapedOreRecipe(pickaxe, "HHH", " S ", " S ", 'H', oreDict, 'S', new ItemStack(Items.STICK)));
+        GameRegistry.addRecipe(new ShapedOreRecipe(sword, " H ", " H ", " S ", 'H', oreDict, 'S', new ItemStack(Items.STICK)));
+        GameRegistry.addRecipe(new ShapedOreRecipe(axe, "HH ", "HS ", " S ", 'H', oreDict, 'S', new ItemStack(Items.STICK)));
+        GameRegistry.addRecipe(new ShapedOreRecipe(shovel, " H ", " S ", " S ", 'H', oreDict, 'S', new ItemStack(Items.STICK)));
+        GameRegistry.addRecipe(new ShapedOreRecipe(hoe, "HH ", " S ", " S ", 'H', oreDict, 'S', new ItemStack(Items.STICK)));
         GameRegistry.addRecipe(new ShapedOreRecipe(helmet, "HHH", "H H", 'H', oreDict));
         GameRegistry.addRecipe(new ShapedOreRecipe(chestPlate, "H H", "HHH", "HHH", 'H', oreDict));
         GameRegistry.addRecipe(new ShapedOreRecipe(leggings, "HHH", "H H", "H H", 'H', oreDict));
@@ -179,11 +179,11 @@ public class MMAURecipeRegister {
      * @param boots
      */
     public static void registerToolsRecipe(ItemStack itemStack, ItemStack pickaxe, ItemStack sword, ItemStack axe, ItemStack shovel, ItemStack hoe, ItemStack helmet, ItemStack chestPlate, ItemStack leggings, ItemStack boots) {
-        GameRegistry.addRecipe(new ShapedOreRecipe(pickaxe, "HHH", " S ", " S ", 'H', itemStack, 'S', new ItemStack(Items.stick)));
-        GameRegistry.addRecipe(new ShapedOreRecipe(sword, " H ", " H ", " S ", 'H', itemStack, 'S', new ItemStack(Items.stick)));
-        GameRegistry.addRecipe(new ShapedOreRecipe(axe, "HH ", "HS ", " S ", 'H', itemStack, 'S', new ItemStack(Items.stick)));
-        GameRegistry.addRecipe(new ShapedOreRecipe(shovel, " H ", " S ", " S ", 'H', itemStack, 'S', new ItemStack(Items.stick)));
-        GameRegistry.addRecipe(new ShapedOreRecipe(hoe, "HH ", " S ", " S ", 'H', itemStack, 'S', new ItemStack(Items.stick)));
+        GameRegistry.addRecipe(new ShapedOreRecipe(pickaxe, "HHH", " S ", " S ", 'H', itemStack, 'S', new ItemStack(Items.STICK)));
+        GameRegistry.addRecipe(new ShapedOreRecipe(sword, " H ", " H ", " S ", 'H', itemStack, 'S', new ItemStack(Items.STICK)));
+        GameRegistry.addRecipe(new ShapedOreRecipe(axe, "HH ", "HS ", " S ", 'H', itemStack, 'S', new ItemStack(Items.STICK)));
+        GameRegistry.addRecipe(new ShapedOreRecipe(shovel, " H ", " S ", " S ", 'H', itemStack, 'S', new ItemStack(Items.STICK)));
+        GameRegistry.addRecipe(new ShapedOreRecipe(hoe, "HH ", " S ", " S ", 'H', itemStack, 'S', new ItemStack(Items.STICK)));
         GameRegistry.addRecipe(new ShapedOreRecipe(helmet, "HHH", "H H", 'H', itemStack));
         GameRegistry.addRecipe(new ShapedOreRecipe(chestPlate, "H H", "HHH", "HHH", 'H', itemStack));
         GameRegistry.addRecipe(new ShapedOreRecipe(leggings, "HHH", "H H", "H H", 'H', itemStack));
