@@ -2,6 +2,7 @@ package com.sorasuke.MMAU.tileentities;
 
 import com.sorasuke.MMAU.MMAULogger;
 import com.sorasuke.MMAU.utils.MMAUPlaySound;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.ISidedInventory;
@@ -35,6 +36,7 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
         int x = pos.getX();
         int y = pos.getY();
         int z = pos.getZ();
+        IBlockState b = worldObj.getBlockState(pos);
         Random random = new Random();
         if (random.nextInt(300) == 0)
             MMAUPlaySound.playSound(this.worldObj, pos, "entity.chicken.ambient", SoundCategory.AMBIENT);
@@ -48,7 +50,9 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
 
         }
         this.markDirty();
-        worldObj.markBlockRangeForRenderUpdate(pos, pos);
+        worldObj.notifyBlockUpdate(pos, b, b, 0);
+        worldObj.scheduleBlockUpdate(pos,this.getBlockType(),0,0);
+        //worldObj.markBlockRangeForRenderUpdate(pos, pos);
         //worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);//同期メソッド
         //markDityだけでいいのかな?
     }
@@ -76,13 +80,13 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
 
     @Override
     public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
-        //MMAULogger.log("onDataPacket!");
+        MMAULogger.log("onDataPacket!");
         readFromNBT(pkt.getNbtCompound());
     }
 
     @Override
     public SPacketUpdateTileEntity getUpdatePacket() {
-        //MMAULogger.log("getDescriptionPacket!");
+        MMAULogger.log("getDescriptionPacket!");
         NBTTagCompound tagCompound = new NBTTagCompound();
         writeToNBT(tagCompound);
         return new SPacketUpdateTileEntity(getPos(), this.getBlockMetadata(), tagCompound);
@@ -207,6 +211,10 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
 
     public float getWorkingPercentage(int i) {
         return workTime * i / workMax;
+    }
+
+    public int getWorkTime(){
+        return this.workTime;
     }
 
     @Override
