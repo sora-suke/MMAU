@@ -4,119 +4,74 @@ import com.sorasuke.MMAU.MMAU;
 import com.sorasuke.MMAU.MMAULogger;
 import com.sorasuke.MMAU.items.IMMAUBaseItem;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenBlock;
-import cpw.mods.fml.common.network.internal.FMLNetworkHandler;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import com.sorasuke.MMAU.utils.MMAUPlaySound;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
+import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.particle.EntityFX;
-import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.state.BlockStateContainer;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.IIcon;
-import net.minecraft.util.MathHelper;
+import net.minecraft.util.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
-import net.minecraftforge.common.util.ForgeDirection;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nullable;
 import java.util.Random;
 
 /**
  * ニワトリブロック
  * Created by sora_suke on 2016/11/26.
  */
-public class ChickenBlock extends Block implements IMMAUBaseBlock, ITileEntityProvider {
+public class ChickenBlock extends BlockHorizontal implements IMMAUBaseBlock, ITileEntityProvider {
     private String name;
 
     private Random rand = new Random();
 
-    @SideOnly(Side.CLIENT)
-    private IIcon iconFront;
+    private ResourceLocation location;
 
-    @SideOnly(Side.CLIENT)
-    private IIcon iconTop;
-
-    @SideOnly(Side.CLIENT)
-    private IIcon iconBottom;
+    public ItemBlock itemBlock;
 
     private static boolean keepInventory;
 
     public ChickenBlock(Material material, String name) {
         super(material);
         this.name = name;
-        setBlockName("MMAU_" + name);
-        setBlockTextureName("mmau:" + name);
+        setUnlocalizedName("MMAU_" + name);
+        this.location = new ResourceLocation("mmau", this.name);
         isBlockContainer = true;
-
+        this.itemBlock = new ItemBlock(this);
     }
 
-    @SideOnly(Side.CLIENT)
-    public void registerBlockIcons(IIconRegister icon) {
-        this.blockIcon = icon.registerIcon("mmau:chicken_block_side");
-        this.iconFront = icon.registerIcon("mmau:chicken_block_front");
-        this.iconTop = icon.registerIcon("mmau:chicken_block_top");
-        this.iconBottom = icon.registerIcon("mmau:chicken_block_bottom");
-    }
+    /*@Override
+    public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
+        super.onBlockAdded(world, pos, state);
+        this.setDefaultDirection(world, pos);
 
-    @SideOnly(Side.CLIENT)
-    public IIcon getIcon(int side, int metadata) {
-        return ForgeDirection.getOrientation(side) == ForgeDirection.DOWN ? this.iconBottom :
-                (ForgeDirection.getOrientation(side) == ForgeDirection.UP ? this.iconTop :
-                        (side == metadata ? this.iconFront :
-                                (metadata == 0 && ForgeDirection.getOrientation(side) == ForgeDirection.SOUTH ? this.iconFront : this.blockIcon)));
-    }
-
-    public void onBlockAdded(World world, int x, int y, int z) {
-        super.onBlockAdded(world, x, y, z);
-        this.setDefaultDirection(world, x, y, z);
-
-    }
+    }*/
 
     @Override
-    public void onBlockClicked(World world, int x, int y, int z, EntityPlayer player) {
-        world.playSoundEffect((double) x + 0.5D, (double) y + 0.5D, (double) z + 0.5D, "mob.chicken.hurt", 1.0F, world.rand.nextFloat() * 0.1F + 0.9F);
-        world.playSoundEffect((double) x + 0.5D, (double) y + 0.5D, (double) z + 0.5D, "game.player.hurt", 1.0F, world.rand.nextFloat() * 0.1F + 0.9F);
+    public void onBlockClicked(World world, BlockPos pos, EntityPlayer player) {
+        MMAUPlaySound.playSound(world, pos, "mob.chicken.hurt", SoundCategory.AMBIENT);
+        MMAUPlaySound.playSound(world, pos, "game.player.hurt", SoundCategory.AMBIENT);
     }
 
-
-    private void setDefaultDirection(World world, int x, int y, int z) {
-        if (!world.isRemote) {
-            Block b1 = world.getBlock(x, y, z - 1);
-            Block b2 = world.getBlock(x, y, z + 1);
-            Block b3 = world.getBlock(x - 1, y, z);
-            Block b4 = world.getBlock(x + 1, y, z);
-
-            byte b0 = 3;
-
-            if (b1.func_149730_j() && !b2.func_149730_j()) {
-                b0 = 3;
-            }
-            if (b2.func_149730_j() && !b1.func_149730_j()) {
-                b0 = 2;
-            }
-            if (b3.func_149730_j() && !b4.func_149730_j()) {
-                b0 = 5;
-            }
-            if (b4.func_149730_j() && !b3.func_149730_j()) {
-                b0 = 4;
-            }
-
-            world.setBlockMetadataWithNotify(x, y, x, b0, 2);
-
-
-        }
-    }
-
-    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer entityPlayer, int side, float hitX, float hitY, float hitZ) {
+    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer entityPlayer, EnumHand hand, @Nullable ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
         if (!world.isRemote) {
             //FMLNetworkHandler.openGui(entityPlayer, MMAU.instance, MMAU.guiIdChickenBlock, world, x, y, z);
-            entityPlayer.openGui(MMAU.instance, MMAU.guiIdChickenBlock, world, x, y, z);
-            MMAULogger.log("テステス");
+            entityPlayer.openGui(MMAU.instance, MMAU.guiIdChickenBlock, world, pos.getX(), pos.getY(), pos.getZ());
+            MMAULogger.log("onBlockActivated_openGUI");
 
         }
         return true;
@@ -127,34 +82,15 @@ public class ChickenBlock extends Block implements IMMAUBaseBlock, ITileEntityPr
     @Override
     public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
         // TODO 自動生成されたメソッド・スタブ
-        MMAULogger.log("テステス");
+        MMAULogger.log("createNewTileEntity");
         return new TileEntityChickenBlock();
     }
 
-    public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase entityPlayer, ItemStack itemStack) {
-        int l = MathHelper.floor_double((double) (entityPlayer.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
-
-        if (l == 0) {
-            world.setBlockMetadataWithNotify(x, y, z, 2, 2);
-        }
-        if (l == 1) {
-            world.setBlockMetadataWithNotify(x, y, z, 5, 2);
-        }
-        if (l == 2) {
-            world.setBlockMetadataWithNotify(x, y, z, 3, 2);
-        }
-        if (l == 3) {
-            world.setBlockMetadataWithNotify(x, y, z, 4, 2);
-        }
-
-
-    }
-
-    public void breakBlock(World world, int x, int y, int z, Block oldBlock, int oldMetaData) {
-        world.playSoundEffect((double) x + 0.5D, (double) y + 0.5D, (double) z + 0.5D, "mob.chicken.hurt", 1.0F, world.rand.nextFloat() * 0.1F + 0.9F);
-        world.playSoundEffect((double) x + 0.5D, (double) y + 0.5D, (double) z + 0.5D, "game.player.hurt", 1.0F, world.rand.nextFloat() * 0.1F + 0.9F);
+    public void breakBlock(World world, BlockPos pos, IBlockState state) {
+        MMAUPlaySound.playSound(world, pos, "mob.chicken.hurt", SoundCategory.AMBIENT);
+        MMAUPlaySound.playSound(world, pos, "game.player.hurt", SoundCategory.AMBIENT);
         if (!keepInventory) {
-            TileEntityChickenBlock tileEntity = (TileEntityChickenBlock) world.getTileEntity(x, y, z);
+            TileEntityChickenBlock tileEntity = (TileEntityChickenBlock) world.getTileEntity(pos);
 
             if (tileEntity != null) {
                 for (int i = 0; i < tileEntity.getSizeInventory(); i++) {
@@ -174,7 +110,7 @@ public class ChickenBlock extends Block implements IMMAUBaseBlock, ITileEntityPr
 
                             itemStack.stackSize -= j;
 
-                            EntityItem item = new EntityItem(world, (double) ((float) x + f), (double) ((float) y + f1), (double) ((float) z + f2), new ItemStack(itemStack.getItem(), j, itemStack.getItemDamage()));
+                            EntityItem item = new EntityItem(world, (double) ((float) pos.getX() + f), (double) ((float) pos.getY() + f1), (double) ((float) pos.getY() + f2), new ItemStack(itemStack.getItem(), j, itemStack.getItemDamage()));
 
                             if (itemStack.hasTagCompound()) {
                                 item.getEntityItem().setTagCompound((NBTTagCompound) itemStack.getTagCompound().copy());
@@ -185,15 +121,44 @@ public class ChickenBlock extends Block implements IMMAUBaseBlock, ITileEntityPr
                     }
                 }
 
-                world.func_147453_f(x, y, z, oldBlock);
+                //world.func_147453_f(x, y, z, oldBlock);
             }
         }
 
-        super.breakBlock(world, x, y, z, oldBlock, oldMetaData);
+        super.breakBlock(world, pos, state);
+    }
+
+    public IBlockState withRotation(IBlockState state, Rotation rot)
+    {
+        return state.withProperty(FACING, rot.rotate((EnumFacing)state.getValue(FACING)));
+    }
+    public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer, ItemStack stack)
+    {
+        return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+    }
+
+    public int getMetaFromState(IBlockState state)
+    {
+        return ((EnumFacing)state.getValue(FACING)).getHorizontalIndex();
+    }
+
+    protected BlockStateContainer createBlockState()
+    {
+        return new BlockStateContainer(this, new IProperty[] {FACING});
     }
 
     @Override
     public String getName() {
         return this.name;
+    }
+
+    @Override
+    public ResourceLocation getLocation() {
+        return this.location;
+    }
+
+    @Override
+    public ItemBlock getItemBlock() {
+        return this.itemBlock;
     }
 }

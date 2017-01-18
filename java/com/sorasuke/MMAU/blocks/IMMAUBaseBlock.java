@@ -1,5 +1,8 @@
 package com.sorasuke.MMAU.blocks;
 
+import net.minecraft.item.ItemBlock;
+import net.minecraft.util.ResourceLocation;
+
 /**
  * Created by sora_suke on 2016/11/20.
  * <p>
@@ -8,7 +11,12 @@ package com.sorasuke.MMAU.blocks;
  * IMMAUBaseBlockを継承させれば名前もまとめて扱える
  */
 public interface IMMAUBaseBlock {
-    String name = "";
+
+    ItemBlock itemBlock = null;
 
     String getName();
+
+    ResourceLocation getLocation();
+
+    ItemBlock getItemBlock();
 }

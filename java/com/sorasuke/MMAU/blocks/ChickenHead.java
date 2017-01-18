@@ -2,37 +2,48 @@ package com.sorasuke.MMAU.blocks;
 
 import com.sorasuke.MMAU.tileentities.TileEntityChickenHead;
 import net.minecraft.block.BlockContainer;
+import net.minecraft.block.BlockHorizontal;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
+import net.minecraft.block.state.BlockStateContainer;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.MathHelper;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Rotation;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 /**
  * Created by sora_suke on 2016/12/22.
  */
-public class ChickenHead extends BlockContainer implements IMMAUBaseBlock {
+public class ChickenHead extends BlockHorizontal implements IMMAUBaseBlock, ITileEntityProvider {
 
     String name;
+    private ResourceLocation location;
+    public ItemBlock itemBlock;
 
     public ChickenHead(Material material, String name) {
         super(material);
         this.name = name;
-        setBlockName("MMAU_" + name);
-        setBlockTextureName("mmau:feather_block");
-        this.setBlockBounds(5.5F / 16F, 0F, 5.5F / 16F, 10.5F / 16F, 6F / 16F, 10.5F / 16F);
+        setUnlocalizedName("MMAU_" + name);
+        this.location = new ResourceLocation("mmau", this.name);
+        this.itemBlock = new ItemBlock(this);
+        //this.setBlockBounds(5.5F / 16F, 0F, 5.5F / 16F, 10.5F / 16F, 6F / 16F, 10.5F / 16F);
     }
 
-    public void onBlockAdded(World world, int i, int j, int k) {
-        EntityPlayer entity = Minecraft.getMinecraft().thePlayer;
-        if (entity != null && world != null) {
-            int le = MathHelper.floor_double((double) (entity.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;//�v���C���[�̌�������0~3�̃��^�f�[�^�̐����ɕϊ����Ă�
-            world.setBlockMetadataWithNotify(i, j, k, le, 2);
-        }
-
-        //world.scheduleBlockUpdate(i, j, k, this, this.tickRate(world));
-
+    @Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos){
+        return new AxisAlignedBB(5.5F / 16F, 0F, 5.5F / 16F, 10.5F / 16F, 6F / 16F, 10.5F / 16F);
     }
 
     public int getRenderType() {
@@ -53,8 +64,37 @@ public class ChickenHead extends BlockContainer implements IMMAUBaseBlock {
         return new TileEntityChickenHead();
     }
 
+    public IBlockState withRotation(IBlockState state, Rotation rot)
+    {
+        return state.withProperty(FACING, rot.rotate((EnumFacing)state.getValue(FACING)));
+    }
+    public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer, ItemStack stack)
+    {
+        return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+    }
+
+    public int getMetaFromState(IBlockState state)
+    {
+        return ((EnumFacing)state.getValue(FACING)).getHorizontalIndex();
+    }
+
+    protected BlockStateContainer createBlockState()
+    {
+        return new BlockStateContainer(this, new IProperty[] {FACING});
+    }
+
     @Override
     public String getName() {
         return this.name;
+    }
+
+    @Override
+    public ResourceLocation getLocation() {
+        return this.location;
+    }
+
+    @Override
+    public ItemBlock getItemBlock() {
+        return this.itemBlock;
     }
 }
