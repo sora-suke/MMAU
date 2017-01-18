@@ -15,7 +15,7 @@ public class ChickenHeadSpecialRender extends TileEntitySpecialRenderer {
     private static final ResourceLocation texture = new ResourceLocation("textures/entity/chicken.png");
 
     @Override
-    public void renderTileEntityAt(TileEntity tileEntity, double x, double y, double z, float f) {
+    public void renderTileEntityAt(TileEntity tileEntity, double x, double y, double z, float f, int destroyStage) {
         render(tileEntity, x, y, z, f, false);
     }
 

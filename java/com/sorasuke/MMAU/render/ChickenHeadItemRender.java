@@ -1,20 +1,19 @@
 package com.sorasuke.MMAU.render;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraftforge.client.IItemRenderer;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.lwjgl.opengl.GL11;
 
 /**
  * Created by sora_suke on 2016/12/22.
  */
 @SideOnly(Side.CLIENT)
-public class ChickenHeadItemRender implements IItemRenderer {
+public class ChickenHeadItemRender /*implements IItemRenderer */{
 
-    private TileEntity tileEntity;
+    /*private TileEntity tileEntity;
     private ChickenHeadSpecialRender tileEntitySpecialRenderer;
 
     public ChickenHeadItemRender(TileEntitySpecialRenderer tileEntitySpecialRenderer, TileEntity tileEntity) {
@@ -44,5 +43,5 @@ public class ChickenHeadItemRender implements IItemRenderer {
     @Override
     public void renderItem(ItemRenderType type, ItemStack item, Object... data) {
         this.tileEntitySpecialRenderer.renderItem(this.tileEntity, 0.0D, 0.0D, 0.0D, 0.0f);
-    }
+    }*/
 }
