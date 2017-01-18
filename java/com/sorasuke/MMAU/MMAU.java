@@ -26,6 +26,8 @@ public class MMAU {
     @SidedProxy(clientSide = "com.sorasuke.MMAU.client.MMAUClientProxy", serverSide = "com.sorasuke.MMAU.common.MMAUProxy")
     public static MMAUProxy proxy;
 
+    public static final String RL = "mmau";
+
     //GUIのID
     public static final int guiIdChickenBlock = 0;
 
