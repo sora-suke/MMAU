@@ -7,7 +7,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
-import net.minecraft.inventory.SlotFurnace;
+import net.minecraft.inventory.SlotFurnaceOutput;
 import net.minecraft.item.ItemStack;
 
 /**
@@ -19,7 +19,7 @@ public class ContainerChickenBlock extends Container {
 
     public ContainerChickenBlock(InventoryPlayer inventory, TileEntityChickenBlock tileentity) {
         this.chickenBlock = tileentity;
-        this.addSlotToContainer(new SlotFurnace(inventory.player, this.chickenBlock, 0, 80, 57));
+        this.addSlotToContainer(new SlotFurnaceOutput(inventory.player, this.chickenBlock, 0, 80, 57));
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 9; j++) {
