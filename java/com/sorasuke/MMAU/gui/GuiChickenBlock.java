@@ -31,6 +31,7 @@ public class GuiChickenBlock extends GuiContainer {
         String name = this.tileEntity.hasCustomName() ? this.tileEntity.getName() : I18n.format(this.tileEntity.getName(), new Object[0]);
         this.fontRendererObj.drawString(name, this.xSize / 2 - this.fontRendererObj.getStringWidth(name) / 2, 6, 4210752);
         this.fontRendererObj.drawString(I18n.format("container.inventory", new Object[0]), 118, this.ySize - 96 + 2, 4210752);
+        this.fontRendererObj.drawString(String.valueOf(this.tileEntity.getWorkTime()), 118, this.ySize - 96 + 8, 4210752);
     }
 
     @Override
