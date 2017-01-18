@@ -31,12 +31,12 @@ public class MMAUOreGen implements IWorldGenerator {
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
         if(this.isRare){
-            for (int i = 0; i < this.value; i++) {
+            Random rnd = new Random();
+            if(random.nextInt(this.value) == 0){
                 genOre(world, random, chunkX << 4, chunkZ << 4);
             }
         }else{
-            Random rnd = new Random();
-            if(random.nextInt(this.value) == 0){
+            for (int i = 0; i < this.value; i++) {
                 genOre(world, random, chunkX << 4, chunkZ << 4);
             }
         }

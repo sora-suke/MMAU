@@ -22,7 +22,7 @@ public class MMAUGens {
                 GameRegistry.registerWorldGenerator(new MMAUOreGen(MMAURegistry.CrystalOre, 50, 1, 3, 12, false), 0);
             }
             if (MMAUConfig.genCrystalOreB) {
-                GameRegistry.registerWorldGenerator(new MMAUOreGen(MMAURegistry.CrystalOre, 20, 1, 10, 35, true), 0);
+                GameRegistry.registerWorldGenerator(new MMAUOreGen(MMAURegistry.CrystalBlock, 20, 1, 10, 35, true), 0);
             }
             if (MMAUConfig.genCobaltOre) {
                 GameRegistry.registerWorldGenerator(new MMAUOreGen(MMAURegistry.CobaltOre, 20, 1, 5, 8, false), 0);
