@@ -3,13 +3,14 @@ package com.sorasuke.MMAU.items;
 import com.sorasuke.MMAU.MMAU;
 
 import com.sorasuke.MMAU.MMAURegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemPickaxe;
+import net.minecraft.util.ResourceLocation;
 
 
 public class MMAUBasePickaxe extends ItemPickaxe implements IMMAUBaseItem {
 
-    String name;
+    private String name;
+    private ResourceLocation location;
 
     /**
      * @param p_i45347_1_ ツールマテリアル
@@ -24,7 +25,8 @@ public class MMAUBasePickaxe extends ItemPickaxe implements IMMAUBaseItem {
         localname = this.name = localname + "_pickaxe";
         setCreativeTab(MMAURegistry.MMAUToolsTab);
         setUnlocalizedName("MMAU_" + localname);
-        setTextureName("mmau:" + localname);
+        this.location = new ResourceLocation(MMAU.RL, name);
+
 
 
     }
@@ -33,4 +35,8 @@ public class MMAUBasePickaxe extends ItemPickaxe implements IMMAUBaseItem {
         return this.name;
     }
 
+    @Override
+    public ResourceLocation getLocation() {
+        return this.location;
+    }
 }

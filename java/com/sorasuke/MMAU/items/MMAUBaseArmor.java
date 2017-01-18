@@ -3,43 +3,42 @@ package com.sorasuke.MMAU.items;
 import com.sorasuke.MMAU.MMAU;
 
 import com.sorasuke.MMAU.MMAURegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.entity.Entity;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 
 public class MMAUBaseArmor extends ItemArmor implements IMMAUBaseItem {
 
-    public String ARMORTYPE[] = {"helmet", "chestplate", "leggings", "boots"};
-    private String armorname;
+    private String ARMORTYPE[] = {"helmet", "chestplate", "leggings", "boots"};
+    private String armorName;
     private Item repair;
     private String name;
+    private int type;
+    private ResourceLocation location;
 
-    /**
-     * @param material   アーマーマテリアル
-     * @param type       鎧の部位 0～3 が 頭～足 に対応している
-     * @param localname  名前
-     * @param repairItem 修復アイテム
-     */
     public MMAUBaseArmor(ArmorMaterial material, int type, String localname, Item repairItem) {
-        super(material, 0, type);
-
+        super(material, type == 2 ? 2 : 1,
+                type == 0 ? EntityEquipmentSlot.HEAD : type == 1 ? EntityEquipmentSlot.CHEST :
+                type == 2 ? EntityEquipmentSlot.LEGS : EntityEquipmentSlot.FEET);
+        this.type = type;
         this.repair = repairItem;
-        armorname = localname;
+        armorName = localname;
         localname = this.name = localname + "_" + ARMORTYPE[type];
         setCreativeTab(MMAURegistry.MMAUToolsTab);
         setUnlocalizedName("MMAU_" + localname);
-        setTextureName("mmau:" + localname);
+        this.location = new ResourceLocation(MMAU.RL, name);
     }
 
-    @Override
+    /*@Override
     public String getArmorTexture(ItemStack stack, Entity entity, int slot, String type) {
-        if (this.armorType == 2) {
-            return "MMAU:textures/models/armor/" + armorname + "_layer_2.png";
+        if (this.type == 2) {
+            return "MMAU:textures/models/armor/" + armorName + "_layer_2.png";
         }
-        return "MMAU:textures/models/armor/" + armorname + "_layer_1.png";
-    }
+        return "MMAU:textures/models/armor/" + armorName + "_layer_1.png";
+    }*/
 
     @Override
     public boolean getIsRepairable(ItemStack p_82789_1_, ItemStack p_82789_2_) {
@@ -48,6 +47,11 @@ public class MMAUBaseArmor extends ItemArmor implements IMMAUBaseItem {
 
     public String getName() {
         return this.name;
+    }
+
+    @Override
+    public ResourceLocation getLocation() {
+        return this.location;
     }
 
 }

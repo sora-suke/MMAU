@@ -4,6 +4,7 @@ import com.sorasuke.MMAU.MMAU;
 import com.sorasuke.MMAU.MMAURegistry;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 
 import java.util.Random;
 
@@ -14,6 +15,7 @@ import java.util.Random;
 public class MMAUBaseTool extends Item implements IMMAUBaseItem {
 
     private String name;
+    private ResourceLocation location;
 
     /**
      * MMAUの工具
@@ -28,16 +30,11 @@ public class MMAUBaseTool extends Item implements IMMAUBaseItem {
 
         setCreativeTab(MMAURegistry.MMAUToolsTab);
         setUnlocalizedName("MMAU_" + localname);
-        setTextureName("mmau:" + localname);
+        this.location = new ResourceLocation(MMAU.RL, name);
         setMaxDamage(durability);
         setHasSubtypes(false);
 
 
-    }
-
-    @Override
-    public boolean doesContainerItemLeaveCraftingGrid(ItemStack itemStack) {
-        return false;
     }
 
     @Override
@@ -60,5 +57,10 @@ public class MMAUBaseTool extends Item implements IMMAUBaseItem {
     @Override
     public String getName() {
         return name;
+    }
+
+    @Override
+    public ResourceLocation getLocation() {
+        return this.location;
     }
 }

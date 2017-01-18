@@ -3,13 +3,14 @@ package com.sorasuke.MMAU.items;
 import com.sorasuke.MMAU.MMAU;
 
 import com.sorasuke.MMAU.MMAURegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemHoe;
+import net.minecraft.util.ResourceLocation;
 
 
 public class MMAUBaseHoe extends ItemHoe implements IMMAUBaseItem {
 
-    String name;
+    private String name;
+    private ResourceLocation location;
 
     /**
      * @param p_i45343_1_ ツールマテリアル
@@ -24,12 +25,18 @@ public class MMAUBaseHoe extends ItemHoe implements IMMAUBaseItem {
         localname = this.name = localname + "_hoe";
         setCreativeTab(MMAURegistry.MMAUToolsTab);
         setUnlocalizedName("MMAU_" + localname);
-        setTextureName("mmau:" + localname);
+        this.location = new ResourceLocation(MMAU.RL, name);
+
 
     }
 
     public String getName() {
         return this.name;
+    }
+
+    @Override
+    public ResourceLocation getLocation() {
+        return this.location;
     }
 
 }

@@ -3,15 +3,19 @@ package com.sorasuke.MMAU.items;
 import com.sorasuke.MMAU.MMAU;
 
 import com.sorasuke.MMAU.MMAURegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
 public class ExplosionButton extends Item implements IMMAUBaseItem {
 
     String name;
+    ResourceLocation location;
 
     public ExplosionButton() {
 
@@ -19,13 +23,13 @@ public class ExplosionButton extends Item implements IMMAUBaseItem {
 
         setCreativeTab(MMAURegistry.MMAUToolsTab);
         setUnlocalizedName("MMAU_" + localname);
-        setTextureName("mmau:" + localname);
+        this.location = new ResourceLocation(MMAU.RL, name);
 
 
     }
 
     @Override
-    public ItemStack onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer) {
+    public ActionResult<ItemStack> onItemRightClick(ItemStack itemStack, World world, EntityPlayer entityPlayer, EnumHand hand) {
 
         if (!world.isRemote) {
             double x = entityPlayer.posX;
@@ -38,14 +42,20 @@ public class ExplosionButton extends Item implements IMMAUBaseItem {
         }
 
         if (entityPlayer.capabilities.isCreativeMode) {
-            return itemStack;
+            return new ActionResult(EnumActionResult.SUCCESS, itemStack);
         }
-        return new ItemStack(itemStack.getItem(), itemStack.stackSize - 1, itemStack.getItemDamage());
+        itemStack.stackSize--;
+        return new ActionResult(EnumActionResult.SUCCESS, itemStack);
 
     }
 
     @Override
     public String getName() {
         return this.name;
+    }
+
+    @Override
+    public ResourceLocation getLocation() {
+        return this.location;
     }
 }

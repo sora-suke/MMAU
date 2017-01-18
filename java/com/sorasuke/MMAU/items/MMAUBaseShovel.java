@@ -3,12 +3,13 @@ package com.sorasuke.MMAU.items;
 import com.sorasuke.MMAU.MMAU;
 
 import com.sorasuke.MMAU.MMAURegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemSpade;
+import net.minecraft.util.ResourceLocation;
 
 public class MMAUBaseShovel extends ItemSpade implements IMMAUBaseItem {
 
-    String name;
+    private String name;
+    private ResourceLocation location;
 
     /**
      * @param p_i45353_1_ ツールマテリアル
@@ -23,7 +24,7 @@ public class MMAUBaseShovel extends ItemSpade implements IMMAUBaseItem {
         localname = this.name = localname + "_shovel";
         setCreativeTab(MMAURegistry.MMAUToolsTab);
         setUnlocalizedName("MMAU_" + localname);
-        setTextureName("mmau:" + localname);
+        this.location = new ResourceLocation(MMAU.RL, name);
 
     }
 
@@ -31,4 +32,7 @@ public class MMAUBaseShovel extends ItemSpade implements IMMAUBaseItem {
         return this.name;
     }
 
+    public ResourceLocation getLocation() {
+        return this.location;
+    }
 }

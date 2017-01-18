@@ -3,19 +3,21 @@ package com.sorasuke.MMAU.items;
 import com.sorasuke.MMAU.MMAU;
 
 import com.sorasuke.MMAU.MMAURegistry;
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.ItemAxe;
+import net.minecraft.util.ResourceLocation;
 
 public class MMAUBaseAxe extends ItemAxe implements IMMAUBaseItem {
 
-    String name;
+    private String name;
+    private ResourceLocation location;
+
 
     /**
-     * @param p_i45327_1_ ツールマテリアル
+     * @param toolMaterial ツールマテリアル
      * @param localname   マテリアル名
      */
-    public MMAUBaseAxe(ToolMaterial p_i45327_1_, String localname) {
-        super(p_i45327_1_);
+    public MMAUBaseAxe(ToolMaterial toolMaterial, String localname) {
+        super(toolMaterial, toolMaterial.getDamageVsEntity(), -3.0F);
         /*
 		 * 斧のベースクラス 使い方 HogeAxe = BaseAxe(HOGETOOL,"hoge") 第一引数は素材、二は名前
 		 * ツール名+ツールの種類で登録される
@@ -23,12 +25,17 @@ public class MMAUBaseAxe extends ItemAxe implements IMMAUBaseItem {
         localname = this.name = localname + "_axe";
         setCreativeTab(MMAURegistry.MMAUToolsTab);
         setUnlocalizedName("MMAU_" + localname);
-        setTextureName("mmau:" + localname);
+        this.location = new ResourceLocation(MMAU.RL, name);
 
     }
 
     public String getName() {
         return this.name;
+    }
+
+    @Override
+    public ResourceLocation getLocation() {
+        return this.location;
     }
 
 }

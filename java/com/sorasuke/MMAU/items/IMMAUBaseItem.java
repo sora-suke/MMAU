@@ -1,5 +1,7 @@
 package com.sorasuke.MMAU.items;
 
+import net.minecraft.util.ResourceLocation;
+
 /**
  * Created by sora_suke on 2016/11/19.
  * <p>
@@ -8,7 +10,8 @@ package com.sorasuke.MMAU.items;
  * IMMAUBaseItemを継承させれば名前もまとめて扱える
  */
 public interface IMMAUBaseItem {
-    String name = "";
 
     String getName();
+
+    ResourceLocation getLocation();
 }
