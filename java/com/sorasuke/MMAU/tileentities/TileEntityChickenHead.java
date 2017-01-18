@@ -7,7 +7,7 @@ import net.minecraft.tileentity.TileEntity;
  */
 public class TileEntityChickenHead extends TileEntity {
     public void updateEntity() {
-        worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);//同期メソッド
+        this.markDirty();
 
 
     }
