@@ -6,11 +6,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public class Orichalcum extends Item {
-	
-	@Override
-	@SideOnly(Side.CLIENT)
-		public boolean hasEffect(ItemStack p_77636_1_)
-		{
-			return true;
-		}
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public boolean hasEffect(ItemStack p_77636_1_) {
+        return true;
+    }
 }

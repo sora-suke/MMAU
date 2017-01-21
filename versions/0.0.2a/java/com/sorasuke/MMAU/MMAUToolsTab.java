@@ -5,17 +5,17 @@ import com.sorasuke.MMAU.items.MMAUItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
-public class MMAUToolsTab extends CreativeTabs{
+public class MMAUToolsTab extends CreativeTabs {
 
-	public MMAUToolsTab(String label) {
-		super(label);
-		
-	}
+    public MMAUToolsTab(String label) {
+        super(label);
 
-	@Override
-	public Item getTabIconItem() {
-		
-		return MMAUItems.NegiPickaxe;
-	}
+    }
+
+    @Override
+    public Item getTabIconItem() {
+
+        return MMAUItems.NegiPickaxe;
+    }
 
 }

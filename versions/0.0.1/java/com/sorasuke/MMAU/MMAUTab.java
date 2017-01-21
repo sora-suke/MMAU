@@ -4,17 +4,17 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 
-public class MMAUTab extends CreativeTabs{
+public class MMAUTab extends CreativeTabs {
 
-	public MMAUTab(String label) {
-		super(label);
-		// TODO ©“®¶¬‚³‚ê‚½ƒRƒ“ƒXƒgƒ‰ƒNƒ^[EƒXƒ^ƒu
-	}
+    public MMAUTab(String label) {
+        super(label);
+        // TODO ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^ï¿½[ï¿½Eï¿½Xï¿½^ï¿½u
+    }
 
-	@Override
-	public Item getTabIconItem() {
-		// TODO ©“®¶¬‚³‚ê‚½ƒƒ\ƒbƒhEƒXƒ^ƒu
-		return Item.getItemFromBlock(Blocks.diamond_block);
-	}
+    @Override
+    public Item getTabIconItem() {
+        // TODO ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½ï¿½ï¿½\ï¿½bï¿½hï¿½Eï¿½Xï¿½^ï¿½u
+        return Item.getItemFromBlock(Blocks.diamond_block);
+    }
 
 }

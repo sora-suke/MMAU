@@ -10,32 +10,32 @@ import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.creativetab.CreativeTabs;
 
-@Mod(modid=MMAU.MODID,version=MMAU.VERSION)
+@Mod(modid = MMAU.MODID, version = MMAU.VERSION)
 public class MMAU {
-	
-	public static final String MODID = "MoreMaterialsAndUtilities";
-	public static final String VERSION = "0.0.2";
-	
-	
-	public static final CreativeTabs MMAUTAB = new MMAUTab("mmautab");//クリエイティブタブ。
-	public static final CreativeTabs MMAUTOOLSTAB = new MMAUToolsTab("mmautoolstab");
-	
-	@EventHandler
-	public void preInit(FMLPreInitializationEvent event){
-		
-		MMAUConfig.Load(this, event);//コンフィグの読み込み
-		
-		MMAUItems.registry(this);//アイテムの登録
-		MMAUBlocks.registry(this);//ブロックの登録
-		
-	}
-	
-	@EventHandler
-	public void Init(FMLInitializationEvent event){
-		
-		Recipes.registry(this);//レシピ登録
-		MMAUGens.registry(this);//ワールド生成関連
-		
-	}
+
+    public static final String MODID = "MoreMaterialsAndUtilities";
+    public static final String VERSION = "0.0.2";
+
+
+    public static final CreativeTabs MMAUTAB = new MMAUTab("mmautab");//クリエイティブタブ。
+    public static final CreativeTabs MMAUTOOLSTAB = new MMAUToolsTab("mmautoolstab");
+
+    @EventHandler
+    public void preInit(FMLPreInitializationEvent event) {
+
+        MMAUConfig.Load(this, event);//コンフィグの読み込み
+
+        MMAUItems.registry(this);//アイテムの登録
+        MMAUBlocks.registry(this);//ブロックの登録
+
+    }
+
+    @EventHandler
+    public void Init(FMLInitializationEvent event) {
+
+        Recipes.registry(this);//レシピ登録
+        MMAUGens.registry(this);//ワールド生成関連
+
+    }
 
 }

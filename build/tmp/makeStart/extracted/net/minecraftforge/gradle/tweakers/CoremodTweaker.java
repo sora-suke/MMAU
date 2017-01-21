@@ -34,18 +34,15 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class CoremodTweaker implements ITweaker
-{
-    protected static final Logger LOGGER             = LogManager.getLogger("GradleStart");
-    private static final String   COREMOD_CLASS      = "net.minecraftforge.fml.relauncher.CoreModManager";
-    private static final String   TWEAKER_SORT_FIELD = "tweakSorting";
+public class CoremodTweaker implements ITweaker {
+    protected static final Logger LOGGER = LogManager.getLogger("GradleStart");
+    private static final String COREMOD_CLASS = "net.minecraftforge.fml.relauncher.CoreModManager";
+    private static final String TWEAKER_SORT_FIELD = "tweakSorting";
 
     @Override
     @SuppressWarnings("unchecked")
-    public void injectIntoClassLoader(LaunchClassLoader classLoader)
-    {
-        try
-        {
+    public void injectIntoClassLoader(LaunchClassLoader classLoader) {
+        try {
             Field coreModList = Class.forName("net.minecraftforge.fml.relauncher.CoreModManager", true, classLoader).getDeclaredField("loadPlugins");
             coreModList.setAccessible(true);
 
@@ -64,22 +61,19 @@ public class CoremodTweaker implements ITweaker
 
             List<ITweaker> oldList = (List<ITweaker>) coreModList.get(null);
 
-            for (int i = 0; i < oldList.size(); i++)
-            {
+            for (int i = 0; i < oldList.size(); i++) {
                 ITweaker tweaker = oldList.get(i);
 
-                if (clazz.isInstance(tweaker))
-                {
+                if (clazz.isInstance(tweaker)) {
                     Object coreMod = pluginField.get(tweaker);
                     Object oldFile = fileField.get(tweaker);
                     File newFile = GradleForgeHacks.coreMap.get(coreMod.getClass().getCanonicalName());
 
                     LOGGER.info("Injecting location in coremod {}", coreMod.getClass().getCanonicalName());
 
-                    if (newFile != null && oldFile == null)
-                    {
+                    if (newFile != null && oldFile == null) {
                         // build new tweaker.
-                        oldList.set(i, construct.newInstance(new Object[] {
+                        oldList.set(i, construct.newInstance(new Object[]{
                                 (String) fields[0].get(tweaker), // name
                                 coreMod, // coremod
                                 newFile, // location
@@ -89,9 +83,7 @@ public class CoremodTweaker implements ITweaker
                     }
                 }
             }
-        }
-        catch (Throwable t)
-        {
+        } catch (Throwable t) {
             LOGGER.log(Level.ERROR, "Something went wrong with the coremod adding.");
             t.printStackTrace();
         }
@@ -101,21 +93,28 @@ public class CoremodTweaker implements ITweaker
         ((List<String>) Launch.blackboard.get("TweakClasses")).add(atTweaker);
 
         // make sure its after the deobf tweaker
-        try
-        {
+        try {
             Field f = Class.forName(COREMOD_CLASS, true, classLoader).getDeclaredField(TWEAKER_SORT_FIELD);
             f.setAccessible(true);
             ((Map<String, Integer>) f.get(null)).put(atTweaker, Integer.valueOf(1001));
-        }
-        catch (Throwable t)
-        {
+        } catch (Throwable t) {
             LOGGER.log(Level.ERROR, "Something went wrong with the adding the AT tweaker adding.");
             t.printStackTrace();
         }
     }
 
     //@formatter:off
-    @Override public String getLaunchTarget() { return null;}
-    @Override public String[] getLaunchArguments() { return new String[0]; }
-    @Override public void acceptOptions(List<String> args, File gameDir, File assetsDir, String profile) { }
+    @Override
+    public String getLaunchTarget() {
+        return null;
+    }
+
+    @Override
+    public String[] getLaunchArguments() {
+        return new String[0];
+    }
+
+    @Override
+    public void acceptOptions(List<String> args, File gameDir, File assetsDir, String profile) {
+    }
 }

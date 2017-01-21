@@ -11,7 +11,7 @@ import org.lwjgl.opengl.GL11;
  * Created by sora_suke on 2016/12/22.
  */
 @SideOnly(Side.CLIENT)
-public class ChickenHeadItemRender /*implements IItemRenderer */{
+public class ChickenHeadItemRender /*implements IItemRenderer */ {
 
     /*private TileEntity tileEntity;
     private ChickenHeadSpecialRender tileEntitySpecialRenderer;

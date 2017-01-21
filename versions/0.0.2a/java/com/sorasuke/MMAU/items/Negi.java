@@ -1,4 +1,4 @@
- package com.sorasuke.MMAU.items;
+package com.sorasuke.MMAU.items;
 
 import java.util.List;
 
@@ -14,29 +14,29 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.StatCollector;
 import net.minecraftforge.oredict.OreDictionary;
 
-public class Negi extends Item{
-	public Negi(){
-		
-		String localname = "negi";
-		
-		setCreativeTab(MMAU.MMAUTAB);
-		setUnlocalizedName("MMAU_"+localname);
-		setTextureName("mmau:"+localname);
-		setFull3D();
-		
-		GameRegistry.registerItem(this, localname);
-		
-		OreDictionary.registerOre("gemNegi", new ItemStack(this,1,0));
-		
-	}
-	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack itemstack,EntityPlayer player,List list,boolean advanced){
-		
-		list.add(ChatFormatting.GREEN+StatCollector.translateToLocal("text.negi.tooltip"));
-		
-	}
-	
+public class Negi extends Item {
+    public Negi() {
+
+        String localname = "negi";
+
+        setCreativeTab(MMAU.MMAUTAB);
+        setUnlocalizedName("MMAU_" + localname);
+        setTextureName("mmau:" + localname);
+        setFull3D();
+
+        GameRegistry.registerItem(this, localname);
+
+        OreDictionary.registerOre("gemNegi", new ItemStack(this, 1, 0));
+
+    }
+
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack itemstack, EntityPlayer player, List list, boolean advanced) {
+
+        list.add(ChatFormatting.GREEN + StatCollector.translateToLocal("text.negi.tooltip"));
+
+    }
+
 }

@@ -1,10 +1,14 @@
 package com.sorasuke.MMAU.tileentities;
 
 import com.sorasuke.MMAU.MMAULogger;
+import com.sorasuke.MMAU.container.ContainerChickenBlock;
 import com.sorasuke.MMAU.utils.MMAUPlaySound;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Items;
+import net.minecraft.inventory.Container;
+import net.minecraft.inventory.ContainerFurnace;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -13,6 +17,7 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.ITickable;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 
@@ -23,7 +28,7 @@ import java.util.Random;
  * ニワトリブロックのTileEntity
  * Created by sora_suke on 2016/11/26.
  */
-public class TileEntityChickenBlock extends TileEntity implements ISidedInventory {
+public class TileEntityChickenBlock extends TileEntity implements ISidedInventory, ITickable {
 
     private final ItemStack slot = new ItemStack(Items.EGG, 0);
     private int workTime;
@@ -31,7 +36,9 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
 
     private String localizedName;
 
-    public void updateEntity() {
+    @Override
+    public void update() {
+        //MMAULogger.log("updateEntity!");
         BlockPos pos = this.getPos();
         int x = pos.getX();
         int y = pos.getY();
@@ -40,18 +47,21 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
         Random random = new Random();
         if (random.nextInt(300) == 0)
             MMAUPlaySound.playSound(this.worldObj, pos, "entity.chicken.ambient", SoundCategory.AMBIENT);
-        if (slot.stackSize < slot.getMaxStackSize()) workTime++;
+        if (slot.stackSize < slot.getMaxStackSize()) {
+            workTime++;
+            //MMAULogger.log("working!");
+        }
         if (workMax <= workTime) {
             if (!this.worldObj.isRemote) slot.stackSize++;
             if (!this.worldObj.isRemote)
                 slot.stackSize = slot.getMaxStackSize() < slot.stackSize ? slot.getMaxStackSize() : slot.stackSize;
             workTime = 0;
             MMAUPlaySound.playSound(this.worldObj, pos, "entity.chicken.egg", SoundCategory.AMBIENT);
-
+            this.markDirty();
         }
-        this.markDirty();
+
         worldObj.notifyBlockUpdate(pos, b, b, 0);
-        worldObj.scheduleBlockUpdate(pos,this.getBlockType(),0,0);
+        worldObj.scheduleBlockUpdate(pos, this.getBlockType(), 0, 0);
         //worldObj.markBlockRangeForRenderUpdate(pos, pos);
         //worldObj.markBlockForUpdate(this.xCoord, this.yCoord, this.zCoord);//同期メソッド
         //markDityだけでいいのかな?
@@ -80,13 +90,13 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
 
     @Override
     public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
-        MMAULogger.log("onDataPacket!");
+        //MMAULogger.log("onDataPacket!");
         readFromNBT(pkt.getNbtCompound());
     }
 
     @Override
     public SPacketUpdateTileEntity getUpdatePacket() {
-        MMAULogger.log("getDescriptionPacket!");
+        //MMAULogger.log("getDescriptionPacket!");
         NBTTagCompound tagCompound = new NBTTagCompound();
         writeToNBT(tagCompound);
         return new SPacketUpdateTileEntity(getPos(), this.getBlockMetadata(), tagCompound);
@@ -179,10 +189,12 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
     }
 
     @Override
-    public void openInventory(EntityPlayer player) {}
+    public void openInventory(EntityPlayer player) {
+    }
 
     @Override
-    public void closeInventory(EntityPlayer player) {}
+    public void closeInventory(EntityPlayer player) {
+    }
 
     @Override
     public boolean isItemValidForSlot(int p_94041_1_, ItemStack p_94041_2_) {
@@ -213,12 +225,16 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
         return workTime * i / workMax;
     }
 
-    public int getWorkTime(){
+    public int getWorkTime() {
         return this.workTime;
     }
 
     @Override
     public int[] getSlotsForFace(EnumFacing side) {
         return new int[0];
+    }
+
+    public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {
+        return new ContainerChickenBlock(playerInventory, this);
     }
 }
