@@ -18,15 +18,13 @@ public class MMAUBaseSword extends ItemSword implements IMMAUBaseItem {
     public MMAUBaseSword(ToolMaterial p_i45356_1_, String localname) {
         super(p_i45356_1_);
         /*
-		 * 剣のベースクラス 使い方 HogeSword = BaseSword(HOGETOOL,"hoge") 第一引数は素材、二は名前
+         * 剣のベースクラス 使い方 HogeSword = BaseSword(HOGETOOL,"hoge") 第一引数は素材、二は名前
 		 * ツール名+ツールの種類で登録される
 		 */
         localname = this.name = localname + "_sword";
         setCreativeTab(MMAURegistry.MMAUToolsTab);
         setUnlocalizedName("MMAU_" + localname);
-        this.location = new ResourceLocation(MMAU.RL, name);
-
-
+        this.location = new ResourceLocation(MMAU.MODID, name);
     }
 
     public String getName() {

@@ -22,14 +22,14 @@ public class MMAUBaseArmor extends ItemArmor implements IMMAUBaseItem {
     public MMAUBaseArmor(ArmorMaterial material, int type, String localname, Item repairItem) {
         super(material, type == 2 ? 2 : 1,
                 type == 0 ? EntityEquipmentSlot.HEAD : type == 1 ? EntityEquipmentSlot.CHEST :
-                type == 2 ? EntityEquipmentSlot.LEGS : EntityEquipmentSlot.FEET);
+                        type == 2 ? EntityEquipmentSlot.LEGS : EntityEquipmentSlot.FEET);
         this.type = type;
         this.repair = repairItem;
         armorName = localname;
         localname = this.name = localname + "_" + ARMORTYPE[type];
         setCreativeTab(MMAURegistry.MMAUToolsTab);
         setUnlocalizedName("MMAU_" + localname);
-        this.location = new ResourceLocation(MMAU.RL, name);
+        this.location = new ResourceLocation(MMAU.MODID, name);
     }
 
     /*@Override

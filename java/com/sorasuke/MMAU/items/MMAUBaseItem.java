@@ -17,7 +17,7 @@ public class MMAUBaseItem extends Item implements IMMAUBaseItem {
     public MMAUBaseItem(String name) {
         this.name = name;
         setUnlocalizedName("MMAU_" + name);
-        this.location = new ResourceLocation(MMAU.RL, name);
+        this.location = new ResourceLocation(MMAU.MODID, name);
     }
 
     public String getName() {

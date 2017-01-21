@@ -30,11 +30,9 @@ public class MMAUBaseTool extends Item implements IMMAUBaseItem {
 
         setCreativeTab(MMAURegistry.MMAUToolsTab);
         setUnlocalizedName("MMAU_" + localname);
-        this.location = new ResourceLocation(MMAU.RL, name);
+        this.location = new ResourceLocation(MMAU.MODID, name);
         setMaxDamage(durability);
         setHasSubtypes(false);
-
-
     }
 
     @Override

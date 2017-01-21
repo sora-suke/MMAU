@@ -14,19 +14,18 @@ public class MMAUBaseAxe extends ItemAxe implements IMMAUBaseItem {
 
     /**
      * @param toolMaterial ツールマテリアル
-     * @param localname   マテリアル名
+     * @param localname    マテリアル名
      */
     public MMAUBaseAxe(ToolMaterial toolMaterial, String localname) {
         super(toolMaterial, toolMaterial.getDamageVsEntity(), -3.0F);
         /*
-		 * 斧のベースクラス 使い方 HogeAxe = BaseAxe(HOGETOOL,"hoge") 第一引数は素材、二は名前
+         * 斧のベースクラス 使い方 HogeAxe = BaseAxe(HOGETOOL,"hoge") 第一引数は素材、二は名前
 		 * ツール名+ツールの種類で登録される
 		 */
         localname = this.name = localname + "_axe";
         setCreativeTab(MMAURegistry.MMAUToolsTab);
         setUnlocalizedName("MMAU_" + localname);
-        this.location = new ResourceLocation(MMAU.RL, name);
-
+        this.location = new ResourceLocation(MMAU.MODID, name);
     }
 
     public String getName() {
