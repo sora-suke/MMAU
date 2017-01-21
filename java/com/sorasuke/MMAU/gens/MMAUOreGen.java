@@ -19,7 +19,7 @@ public class MMAUOreGen implements IWorldGenerator {
     private int veinSize;
     private boolean isRare;
 
-    public MMAUOreGen(Block block, int maxHeight, int minHeight, int value, int veinSize, boolean isRare){
+    public MMAUOreGen(Block block, int maxHeight, int minHeight, int value, int veinSize, boolean isRare) {
         this.block = block;
         this.maxHeight = maxHeight;
         this.minHeight = minHeight;
@@ -30,12 +30,12 @@ public class MMAUOreGen implements IWorldGenerator {
 
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-        if(this.isRare){
+        if (this.isRare) {
             Random rnd = new Random();
-            if(random.nextInt(this.value) == 0){
+            if (random.nextInt(this.value) == 0) {
                 genOre(world, random, chunkX << 4, chunkZ << 4);
             }
-        }else{
+        } else {
             for (int i = 0; i < this.value; i++) {
                 genOre(world, random, chunkX << 4, chunkZ << 4);
             }
