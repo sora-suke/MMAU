@@ -7,6 +7,7 @@ import com.sorasuke.MMAU.tileentities.TileEntityChickenBlock;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenHead;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -160,21 +161,21 @@ public class MMAURegistry {
 
     //アーマーマテリアル
     public static final ArmorMaterial NEGIARMOR = EnumHelper.addArmorMaterial
-            ("Negi",MMAU.RL + "negi", 18, new int[]{5, 5, 5, 5}, 13, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 3);
+            ("Negi", MMAU.MODID + "negi", 18, new int[]{5, 5, 5, 5}, 13, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 3);
     public static final ArmorMaterial CRYSTALARMOR = EnumHelper.addArmorMaterial
-            ("Crystal", MMAU.RL + "crystal", 18, new int[]{3, 5, 4, 2}, 13, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0);
+            ("Crystal", MMAU.MODID + "crystal", 18, new int[]{3, 5, 4, 2}, 13, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0);
     public static final ArmorMaterial BRONZEARMOR = EnumHelper.addArmorMaterial
-            ("Bronze", MMAU.RL + "bronze", 13, new int[]{2, 6, 5, 2}, 8, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0);
+            ("Bronze", MMAU.MODID + "bronze", 13, new int[]{2, 6, 5, 2}, 8, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0);
     public static final ArmorMaterial COBALTARMOR = EnumHelper.addArmorMaterial
-            ("Cobalt", MMAU.RL + "cobalt", 33, new int[]{3, 8, 6, 3}, 12, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 2);
+            ("Cobalt", MMAU.MODID + "cobalt", 33, new int[]{3, 8, 6, 3}, 12, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 2);
     public static final ArmorMaterial ORICHALCUMARMOR = EnumHelper.addArmorMaterial
-            ("Orichalcum", MMAU.RL + "orichalcum", 256, new int[]{5, 5, 5, 5}, 50, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 5);
+            ("Orichalcum", MMAU.MODID + "orichalcum", 256, new int[]{5, 5, 5, 5}, 50, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 5);
     public static final ArmorMaterial SILVERARMOR = EnumHelper.addArmorMaterial
-            ("Silver", MMAU.RL + "silver", 20, new int[]{3, 6, 4, 2}, 30, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0);
+            ("Silver", MMAU.MODID + "silver", 20, new int[]{3, 6, 4, 2}, 30, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0);
     public static final ArmorMaterial PLATINUMARMOR = EnumHelper.addArmorMaterial
-            ("Platinum", MMAU.RL + "platinum", 14, new int[]{2, 6, 5, 2}, 17, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0);
+            ("Platinum", MMAU.MODID + "platinum", 14, new int[]{2, 6, 5, 2}, 17, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0);
     public static final ArmorMaterial STEELARMOR = EnumHelper.addArmorMaterial
-            ("Steel", MMAU.RL + "steel", 32, new int[]{3, 8, 6, 3}, 9, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0);
+            ("Steel", MMAU.MODID + "steel", 32, new int[]{3, 8, 6, 3}, 9, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0);
 
 
     //ネギツール
@@ -387,14 +388,27 @@ public class MMAURegistry {
      * いちいちブロック名入れて書いてGameRegistry書くのめんどくさかったから作った
      * IMMAUBaseBlockを継承させれば名前もまとめて扱える
      */
+    public static void registerBlock(Block mmauBaseblock, boolean isUseMetadata) {
+        registerB(mmauBaseblock, isUseMetadata);
+    }
+
     public static void registerBlock(Block mmauBaseblock) {
+        registerB(mmauBaseblock, false);
+    }
+
+    private static void registerB(Block mmauBaseblock, boolean isUseMetadata){
         if (mmauBaseblock instanceof IMMAUBaseBlock) {
             GameRegistry.register(mmauBaseblock, ((IMMAUBaseBlock) mmauBaseblock).getLocation());
             GameRegistry.register(((IMMAUBaseBlock) mmauBaseblock).getItemBlock(), ((IMMAUBaseBlock) mmauBaseblock).getLocation());
+            if(!isUseMetadata){
+
+                MMAU.proxy.registerItemBlockModel(mmauBaseblock);
+            }
         } else {
             MMAULogger.error(mmauBaseblock.getUnlocalizedName() + " does not inherit IMMAUBaseBlock!"); //たぶんこんなこと起きないだろうけど念のため
         }
     }
+
 
     public static void registerMMAU() {
 
