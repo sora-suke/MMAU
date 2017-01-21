@@ -7,7 +7,7 @@ public class MMAUOreDict {
 
     public static void registry(MMAU mod) {
         /*
-		registerMaterialsOreDictionary("null", new ItemStack(MMAURegistry.Null), new ItemStack(MMAURegistry.NullNugget), new ItemStack(MMAURegistry.NullDust)
+        registerMaterialsOreDictionary("null", new ItemStack(MMAURegistry.Null), new ItemStack(MMAURegistry.NullNugget), new ItemStack(MMAURegistry.NullDust)
              , new ItemStack(MMAURegistry.NullOre), new ItemStack(MMAURegistry.NullBlock), new ItemStack(MMAURegistry.NullPlate), 0);
          */
         registerMaterialsOreDictionary("Negi", new ItemStack(MMAURegistry.Negi), null, null

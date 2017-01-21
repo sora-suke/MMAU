@@ -35,7 +35,7 @@ public class MMAUEvents {
         int x = MathHelper.floor_double(event.getEntityLiving().posX);//なぜか取得できるX座標がずれてる なぜだ ←どうやら､Xの座標が+-で変わるらしい もうわけわからん キャストのさせかたが悪いっぽい いや､これもちがうっぽい? マイクラのMathHelper使えば良いっぽい
         int y = MathHelper.floor_double(event.getEntityLiving().posY - 1);
         int z = MathHelper.floor_double(event.getEntityLiving().posZ);
-        BlockPos pos = new BlockPos(x,y,z);
+        BlockPos pos = new BlockPos(x, y, z);
         Block b = event.getEntityLiving().worldObj.getBlockState(pos).getBlock();
         //MMAULogger.log(String.valueOf(x)+","+String.valueOf(y)+","+String.valueOf(z)+","+b.getLocalizedName());
         if (MMAURegistry.FeatherBlock.equals(b)) {

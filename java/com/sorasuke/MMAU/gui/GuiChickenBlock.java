@@ -1,5 +1,6 @@
 package com.sorasuke.MMAU.gui;
 
+import com.sorasuke.MMAU.MMAU;
 import com.sorasuke.MMAU.MMAULogger;
 import com.sorasuke.MMAU.container.ContainerChickenBlock;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenBlock;
@@ -18,7 +19,7 @@ public class GuiChickenBlock extends GuiContainer {
 
     private static TileEntityChickenBlock tileEntity;
 
-    private static final ResourceLocation bground = new ResourceLocation("mmau:textures/gui/container/chicken_block.png");
+    private static final ResourceLocation bground = new ResourceLocation(MMAU.MODID, "textures/gui/container/chicken_block.png");
 
     public GuiChickenBlock(InventoryPlayer inventoryPlayer, TileEntityChickenBlock entity) {
         super(new ContainerChickenBlock(inventoryPlayer, entity));
