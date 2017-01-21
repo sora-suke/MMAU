@@ -1,0 +1,18 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "textures": {
+      "texture": "morematerialsandutilities:blocks/chicken_block_front"
+    },
+    "model": "morematerialsandutilities:chicken_block",
+    "uvlock": true
+  },
+  "variants": {
+    "facing": {
+      "north": { "model": "morematerialsandutilities:chicken_block" },
+      "south": { "model": "morematerialsandutilities:chicken_block", "y": 180 },
+      "west":  { "model": "morematerialsandutilities:chicken_block", "y": 270 },
+      "east":  { "model": "morematerialsandutilities:chicken_block", "y": 90 }
+    }
+  }
+}
