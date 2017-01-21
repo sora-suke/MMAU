@@ -1,5 +1,6 @@
 package com.sorasuke.MMAU.blocks;
 
+import com.sorasuke.MMAU.MMAU;
 import com.sorasuke.MMAU.items.IMMAUBaseItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -21,7 +22,7 @@ public class MMAUBaseBlock extends Block implements IMMAUBaseBlock {
         super(material);
         this.name = name;
         setUnlocalizedName("MMAU_" + name);
-        this.location = new ResourceLocation("mmau", this.name);
+        this.location = new ResourceLocation(MMAU.MODID, this.name);
         setHarvestLevel(harvestType, harvestLevel);
         this.itemBlock = new ItemBlock(this);
     }
@@ -30,7 +31,7 @@ public class MMAUBaseBlock extends Block implements IMMAUBaseBlock {
         super(material);
         this.name = name;
         setUnlocalizedName("MMAU_" + name);
-        this.location = new ResourceLocation("mmau", this.name);
+        this.location = new ResourceLocation(MMAU.MODID, this.name);
         this.itemBlock = new ItemBlock(this);
     }
 

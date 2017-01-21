@@ -1,5 +1,6 @@
 package com.sorasuke.MMAU.blocks;
 
+import com.sorasuke.MMAU.MMAU;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenHead;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockHorizontal;
@@ -36,51 +37,39 @@ public class ChickenHead extends BlockHorizontal implements IMMAUBaseBlock, ITil
         super(material);
         this.name = name;
         setUnlocalizedName("MMAU_" + name);
-        this.location = new ResourceLocation("mmau", this.name);
+        this.location = new ResourceLocation(MMAU.MODID, this.name);
         this.itemBlock = new ItemBlock(this);
         //this.setBlockBounds(5.5F / 16F, 0F, 5.5F / 16F, 10.5F / 16F, 6F / 16F, 10.5F / 16F);
     }
 
-    @Override
-    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos){
+    /*@Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
         return new AxisAlignedBB(5.5F / 16F, 0F, 5.5F / 16F, 10.5F / 16F, 6F / 16F, 10.5F / 16F);
-    }
-
-    public int getRenderType() {
-        return -1;
-
-    }
-
-    public boolean isOpaqueCube() {
-        return false;
-    }
-
-    public boolean renderAsNormalBlock() {
-        return false;
-    }
+    }*/
 
     @Override
     public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
         return new TileEntityChickenHead();
     }
 
-    public IBlockState withRotation(IBlockState state, Rotation rot)
-    {
-        return state.withProperty(FACING, rot.rotate((EnumFacing)state.getValue(FACING)));
+    public IBlockState withRotation(IBlockState state, Rotation rot) {
+        return state.withProperty(FACING, rot.rotate((EnumFacing) state.getValue(FACING)));
     }
-    public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer, ItemStack stack)
-    {
+
+    public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer, ItemStack stack) {
         return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
     }
 
-    public int getMetaFromState(IBlockState state)
-    {
-        return ((EnumFacing)state.getValue(FACING)).getHorizontalIndex();
+    public IBlockState getStateFromMeta(int meta) {
+        return this.getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta));
     }
 
-    protected BlockStateContainer createBlockState()
-    {
-        return new BlockStateContainer(this, new IProperty[] {FACING});
+    public int getMetaFromState(IBlockState state) {
+        return ((EnumFacing) state.getValue(FACING)).getHorizontalIndex();
+    }
+
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, new IProperty[]{FACING});
     }
 
     @Override

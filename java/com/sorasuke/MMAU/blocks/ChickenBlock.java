@@ -49,7 +49,7 @@ public class ChickenBlock extends BlockHorizontal implements IMMAUBaseBlock, ITi
         super(material);
         this.name = name;
         setUnlocalizedName("MMAU_" + name);
-        this.location = new ResourceLocation("mmau", this.name);
+        this.location = new ResourceLocation(MMAU.MODID, this.name);
         isBlockContainer = true;
         this.itemBlock = new ItemBlock(this);
     }
@@ -128,23 +128,24 @@ public class ChickenBlock extends BlockHorizontal implements IMMAUBaseBlock, ITi
         super.breakBlock(world, pos, state);
     }
 
-    public IBlockState withRotation(IBlockState state, Rotation rot)
-    {
-        return state.withProperty(FACING, rot.rotate((EnumFacing)state.getValue(FACING)));
+    public IBlockState withRotation(IBlockState state, Rotation rot) {
+        return state.withProperty(FACING, rot.rotate((EnumFacing) state.getValue(FACING)));
     }
-    public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer, ItemStack stack)
-    {
+
+    public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer, ItemStack stack) {
         return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
     }
 
-    public int getMetaFromState(IBlockState state)
-    {
-        return ((EnumFacing)state.getValue(FACING)).getHorizontalIndex();
+    public IBlockState getStateFromMeta(int meta) {
+        return this.getDefaultState().withProperty(FACING, EnumFacing.getHorizontal(meta));
     }
 
-    protected BlockStateContainer createBlockState()
-    {
-        return new BlockStateContainer(this, new IProperty[] {FACING});
+    public int getMetaFromState(IBlockState state) {
+        return ((EnumFacing) state.getValue(FACING)).getHorizontalIndex();
+    }
+
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, new IProperty[]{FACING});
     }
 
     @Override
