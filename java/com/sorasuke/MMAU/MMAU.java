@@ -16,17 +16,16 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 import static com.sorasuke.MMAU.MMAUCollaboration.registerEMC;
 
-@Mod(modid = MMAU.MODID, version = MMAU.VERSION)
+@Mod(modid = MMAU.MODID, version = MMAU.VERSION, name = MMAU.MODNAME)
 public class MMAU {
 
-    public static final String MODID = "MoreMaterialsAndUtilities";
+    public static final String MODNAME = "MoreMaterialsAndUtilities";
+    public static final String MODID = "morematerialsandutilities";
     public static final String VERSION = "0.1.1";
     @Mod.Instance
     public static MMAU instance;
     @SidedProxy(clientSide = "com.sorasuke.MMAU.client.MMAUClientProxy", serverSide = "com.sorasuke.MMAU.common.MMAUProxy")
     public static MMAUProxy proxy;
-
-    public static final String RL = "mmau";
 
     //GUIのID
     public static final int guiIdChickenBlock = 0;
