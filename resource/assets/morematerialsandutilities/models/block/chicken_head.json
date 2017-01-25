@@ -1,47 +1,40 @@
 {
-  "parent": "block/block",
-  "display": {
-    "fixed": {
-      "rotation": [ 0, 90, 0 ],
-      "translation": [ 0, 0, 0 ],
-      "scale": [ 0.5, 0.5, 0.5 ]
-    }
-  },
   "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
+  "parent": "block/block",
   "textures": {
-    "0": "morematerialsandutilities:blocks/chicken_block_front"
+    "0": "morematerialsandutilities:blocks/chicken_head"
   },
   "elements": [
     {
-      "name": "head",
+      "name": "atama",
       "from": [ 6.0, 0.0, 6.5 ],
       "to": [ 10.0, 6.0, 9.5 ],
       "faces": {
-        "north": { "texture": "#0", "uv": [ 10.0, 3.0, 14.0, 9.0 ] },
-        "east": { "texture": "#0", "uv": [ 7.0, 3.0, 10.0, 9.0 ] },
-        "south": { "texture": "#0", "uv": [ 3.0, 3.0, 7.0, 9.0 ] },
-        "west": { "texture": "#0", "uv": [ 0.0, 3.0, 3.0, 9.0 ] },
+        "north": { "texture": "#0", "uv": [ 3.0, 3.0, 7.0, 9.0 ] },
+        "east": { "texture": "#0", "uv": [ 0.0, 3.0, 3.0, 9.0 ] },
+        "south": { "texture": "#0", "uv": [ 10.0, 3.0, 14.0, 9.0 ] },
+        "west": { "texture": "#0", "uv": [ 7.0, 3.0, 10.0, 9.0 ] },
         "up": { "texture": "#0", "uv": [ 3.0, 0.0, 7.0, 3.0 ] },
         "down": { "texture": "#0", "uv": [ 3.0, 0.0, 7.0, 3.0 ] }
       }
     },
     {
-      "name": "kuchi_bashi",
-      "from": [ 6.0, 2.0, 9.5 ],
-      "to": [ 10.0, 4.0, 11.5 ],
+      "name": "kuchi",
+      "from": [ 6.0, 2.0, 4.5 ],
+      "to": [ 10.0, 4.0, 6.5 ],
       "faces": {
-        "north": { "texture": "#0", "uv": [ 8.0, 11.0, 12.0, 13.0 ] },
-        "east": { "texture": "#0", "uv": [ 6.0, 11.0, 8.0, 13.0 ] },
-        "south": { "texture": "#0", "uv": [ 6.0, 11.0, 2.0, 13.0 ] },
-        "west": { "texture": "#0", "uv": [ 0.0, 11.0, 2.0, 13.0 ] },
+        "north": { "texture": "#0", "uv": [ 2.0, 11.0, 6.0, 13.0 ] },
+        "east": { "texture": "#0", "uv": [ 0.0, 11.0, 2.0, 13.0 ] },
+        "south": { "texture": "#0", "uv": [ 8.0, 11.0, 12.0, 13.0 ] },
+        "west": { "texture": "#0", "uv": [ 6.0, 11.0, 8.0, 13.0 ] },
         "up": { "texture": "#0", "uv": [ 2.0, 9.0, 6.0, 11.0 ] },
         "down": { "texture": "#0", "uv": [ 6.0, 9.0, 10.0, 11.0 ] }
       }
     },
     {
       "name": "tosaka",
-      "from": [ 7.0, 0.0, 8.5 ],
-      "to": [ 9.0, 2.0, 10.5 ],
+      "from": [ 7.0, 0.0, 4.5 ],
+      "to": [ 9.0, 2.0, 6.5 ],
       "faces": {
         "north": { "texture": "#0", "uv": [ 4.0, 7.0, 6.0, 9.0 ] },
         "east": { "texture": "#0", "uv": [ 4.0, 7.0, 6.0, 9.0 ] },
