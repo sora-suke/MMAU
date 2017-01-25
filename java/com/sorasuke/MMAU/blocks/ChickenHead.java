@@ -42,10 +42,25 @@ public class ChickenHead extends BlockHorizontal implements IMMAUBaseBlock, ITil
         //this.setBlockBounds(5.5F / 16F, 0F, 5.5F / 16F, 10.5F / 16F, 6F / 16F, 10.5F / 16F);
     }
 
-    /*@Override
+    @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
         return new AxisAlignedBB(5.5F / 16F, 0F, 5.5F / 16F, 10.5F / 16F, 6F / 16F, 10.5F / 16F);
-    }*/
+    }
+
+    public boolean isOpaqueCube(IBlockState state)
+    {
+        return false;
+    }
+
+    public boolean isFullCube(IBlockState state)
+    {
+        return false;
+    }
+
+    public boolean isPassable(IBlockAccess worldIn, BlockPos pos)
+    {
+        return false;
+    }
 
     @Override
     public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
