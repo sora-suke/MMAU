@@ -2,14 +2,8 @@
   "__comment": "Model generated using MrCrayfish's Model Creator (http://mrcrayfish.com/modelcreator/)",
   "parent": "block/block",
   "textures": {
-    "0": "morematerialsandutilities:blocks/chicken_head"
-  },
-  "display": {
-    "gui": {
-      "rotation": [ 30, 225, 0 ],
-      "translation": [ 0, 4, 0 ],
-      "scale": [ 1.2, 1.2, 1.2 ]
-    }
+    "0": "morematerialsandutilities:blocks/chicken_head",
+    "particle" : "#0"
   },
   "elements": [
     {
