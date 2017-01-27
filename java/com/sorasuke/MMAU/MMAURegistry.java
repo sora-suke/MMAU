@@ -388,19 +388,19 @@ public class MMAURegistry {
      * いちいちブロック名入れて書いてGameRegistry書くのめんどくさかったから作った
      * IMMAUBaseBlockを継承させれば名前もまとめて扱える
      */
-    public static void registerBlock(Block mmauBaseblock, boolean isUseMetadata) {
-        registerB(mmauBaseblock, isUseMetadata);
+    public static void registerBlock(Block mmauBaseblock, boolean isUseSpecialModel) {
+        registerB(mmauBaseblock, isUseSpecialModel);
     }
 
     public static void registerBlock(Block mmauBaseblock) {
         registerB(mmauBaseblock, false);
     }
 
-    private static void registerB(Block mmauBaseblock, boolean isUseMetadata){
+    private static void registerB(Block mmauBaseblock, boolean isUseSpecialModel){
         if (mmauBaseblock instanceof IMMAUBaseBlock) {
             GameRegistry.register(mmauBaseblock, ((IMMAUBaseBlock) mmauBaseblock).getLocation());
             GameRegistry.register(((IMMAUBaseBlock) mmauBaseblock).getItemBlock(), ((IMMAUBaseBlock) mmauBaseblock).getLocation());
-            if(!isUseMetadata){
+            if(!isUseSpecialModel){
 
                 MMAU.proxy.registerItemBlockModel(mmauBaseblock);
             }
@@ -612,7 +612,7 @@ public class MMAURegistry {
         registerBlock(FeatherBlock);
 
         registerBlock(ChickenBlock);
-        registerBlock(ChickenHead);
+        registerBlock(ChickenHead, true);
 
 
         GameRegistry.registerTileEntity(TileEntityChickenBlock.class, "ChickenBlock");
