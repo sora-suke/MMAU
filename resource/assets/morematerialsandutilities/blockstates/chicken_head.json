@@ -9,8 +9,8 @@
     "model": "morematerialsandutilities:dummy",
     "uvlock": true
   },
+  "//comment": "ここを消すとミッシングのやつになる｡",
   "variants": {
-    "//comment": "ここを消すとミッシングのやつになる｡",
     "facing": {
       "north": {},
       "south": {"y": 180 },
