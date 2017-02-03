@@ -1,21 +1,23 @@
 {
   "forge_marker": 1,
   "defaults": {
+    "model": "morematerialsandutilities:chicken_head",
     "textures": {
-      "//texture": "morematerialsandutilities:blocks/chicken_head",
+      "texture": "morematerialsandutilities:blocks/chicken_head",
       "particle": "morematerialsandutilities:blocks/chicken_head"
     },
-    "//comment": "ここで空のモデルをしていしてるが､なぜかニワトリのあたまのモデル(models/block/chicken_head.json)が描画される ついでになんかそっぽ向いてるし",
-    "model": "morematerialsandutilities:dummy",
-    "uvlock": true
+    "uvlock": true,
+    "transform": "forge:default-block"
   },
-  "//comment": "ここを消すとミッシングのやつになる｡",
   "variants": {
+    "normal": [{
+      "model": "morematerialsandutilities:chicken_head"
+    }],
     "facing": {
-      "north": {},
-      "south": {"y": 180 },
-      "west":  {"y": 270 },
-      "east":  {"y": 90 }
+      "north": {"model": "morematerialsandutilities:chicken_head"},
+      "south": {"model": "morematerialsandutilities:chicken_head_south"},
+      "west":  {"model": "morematerialsandutilities:chicken_head_west"},
+      "east":  {"model": "morematerialsandutilities:chicken_head_east"}
     }
   }
 }
