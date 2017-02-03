@@ -16,6 +16,7 @@ import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityLockable;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.SoundCategory;
@@ -28,7 +29,7 @@ import java.util.Random;
  * ニワトリブロックのTileEntity
  * Created by sora_suke on 2016/11/26.
  */
-public class TileEntityChickenBlock extends TileEntity implements ISidedInventory, ITickable {
+public class TileEntityChickenBlock extends TileEntityLockable implements ISidedInventory, ITickable {
 
     private final ItemStack slot = new ItemStack(Items.EGG, 0);
     private int workTime;
@@ -46,7 +47,7 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
         IBlockState b = worldObj.getBlockState(pos);
         Random random = new Random();
         if (random.nextInt(300) == 0)
-            MMAUPlaySound.playSound(this.worldObj, pos, "entity.chicken.ambient", SoundCategory.AMBIENT);
+            MMAUPlaySound.playSound(this.worldObj, pos, "entity.chicken.ambient", SoundCategory.BLOCKS);
         if (slot.stackSize < slot.getMaxStackSize()) {
             workTime++;
             //MMAULogger.log("working!");
@@ -56,7 +57,7 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
             if (!this.worldObj.isRemote)
                 slot.stackSize = slot.getMaxStackSize() < slot.stackSize ? slot.getMaxStackSize() : slot.stackSize;
             workTime = 0;
-            MMAUPlaySound.playSound(this.worldObj, pos, "entity.chicken.egg", SoundCategory.AMBIENT);
+            MMAUPlaySound.playSound(this.worldObj, pos, "entity.chicken.egg", SoundCategory.BLOCKS);
             this.markDirty();
         }
 
@@ -180,7 +181,7 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
 
     @Override
     public int getInventoryStackLimit() {
-        return 0;
+        return 16;
     }
 
     @Override
@@ -236,5 +237,10 @@ public class TileEntityChickenBlock extends TileEntity implements ISidedInventor
 
     public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {
         return new ContainerChickenBlock(playerInventory, this);
+    }
+
+    @Override
+    public String getGuiID() {
+        return "mmau:chicken_block";
     }
 }
