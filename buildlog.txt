@@ -1,63 +1,305 @@
 Starting Build
-Settings evaluated using empty settings script.
+Settings evaluated using settings file 'C:\master\settings.gradle'.
 Projects loaded. Root project using build file 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build.gradle'.
 Included projects: [root project 'MMAU']
 Evaluating root project 'MMAU' using build file 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build.gradle'.
-****************************
- Powered By MCP:             
- http://modcoderpack.com/    
- Searge, ProfMobius, Fesh0r, 
- R4wk, ZeuX, IngisKahn, bspkrs
- MCP Data version : unknown
-****************************
+Compiling build file 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build.gradle' using SubsetScriptTransformer.
+Compiling build file 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build.gradle' using BuildScriptTransformer.
+java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1169)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1105)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:933)
+	at net.minecraftforge.gradle.common.BasePlugin.getWithEtag(BasePlugin.java:718)
+	at net.minecraftforge.gradle.common.BasePlugin.getRemoteJsons(BasePlugin.java:221)
+	at net.minecraftforge.gradle.common.BasePlugin.apply(BasePlugin.java:177)
+	at net.minecraftforge.gradle.common.BasePlugin.apply(BasePlugin.java:92)
+	at org.gradle.api.internal.plugins.ImperativeOnlyPluginApplicator.applyImperative(ImperativeOnlyPluginApplicator.java:35)
+	at org.gradle.api.internal.plugins.RuleBasedPluginApplicator.applyImperative(RuleBasedPluginApplicator.java:43)
+	at org.gradle.api.internal.plugins.DefaultPluginManager.doApply(DefaultPluginManager.java:137)
+	at org.gradle.api.internal.plugins.DefaultPluginManager.apply(DefaultPluginManager.java:112)
+	at org.gradle.api.internal.plugins.DefaultObjectConfigurationAction.applyType(DefaultObjectConfigurationAction.java:113)
+	at org.gradle.api.internal.plugins.DefaultObjectConfigurationAction.access$200(DefaultObjectConfigurationAction.java:36)
+	at org.gradle.api.internal.plugins.DefaultObjectConfigurationAction$3.run(DefaultObjectConfigurationAction.java:80)
+	at org.gradle.api.internal.plugins.DefaultObjectConfigurationAction.execute(DefaultObjectConfigurationAction.java:136)
+	at org.gradle.api.internal.project.AbstractPluginAware.apply(AbstractPluginAware.java:46)
+	at org.gradle.api.internal.project.ProjectScript.apply(ProjectScript.java:34)
+	at org.gradle.api.Script$apply$0.callCurrent(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:52)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:154)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)
+	at build_5gev713oxl158j5jslcevc1yi.run(C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build.gradle:10)
+	at org.gradle.groovy.scripts.internal.DefaultScriptRunnerFactory$ScriptRunnerImpl.run(DefaultScriptRunnerFactory.java:91)
+	at org.gradle.configuration.DefaultScriptPluginFactory$ScriptPluginImpl$2.run(DefaultScriptPluginFactory.java:177)
+	at org.gradle.configuration.ProjectScriptTarget.addConfiguration(ProjectScriptTarget.java:77)
+	at org.gradle.configuration.DefaultScriptPluginFactory$ScriptPluginImpl.apply(DefaultScriptPluginFactory.java:182)
+	at org.gradle.configuration.project.BuildScriptProcessor.execute(BuildScriptProcessor.java:38)
+	at org.gradle.configuration.project.BuildScriptProcessor.execute(BuildScriptProcessor.java:25)
+	at org.gradle.configuration.project.ConfigureActionsProjectEvaluator.evaluate(ConfigureActionsProjectEvaluator.java:34)
+	at org.gradle.configuration.project.LifecycleProjectEvaluator.evaluate(LifecycleProjectEvaluator.java:55)
+	at org.gradle.api.internal.project.AbstractProject.evaluate(AbstractProject.java:540)
+	at org.gradle.api.internal.project.AbstractProject.evaluate(AbstractProject.java:93)
+	at org.gradle.execution.TaskPathProjectEvaluator.configureHierarchy(TaskPathProjectEvaluator.java:42)
+	at org.gradle.configuration.DefaultBuildConfigurer.configure(DefaultBuildConfigurer.java:35)
+	at org.gradle.initialization.DefaultGradleLauncher$2.run(DefaultGradleLauncher.java:124)
+	at org.gradle.internal.Factories$1.create(Factories.java:22)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:91)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:53)
+	at org.gradle.initialization.DefaultGradleLauncher.doBuildStages(DefaultGradleLauncher.java:121)
+	at org.gradle.initialization.DefaultGradleLauncher.access$200(DefaultGradleLauncher.java:32)
+	at org.gradle.initialization.DefaultGradleLauncher$1.create(DefaultGradleLauncher.java:98)
+	at org.gradle.initialization.DefaultGradleLauncher$1.create(DefaultGradleLauncher.java:92)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:91)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:63)
+	at org.gradle.initialization.DefaultGradleLauncher.doBuild(DefaultGradleLauncher.java:92)
+	at org.gradle.initialization.DefaultGradleLauncher.run(DefaultGradleLauncher.java:83)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter$DefaultBuildController.run(InProcessBuildActionExecuter.java:99)
+	at org.gradle.tooling.internal.provider.ExecuteBuildActionRunner.run(ExecuteBuildActionRunner.java:28)
+	at org.gradle.launcher.exec.ChainingBuildActionRunner.run(ChainingBuildActionRunner.java:35)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:48)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:30)
+	at org.gradle.launcher.exec.ContinuousBuildActionExecuter.execute(ContinuousBuildActionExecuter.java:81)
+	at org.gradle.launcher.exec.ContinuousBuildActionExecuter.execute(ContinuousBuildActionExecuter.java:46)
+	at org.gradle.launcher.exec.DaemonUsageSuggestingBuildActionExecuter.execute(DaemonUsageSuggestingBuildActionExecuter.java:51)
+	at org.gradle.launcher.exec.DaemonUsageSuggestingBuildActionExecuter.execute(DaemonUsageSuggestingBuildActionExecuter.java:28)
+	at org.gradle.launcher.cli.RunBuildAction.run(RunBuildAction.java:43)
+	at org.gradle.internal.Actions$RunnableActionAdapter.execute(Actions.java:173)
+	at org.gradle.launcher.cli.CommandLineActionFactory$ParseAndBuildAction.execute(CommandLineActionFactory.java:239)
+	at org.gradle.launcher.cli.CommandLineActionFactory$ParseAndBuildAction.execute(CommandLineActionFactory.java:212)
+	at org.gradle.launcher.cli.JavaRuntimeValidationAction.execute(JavaRuntimeValidationAction.java:35)
+	at org.gradle.launcher.cli.JavaRuntimeValidationAction.execute(JavaRuntimeValidationAction.java:24)
+	at org.gradle.launcher.cli.ExceptionReportingAction.execute(ExceptionReportingAction.java:33)
+	at org.gradle.launcher.cli.ExceptionReportingAction.execute(ExceptionReportingAction.java:22)
+	at org.gradle.launcher.cli.CommandLineActionFactory$WithLogging.execute(CommandLineActionFactory.java:205)
+	at org.gradle.launcher.cli.CommandLineActionFactory$WithLogging.execute(CommandLineActionFactory.java:169)
+	at org.gradle.launcher.Main.doAction(Main.java:33)
+	at org.gradle.launcher.bootstrap.EntryPoint.run(EntryPoint.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.launcher.bootstrap.ProcessBootstrap.runNoExit(ProcessBootstrap.java:55)
+	at org.gradle.launcher.bootstrap.ProcessBootstrap.run(ProcessBootstrap.java:36)
+	at org.gradle.launcher.GradleMain.main(GradleMain.java:23)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.wrapper.BootstrapMainStarter.start(BootstrapMainStarter.java:30)
+	at org.gradle.wrapper.WrapperExecutor.execute(WrapperExecutor.java:127)
+	at org.gradle.wrapper.GradleWrapperMain.main(GradleWrapperMain.java:61)
+java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at java.net.Socket.connect(Socket.java:538)
+	at sun.net.NetworkClient.doConnect(NetworkClient.java:180)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:432)
+	at sun.net.www.http.HttpClient.openServer(HttpClient.java:527)
+	at sun.net.www.http.HttpClient.<init>(HttpClient.java:211)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:308)
+	at sun.net.www.http.HttpClient.New(HttpClient.java:326)
+	at sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1169)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1105)
+	at sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:999)
+	at sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:933)
+	at net.minecraftforge.gradle.common.BasePlugin.getWithEtag(BasePlugin.java:718)
+	at net.minecraftforge.gradle.common.BasePlugin.getWithEtag(BasePlugin.java:679)
+	at net.minecraftforge.gradle.user.patcherUser.forge.ForgePlugin.setForgeVersionJson(ForgePlugin.java:158)
+	at net.minecraftforge.gradle.user.patcherUser.forge.ForgePlugin.applyUserPlugin(ForgePlugin.java:56)
+	at net.minecraftforge.gradle.user.UserBasePlugin.applyPlugin(UserBasePlugin.java:167)
+	at net.minecraftforge.gradle.common.BasePlugin.apply(BasePlugin.java:209)
+	at net.minecraftforge.gradle.common.BasePlugin.apply(BasePlugin.java:92)
+	at org.gradle.api.internal.plugins.ImperativeOnlyPluginApplicator.applyImperative(ImperativeOnlyPluginApplicator.java:35)
+	at org.gradle.api.internal.plugins.RuleBasedPluginApplicator.applyImperative(RuleBasedPluginApplicator.java:43)
+	at org.gradle.api.internal.plugins.DefaultPluginManager.doApply(DefaultPluginManager.java:137)
+	at org.gradle.api.internal.plugins.DefaultPluginManager.apply(DefaultPluginManager.java:112)
+	at org.gradle.api.internal.plugins.DefaultObjectConfigurationAction.applyType(DefaultObjectConfigurationAction.java:113)
+	at org.gradle.api.internal.plugins.DefaultObjectConfigurationAction.access$200(DefaultObjectConfigurationAction.java:36)
+	at org.gradle.api.internal.plugins.DefaultObjectConfigurationAction$3.run(DefaultObjectConfigurationAction.java:80)
+	at org.gradle.api.internal.plugins.DefaultObjectConfigurationAction.execute(DefaultObjectConfigurationAction.java:136)
+	at org.gradle.api.internal.project.AbstractPluginAware.apply(AbstractPluginAware.java:46)
+	at org.gradle.api.internal.project.ProjectScript.apply(ProjectScript.java:34)
+	at org.gradle.api.Script$apply$0.callCurrent(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:52)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:154)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:166)
+	at build_5gev713oxl158j5jslcevc1yi.run(C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build.gradle:10)
+	at org.gradle.groovy.scripts.internal.DefaultScriptRunnerFactory$ScriptRunnerImpl.run(DefaultScriptRunnerFactory.java:91)
+	at org.gradle.configuration.DefaultScriptPluginFactory$ScriptPluginImpl$2.run(DefaultScriptPluginFactory.java:177)
+	at org.gradle.configuration.ProjectScriptTarget.addConfiguration(ProjectScriptTarget.java:77)
+	at org.gradle.configuration.DefaultScriptPluginFactory$ScriptPluginImpl.apply(DefaultScriptPluginFactory.java:182)
+	at org.gradle.configuration.project.BuildScriptProcessor.execute(BuildScriptProcessor.java:38)
+	at org.gradle.configuration.project.BuildScriptProcessor.execute(BuildScriptProcessor.java:25)
+	at org.gradle.configuration.project.ConfigureActionsProjectEvaluator.evaluate(ConfigureActionsProjectEvaluator.java:34)
+	at org.gradle.configuration.project.LifecycleProjectEvaluator.evaluate(LifecycleProjectEvaluator.java:55)
+	at org.gradle.api.internal.project.AbstractProject.evaluate(AbstractProject.java:540)
+	at org.gradle.api.internal.project.AbstractProject.evaluate(AbstractProject.java:93)
+	at org.gradle.execution.TaskPathProjectEvaluator.configureHierarchy(TaskPathProjectEvaluator.java:42)
+	at org.gradle.configuration.DefaultBuildConfigurer.configure(DefaultBuildConfigurer.java:35)
+	at org.gradle.initialization.DefaultGradleLauncher$2.run(DefaultGradleLauncher.java:124)
+	at org.gradle.internal.Factories$1.create(Factories.java:22)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:91)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:53)
+	at org.gradle.initialization.DefaultGradleLauncher.doBuildStages(DefaultGradleLauncher.java:121)
+	at org.gradle.initialization.DefaultGradleLauncher.access$200(DefaultGradleLauncher.java:32)
+	at org.gradle.initialization.DefaultGradleLauncher$1.create(DefaultGradleLauncher.java:98)
+	at org.gradle.initialization.DefaultGradleLauncher$1.create(DefaultGradleLauncher.java:92)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:91)
+	at org.gradle.internal.progress.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:63)
+	at org.gradle.initialization.DefaultGradleLauncher.doBuild(DefaultGradleLauncher.java:92)
+	at org.gradle.initialization.DefaultGradleLauncher.run(DefaultGradleLauncher.java:83)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter$DefaultBuildController.run(InProcessBuildActionExecuter.java:99)
+	at org.gradle.tooling.internal.provider.ExecuteBuildActionRunner.run(ExecuteBuildActionRunner.java:28)
+	at org.gradle.launcher.exec.ChainingBuildActionRunner.run(ChainingBuildActionRunner.java:35)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:48)
+	at org.gradle.launcher.exec.InProcessBuildActionExecuter.execute(InProcessBuildActionExecuter.java:30)
+	at org.gradle.launcher.exec.ContinuousBuildActionExecuter.execute(ContinuousBuildActionExecuter.java:81)
+	at org.gradle.launcher.exec.ContinuousBuildActionExecuter.execute(ContinuousBuildActionExecuter.java:46)
+	at org.gradle.launcher.exec.DaemonUsageSuggestingBuildActionExecuter.execute(DaemonUsageSuggestingBuildActionExecuter.java:51)
+	at org.gradle.launcher.exec.DaemonUsageSuggestingBuildActionExecuter.execute(DaemonUsageSuggestingBuildActionExecuter.java:28)
+	at org.gradle.launcher.cli.RunBuildAction.run(RunBuildAction.java:43)
+	at org.gradle.internal.Actions$RunnableActionAdapter.execute(Actions.java:173)
+	at org.gradle.launcher.cli.CommandLineActionFactory$ParseAndBuildAction.execute(CommandLineActionFactory.java:239)
+	at org.gradle.launcher.cli.CommandLineActionFactory$ParseAndBuildAction.execute(CommandLineActionFactory.java:212)
+	at org.gradle.launcher.cli.JavaRuntimeValidationAction.execute(JavaRuntimeValidationAction.java:35)
+	at org.gradle.launcher.cli.JavaRuntimeValidationAction.execute(JavaRuntimeValidationAction.java:24)
+	at org.gradle.launcher.cli.ExceptionReportingAction.execute(ExceptionReportingAction.java:33)
+	at org.gradle.launcher.cli.ExceptionReportingAction.execute(ExceptionReportingAction.java:22)
+	at org.gradle.launcher.cli.CommandLineActionFactory$WithLogging.execute(CommandLineActionFactory.java:205)
+	at org.gradle.launcher.cli.CommandLineActionFactory$WithLogging.execute(CommandLineActionFactory.java:169)
+	at org.gradle.launcher.Main.doAction(Main.java:33)
+	at org.gradle.launcher.bootstrap.EntryPoint.run(EntryPoint.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.launcher.bootstrap.ProcessBootstrap.runNoExit(ProcessBootstrap.java:55)
+	at org.gradle.launcher.bootstrap.ProcessBootstrap.run(ProcessBootstrap.java:36)
+	at org.gradle.launcher.GradleMain.main(GradleMain.java:23)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.wrapper.BootstrapMainStarter.start(BootstrapMainStarter.java:30)
+	at org.gradle.wrapper.WrapperExecutor.execute(WrapperExecutor.java:127)
+	at org.gradle.wrapper.GradleWrapperMain.main(GradleWrapperMain.java:61)
+#################################################
+         ForgeGradle 2.2-SNAPSHOT-59eb824        
+  https://github.com/MinecraftForge/ForgeGradle  
+#################################################
+               Powered by MCP unknown               
+             http://modcoderpack.com             
+         by: Searge, ProfMobius, Fesh0r,         
+         R4wk, ZeuX, IngisKahn, bspkrs           
+#################################################
+file or directory 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\src\api\resources', not found
 All projects evaluated.
-Selected primary task 'DefaultTaskParameter{taskName='build',projectPath='null'}'
-Tasks to be executed: [task ':compileApiJava', task ':processApiResources', task ':apiClasses', task ':sourceMainJava', task ':compileJava', task ':processResources', task ':classes', task ':jar', task ':compileTestJava', task ':processTestResources', task ':testClasses', task ':test', task ':extractMcpData', task ':getVersionJson', task ':extractUserDev', task ':genSrgs', task ':reobf', task ':assemble', task ':check', task ':build']
+Selected primary task 'build' from project :
+Tasks to be executed: [task ':deobfCompileDummyTask', task ':deobfProvidedDummyTask', task ':sourceApiJava', task ':compileApiJava', task ':processApiResources', task ':apiClasses', task ':sourceMainJava', task ':compileJava', task ':processResources', task ':classes', task ':jar', task ':sourceTestJava', task ':compileTestJava', task ':processTestResources', task ':testClasses', task ':test', task ':extractMcpData', task ':extractMcpMappings', task ':getVersionJson', task ':extractUserdev', task ':genSrgs', task ':reobfJar', task ':extractRangemapReplacedMain', task ':retromapReplacedMain', task ':sourceJar', task ':assemble', task ':check', task ':build']
+:deobfCompileDummyTask (Thread[main,5,main]) started.
+:deobfCompileDummyTask
+Executing task ':deobfCompileDummyTask' (up-to-date check took 0.0 secs) due to:
+  Task has not declared any outputs.
+:deobfCompileDummyTask (Thread[main,5,main]) completed. Took 0.0 secs.
+:deobfProvidedDummyTask (Thread[main,5,main]) started.
+:deobfProvidedDummyTask
+Executing task ':deobfProvidedDummyTask' (up-to-date check took 0.0 secs) due to:
+  Task has not declared any outputs.
+:deobfProvidedDummyTask (Thread[main,5,main]) completed. Took 0.0 secs.
+:sourceApiJava (Thread[main,5,main]) started.
+:sourceApiJava
+file or directory 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\src\api\java', not found
+Skipping task ':sourceApiJava' as it is up-to-date (took 0.031 secs).
+:sourceApiJava UP-TO-DATE
+:sourceApiJava (Thread[main,5,main]) completed. Took 0.031 secs.
 :compileApiJava (Thread[main,5,main]) started.
 :compileApiJava
 Skipping task ':compileApiJava' as it has no source files.
 :compileApiJava UP-TO-DATE
-:compileApiJava (Thread[main,5,main]) completed. Took 0.011 secs.
+:compileApiJava (Thread[main,5,main]) completed. Took 0.001 secs.
 :processApiResources (Thread[main,5,main]) started.
 :processApiResources
+file or directory 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\src\api\resources', not found
 Skipping task ':processApiResources' as it has no source files.
 :processApiResources UP-TO-DATE
-:processApiResources (Thread[main,5,main]) completed. Took 0.001 secs.
+:processApiResources (Thread[main,5,main]) completed. Took 0.0 secs.
 :apiClasses (Thread[main,5,main]) started.
 :apiClasses
 Skipping task ':apiClasses' as it has no actions.
 :apiClasses UP-TO-DATE
-:apiClasses (Thread[main,5,main]) completed. Took 0.0 secs.
+:apiClasses (Thread[main,5,main]) completed. Took 0.001 secs.
 :sourceMainJava (Thread[main,5,main]) started.
 :sourceMainJava
-Skipping task ':sourceMainJava' as it is up-to-date (took 0.039 secs).
+Skipping task ':sourceMainJava' as it is up-to-date (took 0.008 secs).
 :sourceMainJava UP-TO-DATE
-:sourceMainJava (Thread[main,5,main]) completed. Took 0.039 secs.
+:sourceMainJava (Thread[main,5,main]) completed. Took 0.008 secs.
 :compileJava (Thread[main,5,main]) started.
 :compileJava
-Failed to get resource: GET. [HTTP HTTP/1.1 403 Forbidden: https://libraries.minecraft.net//forgeSrc/1.7.10-10.13.4.1614-1.7.10/forgeSrc-1.7.10-10.13.4.1614-1.7.10.pom]
-Failed to get resource: GET. [HTTP HTTP/1.1 403 Forbidden: https://libraries.minecraft.net/org/scala-lang/scala-parser-combinators_2.11/1.0.1/scala-parser-combinators_2.11-1.0.1.pom]
-Failed to get resource: GET. [HTTP HTTP/1.1 403 Forbidden: https://libraries.minecraft.net/org/scala-lang/scala-swing_2.11/1.0.1/scala-swing_2.11-1.0.1.pom]
-Failed to get resource: GET. [HTTP HTTP/1.1 403 Forbidden: https://libraries.minecraft.net/org/scala-lang/scala-xml_2.11/1.0.2/scala-xml_2.11-1.0.2.pom]
-Skipping task ':compileJava' as it is up-to-date (took 3.796 secs).
-:compileJava UP-TO-DATE
-:compileJava (Thread[main,5,main]) completed. Took 3.798 secs.
+Executing task ':compileJava' (up-to-date check took 0.204 secs) due to:
+  Value of input property 'options.encoding' has changed for task ':compileJava'
+  Value of input property 'targetCompatibility' has changed for task ':compileJava'
+  Value of input property 'options.compilerArgs' has changed for task ':compileJava'
+All input files are considered out-of-date for incremental task ':compileJava'.
+Compiling with JDK Java compiler API.
+エラー: C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\libs\ProjectE-1.7.10-PE1.10.0.jarの読込みエラーです。zip file is empty
+エラー: C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\libs\ProjectE-1.7.10-PE1.10.0.jarの読込みエラーです。zip file is empty
+C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\sources\main\java\com\sorasuke\MMAU\MMAURegistry.java:72: 警告: 最終パラメータの不正確な引数型を持った可変引数メソッドの非可変引数呼出し。
+            list.add(ChatFormatting.GREEN + I18n.format("text.negi.tooltip", null));
+                                                                             ^
+  可変引数呼出しに関してはObjectにキャストします。
+  非可変引数呼出しに関してはObject[]にキャストしてこの警告を出さないようにします
+C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\sources\main\java\com\sorasuke\MMAU\MMAURegistry.java:90: 警告: 最終パラメータの不正確な引数型を持った可変引数メソッドの非可変引数呼出し。
+            list.add(ChatFormatting.GREEN + I18n.format("text.silver.tooltip", null));
+                                                                               ^
+  可変引数呼出しに関してはObjectにキャストします。
+  非可変引数呼出しに関してはObject[]にキャストしてこの警告を出さないようにします
+注意:一部の入力ファイルは非推奨のAPIを使用またはオーバーライドしています。
+注意:詳細は、-Xlint:deprecationオプションを指定して再コンパイルしてください。
+注意:C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\sources\main\java\com\sorasuke\MMAU\items\ExplosionButton.javaの操作は、未チェックまたは安全ではありません。
+注意:詳細は、-Xlint:uncheckedオプションを指定して再コンパイルしてください。
+警告2個
+:compileJava (Thread[main,5,main]) completed. Took 1.596 secs.
 :processResources (Thread[main,5,main]) started.
 :processResources
-Executing task ':processResources' (up-to-date check took 0.151 secs) due to:
-  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\resources\main\ReadMe_EN.txt has changed.
-  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\resources\main\ReadMe_JP.txt has changed.
-  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\resources\main\assets\mmau\textures\items\Thumbs.db has been removed.
-:processResources (Thread[main,5,main]) completed. Took 0.837 secs.
+Skipping task ':processResources' as it is up-to-date (took 0.065 secs).
+:processResources UP-TO-DATE
+:processResources (Thread[main,5,main]) completed. Took 0.081 secs.
 :classes (Thread[main,5,main]) started.
 :classes
 Skipping task ':classes' as it has no actions.
 :classes (Thread[main,5,main]) completed. Took 0.0 secs.
 :jar (Thread[main,5,main]) started.
 :jar
-Executing task ':jar' (up-to-date check took 0.047 secs) due to:
-  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\libs\MoreMaterialsAndUtilities-0.1.1-1.7.10.jar has changed.
-:jar (Thread[main,5,main]) completed. Took 0.475 secs.
+Executing task ':jar' (up-to-date check took 0.0 secs) due to:
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\libs\MoreMaterialsAndUtilities-0.2.0-1.10.2.jar has changed.
+:jar (Thread[main,5,main]) completed. Took 0.256 secs.
+:sourceTestJava (Thread[main,5,main]) started.
+:sourceTestJava
+file or directory 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\src\test\java', not found
+Skipping task ':sourceTestJava' as it is up-to-date (took 0.003 secs).
+:sourceTestJava UP-TO-DATE
+:sourceTestJava (Thread[main,5,main]) completed. Took 0.004 secs.
 :compileTestJava (Thread[main,5,main]) started.
 :compileTestJava
 Skipping task ':compileTestJava' as it has no source files.
@@ -65,6 +307,7 @@ Skipping task ':compileTestJava' as it has no source files.
 :compileTestJava (Thread[main,5,main]) completed. Took 0.001 secs.
 :processTestResources (Thread[main,5,main]) started.
 :processTestResources
+file or directory 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\src\test\resources', not found
 Skipping task ':processTestResources' as it has no source files.
 :processTestResources UP-TO-DATE
 :processTestResources (Thread[main,5,main]) completed. Took 0.001 secs.
@@ -72,7 +315,7 @@ Skipping task ':processTestResources' as it has no source files.
 :testClasses
 Skipping task ':testClasses' as it has no actions.
 :testClasses UP-TO-DATE
-:testClasses (Thread[main,5,main]) completed. Took 0.001 secs.
+:testClasses (Thread[main,5,main]) completed. Took 0.0 secs.
 :test (Thread[main,5,main]) started.
 :test
 file or directory 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\classes\test', not found
@@ -81,34 +324,56 @@ Skipping task ':test' as it has no source files.
 :test (Thread[main,5,main]) completed. Took 0.001 secs.
 :extractMcpData (Thread[main,5,main]) started.
 :extractMcpData
-Skipping task ':extractMcpData' as it is up-to-date (took 0.001 secs).
-:extractMcpData UP-TO-DATE
-:extractMcpData (Thread[main,5,main]) completed. Took 0.003 secs.
+Skipping task ':extractMcpData' as task onlyIf is false.
+:extractMcpData SKIPPED
+:extractMcpData (Thread[main,5,main]) completed. Took 0.166 secs.
+:extractMcpMappings (Thread[main,5,main]) started.
+:extractMcpMappings
+Skipping task ':extractMcpMappings' as task onlyIf is false.
+:extractMcpMappings SKIPPED
+:extractMcpMappings (Thread[main,5,main]) completed. Took 0.133 secs.
 :getVersionJson (Thread[main,5,main]) started.
 :getVersionJson
 Executing task ':getVersionJson' (up-to-date check took 0.0 secs) due to:
-  Task has not declared any outputs.
-:getVersionJson (Thread[main,5,main]) completed. Took 0.381 secs.
-:extractUserDev (Thread[main,5,main]) started.
-:extractUserDev
-Failed to get resource: GET. [HTTP HTTP/1.1 403 Forbidden: https://libraries.minecraft.net/net/minecraftforge/forge/1.7.10-10.13.4.1614-1.7.10/forge-1.7.10-10.13.4.1614-1.7.10.pom]
-Skipping task ':extractUserDev' as it is up-to-date (took 1.631 secs).
-:extractUserDev UP-TO-DATE
-:extractUserDev (Thread[main,5,main]) completed. Took 1.632 secs.
+  Task.upToDateWhen is false.
+:getVersionJson (Thread[main,5,main]) completed. Took 1.126 secs.
+:extractUserdev (Thread[main,5,main]) started.
+:extractUserdev
+Skipping task ':extractUserdev' as it is up-to-date (took 0.007 secs).
+:extractUserdev UP-TO-DATE
+:extractUserdev (Thread[main,5,main]) completed. Took 0.008 secs.
 :genSrgs (Thread[main,5,main]) started.
 :genSrgs
 Skipping task ':genSrgs' as task onlyIf is false.
 :genSrgs SKIPPED
-:genSrgs (Thread[main,5,main]) completed. Took 0.422 secs.
-:reobf (Thread[main,5,main]) started.
-:reobf
-Executing task ':reobf' (up-to-date check took 0.004 secs) due to:
-  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\libs\MoreMaterialsAndUtilities-0.1.1-1.7.10.jar has changed.
-:reobf (Thread[main,5,main]) completed. Took 1.028 secs.
+:genSrgs (Thread[main,5,main]) completed. Took 0.442 secs.
+:reobfJar (Thread[main,5,main]) started.
+:reobfJar
+Executing task ':reobfJar' (up-to-date check took 0.001 secs) due to:
+  Task.upToDateWhen is false.
+:reobfJar (Thread[main,5,main]) completed. Took 0.812 secs.
+:extractRangemapReplacedMain (Thread[main,5,main]) started.
+:extractRangemapReplacedMain
+Executing task ':extractRangemapReplacedMain' (up-to-date check took 0.026 secs) due to:
+  Input file C:\Users\sora_suke\.gradle\caches\minecraft\deobfedDeps\compileDummy.jar has changed.
+  Input file C:\Users\sora_suke\.gradle\caches\minecraft\deobfedDeps\providedDummy.jar has changed.
+C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\sources\main\java
+:extractRangemapReplacedMain (Thread[main,5,main]) completed. Took 0.156 secs.
+:retromapReplacedMain (Thread[main,5,main]) started.
+:retromapReplacedMain
+Executing task ':retromapReplacedMain' (up-to-date check took 0.0 secs) due to:
+  Input file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\retromapping\replacedMain.rangemap has changed.
+remapping source...
+:retromapReplacedMain (Thread[main,5,main]) completed. Took 1.097 secs.
+:sourceJar (Thread[main,5,main]) started.
+:sourceJar
+Executing task ':sourceJar' (up-to-date check took 0.0 secs) due to:
+  Input file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\retromapping\retromappedReplacedMain.jar has changed.
+:sourceJar (Thread[main,5,main]) completed. Took 0.078 secs.
 :assemble (Thread[main,5,main]) started.
 :assemble
 Skipping task ':assemble' as it has no actions.
-:assemble (Thread[main,5,main]) completed. Took 0.001 secs.
+:assemble (Thread[main,5,main]) completed. Took 0.0 secs.
 :check (Thread[main,5,main]) started.
 :check
 Skipping task ':check' as it has no actions.
@@ -121,4 +386,5 @@ Skipping task ':build' as it has no actions.
 
 BUILD SUCCESSFUL
 
-Total time: 29.661 secs
+Total time: 53.408 secs
+Stopped 0 compiler daemon(s).
