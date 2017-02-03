@@ -35,19 +35,20 @@ import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
-public abstract class GradleStartCommon {
-    protected static Logger LOGGER = LogManager.getLogger("GradleStart");
+public abstract class GradleStartCommon
+{
+    protected static Logger LOGGER        = LogManager.getLogger("GradleStart");
 
-    Map<String, String> argMap = Maps.newHashMap();
-    List<String> extras = Lists.newArrayList();
+    Map<String, String>     argMap        = Maps.newHashMap();
+    List<String>            extras        = Lists.newArrayList();
 
-    static final File SRG_DIR = new File("C:/Users/sora_suke/.gradle/caches/minecraft/de/oceanlabs/mcp/mcp_snapshot/20161111/srgs");
-    static final File SRG_NOTCH_SRG = new File("C:/Users/sora_suke/.gradle/caches/minecraft/de/oceanlabs/mcp/mcp_snapshot/20161111/1.10.2/srgs/notch-srg.srg");
-    static final File SRG_NOTCH_MCP = new File("C:/Users/sora_suke/.gradle/caches/minecraft/de/oceanlabs/mcp/mcp_snapshot/20161111/1.10.2/srgs/notch-mcp.srg");
-    static final File SRG_SRG_MCP = new File("C:/Users/sora_suke/.gradle/caches/minecraft/de/oceanlabs/mcp/mcp_snapshot/20161111/1.10.2/srgs/srg-mcp.srg");
-    static final File SRG_MCP_SRG = new File("C:/Users/sora_suke/.gradle/caches/minecraft/de/oceanlabs/mcp/mcp_snapshot/20161111/1.10.2/srgs/mcp-srg.srg");
-    static final File SRG_MCP_NOTCH = new File("C:/Users/sora_suke/.gradle/caches/minecraft/de/oceanlabs/mcp/mcp_snapshot/20161111/1.10.2/srgs/mcp-notch.srg");
-    static final File CSV_DIR = new File("C:/Users/sora_suke/.gradle/caches/minecraft/de/oceanlabs/mcp/mcp_snapshot/20161111");
+    static final File       SRG_DIR       = new File("C:/Users/sora_suke/.gradle/caches/minecraft/de/oceanlabs/mcp/mcp_snapshot/20161111/srgs");
+    static final File       SRG_NOTCH_SRG = new File("C:/Users/sora_suke/.gradle/caches/minecraft/de/oceanlabs/mcp/mcp_snapshot/20161111/1.10.2/srgs/notch-srg.srg");
+    static final File       SRG_NOTCH_MCP = new File("C:/Users/sora_suke/.gradle/caches/minecraft/de/oceanlabs/mcp/mcp_snapshot/20161111/1.10.2/srgs/notch-mcp.srg");
+    static final File       SRG_SRG_MCP   = new File("C:/Users/sora_suke/.gradle/caches/minecraft/de/oceanlabs/mcp/mcp_snapshot/20161111/1.10.2/srgs/srg-mcp.srg");
+    static final File       SRG_MCP_SRG   = new File("C:/Users/sora_suke/.gradle/caches/minecraft/de/oceanlabs/mcp/mcp_snapshot/20161111/1.10.2/srgs/mcp-srg.srg");
+    static final File       SRG_MCP_NOTCH = new File("C:/Users/sora_suke/.gradle/caches/minecraft/de/oceanlabs/mcp/mcp_snapshot/20161111/1.10.2/srgs/mcp-notch.srg");
+    static final File       CSV_DIR       = new File("C:/Users/sora_suke/.gradle/caches/minecraft/de/oceanlabs/mcp/mcp_snapshot/20161111");
 
     protected abstract void setDefaultArguments(Map<String, String> argMap);
 
@@ -57,7 +58,8 @@ public abstract class GradleStartCommon {
 
     protected abstract String getTweakClass();
 
-    protected void launch(String[] args) throws Throwable {
+    protected void launch(String[] args) throws Throwable
+    {
         // DEPRECATED, use the properties below instead!
         System.setProperty("net.minecraftforge.gradle.GradleStart.srgDir", SRG_DIR.getCanonicalPath());
 
@@ -80,7 +82,7 @@ public abstract class GradleStartCommon {
 
         // because its the dev env.
         System.setProperty("fml.ignoreInvalidMinecraftCertificates", "true"); // cant hurt. set it now.
-
+        
         net.minecraftforge.gradle.GradleForgeHacks.searchCoremods(this);
 
         // now the actual launch args.
@@ -92,27 +94,32 @@ public abstract class GradleStartCommon {
 
         // launch.
         System.gc();
-        Class.forName(getBounceClass()).getDeclaredMethod("main", String[].class).invoke(null, new Object[]{args});
+        Class.forName(getBounceClass()).getDeclaredMethod("main", String[].class).invoke(null, new Object[] { args });
     }
 
-    private String[] getArgs() {
+    private String[] getArgs()
+    {
         ArrayList<String> list = new ArrayList<String>(22);
 
-        for (Map.Entry<String, String> e : argMap.entrySet()) {
+        for (Map.Entry<String, String> e : argMap.entrySet())
+        {
             String val = e.getValue();
-            if (!Strings.isNullOrEmpty(val)) {
+            if (!Strings.isNullOrEmpty(val))
+            {
                 list.add("--" + e.getKey());
                 list.add(val);
             }
         }
 
         // grab tweakClass
-        if (!Strings.isNullOrEmpty(getTweakClass())) {
+        if (!Strings.isNullOrEmpty(getTweakClass()))
+        {
             list.add("--tweakClass");
             list.add(getTweakClass());
         }
 
-        if (extras != null) {
+        if (extras != null)
+        {
             list.addAll(extras);
         }
 
@@ -121,14 +128,17 @@ public abstract class GradleStartCommon {
         // final logging.
         StringBuilder b = new StringBuilder();
         b.append('[');
-        for (int x = 0; x < out.length; x++) {
+        for (int x = 0; x < out.length; x++)
+        {
             b.append(out[x]);
-            if ("--accessToken".equalsIgnoreCase(out[x])) {
+            if ("--accessToken".equalsIgnoreCase(out[x]))
+            {
                 b.append("{REDACTED}");
                 x++;
             }
 
-            if (x < out.length - 1) {
+            if (x < out.length - 1)
+            {
                 b.append(", ");
             }
         }
@@ -138,19 +148,23 @@ public abstract class GradleStartCommon {
         return out;
     }
 
-    private void parseArgs(String[] args) {
+    private void parseArgs(String[] args)
+    {
         final OptionParser parser = new OptionParser();
         parser.allowsUnrecognizedOptions();
 
-        for (String key : argMap.keySet()) {
+        for (String key : argMap.keySet())
+        {
             parser.accepts(key).withRequiredArg().ofType(String.class);
         }
 
         final NonOptionArgumentSpec<String> nonOption = parser.nonOptions();
 
         final OptionSet options = parser.parse(args);
-        for (String key : argMap.keySet()) {
-            if (options.hasArgument(key)) {
+        for (String key : argMap.keySet())
+        {
+            if (options.hasArgument(key))
+            {
                 String value = (String) options.valueOf(key);
                 argMap.put(key, value);
                 if (!"password".equalsIgnoreCase(key))
