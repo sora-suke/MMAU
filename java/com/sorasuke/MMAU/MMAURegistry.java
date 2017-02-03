@@ -6,6 +6,7 @@ import com.sorasuke.MMAU.items.*;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenBlock;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenHead;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
@@ -161,21 +162,21 @@ public class MMAURegistry {
 
     //アーマーマテリアル
     public static final ArmorMaterial NEGIARMOR = EnumHelper.addArmorMaterial
-            ("Negi", MMAU.MODID + "negi", 18, new int[]{5, 5, 5, 5}, 13, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 3);
+            ("Negi", MMAU.MODID + ":negi", 18, new int[]{5, 5, 5, 5}, 13, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 3);
     public static final ArmorMaterial CRYSTALARMOR = EnumHelper.addArmorMaterial
-            ("Crystal", MMAU.MODID + "crystal", 18, new int[]{3, 5, 4, 2}, 13, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0);
+            ("Crystal", MMAU.MODID + ":crystal", 18, new int[]{3, 5, 4, 2}, 13, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 0);
     public static final ArmorMaterial BRONZEARMOR = EnumHelper.addArmorMaterial
-            ("Bronze", MMAU.MODID + "bronze", 13, new int[]{2, 6, 5, 2}, 8, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0);
+            ("Bronze", MMAU.MODID + ":bronze", 13, new int[]{2, 6, 5, 2}, 8, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0);
     public static final ArmorMaterial COBALTARMOR = EnumHelper.addArmorMaterial
-            ("Cobalt", MMAU.MODID + "cobalt", 33, new int[]{3, 8, 6, 3}, 12, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 2);
+            ("Cobalt", MMAU.MODID + ":cobalt", 33, new int[]{3, 8, 6, 3}, 12, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 2);
     public static final ArmorMaterial ORICHALCUMARMOR = EnumHelper.addArmorMaterial
-            ("Orichalcum", MMAU.MODID + "orichalcum", 256, new int[]{5, 5, 5, 5}, 50, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 5);
+            ("Orichalcum", MMAU.MODID + ":orichalcum", 256, new int[]{5, 5, 5, 5}, 50, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 5);
     public static final ArmorMaterial SILVERARMOR = EnumHelper.addArmorMaterial
-            ("Silver", MMAU.MODID + "silver", 20, new int[]{3, 6, 4, 2}, 30, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0);
+            ("Silver", MMAU.MODID + ":silver", 20, new int[]{3, 6, 4, 2}, 30, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0);
     public static final ArmorMaterial PLATINUMARMOR = EnumHelper.addArmorMaterial
-            ("Platinum", MMAU.MODID + "platinum", 14, new int[]{2, 6, 5, 2}, 17, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0);
+            ("Platinum", MMAU.MODID + ":platinum", 14, new int[]{2, 6, 5, 2}, 17, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0);
     public static final ArmorMaterial STEELARMOR = EnumHelper.addArmorMaterial
-            ("Steel", MMAU.MODID + "steel", 32, new int[]{3, 8, 6, 3}, 9, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0);
+            ("Steel", MMAU.MODID + ":steel", 32, new int[]{3, 8, 6, 3}, 9, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0);
 
 
     //ネギツール
@@ -329,42 +330,42 @@ public class MMAURegistry {
 
     //ブロック
     public static final Block NegiOre = new MMAUBaseGemOre("negi_ore", new ItemStack(Negi), 3).setCreativeTab(MMAUTab).setHardness(3.0F).setResistance(5.0F);
-    public static final Block NegiBlock = new MMAUBaseBlock(Material.IRON, "negi_block", "pickaxe", 1).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
+    public static final Block NegiBlock = new MMAUBaseBlock(Material.IRON, "negi_block", "pickaxe", 1, SoundType.METAL).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
 
     public static final Block CrystalOre = new MMAUBaseGemOre("crystal_ore", new ItemStack(Crystal), 1).setCreativeTab(MMAUTab).setHardness(3.0F).setResistance(5.0F);
-    public static final Block CrystalBlock = new MMAUBaseBlock(Material.GLASS, "crystal_block", "pickaxe", 1).setCreativeTab(MMAUTab).setHardness(0.5F).setResistance(0.8F);
+    public static final Block CrystalBlock = new MMAUBaseBlock(Material.GLASS, "crystal_block", "pickaxe", 1, SoundType.GLASS).setCreativeTab(MMAUTab).setHardness(0.5F).setResistance(0.8F);
 
-    public static final Block BronzeBlock = new MMAUBaseBlock(Material.IRON, "bronze_block", "pickaxe", 1).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
+    public static final Block BronzeBlock = new MMAUBaseBlock(Material.IRON, "bronze_block", "pickaxe", 1, SoundType.METAL).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
 
     public static final Block CobaltOre = new MMAUBaseOre("cobalt_ore", 3).setCreativeTab(MMAUTab).setHardness(3.0F).setResistance(5.0F);
-    public static final Block CobaltBlock = new MMAUBaseBlock(Material.IRON, "cobalt_block", "pickaxe", 1).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
+    public static final Block CobaltBlock = new MMAUBaseBlock(Material.IRON, "cobalt_block", "pickaxe", 1, SoundType.METAL).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
 
     public static final Block CopperOre = new MMAUBaseOre("copper_ore", 1).setCreativeTab(MMAUTab).setHardness(3.0F).setResistance(5.0F);
-    public static final Block CopperBlock = new MMAUBaseBlock(Material.IRON, "copper_block", "pickaxe", 1).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
+    public static final Block CopperBlock = new MMAUBaseBlock(Material.IRON, "copper_block", "pickaxe", 1, SoundType.METAL).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
 
     public static final Block TinOre = new MMAUBaseOre("tin_ore", 1).setCreativeTab(MMAUTab).setHardness(3.0F).setResistance(5.0F);
-    public static final Block TinBlock = new MMAUBaseBlock(Material.IRON, "tin_block", "pickaxe", 1).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
+    public static final Block TinBlock = new MMAUBaseBlock(Material.IRON, "tin_block", "pickaxe", 1, SoundType.METAL).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
 
     public static final Block OrichalcumOre = new MMAUBaseOre("orichalcum_ore", 3).setCreativeTab(MMAUTab).setHardness(3.0F).setResistance(5.0F);
-    public static final Block OrichalcumBlock = new MMAUBaseBlock(Material.IRON, "orichalcum_block", "pickaxe", 1).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(600.0F);
+    public static final Block OrichalcumBlock = new MMAUBaseBlock(Material.IRON, "orichalcum_block", "pickaxe", 1, SoundType.METAL).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(600.0F);
 
     public static final Block SilverOre = new MMAUBaseOre("silver_ore", 2).setCreativeTab(MMAUTab).setHardness(3.0F).setResistance(5.0F);
-    public static final Block SilverBlock = new MMAUBaseBlock(Material.IRON, "silver_block", "pickaxe", 1).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
+    public static final Block SilverBlock = new MMAUBaseBlock(Material.IRON, "silver_block", "pickaxe", 1, SoundType.METAL).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
 
     public static final Block PlatinumOre = new MMAUBaseOre("platinum_ore", 2).setCreativeTab(MMAUTab).setHardness(3.0F).setResistance(5.0F);
-    public static final Block PlatinumBlock = new MMAUBaseBlock(Material.IRON, "platinum_block", "pickaxe", 1).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
+    public static final Block PlatinumBlock = new MMAUBaseBlock(Material.IRON, "platinum_block", "pickaxe", 1, SoundType.METAL).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
 
-    public static final Block SteelBlock = new MMAUBaseBlock(Material.IRON, "steel_block", "pickaxe", 1).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
+    public static final Block SteelBlock = new MMAUBaseBlock(Material.IRON, "steel_block", "pickaxe", 1, SoundType.METAL).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
 
-    public static final Block BrassBlock = new MMAUBaseBlock(Material.IRON, "brass_block", "pickaxe", 1).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
+    public static final Block BrassBlock = new MMAUBaseBlock(Material.IRON, "brass_block", "pickaxe", 1, SoundType.METAL).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
 
     public static final Block LeadOre = new MMAUBaseOre("lead_ore", 1).setCreativeTab(MMAUTab).setHardness(3.0F).setResistance(5.0F);
-    public static final Block LeadBlock = new MMAUBaseBlock(Material.IRON, "lead_block", "pickaxe", 1).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
+    public static final Block LeadBlock = new MMAUBaseBlock(Material.IRON, "lead_block", "pickaxe", 1, SoundType.METAL).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
 
     public static final Block ZincOre = new MMAUBaseOre("zinc_ore", 1).setCreativeTab(MMAUTab).setHardness(3.0F).setResistance(5.0F);
-    public static final Block ZincBlock = new MMAUBaseBlock(Material.IRON, "zinc_block", "pickaxe", 1).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
+    public static final Block ZincBlock = new MMAUBaseBlock(Material.IRON, "zinc_block", "pickaxe", 1, SoundType.METAL).setCreativeTab(MMAUTab).setHardness(5.0F).setResistance(10.0F);
 
-    public static final Block FeatherBlock = new MMAUBaseBlock(Material.CLOTH, "feather_block").setCreativeTab(MMAUTab).setHardness(0.8F);
+    public static final Block FeatherBlock = new MMAUBaseBlock(Material.CLOTH, "feather_block", SoundType.CLOTH).setCreativeTab(MMAUTab).setHardness(0.8F);
 
     public static final Block ChickenBlock = new ChickenBlock(Material.CLOTH, "chicken_block").setCreativeTab(MMAUUtilsTab).setHardness(1.0F).setResistance(1.0F);
     public static final Block ChickenHead = new ChickenHead(Material.CLOTH, "chicken_head").setCreativeTab(MMAUUtilsTab).setHardness(1.0F).setResistance(1.0F);
@@ -376,8 +377,20 @@ public class MMAURegistry {
      * IMMAUBaseItemを継承させれば名前もまとめて扱える
      */
     public static void registerItem(Item mmauBaseItem) {
+        registerI(mmauBaseItem, false);
+    }
+
+    public static void registerItem(Item mmauBaseItem, boolean isUseSpecialModel) {
+        registerI(mmauBaseItem, isUseSpecialModel);
+    }
+
+    public static void registerI(Item mmauBaseItem, boolean isUseSpecialModel){
         if (mmauBaseItem instanceof IMMAUBaseItem) {
             GameRegistry.register(mmauBaseItem, ((IMMAUBaseItem) mmauBaseItem).getLocation());
+            if(!isUseSpecialModel){
+
+                MMAU.proxy.registerItemModel(mmauBaseItem);
+            }
         } else {
             MMAULogger.error(mmauBaseItem.getUnlocalizedName() + " does not inherit IMMAUBaseItem!"); //たぶんこんなこと起きないだろうけど念のため
         }
