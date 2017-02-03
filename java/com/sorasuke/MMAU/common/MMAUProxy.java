@@ -13,4 +13,8 @@ public class MMAUProxy {
     public void registerItemBlockModel(Block b){
 
     }
+
+    public void registerItemModel(Item i){
+
+    }
 }
