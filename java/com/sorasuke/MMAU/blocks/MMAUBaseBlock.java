@@ -3,6 +3,7 @@ package com.sorasuke.MMAU.blocks;
 import com.sorasuke.MMAU.MMAU;
 import com.sorasuke.MMAU.items.IMMAUBaseItem;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.util.ResourceLocation;
@@ -18,16 +19,17 @@ public class MMAUBaseBlock extends Block implements IMMAUBaseBlock {
     private ResourceLocation location;
     public ItemBlock itemBlock;
 
-    public MMAUBaseBlock(Material material, String name, String harvestType, int harvestLevel) {
+    public MMAUBaseBlock(Material material, String name, String harvestType, int harvestLevel, SoundType soundType) {
         super(material);
         this.name = name;
         setUnlocalizedName("MMAU_" + name);
         this.location = new ResourceLocation(MMAU.MODID, this.name);
         setHarvestLevel(harvestType, harvestLevel);
         this.itemBlock = new ItemBlock(this);
+        setSoundType(soundType);
     }
 
-    public MMAUBaseBlock(Material material, String name) {
+    public MMAUBaseBlock(Material material, String name, SoundType soundType) {
         super(material);
         this.name = name;
         setUnlocalizedName("MMAU_" + name);
