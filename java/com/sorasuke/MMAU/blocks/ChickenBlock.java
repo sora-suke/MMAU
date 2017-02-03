@@ -5,10 +5,7 @@ import com.sorasuke.MMAU.MMAULogger;
 import com.sorasuke.MMAU.items.IMMAUBaseItem;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenBlock;
 import com.sorasuke.MMAU.utils.MMAUPlaySound;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockContainer;
-import net.minecraft.block.BlockHorizontal;
-import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.state.BlockStateContainer;
@@ -52,6 +49,7 @@ public class ChickenBlock extends BlockHorizontal implements IMMAUBaseBlock, ITi
         this.location = new ResourceLocation(MMAU.MODID, this.name);
         isBlockContainer = true;
         this.itemBlock = new ItemBlock(this);
+        setSoundType(SoundType.CLOTH);
     }
 
     /*@Override
@@ -63,15 +61,15 @@ public class ChickenBlock extends BlockHorizontal implements IMMAUBaseBlock, ITi
 
     @Override
     public void onBlockClicked(World world, BlockPos pos, EntityPlayer player) {
-        MMAUPlaySound.playSound(world, pos, "mob.chicken.hurt", SoundCategory.AMBIENT);
-        MMAUPlaySound.playSound(world, pos, "game.player.hurt", SoundCategory.AMBIENT);
+        MMAUPlaySound.playSound(world, pos, "entity.chicken.hurt", SoundCategory.BLOCKS);
+        MMAUPlaySound.playSound(world, pos, "entity.generic.hurt", SoundCategory.BLOCKS);
     }
 
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer entityPlayer, EnumHand hand, @Nullable ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
         if (!world.isRemote) {
             //FMLNetworkHandler.openGui(entityPlayer, MMAU.instance, MMAU.guiIdChickenBlock, world, x, y, z);
             entityPlayer.openGui(MMAU.instance, MMAU.guiIdChickenBlock, world, pos.getX(), pos.getY(), pos.getZ());
-            MMAULogger.log("onBlockActivated_openGUI");
+            //MMAULogger.log("onBlockActivated_openGUI");
 
         }
         return true;
@@ -81,14 +79,14 @@ public class ChickenBlock extends BlockHorizontal implements IMMAUBaseBlock, ITi
 
     @Override
     public TileEntity createNewTileEntity(World p_149915_1_, int p_149915_2_) {
-        // TODO 自動生成されたメソッド・スタブ
-        MMAULogger.log("createNewTileEntity");
+        //MMAULogger.log("createNewTileEntity");
         return new TileEntityChickenBlock();
     }
 
     public void breakBlock(World world, BlockPos pos, IBlockState state) {
-        MMAUPlaySound.playSound(world, pos, "mob.chicken.hurt", SoundCategory.AMBIENT);
-        MMAUPlaySound.playSound(world, pos, "game.player.hurt", SoundCategory.AMBIENT);
+        MMAULogger.log("音出てるん?これ");
+        MMAUPlaySound.playSound(world, pos, "entity.chicken.hurt", SoundCategory.BLOCKS);
+        MMAUPlaySound.playSound(world, pos, "entity.generic.hurt", SoundCategory.BLOCKS);
         if (!keepInventory) {
             TileEntityChickenBlock tileEntity = (TileEntityChickenBlock) world.getTileEntity(pos);
 
