@@ -1,0 +1,1 @@
+{"forge_marker":1,"defaults":{"model":"cube_all","textures":{"all":"morematerialsandutilities:blocks/platinum_ore"},"transform": "forge:default-block"},"variants": {"normal":[{}],"inventory":[{}]}}
