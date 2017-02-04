@@ -13,6 +13,17 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/minecraft/deobfedDeps/deobf/mezz/jei/jei_1.10.2/3.13.0.330/jei_1.10.2-3.13.0.330.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/minecraft/deobfedDeps/deobf/mezz/jei/jei_1.10.2/3.13.0.330/jei_1.10.2-3.13.0.330-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
           <root url="jar://$USER_HOME$/.gradle/caches/minecraft/deobfedDeps/compileDummy.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -708,6 +719,19 @@
         <JAVADOC />
         <SOURCES>
           <root url="jar://$USER_HOME$/.gradle/caches/minecraft/net/minecraftforge/forge/1.10.2-12.18.3.2185/snapshot/20161111/forgeSrc-1.10.2-12.18.3.2185-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/mezz.jei/jei_1.10.2/3.13.0.330/55e3e2167de36b77fc0eda0e21eb9a61506af8b8/jei_1.10.2-3.13.0.330.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/mezz.jei/jei_1.10.2/3.13.0.330/3277a988ca62bf33539a04ec19e02b93681370b8/jei_1.10.2-3.13.0.330-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/mezz.jei/jei_1.10.2/3.13.0.330/d7838b58bac1238d2735b39a40efa7fc2dfa8fff/jei_1.10.2-3.13.0.330-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
