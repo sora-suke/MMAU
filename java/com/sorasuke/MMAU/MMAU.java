@@ -5,6 +5,8 @@ import com.sorasuke.MMAU.common.MMAUProxy;
 import com.sorasuke.MMAU.gens.MMAUGens;
 
 
+import com.sorasuke.MMAU.items.MMAUBaseTool;
+import net.minecraft.client.Minecraft;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -54,6 +56,7 @@ public class MMAU {
         MMAURecipeRegister.registry(this);// レシピ登録
         MMAUGens.registry(this);// ワールド生成関連
         MinecraftForge.EVENT_BUS.register(new MMAUEvents());
+        MinecraftForge.EVENT_BUS.register(MMAURegistry.IronMortar);
 
     }
 
