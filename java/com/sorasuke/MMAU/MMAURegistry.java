@@ -67,7 +67,7 @@ public class MMAURegistry {
         @Override
         @SideOnly(Side.CLIENT)
         public void addInformation(ItemStack itemstack, EntityPlayer player, List list, boolean advanced) {
-            list.add(ChatFormatting.GREEN + I18n.format("text.silver.tooltip", null));
+            list.add(ChatFormatting.AQUA + I18n.format("text.silver.tooltip", null));
         }
     }.setCreativeTab(MMAUTab);
     public static final Item Platinum = new MMAUBaseItem("platinum").setCreativeTab(MMAUTab);
