@@ -90,6 +90,10 @@ public class MMAURecipeRegister {
         registerMaterialProcessingResipe("ingotZinc", "oreZinc", "nuggetZinc", "dustZinc", "blockZinc"
                 , new ItemStack(MMAURegistry.Zinc), new ItemStack(MMAURegistry.ZincOre), new ItemStack(MMAURegistry.ZincNugget), new ItemStack(MMAURegistry.ZincDust), new ItemStack(MMAURegistry.ZincBlock), 0.7f);
 
+
+        //registerMetalRecipes("Cobalt", new ItemStack(MMAURegistry.Cobalt), new ItemStack(MMAURegistry.CobaltOre), new ItemStack(MMAURegistry.CobaltNugget), new ItemStack(MMAURegistry.CobaltDust), new ItemStack(MMAURegistry.CobaltBlock), 0.7f);
+
+
         // 鉄系
         GameRegistry.addRecipe(
                 new ShapelessOreRecipe(new ItemStack(MMAURegistry.IronNugget, 9, 0), "ingotIron"));
@@ -190,6 +194,23 @@ public class MMAURecipeRegister {
         GameRegistry.addRecipe(new ShapedOreRecipe(boots, "H H", "H H", 'H', itemStack));
     }
 
+
+    public static void registerMetalRecipes(String dictName, ItemStack ingot, ItemStack ore, ItemStack nugget, ItemStack dust, ItemStack block, float smeltExp){
+        GameRegistry.addSmelting(ore, ingot, smeltExp);//鉱石からインゴット
+        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(dust.getItem(), 2), "ore" + dictName, "craftingToolMotor"));//鉱石から粉
+        GameRegistry.addSmelting(dust, ingot, smeltExp);//粉からインゴット
+        GameRegistry.addRecipe(new ShapelessOreRecipe(dust, "ingot" + dictName, "craftingToolMotor"));//インゴットから粉
+        GameRegistry.addRecipe(new ShapedOreRecipe(ingot, "HHH", "HHH", "HHH", 'H', "nugget" + dictName));
+        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(nugget.getItem(), 9), "ingot" + dictName));
+        GameRegistry.addRecipe(new ShapedOreRecipe(block, "HHH", "HHH", "HHH", 'H', "ingot" + dictName));
+        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ingot.getItem(), 9), "block" + dictName));
+    }
+
+
+
+
+
+
     /**
      * インゴットを精錬したり粉砕したり圧縮するレシピをまとめて登録する
      * 粉と鉱石はNullにすれば宝石系/合金って感じになる
@@ -207,10 +228,11 @@ public class MMAURecipeRegister {
      * @param block
      * @param smeltExp   精錬時の経験値
      */
-    public static void registerMaterialProcessingResipe(String ingotDict, String oreDict, String nuggetDict, String dustDict, String blockDict, ItemStack ingot, ItemStack ore, ItemStack nugget, ItemStack dust, ItemStack block, float smeltExp) {
+    public static void registerMaterialProcessingResipe(String ingotDict, String oreDict, String nuggetDict, String dustDict, String blockDict
+            , ItemStack ingot, ItemStack ore, ItemStack nugget, ItemStack dust, ItemStack block, float smeltExp) {
         if (ore != null && dust != null) {//粉と鉱石が両方ある
             GameRegistry.addSmelting(ore, ingot, smeltExp);//鉱石からインゴット
-            GameRegistry.addRecipe(new ShapelessOreRecipe(dust.splitStack(2), oreDict, "craftingToolMotor"));//鉱石から粉
+            GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(dust.getItem(),2), oreDict, "craftingToolMotor"));//鉱石から粉
             GameRegistry.addSmelting(dust, ingot, smeltExp);//粉からインゴット
             GameRegistry.addRecipe(new ShapelessOreRecipe(dust, ingotDict, "craftingToolMotor"));//インゴットから粉
         } else if (dust != null) {//粉しか無い
@@ -221,10 +243,10 @@ public class MMAURecipeRegister {
         }
         if (nugget != null) {
             GameRegistry.addRecipe(new ShapedOreRecipe(ingot, "HHH", "HHH", "HHH", 'H', nuggetDict));
-            GameRegistry.addRecipe(new ShapelessOreRecipe(nugget.splitStack(9), ingotDict));
+            GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(nugget.getItem(), 9), ingotDict));
         }
         GameRegistry.addRecipe(new ShapelessOreRecipe(block, ingotDict, ingotDict, ingotDict, ingotDict, ingotDict, ingotDict, ingotDict, ingotDict, ingotDict));
-        GameRegistry.addRecipe(new ShapelessOreRecipe(ingot.splitStack(9), blockDict));
+        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ingot.getItem(), 9), blockDict));
     }
 
 
