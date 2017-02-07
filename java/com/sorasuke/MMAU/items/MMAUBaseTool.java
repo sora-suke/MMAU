@@ -37,6 +37,7 @@ public class MMAUBaseTool extends Item implements IMMAUBaseItem {
         this.location = new ResourceLocation(MMAU.MODID, name);
         setMaxDamage(durability);
         setHasSubtypes(false);
+        setContainerItem(this);
         setMaxStackSize(1);//ウォォーーーーーーッ! これの指定やってなかったアアアアアアアアアア
     }
 
@@ -47,10 +48,13 @@ public class MMAUBaseTool extends Item implements IMMAUBaseItem {
 
     @Override
     public ItemStack getContainerItem(ItemStack item) {
-        if(item != null && item.getItem() == this){
-            item.setItemDamage(item.getItemDamage()+1);
+        if (item.getItem() == this) {
+            Random rand = Item.itemRand;
+            boolean flag = item.attemptDamageItem(1, rand);
+            return flag ? null : new ItemStack(item.getItem(), 1, item.getMetadata());
+
         }
-        return item;
+        return null;
     }
 
     @SubscribeEvent
