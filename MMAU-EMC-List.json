@@ -1,0 +1,26 @@
+{
+    "values": {
+        "before": {
+            "OD|gemNegi": 4096,
+            "OD|gemCrystal": 128,
+            "OD|ingotOrichalcum": 65536,
+            "OD|ingotZinc": 128,
+            "OD|ingotSteel": 512,
+            "OD|ingotBrass":128,
+            "OD|dustBronze":160,
+            "OD|dustCobalt":1024,
+            "OD|dustOrichalcum":65536,
+            "OD|dustDilver":512,
+            "OD|dustPlatinum":4096,
+            "OD|dustSteel":512,
+            "OD|dustCopper":128,
+            "OD|dustTin":256,
+            "OD|dustBrass":128,
+            "OD|dustLead":512,
+            "OD|dustZinc":128,
+            "OD|dustIron":128,
+            "OD|dustGold":2048,
+            "morematerialsandutilities:chicken_head|0":512
+        }
+    }
+}
