@@ -1,4 +1,4 @@
-﻿*MoreMaterialsAndUtilities-0.1.1
+﻿*MoreMaterialsAndUtilities-0.1.1-1.10.2
  ･作者 :sora_suke(Twitter :@sora_suke_mc)
  ･配布サイト(非公式フォーラム) :http://forum.minecraftuser.jp/viewtopic.php?f=13&t=29713
   (Curse) :https://minecraft.curseforge.com/projects/morematerialsandutilities
@@ -52,11 +52,11 @@
 
   ･巨大クリスタル鉱床-クリスタルブロックの大きな鉱脈
 
- レシピはNEIやクラフトガイドで確認してください｡
+ レシピはJEI､NEIやクラフトガイドで確認してください｡
 
 
 *導入方法
- ･前提:forge10.13.4.1614以降｡
+ ･前提:forge12.18.3.2185以降｡
  ･このJarファイルをmodsに放り込む｡
 
  ･Curseクライアントを使ってるなら
@@ -64,6 +64,10 @@
   ･インストールボタンを押す｡
 
 *チェンジログ
+ ･2017/2/hoge
+  ･0.1.1-1.10.2リリース
+  ･1.10.2に対応!
+
  ･2017/1/2
   ･0.1.1リリース
   ･羽ブロックの落下ダメージ軽減がうまく働いてなかったのを修正

@@ -3,12 +3,14 @@ Settings evaluated using settings file 'C:\master\settings.gradle'.
 Projects loaded. Root project using build file 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build.gradle'.
 Included projects: [root project 'MMAU']
 Evaluating root project 'MMAU' using build file 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build.gradle'.
-Cached resource http://files.minecraftforge.net/maven/net/minecraftforge/gradle/ForgeGradle/2.2-SNAPSHOT/ForgeGradle-2.2-20170124.182723-28.pom is up-to-date (lastModified: Wed Jan 25 03:27:26 JST 2017).
+Compiling build file 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build.gradle' using SubsetScriptTransformer.
+Found locally available resource with matching checksum: [http://files.minecraftforge.net/maven/net/minecraftforge/gradle/ForgeGradle/2.2-SNAPSHOT/ForgeGradle-2.2-20170206.202001-30.pom, C:\Users\sora_suke\.gradle\caches\modules-2\files-2.1\net.minecraftforge.gradle\ForgeGradle\2.2-SNAPSHOT\9f76801c419c6a7701bf4bd76a65dd14f85950bf\ForgeGradle-2.2-SNAPSHOT.pom]
 Cached resource http://files.minecraftforge.net/maven/net/minecraftforge/fernflower/2.0-SNAPSHOT/fernflower-2.0-20151214.100946-17.pom is up-to-date (lastModified: Mon Dec 14 13:09:48 JST 2015).
-Cached resource http://files.minecraftforge.net/maven/net/minecraftforge/gradle/ForgeGradle/2.2-SNAPSHOT/ForgeGradle-2.2-20170124.182723-28.jar is up-to-date (lastModified: Wed Jan 25 03:27:24 JST 2017).
+Download http://files.minecraftforge.net/maven/net/minecraftforge/gradle/ForgeGradle/2.2-SNAPSHOT/ForgeGradle-2.2-20170206.202001-30.jar
 Cached resource http://files.minecraftforge.net/maven/net/minecraftforge/fernflower/2.0-SNAPSHOT/fernflower-2.0-20151214.100946-17.jar is up-to-date (lastModified: Mon Dec 14 13:09:48 JST 2015).
+Compiling build file 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build.gradle' using BuildScriptTransformer.
 #################################################
-         ForgeGradle 2.2-SNAPSHOT-59eb824        
+         ForgeGradle 2.2-SNAPSHOT-2112b0a        
   https://github.com/MinecraftForge/ForgeGradle  
 #################################################
                Powered by MCP unknown               
@@ -19,34 +21,49 @@ Cached resource http://files.minecraftforge.net/maven/net/minecraftforge/fernflo
 file or directory 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\src\api\resources', not found
 All projects evaluated.
 Selected primary task 'build' from project :
-Tasks to be executed: [task ':deobfCompileDummyTask', task ':deobfProvidedDummyTask', task ':sourceApiJava', task ':compileApiJava', task ':processApiResources', task ':apiClasses', task ':sourceMainJava', task ':compileJava', task ':processResources', task ':classes', task ':jar', task ':sourceTestJava', task ':compileTestJava', task ':processTestResources', task ':testClasses', task ':test', task ':extractMcpData', task ':extractMcpMappings', task ':getVersionJson', task ':extractUserdev', task ':genSrgs', task ':reobfJar', task ':extractRangemapReplacedMain', task ':retromapReplacedMain', task ':sourceJar', task ':assemble', task ':check', task ':build']
+Tasks to be executed: [task ':extractMcpMappings', task ':deobfCompileDeobfDepTask0', task ':deobfCompileRemapDepSourcesTask1', task ':deobfCompileDummyTask', task ':deobfProvidedDummyTask', task ':sourceApiJava', task ':compileApiJava', task ':processApiResources', task ':apiClasses', task ':sourceMainJava', task ':compileJava', task ':processResources', task ':classes', task ':jar', task ':sourceTestJava', task ':compileTestJava', task ':processTestResources', task ':testClasses', task ':test', task ':extractMcpData', task ':getVersionJson', task ':extractUserdev', task ':genSrgs', task ':reobfJar', task ':extractRangemapReplacedMain', task ':retromapReplacedMain', task ':sourceJar', task ':assemble', task ':check', task ':build']
+:extractMcpMappings (Thread[main,5,main]) started.
+:extractMcpMappings
+Skipping task ':extractMcpMappings' as task onlyIf is false.
+:extractMcpMappings SKIPPED
+:extractMcpMappings (Thread[main,5,main]) completed. Took 0.629 secs.
+:deobfCompileDeobfDepTask0 (Thread[main,5,main]) started.
+:deobfCompileDeobfDepTask0
+Skipping task ':deobfCompileDeobfDepTask0' as task onlyIf is false.
+:deobfCompileDeobfDepTask0 SKIPPED
+:deobfCompileDeobfDepTask0 (Thread[main,5,main]) completed. Took 0.559 secs.
+:deobfCompileRemapDepSourcesTask1 (Thread[main,5,main]) started.
+:deobfCompileRemapDepSourcesTask1
+Skipping task ':deobfCompileRemapDepSourcesTask1' as task onlyIf is false.
+:deobfCompileRemapDepSourcesTask1 SKIPPED
+:deobfCompileRemapDepSourcesTask1 (Thread[main,5,main]) completed. Took 0.553 secs.
 :deobfCompileDummyTask (Thread[main,5,main]) started.
 :deobfCompileDummyTask
-Executing task ':deobfCompileDummyTask' (up-to-date check took 0.0 secs) due to:
+Executing task ':deobfCompileDummyTask' (up-to-date check took 0.001 secs) due to:
   Task has not declared any outputs.
-:deobfCompileDummyTask (Thread[main,5,main]) completed. Took 0.01 secs.
+:deobfCompileDummyTask (Thread[main,5,main]) completed. Took 0.004 secs.
 :deobfProvidedDummyTask (Thread[main,5,main]) started.
 :deobfProvidedDummyTask
 Executing task ':deobfProvidedDummyTask' (up-to-date check took 0.0 secs) due to:
   Task has not declared any outputs.
-:deobfProvidedDummyTask (Thread[main,5,main]) completed. Took 0.003 secs.
+:deobfProvidedDummyTask (Thread[main,5,main]) completed. Took 0.002 secs.
 :sourceApiJava (Thread[main,5,main]) started.
 :sourceApiJava
 file or directory 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\src\api\java', not found
-Skipping task ':sourceApiJava' as it is up-to-date (took 0.049 secs).
-:sourceApiJava UP-TO-DATE
-:sourceApiJava (Thread[main,5,main]) completed. Took 0.05 secs.
+Executing task ':sourceApiJava' (up-to-date check took 0.237 secs) due to:
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\sources\api\java has changed.
+:sourceApiJava (Thread[main,5,main]) completed. Took 0.306 secs.
 :compileApiJava (Thread[main,5,main]) started.
 :compileApiJava
 Skipping task ':compileApiJava' as it has no source files.
 :compileApiJava UP-TO-DATE
-:compileApiJava (Thread[main,5,main]) completed. Took 0.0 secs.
+:compileApiJava (Thread[main,5,main]) completed. Took 0.002 secs.
 :processApiResources (Thread[main,5,main]) started.
 :processApiResources
 file or directory 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\src\api\resources', not found
 Skipping task ':processApiResources' as it has no source files.
 :processApiResources UP-TO-DATE
-:processApiResources (Thread[main,5,main]) completed. Took 0.0 secs.
+:processApiResources (Thread[main,5,main]) completed. Took 0.003 secs.
 :apiClasses (Thread[main,5,main]) started.
 :apiClasses
 Skipping task ':apiClasses' as it has no actions.
@@ -54,28 +71,27 @@ Skipping task ':apiClasses' as it has no actions.
 :apiClasses (Thread[main,5,main]) completed. Took 0.0 secs.
 :sourceMainJava (Thread[main,5,main]) started.
 :sourceMainJava
-Executing task ':sourceMainJava' (up-to-date check took 0.11 secs) due to:
-  Input file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\java\com\sorasuke\MMAU\common\MMAUProxy.java has changed.
-  Input file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\java\com\sorasuke\MMAU\blocks\ChickenHead.java has changed.
-  Input file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\java\com\sorasuke\MMAU\client\MMAUClientProxy.java has changed.
-:sourceMainJava (Thread[main,5,main]) completed. Took 1.062 secs.
+Executing task ':sourceMainJava' (up-to-date check took 0.121 secs) due to:
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\sources\main\java has changed.
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\sources\main\java\com\sorasuke\MMAU\MMAU.java has been removed.
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\sources\main\java\com\sorasuke\MMAU\items\MMAUBaseArmor.java has been removed.
+:sourceMainJava (Thread[main,5,main]) completed. Took 1.902 secs.
 :compileJava (Thread[main,5,main]) started.
 :compileJava
-Executing task ':compileJava' (up-to-date check took 1.562 secs) due to:
-  Input file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\sources\main\java\com\sorasuke\MMAU\MMAURegistry.java has changed.
-  Input file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\sources\main\java\com\sorasuke\MMAU\tileentities\TileEntityChickenBlock.java has changed.
-  Input file C:\Users\sora_suke\.gradle\caches\minecraft\deobfedDeps\compileDummy.jar has changed.
+Executing task ':compileJava' (up-to-date check took 1.439 secs) due to:
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\classes\main has changed.
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\dependency-cache has changed.
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\classes\main\com\sorasuke\MMAU\items\MMAUBasePickaxe.class has been removed.
+All input files are considered out-of-date for incremental task ':compileJava'.
 Compiling with JDK Java compiler API.
-エラー: C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\libs\ProjectE-1.7.10-PE1.10.0.jarの読込みエラーです。zip file is empty
-エラー: C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\libs\ProjectE-1.7.10-PE1.10.0.jarの読込みエラーです。zip file is empty
 C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\sources\main\java\com\sorasuke\MMAU\MMAURegistry.java:73: 警告: 最終パラメータの不正確な引数型を持った可変引数メソッドの非可変引数呼出し。
             list.add(ChatFormatting.GREEN + I18n.format("text.negi.tooltip", null));
                                                                              ^
   可変引数呼出しに関してはObjectにキャストします。
   非可変引数呼出しに関してはObject[]にキャストしてこの警告を出さないようにします
 C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\sources\main\java\com\sorasuke\MMAU\MMAURegistry.java:91: 警告: 最終パラメータの不正確な引数型を持った可変引数メソッドの非可変引数呼出し。
-            list.add(ChatFormatting.GREEN + I18n.format("text.silver.tooltip", null));
-                                                                               ^
+            list.add(ChatFormatting.AQUA + I18n.format("text.silver.tooltip", null));
+                                                                              ^
   可変引数呼出しに関してはObjectにキャストします。
   非可変引数呼出しに関してはObject[]にキャストしてこの警告を出さないようにします
 注意:一部の入力ファイルは非推奨のAPIを使用またはオーバーライドしています。
@@ -83,40 +99,38 @@ C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\sources\main\java\com\sora
 注意:C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\sources\main\java\com\sorasuke\MMAU\items\ExplosionButton.javaの操作は、未チェックまたは安全ではありません。
 注意:詳細は、-Xlint:uncheckedオプションを指定して再コンパイルしてください。
 警告2個
-:compileJava (Thread[main,5,main]) completed. Took 2.922 secs.
+:compileJava (Thread[main,5,main]) completed. Took 9.902 secs.
 :processResources (Thread[main,5,main]) started.
 :processResources
-Executing task ':processResources' (up-to-date check took 0.157 secs) due to:
-  Input file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\resource\assets\morematerialsandutilities\blockstates\crystal_block.json has been added.
-  Input file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\resource\assets\morematerialsandutilities\models\item\gold_plate.json has been added.
-  Input file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\resource\assets\morematerialsandutilities\models\item\silver_sword.json has been added.
-:processResources (Thread[main,5,main]) completed. Took 3.367 secs.
+Executing task ':processResources' (up-to-date check took 0.051 secs) due to:
+  Value of input property 'version' has changed for task ':processResources'
+:processResources (Thread[main,5,main]) completed. Took 3.962 secs.
 :classes (Thread[main,5,main]) started.
 :classes
 Skipping task ':classes' as it has no actions.
 :classes (Thread[main,5,main]) completed. Took 0.0 secs.
 :jar (Thread[main,5,main]) started.
 :jar
-Executing task ':jar' (up-to-date check took 0.109 secs) due to:
-  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\libs\MoreMaterialsAndUtilities-0.2.0-1.10.2.jar has changed.
-:jar (Thread[main,5,main]) completed. Took 0.313 secs.
+Executing task ':jar' (up-to-date check took 0.001 secs) due to:
+  No history is available.
+:jar (Thread[main,5,main]) completed. Took 0.499 secs.
 :sourceTestJava (Thread[main,5,main]) started.
 :sourceTestJava
 file or directory 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\src\test\java', not found
-Skipping task ':sourceTestJava' as it is up-to-date (took 0.0 secs).
-:sourceTestJava UP-TO-DATE
-:sourceTestJava (Thread[main,5,main]) completed. Took 0.015 secs.
+Executing task ':sourceTestJava' (up-to-date check took 0.001 secs) due to:
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\sources\test\java has changed.
+:sourceTestJava (Thread[main,5,main]) completed. Took 0.031 secs.
 :compileTestJava (Thread[main,5,main]) started.
 :compileTestJava
 Skipping task ':compileTestJava' as it has no source files.
 :compileTestJava UP-TO-DATE
-:compileTestJava (Thread[main,5,main]) completed. Took 0.0 secs.
+:compileTestJava (Thread[main,5,main]) completed. Took 0.002 secs.
 :processTestResources (Thread[main,5,main]) started.
 :processTestResources
 file or directory 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\src\test\resources', not found
 Skipping task ':processTestResources' as it has no source files.
 :processTestResources UP-TO-DATE
-:processTestResources (Thread[main,5,main]) completed. Took 0.0 secs.
+:processTestResources (Thread[main,5,main]) completed. Took 0.001 secs.
 :testClasses (Thread[main,5,main]) started.
 :testClasses
 Skipping task ':testClasses' as it has no actions.
@@ -127,60 +141,51 @@ Skipping task ':testClasses' as it has no actions.
 file or directory 'C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\classes\test', not found
 Skipping task ':test' as it has no source files.
 :test UP-TO-DATE
-:test (Thread[main,5,main]) completed. Took 0.0 secs.
+:test (Thread[main,5,main]) completed. Took 0.001 secs.
 :extractMcpData (Thread[main,5,main]) started.
 :extractMcpData
 Skipping task ':extractMcpData' as task onlyIf is false.
 :extractMcpData SKIPPED
-:extractMcpData (Thread[main,5,main]) completed. Took 5.819 secs.
-:extractMcpMappings (Thread[main,5,main]) started.
-:extractMcpMappings
-Skipping task ':extractMcpMappings' as task onlyIf is false.
-:extractMcpMappings SKIPPED
-:extractMcpMappings (Thread[main,5,main]) completed. Took 0.537 secs.
+:extractMcpData (Thread[main,5,main]) completed. Took 5.665 secs.
 :getVersionJson (Thread[main,5,main]) started.
 :getVersionJson
-Executing task ':getVersionJson' (up-to-date check took 0.0 secs) due to:
+Executing task ':getVersionJson' (up-to-date check took 0.022 secs) due to:
   Task.upToDateWhen is false.
-:getVersionJson (Thread[main,5,main]) completed. Took 1.077 secs.
+:getVersionJson (Thread[main,5,main]) completed. Took 0.37 secs.
 :extractUserdev (Thread[main,5,main]) started.
 :extractUserdev
-Skipping task ':extractUserdev' as it is up-to-date (took 0.109 secs).
+Skipping task ':extractUserdev' as it is up-to-date (took 0.131 secs).
 :extractUserdev UP-TO-DATE
-:extractUserdev (Thread[main,5,main]) completed. Took 0.109 secs.
+:extractUserdev (Thread[main,5,main]) completed. Took 0.131 secs.
 :genSrgs (Thread[main,5,main]) started.
 :genSrgs
 Skipping task ':genSrgs' as task onlyIf is false.
 :genSrgs SKIPPED
-:genSrgs (Thread[main,5,main]) completed. Took 0.313 secs.
+:genSrgs (Thread[main,5,main]) completed. Took 0.382 secs.
 :reobfJar (Thread[main,5,main]) started.
 :reobfJar
 Executing task ':reobfJar' (up-to-date check took 0.0 secs) due to:
   Task.upToDateWhen is false.
-:reobfJar (Thread[main,5,main]) completed. Took 0.484 secs.
+:reobfJar (Thread[main,5,main]) completed. Took 1.204 secs.
 :extractRangemapReplacedMain (Thread[main,5,main]) started.
 :extractRangemapReplacedMain
-Executing task ':extractRangemapReplacedMain' (up-to-date check took 0.0 secs) due to:
-  Input file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\sources\main\java\com\sorasuke\MMAU\MMAURegistry.java has changed.
-  Input file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\sources\main\java\com\sorasuke\MMAU\tileentities\TileEntityChickenBlock.java has changed.
-  Input file C:\Users\sora_suke\.gradle\caches\minecraft\deobfedDeps\compileDummy.jar has changed.
+Executing task ':extractRangemapReplacedMain' (up-to-date check took 0.018 secs) due to:
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\retromapping\replacedMain.rangemap has changed.
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\retromapping\replacedMain.rangemap has been removed.
 C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\sources\main\java
-:extractRangemapReplacedMain (Thread[main,5,main]) completed. Took 1.538 secs.
+:extractRangemapReplacedMain (Thread[main,5,main]) completed. Took 6.001 secs.
 :retromapReplacedMain (Thread[main,5,main]) started.
 :retromapReplacedMain
-Executing task ':retromapReplacedMain' (up-to-date check took 0.0 secs) due to:
-  Input file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\sources\main\java\com\sorasuke\MMAU\MMAURegistry.java has changed.
-  Input file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\sources\main\java\com\sorasuke\MMAU\tileentities\TileEntityChickenBlock.java has changed.
-  Input file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\retromapping\replacedMain.rangemap has changed.
+Executing task ':retromapReplacedMain' (up-to-date check took 0.002 secs) due to:
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\retromapping\retromappedReplacedMain.jar has changed.
+  Output file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\retromapping\retromappedReplacedMain.jar has been removed.
 remapping source...
-:retromapReplacedMain (Thread[main,5,main]) completed. Took 1.06 secs.
+:retromapReplacedMain (Thread[main,5,main]) completed. Took 1.834 secs.
 :sourceJar (Thread[main,5,main]) started.
 :sourceJar
-Executing task ':sourceJar' (up-to-date check took 0.016 secs) due to:
-  Input file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\resources\main\assets\morematerialsandutilities\models\item\bronze_plate.json has been added.
-  Input file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\resources\main\assets\morematerialsandutilities\models\item\silver.json has been added.
-  Input file C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\build\resources\main\assets\morematerialsandutilities\models\item\tin_dust.json has been added.
-:sourceJar (Thread[main,5,main]) completed. Took 0.215 secs.
+Executing task ':sourceJar' (up-to-date check took 0.001 secs) due to:
+  No history is available.
+:sourceJar (Thread[main,5,main]) completed. Took 0.414 secs.
 :assemble (Thread[main,5,main]) started.
 :assemble
 Skipping task ':assemble' as it has no actions.
@@ -197,5 +202,5 @@ Skipping task ':build' as it has no actions.
 
 BUILD SUCCESSFUL
 
-Total time: 55.871 secs
+Total time: 4 mins 10.388 secs
 Stopped 0 compiler daemon(s).

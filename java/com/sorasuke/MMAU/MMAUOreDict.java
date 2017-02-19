@@ -1,5 +1,6 @@
 package com.sorasuke.MMAU;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -44,6 +45,7 @@ public class MMAUOreDict {
         OreDictionary.registerOre("dustGold", new ItemStack(MMAURegistry.GoldDust));
         OreDictionary.registerOre("plateGold", new ItemStack(MMAURegistry.GoldPlate));
 
+        OreDictionary.registerOre("coal", new ItemStack(Items.COAL));
         OreDictionary.registerOre("dustCoal", new ItemStack(MMAURegistry.CoalDust));
 
         OreDictionary.registerOre("craftingToolMotor", new ItemStack(MMAURegistry.IronMortar, 1, 32767));

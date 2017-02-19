@@ -1,5 +1,5 @@
 #################################################
-         ForgeGradle 2.2-SNAPSHOT-59eb824        
+         ForgeGradle 2.2-SNAPSHOT-2112b0a        
   https://github.com/MinecraftForge/ForgeGradle  
 #################################################
                Powered by MCP unknown               
@@ -23,14 +23,14 @@
 :mergeJars SKIPPED
 :deobfMcSRG SKIPPED
 :decompileMc SKIPPED
-:fixMcSources SKIPPED
+:fixMcSources
 :applySourcePatches SKIPPED
 :remapMcSources SKIPPED
 :recompileMc SKIPPED
 :extractNatives SKIPPED
 :getAssetIndex UP-TO-DATE
 :getAssets
-Current status: 999/1112   89%
+Current status: 1110/1112   99%
 :makeStart
 :setupDecompWorkspace
 :ideaModule
@@ -40,4 +40,4 @@ Current status: 999/1112   89%
 
 BUILD SUCCESSFUL
 
-Total time: 14.879 secs
+Total time: 40.073 secs

@@ -1,4 +1,4 @@
-*MoreMaterialsAndUtilities-0.1.1
+*MoreMaterialsAndUtilities-0.1.1-1.10.2
  ･Producer :sora_suke(Twitter :@sora_suke_mc)
  ･Distribution site(Minecraft Unofficial Japan Users Forum) :http://forum.minecraftuser.jp/viewtopic.php?f=13&t=29713
   (Curse) :https://minecraft.curseforge.com/projects/morematerialsandutilities
@@ -52,10 +52,10 @@
 
   ･Giant Crystal Deposit-Large vein of crystal block
 
-  Please check recipes with NEI or Craft guide.
+  Please check recipes with JEI, NEI or Craft guide.
 
 *How to install.
- ･Install Forge version 10.13.4.1614 or later.
+ ･Install Forge version 12.18.3.2185 or later.
  ･Enter this jar file in the mods folder.
 
  ･If you use Curse client,
@@ -63,6 +63,10 @@
   ･Press that install button.
 
 *Change log
+ ･February foo, 2017
+  ･Release ver 0.1.1-1.10.2.
+  ･Now available on 1.10.2!
+
  ･January 2, 2017
   ･Release ver0.1.1
   ･Fixed that the falling damage reduction of the feather block did not work well.
