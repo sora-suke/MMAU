@@ -18,7 +18,7 @@ public class MMAUBaseTab extends CreativeTabs{
 
     public MMAUBaseTab(String title, ItemStack icon){
         super(title);
-        MMAULogger.log("Construct of MMAUBaseTab called!");
+        //MMAULogger.log("Construct of MMAUBaseTab called!");
         if(icon != null){
             iconItem = icon;
         }else{
