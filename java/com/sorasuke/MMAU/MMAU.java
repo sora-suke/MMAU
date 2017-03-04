@@ -32,8 +32,7 @@ public class MMAU {
     //GUIのID
     public static final int guiIdChickenBlock = 0;
 
-    //連携MODが読み込まれてるかのBoolean
-    public boolean loadedProjectE;
+
 
 
     @Mod.EventHandler
@@ -62,13 +61,7 @@ public class MMAU {
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        //連携MODが読み込まれてるか取得
-        loadedProjectE = Loader.isModLoaded("ProjectE");
 
-        if (loadedProjectE) {
-            MMAULogger.log("ProjectE is Loaded!");
-            registerEMC();
-        }
 
     }
 

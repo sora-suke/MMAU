@@ -7,13 +7,4 @@ package com.sorasuke.MMAU;
  */
 public class MMAUCollaboration {
 
-    public static void registerEMC() {
-
-        /*APICustomEMCMapper.instance.registerCustomEMC(MMAURegistry.Negi, 4096);
-        APICustomEMCMapper.instance.registerCustomEMC(MMAURegistry.Crystal, 128);
-        APICustomEMCMapper.instance.registerCustomEMC(MMAURegistry.Orichalcum, 65536);*/
-
-
-    }
-
 }
