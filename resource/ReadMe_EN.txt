@@ -63,7 +63,7 @@
   ･Press that install button.
 
 *Change log
- ･February foo, 2017
+ ･March 4, 2017
   ･Release ver 0.1.1-1.10.2.
   ･Now available on 1.10.2!
 
