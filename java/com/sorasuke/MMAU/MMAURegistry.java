@@ -32,11 +32,32 @@ public class MMAURegistry {
 
     //クリエイティブタブ
 
-    public static final CreativeTabs MMAUTab = new MMAUBaseTab("mmautab", new ItemStack(MMAURegistry.Negi));
+    public static final CreativeTabs MMAUTab = new CreativeTabs("mmautab") {
+        @Override
+        @SideOnly(Side.CLIENT)
+        public Item getTabIconItem() {
 
-    public static final CreativeTabs MMAUToolsTab = new MMAUBaseTab("mmautoolstab", new ItemStack(MMAURegistry.NegiPickaxe));
+            return MMAURegistry.Negi;
+        }
+    };
 
-    public static final CreativeTabs MMAUUtilsTab = new MMAUBaseTab("mmauutilstab",new ItemStack(MMAURegistry.ChickenBlock));
+    public static final CreativeTabs MMAUToolsTab = new CreativeTabs("mmautoolstab") {
+        @Override
+        @SideOnly(Side.CLIENT)
+        public Item getTabIconItem() {
+
+            return MMAURegistry.NegiPickaxe;
+        }
+    };
+
+    public static final CreativeTabs MMAUUtilsTab = new CreativeTabs("mmauutilstab") {
+        @Override
+        @SideOnly(Side.CLIENT)
+        public Item getTabIconItem() {
+
+            return Item.getItemFromBlock(MMAURegistry.ChickenBlock);
+        }
+    };
 
 
     //アイテム類
