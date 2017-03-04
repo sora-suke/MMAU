@@ -16,8 +16,6 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 
-import static com.sorasuke.MMAU.MMAUCollaboration.registerEMC;
-
 @Mod(modid = MMAU.MODID, version = MMAU.VERSION, name = MMAU.MODNAME)
 public class MMAU {
 
