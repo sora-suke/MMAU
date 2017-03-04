@@ -11,7 +11,7 @@ public class MMAUCollaboration {
 
         /*APICustomEMCMapper.instance.registerCustomEMC(MMAURegistry.Negi, 4096);
         APICustomEMCMapper.instance.registerCustomEMC(MMAURegistry.Crystal, 128);
-        APICustomEMCMapper.instance.registerCustomEMC(MMAURegistry.Orichalcum, 65536);
+        APICustomEMCMapper.instance.registerCustomEMC(MMAURegistry.Orichalcum, 65536);*/
 
 
     }
