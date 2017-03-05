@@ -5,10 +5,10 @@ import com.sorasuke.MMAU.blocks.*;
 import com.sorasuke.MMAU.items.*;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenBlock;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenHead;
+import com.sorasuke.MMAU.tileentities.TileEntityQuarry;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.Minecraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -391,6 +391,8 @@ public class MMAURegistry {
     public static final Block ChickenBlock = new ChickenBlock(Material.CLOTH, "chicken_block").setCreativeTab(MMAUUtilsTab).setHardness(1.0F).setResistance(1.0F);
     public static final Block ChickenHead = new ChickenHead(Material.CLOTH, "chicken_head").setCreativeTab(MMAUUtilsTab).setHardness(1.0F).setResistance(1.0F);
 
+    public static final Block Quarry = new QuarryBlock(Material.IRON, "quarry").setCreativeTab(MMAUUtilsTab).setHardness(5.0F).setResistance(5.0F);
+
 
     /**
      * IMMAUBaseItemを継承したアイテムを登録させる
@@ -648,9 +650,12 @@ public class MMAURegistry {
         registerBlock(ChickenBlock);
         registerBlock(ChickenHead);
 
+        registerBlock(Quarry);
+
 
         GameRegistry.registerTileEntity(TileEntityChickenBlock.class, "ChickenBlock");
         GameRegistry.registerTileEntity(TileEntityChickenHead.class, "ChickenHead");
+        GameRegistry.registerTileEntity(TileEntityQuarry.class, "Quarry");
 
 
     }

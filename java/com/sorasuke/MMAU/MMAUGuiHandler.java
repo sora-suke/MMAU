@@ -1,9 +1,12 @@
 package com.sorasuke.MMAU;
 
 import com.sorasuke.MMAU.container.ContainerChickenBlock;
+import com.sorasuke.MMAU.container.ContainerQuarry;
 import com.sorasuke.MMAU.gui.GuiChickenBlock;
+import com.sorasuke.MMAU.gui.GuiQuarry;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenBlock;
 
+import com.sorasuke.MMAU.tileentities.TileEntityQuarry;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -23,7 +26,10 @@ public class MMAUGuiHandler implements IGuiHandler {
                     if (entity instanceof TileEntityChickenBlock) {
                         return new ContainerChickenBlock(player.inventory, (TileEntityChickenBlock) entity);
                     }
-                    //return null;
+                case MMAU.guiIdQuarry:
+                    if(entity instanceof TileEntityQuarry){
+                        return new ContainerQuarry(player.inventory, (TileEntityQuarry)entity);
+                    }
             }
         }
         return null;
@@ -38,7 +44,10 @@ public class MMAUGuiHandler implements IGuiHandler {
                     if (entity instanceof TileEntityChickenBlock) {
                         return new GuiChickenBlock(player.inventory, (TileEntityChickenBlock) entity);
                     }
-                    //return null;
+                case MMAU.guiIdQuarry:
+                    if (entity instanceof TileEntityQuarry) {
+                        return new GuiQuarry(player.inventory, (TileEntityQuarry) entity);
+                    }
             }
         }
         return null;

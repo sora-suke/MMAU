@@ -29,6 +29,7 @@ public class MMAU {
 
     //GUIのID
     public static final int guiIdChickenBlock = 0;
+    public static final int guiIdQuarry = 1;
 
 
 
