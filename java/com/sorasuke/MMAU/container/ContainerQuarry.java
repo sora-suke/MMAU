@@ -4,6 +4,7 @@ import com.sorasuke.MMAU.tileentities.TileEntityChickenBlock;
 import com.sorasuke.MMAU.tileentities.TileEntityQuarry;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
@@ -55,8 +56,27 @@ public class ContainerQuarry extends Container {
                     return null;
                 }
                 slot.onSlotChange(itemStackMem, itemStack);
-            }else if(!this.mergeItemStack(itemStackMem, 0, 29, false)){
+            }/*else if(!this.mergeItemStack(itemStackMem, 0, 29, false)){
                 return null;
+            }*/
+            else if (clickedIndex >= 29 && clickedIndex <= 64){
+                if(itemStackMem.isItemEqual(new ItemStack(Items.ENCHANTED_BOOK))){
+                    if(!this.mergeItemStack(itemStackMem, 0, 1, false)){
+                        return null;
+                    }
+                } else if(itemStackMem.isItemEqual(new ItemStack(Items.DIAMOND/*アップグレード作るまでこのまま*/))){
+                    if(!this.mergeItemStack(itemStackMem, 1, 2, false)){
+                        return null;
+                    }
+                }else if(clickedIndex >= 29 && clickedIndex <= 55){
+                    if(this.mergeItemStack(itemStackMem, 56, 65, false)){
+                        return null;
+                    }
+                }else if(clickedIndex >= 56 && clickedIndex <= 64){
+                    if(this.mergeItemStack(itemStackMem, 29, 56, false)){
+                        return null;
+                    }
+                }
             }
             if(!(itemStackMem.stackSize <=0)){
                 slot.onSlotChanged();
