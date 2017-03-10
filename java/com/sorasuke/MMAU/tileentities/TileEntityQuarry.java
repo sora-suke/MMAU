@@ -1,5 +1,7 @@
 package com.sorasuke.MMAU.tileentities;
 
+import com.sorasuke.MMAU.container.ContainerQuarry;
+import com.sorasuke.MMAU.items.upgrades.IUpgrade;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -21,7 +23,7 @@ import javax.annotation.Nullable;
  */
 public class TileEntityQuarry extends TileEntityLockable implements ISidedInventory, ITickable {
 
-    private ItemStack[] slot = new ItemStack[29];
+    private ItemStack[] slot = new ItemStack[32];
     private String localizedName;
 
     private int rfAmount;
@@ -85,17 +87,17 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
 
     @Override
     public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction) {
-        return false;
+        return index < 5 && itemStackIn.getItem() instanceof IUpgrade;
     }
 
     @Override
     public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
-        return false;
+        return index > 4;
     }
 
     @Override
     public int getSizeInventory() {
-        return 29;
+        return slot.length;
     }
 
     @Nullable
