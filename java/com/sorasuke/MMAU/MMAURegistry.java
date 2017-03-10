@@ -3,6 +3,7 @@ package com.sorasuke.MMAU;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import com.sorasuke.MMAU.blocks.*;
 import com.sorasuke.MMAU.items.*;
+import com.sorasuke.MMAU.items.upgrades.UpgradeBase;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenBlock;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenHead;
 import com.sorasuke.MMAU.tileentities.TileEntityQuarry;
@@ -348,6 +349,9 @@ public class MMAURegistry {
     //便利アイテム
     public static final Item ExplosionButton = new ExplosionButton();
 
+    public static final Item UpgradeBlank = new UpgradeBase("blank", 0);
+    public static final Item UpgradeVoid = new UpgradeBase("void", 0);
+
 
     //ブロック
     public static final Block NegiOre = new MMAUBaseGemOre("negi_ore", new ItemStack(Negi), 3).setCreativeTab(MMAUTab).setHardness(3.0F).setResistance(5.0F);
@@ -606,6 +610,9 @@ public class MMAURegistry {
 
         //便利アイテム
         registerItem(ExplosionButton);
+
+        registerItem(UpgradeBlank);
+        registerItem(UpgradeVoid);
 
 
         //ブロック
