@@ -61,7 +61,7 @@ public class UpgradeBase extends Item implements IMMAUBaseItem, IUpgrade{
     }
 
     @Override
-    public int getGread(ItemStack stack) {
+    public int getGrade(ItemStack stack) {
         return stack.getMetadata();
     }
 
