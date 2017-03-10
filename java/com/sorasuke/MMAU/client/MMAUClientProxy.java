@@ -1,5 +1,6 @@
 package com.sorasuke.MMAU.client;
 
+import com.sorasuke.MMAU.MMAU;
 import com.sorasuke.MMAU.MMAURegistry;
 import com.sorasuke.MMAU.blocks.IMMAUBaseBlock;
 import com.sorasuke.MMAU.common.MMAUProxy;
@@ -11,6 +12,8 @@ import com.sorasuke.MMAU.tileentities.TileEntityChickenHead;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
@@ -38,6 +41,13 @@ public class MMAUClientProxy extends MMAUProxy {
 
     @Override
     public void registerItemModel(Item i){
-        ModelLoader.setCustomModelResourceLocation(i, 0, new ModelResourceLocation(((IMMAUBaseItem)i).getLocation(),"inventory"));
+        if(!i.getHasSubtypes()) {
+            ModelLoader.setCustomModelResourceLocation(i, 0, new ModelResourceLocation(((IMMAUBaseItem) i).getLocation(), "inventory"));
+        } else {
+            String rl = ((IMMAUBaseItem) i).getLocation().getResourcePath();
+            for(int j = 0; j < i.getMaxDamage(new ItemStack(i));j++){
+                ModelLoader.setCustomModelResourceLocation(i, j, new ModelResourceLocation(new ResourceLocation(MMAU.MODID, rl + "_"+ j), "inventory"));
+            }
+        }
     }
 }
