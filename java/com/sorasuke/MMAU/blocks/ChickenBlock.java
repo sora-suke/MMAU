@@ -13,6 +13,8 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -84,43 +86,12 @@ public class ChickenBlock extends BlockHorizontal implements IMMAUBaseBlock, ITi
     }
 
     public void breakBlock(World world, BlockPos pos, IBlockState state) {
-        MMAULogger.log("音出てるん?これ");
-        MMAUPlaySound.playSound(world, pos, "entity.chicken.hurt", SoundCategory.BLOCKS);
-        MMAUPlaySound.playSound(world, pos, "entity.generic.hurt", SoundCategory.BLOCKS);
-        if (!keepInventory) {
-            TileEntityChickenBlock tileEntity = (TileEntityChickenBlock) world.getTileEntity(pos);
+        TileEntity tileentity = world.getTileEntity(pos);
 
-            if (tileEntity != null) {
-                for (int i = 0; i < tileEntity.getSizeInventory(); i++) {
-                    ItemStack itemStack = tileEntity.getStackInSlot(i);
-
-                    if (itemStack != null) {
-                        float f = this.rand.nextFloat() * 0.8F + 0.1F;
-                        float f1 = this.rand.nextFloat() * 0.8F + 0.1F;
-                        float f2 = this.rand.nextFloat() * 0.8F + 0.1F;
-
-                        while (itemStack.stackSize > 0) {
-                            int j = this.rand.nextInt(21) + 10;
-
-                            if (j > itemStack.stackSize) {
-                                j = itemStack.stackSize;
-                            }
-
-                            itemStack.stackSize -= j;
-
-                            EntityItem item = new EntityItem(world, (double) ((float) pos.getX() + f), (double) ((float) pos.getY() + f1), (double) ((float) pos.getY() + f2), new ItemStack(itemStack.getItem(), j, itemStack.getItemDamage()));
-
-                            if (itemStack.hasTagCompound()) {
-                                item.getEntityItem().setTagCompound((NBTTagCompound) itemStack.getTagCompound().copy());
-                            }
-
-                            world.spawnEntityInWorld(item);
-                        }
-                    }
-                }
-
-                //world.func_147453_f(x, y, z, oldBlock);
-            }
+        if (tileentity instanceof IInventory)
+        {
+            InventoryHelper.dropInventoryItems(world, pos, (IInventory)tileentity);
+            world.updateComparatorOutputLevel(pos, this);
         }
 
         super.breakBlock(world, pos, state);
