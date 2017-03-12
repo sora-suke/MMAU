@@ -3,6 +3,7 @@ package com.sorasuke.MMAU;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import com.sorasuke.MMAU.blocks.*;
 import com.sorasuke.MMAU.items.*;
+import com.sorasuke.MMAU.items.upgrades.IUpgrade;
 import com.sorasuke.MMAU.items.upgrades.UpgradeBase;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenBlock;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenHead;
@@ -18,6 +19,7 @@ import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
@@ -351,6 +353,8 @@ public class MMAURegistry {
 
     public static final Item UpgradeBlank = new UpgradeBase("blank", 0);
     public static final Item UpgradeVoid = new UpgradeBase("void", 0);
+    public static final Item UpgradeSpeed = new UpgradeBase("speed", 3);
+    public static final Item UpgradeEnergy = new UpgradeBase("energy", 3);
 
 
     //ブロック
@@ -613,6 +617,8 @@ public class MMAURegistry {
 
         registerItem(UpgradeBlank);
         registerItem(UpgradeVoid);
+        registerItem(UpgradeSpeed);
+        registerItem(UpgradeEnergy);
 
 
         //ブロック
