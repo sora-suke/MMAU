@@ -23,7 +23,7 @@ import javax.annotation.Nullable;
  */
 public class TileEntityQuarry extends TileEntityLockable implements ISidedInventory, ITickable {
 
-    private ItemStack[] slot = new ItemStack[32];
+    private final ItemStack[] slot = new ItemStack[32];
     private String localizedName;
 
     private int rfAmount;
@@ -92,7 +92,7 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
 
     @Override
     public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
-        return index > 4;
+        return false;//何を入れてもホッパーでアイテムが取り出せる(´・ω・｀)なんで
     }
 
     @Override
@@ -159,7 +159,10 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
 
     @Override
     public boolean isItemValidForSlot(int index, ItemStack stack) {
-        return true;
+        if(index < 5 && stack.getItem() instanceof IUpgrade){
+            return true;
+        }
+        return false;
     }
 
     @Override
