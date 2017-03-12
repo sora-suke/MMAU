@@ -8,4 +8,5 @@ import net.minecraft.item.ItemStack;
 public interface IUpgrade {
     public int getGrade(ItemStack stack);
     public String getType();
+    public int getMaxGrade();
 }

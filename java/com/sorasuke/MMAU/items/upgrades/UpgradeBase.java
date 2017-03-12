@@ -1,6 +1,7 @@
 package com.sorasuke.MMAU.items.upgrades;
 
 import com.sorasuke.MMAU.MMAU;
+import com.sorasuke.MMAU.MMAULogger;
 import com.sorasuke.MMAU.MMAURegistry;
 import com.sorasuke.MMAU.items.IMMAUBaseItem;
 import net.minecraft.creativetab.CreativeTabs;
@@ -25,9 +26,9 @@ public class UpgradeBase extends Item implements IMMAUBaseItem, IUpgrade{
     public UpgradeBase(String name, int subtipe) {
         this.name = "upgrade_" + name;
         this.setCreativeTab(MMAURegistry.MMAUUtilsTab);
+        //MMAULogger.log("UpgradeBaseConstruct!!");
         this.setUnlocalizedName("MMAU_" + this.name);
         this.setHasSubtypes(subtipe > 0);
-        this.setMaxDamage(0);
         this.setMaxStackSize(1);
         this.subtipes = subtipe;
         this.type = name;
@@ -45,18 +46,23 @@ public class UpgradeBase extends Item implements IMMAUBaseItem, IUpgrade{
         return this.location;
     }
 
+    @Override
     public String getUnlocalizedName(ItemStack stack)
     {
         int i = stack.getMetadata();
         return super.getUnlocalizedName() + (this.subtipes > 0 ? "." + i : "");
     }
 
+    @Override
     @SideOnly(Side.CLIENT)
     public void getSubItems(Item itemIn, CreativeTabs tab, List<ItemStack> subItems)
     {
-        for (int i = 0; i < this.subtipes; ++i)
-        {
-            subItems.add(new ItemStack(itemIn, 1, i));
+        if(this.hasSubtypes) {
+            for (int i = 0; i < this.subtipes; ++i) {
+                subItems.add(new ItemStack(itemIn, 1, i));
+            }
+        }else{
+            subItems.add(new ItemStack(itemIn, 1, 0));
         }
     }
 
@@ -68,5 +74,10 @@ public class UpgradeBase extends Item implements IMMAUBaseItem, IUpgrade{
     @Override
     public String getType() {
         return this.type;
+    }
+
+    @Override
+    public int getMaxGrade() {
+        return this.subtipes;
     }
 }
