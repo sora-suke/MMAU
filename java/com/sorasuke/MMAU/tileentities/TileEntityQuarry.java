@@ -1,6 +1,6 @@
 package com.sorasuke.MMAU.tileentities;
 
-import com.sorasuke.MMAU.container.ContainerQuarry;
+import com.sorasuke.MMAU.MMAULogger;
 import com.sorasuke.MMAU.items.upgrades.IUpgrade;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -86,12 +86,14 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
     }
 
     @Override
-    public boolean canInsertItem(int index, ItemStack itemStackIn, EnumFacing direction) {
-        return index < 5 && itemStackIn.getItem() instanceof IUpgrade;
+    public boolean canInsertItem(int index, @Nullable ItemStack stack, EnumFacing direction) {
+        MMAULogger.log("canInsertItem called! Arguments:int index " + index + ", ItemStack stack " + stack == null?"null":(stack.getItem()) + ", EnumFacing direction" + direction.getName());
+        return this.isItemValidForSlot(index, stack);
     }
 
-    @Override
-    public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
+    //@Override
+    public boolean canExtractItem(int index, @Nullable ItemStack stack, EnumFacing direction) {
+        MMAULogger.log("canExtractItem called! Arguments:int index " + index + ", ItemStack itemStackIn " + stack == null?"null":(stack.getItem()) + ", EnumFacing direction" + direction.getName());
         return false;//何を入れてもホッパーでアイテムが取り出せる(´・ω・｀)なんで
     }
 
