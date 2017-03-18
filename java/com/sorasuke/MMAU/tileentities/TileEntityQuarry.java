@@ -15,6 +15,10 @@ import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntityLockable;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.wrapper.SidedInvWrapper;
 
 import javax.annotation.Nullable;
 
@@ -94,7 +98,7 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
     @Override
     public boolean canExtractItem(int index, @Nullable ItemStack stack, EnumFacing direction) {
         MMAULogger.log("canExtractItem called! Arguments:int index " + index + ", ItemStack itemStackIn " + stack == null?"null":(stack.getItem()) + ", EnumFacing direction" + direction.getName());
-        return false;//何を入れてもホッパーでアイテムが取り出せる(´・ω・｀)なんで
+        return true;//何を入れてもホッパーでアイテムが取り出せる(´・ω・｀)なんで
     }
 
     @Override
@@ -214,5 +218,22 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
     @Override
     public boolean hasCustomName() {
         return this.localizedName != null && this.localizedName.length() > 0;
+    }
+
+
+    IItemHandler handlerTop = new SidedInvWrapper(this, EnumFacing.UP);
+    IItemHandler handlerBottom = new SidedInvWrapper(this, EnumFacing.DOWN);
+    IItemHandler handlerSide = new SidedInvWrapper(this, EnumFacing.WEST);
+
+    @Override
+    public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
+        if (facing != null && capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
+            if (facing == EnumFacing.DOWN)
+                return (T) handlerBottom;
+            else if (facing == EnumFacing.UP)
+                return (T) handlerTop;
+            else
+                return (T) handlerSide;
+        return super.getCapability(capability, facing);
     }
 }
