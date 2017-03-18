@@ -91,7 +91,7 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
         return this.isItemValidForSlot(index, stack);
     }
 
-    //@Override
+    @Override
     public boolean canExtractItem(int index, @Nullable ItemStack stack, EnumFacing direction) {
         MMAULogger.log("canExtractItem called! Arguments:int index " + index + ", ItemStack itemStackIn " + stack == null?"null":(stack.getItem()) + ", EnumFacing direction" + direction.getName());
         return false;//何を入れてもホッパーでアイテムが取り出せる(´・ω・｀)なんで
