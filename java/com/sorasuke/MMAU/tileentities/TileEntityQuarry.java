@@ -18,6 +18,7 @@ import net.minecraft.util.ITickable;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.wrapper.InvWrapper;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
 
 import javax.annotation.Nullable;
@@ -86,19 +87,22 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
 
     @Override
     public int[] getSlotsForFace(EnumFacing side) {
-        return new int[0];
+        return new int[]{0,1,2,3,4,5,6,7,8,9
+                ,10,11,12,13,14,15,16,17,18,19
+                ,20,21,22,23,24,25,26,27,28,29
+                ,30,31};
     }
 
     @Override
     public boolean canInsertItem(int index, @Nullable ItemStack stack, EnumFacing direction) {
-        MMAULogger.log("canInsertItem called! Arguments:int index " + index + ", ItemStack stack " + stack == null?"null":(stack.getItem()) + ", EnumFacing direction" + direction.getName());
+        //MMAULogger.log("canInsertItem called! Arguments:int index " + index + ", ItemStack stack " + stack == null?"null":(stack.getItem()) + ", EnumFacing direction" + direction.getName());
         return this.isItemValidForSlot(index, stack);
     }
 
     @Override
     public boolean canExtractItem(int index, @Nullable ItemStack stack, EnumFacing direction) {
-        MMAULogger.log("canExtractItem called! Arguments:int index " + index + ", ItemStack itemStackIn " + stack == null?"null":(stack.getItem()) + ", EnumFacing direction" + direction.getName());
-        return true;//何を入れてもホッパーでアイテムが取り出せる(´・ω・｀)なんで
+        //MMAULogger.log("canExtractItem called! Arguments:int index " + index + ", ItemStack itemStackIn " + stack == null?"null":(stack.getItem()) + ", EnumFacing direction" + direction.getName());
+        return !this.isItemValidForSlot(index, stack);
     }
 
     @Override
@@ -221,19 +225,16 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
     }
 
 
-    IItemHandler handlerTop = new SidedInvWrapper(this, EnumFacing.UP);
-    IItemHandler handlerBottom = new SidedInvWrapper(this, EnumFacing.DOWN);
-    IItemHandler handlerSide = new SidedInvWrapper(this, EnumFacing.WEST);
+
+    IItemHandler handler = new SidedInvWrapper(this, null);
 
     @Override
     public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
-        if (facing != null && capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY)
-            if (facing == EnumFacing.DOWN)
-                return (T) handlerBottom;
-            else if (facing == EnumFacing.UP)
-                return (T) handlerTop;
-            else
-                return (T) handlerSide;
+        if (facing != null && capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY){
+            MMAULogger.log("hogehoge");
+            return (T) handler;
+        }
+
         return super.getCapability(capability, facing);
     }
 }
