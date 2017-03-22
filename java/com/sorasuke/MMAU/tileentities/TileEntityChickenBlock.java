@@ -115,7 +115,7 @@ public class TileEntityChickenBlock extends TileEntityLockable implements ISided
 
     @Override
     public boolean canExtractItem(int index, ItemStack stack, EnumFacing direction) {
-        MMAULogger.log("canExtractItem called! Arguments:int index " + index + ", ItemStack itemStackIn " + stack.getItem() + ", EnumFacing direction" + direction.getName());
+        //MMAULogger.log("canExtractItem called! Arguments:int index " + index + ", ItemStack itemStackIn " + stack.getItem() + ", EnumFacing direction" + direction.getName());
 
         return true;
     }
