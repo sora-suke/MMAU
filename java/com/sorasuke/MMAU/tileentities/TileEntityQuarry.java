@@ -231,7 +231,7 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
     @Override
     public <T> T getCapability(Capability<T> capability, EnumFacing facing) {
         if (facing != null && capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY){
-            MMAULogger.log("hogehoge");
+            //MMAULogger.log("hogehoge");
             return (T) handler;
         }
 
