@@ -22,6 +22,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -63,8 +64,8 @@ public class ChickenBlock extends BlockHorizontal implements IMMAUBaseBlock, ITi
 
     @Override
     public void onBlockClicked(World world, BlockPos pos, EntityPlayer player) {
-        MMAUPlaySound.playSound(world, pos, "entity.chicken.hurt", SoundCategory.BLOCKS);
-        MMAUPlaySound.playSound(world, pos, "entity.generic.hurt", SoundCategory.BLOCKS);
+        //MMAULogger.log("onBlockClicked");
+        this.chickenHurt(world, pos);
     }
 
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer entityPlayer, EnumHand hand, @Nullable ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
@@ -87,6 +88,8 @@ public class ChickenBlock extends BlockHorizontal implements IMMAUBaseBlock, ITi
 
     public void breakBlock(World world, BlockPos pos, IBlockState state) {
         TileEntity tileentity = world.getTileEntity(pos);
+        MMAULogger.log("breakBlock");
+        this.chickenHurt(world, pos);
 
         if (tileentity instanceof IInventory)
         {
@@ -95,6 +98,19 @@ public class ChickenBlock extends BlockHorizontal implements IMMAUBaseBlock, ITi
         }
 
         super.breakBlock(world, pos, state);
+    }
+
+    public void onBlockDestroyedByPlayer(World world, BlockPos pos, IBlockState state) {
+        this.chickenHurt(world, pos);
+    }
+
+    public void onBlockDestroyedByExplosion(World world, BlockPos pos, Explosion explosionIn){
+        this.chickenHurt(world, pos);
+    }
+
+    private void chickenHurt(World w, BlockPos p){
+        MMAUPlaySound.playSound(w, p, "entity.chicken.hurt", SoundCategory.BLOCKS);
+        MMAUPlaySound.playSound(w, p, "entity.generic.hurt", SoundCategory.BLOCKS);
     }
 
     public IBlockState withRotation(IBlockState state, Rotation rot) {
