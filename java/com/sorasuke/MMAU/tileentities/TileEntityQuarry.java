@@ -208,7 +208,7 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
 
     @Override
     public void update() {
-        MMAULogger.log("hoge"+this.energyStorage.getEnergyStored());
+        //MMAULogger.log("hoge"+this.energyStorage.getEnergyStored());
         BlockPos pos = this.getPos();
         int x = pos.getX();
         int y = pos.getY();
