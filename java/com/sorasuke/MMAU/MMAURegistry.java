@@ -356,6 +356,10 @@ public class MMAURegistry {
     public static final Item UpgradeSpeed = new UpgradeBase("speed", 3);
     public static final Item UpgradeEnergy = new UpgradeBase("energy", 3);
 
+    public static final ArmorMaterial SCP081Jp = EnumHelper.addArmorMaterial
+            ("SCP081JP", MMAU.MODID + ":scp081jp", 32000, new int[]{0, 0, 0, 0}, 0, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
+    public static final Item SCP081JP = new SCP081JP(SCP081Jp, 2, "scp081jp");
+
 
     //ブロック
     public static final Block NegiOre = new MMAUBaseGemOre("negi_ore", new ItemStack(Negi), 3).setCreativeTab(MMAUTab).setHardness(3.0F).setResistance(5.0F);
@@ -608,6 +612,8 @@ public class MMAURegistry {
         registerItem(SteelChestplate);
         registerItem(SteelLeggings);
         registerItem(SteelBoots);
+
+        registerItem(SCP081JP);
 
         //工具
         registerItem(IronMortar);

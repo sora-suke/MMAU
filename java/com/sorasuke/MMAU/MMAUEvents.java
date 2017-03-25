@@ -1,12 +1,16 @@
 package com.sorasuke.MMAU;
 
 
+import com.sorasuke.MMAU.items.SCP081JP;
 import net.minecraft.block.Block;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityChicken;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -59,6 +63,16 @@ public class MMAUEvents {
                         event.getDrops().add(entityItem);
                     //event.entity.dropItem(Item.getItemFromBlock(MMAURegistry.ChickenHead),0);
                 }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public void wearSCP081JPTickEvent(LivingEvent.LivingUpdateEvent event){
+        ItemStack i = event.getEntityLiving().getItemStackFromSlot(EntityEquipmentSlot.LEGS);
+        if(i != null) {
+            if (i.getItem().equals(MMAURegistry.SCP081JP)) {
+                event.getEntityLiving().addPotionEffect(new PotionEffect(Potion.getPotionById(12), 10, 10));
             }
         }
     }
