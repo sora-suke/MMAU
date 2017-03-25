@@ -1,7 +1,10 @@
 package com.sorasuke.MMAU.tileentities;
 
+import cofh.api.energy.EnergyStorage;
+import cofh.api.energy.IEnergyReceiver;
+import com.sorasuke.MMAU.MMAULogger;
 import com.sorasuke.MMAU.items.upgrades.IUpgrade;
-import mcp.MethodsReturnNonnullByDefault;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -15,7 +18,10 @@ import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntityLockable;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
+import net.minecraft.util.math.BlockPos;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
@@ -25,13 +31,18 @@ import javax.annotation.Nullable;
 /**
  * Created by sora_suke on 2017/03/05.
  */
-public class TileEntityQuarry extends TileEntityLockable implements ISidedInventory, ITickable {
+public class TileEntityQuarry extends TileEntityLockable implements ISidedInventory, ITickable, IEnergyReceiver {
 
     private final ItemStack[] slot = new ItemStack[32];
     private String localizedName;
 
-    private int rfAmount;
-    private int rfMax;
+    private int maxRFAmount = 65535;
+
+    EnergyStorage energyStorage;
+
+    public TileEntityQuarry(){
+        this.energyStorage = new EnergyStorage(maxRFAmount);
+    }
 
     @Override
     public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
@@ -46,10 +57,10 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
             nbttaglist.appendTag(nbt1);
         }
         nbt.setTag("Items", nbttaglist);
-        nbt.setInteger("RFAmount", this.rfAmount);
         if (this.hasCustomName()) {
             nbt.setString("CustomName", this.localizedName);
         }
+        this.energyStorage.writeToNBT(nbt);
         return nbt;
     }
 
@@ -67,10 +78,11 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
         if (nbt.hasKey("CustomName")) {
             this.localizedName = nbt.getString("CustomName");
         }
-        this.rfAmount = nbt.getInteger("RFAmount");
+        this.energyStorage.readFromNBT(nbt);
     }
 
     @Override
+    @SideOnly(Side.CLIENT)
     public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
         //MMAULogger.log("onDataPacket!");
         readFromNBT(pkt.getNbtCompound());
@@ -196,11 +208,20 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
 
     @Override
     public void update() {
+        MMAULogger.log("hoge"+this.energyStorage.getEnergyStored());
+        BlockPos pos = this.getPos();
+        int x = pos.getX();
+        int y = pos.getY();
+        int z = pos.getZ();
+        IBlockState b = worldObj.getBlockState(pos);
 
+        this.markDirty();
+        worldObj.notifyBlockUpdate(pos, b, b, 0);
+        worldObj.scheduleBlockUpdate(pos, this.getBlockType(), 0, 0);
     }
 
     public float getRFPercentage(int i) {
-        return rfAmount * i / rfMax;
+        return getRFAmount() * i / this.getMaxRFAmount();
     }
 
     @Override
@@ -235,5 +256,33 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
         }
 
         return super.getCapability(capability, facing);
+    }
+
+    public int getRFAmount() {
+        return this.energyStorage.getEnergyStored();
+    }
+
+    public int getMaxRFAmount() {
+        return this.energyStorage.getMaxEnergyStored();
+    }
+
+    @Override
+    public boolean canConnectEnergy(EnumFacing from) {
+        return true;
+    }
+
+    @Override
+    public int getEnergyStored(EnumFacing from) {
+        return energyStorage.getEnergyStored();
+    }
+
+    @Override
+    public int getMaxEnergyStored(EnumFacing from) {
+        return energyStorage.getMaxEnergyStored();
+    }
+
+    @Override
+    public int receiveEnergy(EnumFacing from, int maxReceive, boolean simulate) {
+        return energyStorage.receiveEnergy(maxReceive, simulate);
     }
 }
