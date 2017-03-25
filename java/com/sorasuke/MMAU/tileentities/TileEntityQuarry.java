@@ -216,6 +216,24 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
         int z = pos.getZ();
         IBlockState b = worldObj.getBlockState(pos);
 
+        int energyAmount = 0;
+        int speedAmount = 0;
+        for(int i=0;i<5;i++){
+            if(this.slot[i] != null) {
+                IUpgrade u = (IUpgrade) (this.slot[i].getItem());
+
+                switch (u.getType()) {
+                    case "energy": {
+                        energyAmount += 4 ^ ((u.getGrade(this.slot[i]))) * this.slot[i].stackSize;
+                    }
+                    case "speed": {
+                        speedAmount += 4 ^ ((u.getGrade(this.slot[i]))) * this.slot[i].stackSize;
+                    }
+                }
+            }
+        }
+        this.energyStorage.setCapacity(this.defaultMaxRFAmount + energyAmount * 8192);
+
         this.markDirty();
         worldObj.notifyBlockUpdate(pos, b, b, 0);
         worldObj.scheduleBlockUpdate(pos, this.getBlockType(), 0, 0);
