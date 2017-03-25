@@ -10,6 +10,7 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.ItemStackHelper;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
@@ -36,12 +37,12 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
     private final ItemStack[] slot = new ItemStack[32];
     private String localizedName;
 
-    private int maxRFAmount = 65535;
+    private int defaultMaxRFAmount = 65535;
 
     EnergyStorage energyStorage;
 
     public TileEntityQuarry(){
-        this.energyStorage = new EnergyStorage(maxRFAmount);
+        this.energyStorage = new EnergyStorage(defaultMaxRFAmount);
     }
 
     @Override
