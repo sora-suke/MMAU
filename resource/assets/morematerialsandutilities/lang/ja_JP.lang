@@ -7,6 +7,9 @@ itemGroup.mmauutilstab=MMAUUtils
 text.negi.tooltip=食べられないよ!ヾ(ﾟ□ﾟ＠)
 text.silver.tooltip=抗菌!
 
+gui.mmau.rf=RF
+gui.mmau.upgrade=アップグレード
+
 
 tile.MMAU_negi_ore.name=ネギ鉱石
 tile.MMAU_negi_block.name=ネギブロック
@@ -34,6 +37,7 @@ tile.MMAU_brass_block.name=真鍮ブロック
 
 tile.MMAU_chicken_block.name=ニワトリブロック
 tile.MMAU_chicken_head.name=ニワトリの頭
+tile.MMAU_quarry.name=クァーリー
 
 tile.MMAU_feather_block.name=羽ブロック
 

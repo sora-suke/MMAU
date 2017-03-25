@@ -7,6 +7,9 @@ itemGroup.mmauutilstab=MMAUUtils
 text.negi.tooltip=This is inedible!ヾ(ﾟ□ﾟ＠)
 text.silver.tooltip=This is antibacterial!
 
+gui.mmau.rf=RF
+gui.mmau.upgrade=Upgrade
+
 
 tile.MMAU_negi_ore.name=Negi Ore
 tile.MMAU_negi_block.name=Block of Negi
@@ -34,6 +37,7 @@ tile.MMAU_brass_block.name=Block of Brass
 
 tile.MMAU_chicken_block.name=Chicken Block
 tile.MMAU_chicken_head.name=Chicken Head
+tile.MMAU_quarry.name=Quarry
 
 tile.MMAU_feather_block.name=Block of Feather
 
