@@ -51,6 +51,8 @@ public class GuiQuarry extends GuiContainer {
             }
         }
         //this.fontRendererObj.drawString(String.valueOf(this.tileEntity.getRFAmount()), 118, this.ySize - 96 + 8, 4210752);
+        this.fontRendererObj.drawString(I18n.format("container.inventory", new Object[0]), 8, this.ySize - 96 + 2, 4210752);
+        this.fontRendererObj.drawString(I18n.format("gui.mmau.upgrade", new Object[0]), 72, 26, 4210752);
         RenderHelper.enableGUIStandardItemLighting();
     }
 
@@ -84,7 +86,8 @@ public class GuiQuarry extends GuiContainer {
         @Override
         public void drawButtonForegroundLayer(int mouseX, int mouseY) {
             //MMAULogger.log("drawButtonForegroundLayer!");
-            GuiQuarry.this.drawCreativeTabHoveringText(I18n.format("gui.mmau.rf" + this.tileEntityQuarry.getRFAmount() + "/" + this.tileEntityQuarry.getMaxRFAmount(), new Object[0]), mouseX, mouseY);
+            GuiQuarry.this.drawCreativeTabHoveringText(I18n.format("gui.mmau.rf", new Object[0])
+                    + " " + this.tileEntityQuarry.getRFAmount() + "/" + this.tileEntityQuarry.getMaxRFAmount(), mouseX, mouseY);
         }
 
         @Override
