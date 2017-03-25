@@ -61,6 +61,7 @@ public class GuiQuarry extends GuiContainer {
         int k = (this.width - this.xSize) / 2;
         int l = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
+        this.drawTexturedModalRect(k + 9, l + 8, 176, 0, (int) (tileEntity.getRFPercentage(53)), 16);
     }
 
     @SideOnly(Side.CLIENT)
