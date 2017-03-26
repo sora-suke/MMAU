@@ -7,6 +7,9 @@ import com.sorasuke.MMAU.gens.MMAUGens;
 
 import com.sorasuke.MMAU.items.MMAUBaseTool;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.storage.loot.LootTable;
+import net.minecraft.world.storage.loot.LootTableList;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
@@ -59,6 +62,7 @@ public class MMAU {
         MMAUGens.registry(this);// ワールド生成関連
         MinecraftForge.EVENT_BUS.register(new MMAUEvents());
         MinecraftForge.EVENT_BUS.register(MMAURegistry.IronMortar);
+        MinecraftForge.EVENT_BUS.register(new MMAULoot());
 
     }
 
