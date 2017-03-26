@@ -57,6 +57,10 @@ public class MMAUBaseTool extends Item implements IMMAUBaseItem {
         return null;
     }
 
+    /**
+     * 同アイテム修繕の時におかしくなるのを防ぐためにある
+     * インスタンスをMinecraftForge.EVENT_BUS.registerの引数にする
+     * */
     @SubscribeEvent
     public void onCrafting(PlayerEvent.ItemCraftedEvent event){
         isRepair = this == event.crafting.getItem();

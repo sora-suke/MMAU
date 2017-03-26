@@ -6,9 +6,7 @@ import net.minecraft.util.ResourceLocation;
 
 /**
  * Created by sora_suke on 2016/11/19.
- * <p>
- * MMAURegistry.registerItemで登録させるためのやつ
- * コンストラクタの引数に名前を入れればその名前のテクスチャと非翻訳名にまとめて指定される
+ * 無機能アイテム用のベース
  */
 public class MMAUBaseItem extends Item implements IMMAUBaseItem {
     private String name;

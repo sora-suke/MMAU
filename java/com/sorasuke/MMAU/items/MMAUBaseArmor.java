@@ -19,6 +19,10 @@ public class MMAUBaseArmor extends ItemArmor implements IMMAUBaseItem {
     private int type;
     private ResourceLocation location;
 
+    /**
+     * @param type 0~3がヘルメット~ブーツに対応している
+     * 後は引数の名前でわかるよね?
+     * */
     public MMAUBaseArmor(ArmorMaterial material, int type, String localname, Item repairItem) {
         super(material, type == 2 ? 2 : 1,
                 type == 0 ? EntityEquipmentSlot.HEAD : type == 1 ? EntityEquipmentSlot.CHEST :

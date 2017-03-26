@@ -11,7 +11,13 @@ import net.minecraft.util.ResourceLocation;
  */
 public interface IMMAUBaseItem {
 
+    /**
+     * 登録時などに使う名前を返す
+     * */
     String getName();
 
+    /**
+     * 登録時などに使うResourceLocationを返す
+     * */
     ResourceLocation getLocation();
 }
