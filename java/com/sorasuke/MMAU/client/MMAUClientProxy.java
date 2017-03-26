@@ -20,10 +20,14 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * Created by sora_suke on 2016/12/22.
+ * クライアントプロキシ
  */
+@SideOnly(Side.CLIENT)
 public class MMAUClientProxy extends MMAUProxy {
     @Override
     public void registerRender() {
