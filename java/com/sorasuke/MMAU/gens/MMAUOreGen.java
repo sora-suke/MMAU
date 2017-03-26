@@ -10,6 +10,9 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import net.minecraftforge.fml.common.IWorldGenerator;
 
+/**
+ * 鉱石生成
+ * */
 public class MMAUOreGen implements IWorldGenerator {
 
     private Block block;
@@ -18,26 +21,30 @@ public class MMAUOreGen implements IWorldGenerator {
     private int value;
     private int veinSize;
     private boolean isRare;
+    private boolean enabled;
 
-    public MMAUOreGen(Block block, int maxHeight, int minHeight, int value, int veinSize, boolean isRare) {
+    public MMAUOreGen(Block block, int maxHeight, int minHeight, int value, int veinSize, boolean isRare, boolean enabled) {
         this.block = block;
         this.maxHeight = maxHeight;
         this.minHeight = minHeight;
         this.value = value;
         this.veinSize = veinSize;
         this.isRare = isRare;
+        this.enabled = enabled;
     }
 
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-        if (this.isRare) {
-            Random rnd = new Random();
-            if (random.nextInt(this.value) == 0) {
-                genOre(world, random, chunkX << 4, chunkZ << 4);
-            }
-        } else {
-            for (int i = 0; i < this.value; i++) {
-                genOre(world, random, chunkX << 4, chunkZ << 4);
+        if(this.enabled) {
+            if (this.isRare) {
+                Random rnd = new Random();
+                if (random.nextInt(this.value) == 0) {
+                    genOre(world, random, chunkX << 4, chunkZ << 4);
+                }
+            } else {
+                for (int i = 0; i < this.value; i++) {
+                    genOre(world, random, chunkX << 4, chunkZ << 4);
+                }
             }
         }
     }
