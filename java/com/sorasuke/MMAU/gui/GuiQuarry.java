@@ -25,6 +25,7 @@ public class GuiQuarry extends GuiContainer {
 
     private static TileEntityQuarry tileEntity;
 
+    /**GUIのテクスチャ*/
     private static final ResourceLocation bground = new ResourceLocation(MMAU.MODID, "textures/gui/container/quarry.png");
 
     public GuiQuarry(InventoryPlayer inventoryPlayer, TileEntityQuarry entity) {
@@ -50,7 +51,7 @@ public class GuiQuarry extends GuiContainer {
                 break;
             }
         }
-        //this.fontRendererObj.drawString(String.valueOf(this.tileEntity.getRFAmount()), 118, this.ySize - 96 + 8, 4210752);
+
         this.fontRendererObj.drawString(I18n.format("container.inventory", new Object[0]), 8, this.ySize - 96 + 2, 4210752);
         this.fontRendererObj.drawString(I18n.format("gui.mmau.upgrade", new Object[0]), 72, 26, 4210752);
         RenderHelper.enableGUIStandardItemLighting();
@@ -66,9 +67,12 @@ public class GuiQuarry extends GuiContainer {
         this.drawTexturedModalRect(k + 9, l + 8, 176, 0, (int) (tileEntity.getRFPercentage(53)), 16);
     }
 
+    /**
+     * 重ねたらRFの量が表示されるようになるやつ
+     * ボタン扱い
+     * */
     @SideOnly(Side.CLIENT)
     public class PanelRFAmount extends GuiButton {
-        private final ResourceLocation iconTexture = new ResourceLocation(MMAU.MODID, "textures/gui/container/quarry.png");
         private final int iconX = 176;
         private final int iconY = 16;
         private TileEntityQuarry tileEntityQuarry;
@@ -93,21 +97,9 @@ public class GuiQuarry extends GuiContainer {
         @Override
         public void drawButton(Minecraft mc, int mouseX, int mouseY){
             this.tileEntityQuarry = GuiQuarry.tileEntity;
-            if (this.visible)
-            {
-                mc.getTextureManager().bindTexture(iconTexture);
-                GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-                this.hovered = mouseX >= this.xPosition && mouseY >= this.yPosition && mouseX < this.xPosition + this.width && mouseY < this.yPosition + this.height;
+            this.hovered = mouseX >= this.xPosition && mouseY >= this.yPosition && mouseX < this.xPosition + this.width && mouseY < this.yPosition + this.height;
 
-                this.drawTexturedModalRect(this.xPosition, this.yPosition, this.iconX, this.iconY, this.width, this.height);
 
-                if (!iconTexture.equals(this.iconTexture))
-                {
-                    mc.getTextureManager().bindTexture(this.iconTexture);
-                }
-
-                //this.drawTexturedModalRect(this.xPosition + 2, this.yPosition + 2, this.iconX, this.iconY, 53, 16);
-            }
         }
 
         @Override
