@@ -18,6 +18,8 @@ public class MMAUConfig {
     public static boolean genLeadOre;
     public static boolean genZincOre;
 
+    public static int quarryDefaultMaxRFAmount;
+
     public static void Load(FMLPreInitializationEvent event) {
 
         MMAULogger.log("Load Config!");
@@ -42,6 +44,8 @@ public class MMAUConfig {
                     .getBoolean(true);
             genLeadOre = config.get("GENERAL", "genLeadOre", true, "Generate lead ores.").getBoolean(true);
             genZincOre = config.get("GENERAL", "genZincOre", true, "Generate zinc ores.").getBoolean(true);
+
+            quarryDefaultMaxRFAmount = config.get("MACHINE", "quarryDefaultMaxRFAmount", 65536, "Default Quarry max RF amount.").getInt();
 
         } catch (Exception e) {
             MMAULogger.error("Config load error!");

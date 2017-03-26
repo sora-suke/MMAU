@@ -2,6 +2,7 @@ package com.sorasuke.MMAU.tileentities;
 
 import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyReceiver;
+import com.sorasuke.MMAU.MMAUConfig;
 import com.sorasuke.MMAU.MMAULogger;
 import com.sorasuke.MMAU.items.upgrades.IUpgrade;
 import net.minecraft.block.state.IBlockState;
@@ -31,18 +32,24 @@ import javax.annotation.Nullable;
 
 /**
  * Created by sora_suke on 2017/03/05.
+ * クァーリーのTileEntity
  */
 public class TileEntityQuarry extends TileEntityLockable implements ISidedInventory, ITickable, IEnergyReceiver {
 
+    /**インベントリ*/
     private final ItemStack[] slot = new ItemStack[32];
+    /**名前*/
     private String localizedName;
 
-    private int defaultMaxRFAmount = 65535;
+    /** デフォルトのRF貯蔵量 コンフィグで変えられる */
+    private int defaultMaxRFAmount = MMAUConfig.quarryDefaultMaxRFAmount;
 
+    /**RF関連の処理とかはこれに任せられるらしい*/
     EnergyStorage energyStorage;
 
     public TileEntityQuarry(){
-        this.energyStorage = new EnergyStorage(defaultMaxRFAmount);
+        /**読み込む時に最初デフォルトの量になってしまうのでInteget.MAX_VALUEでゴリ押しする*/
+        this.energyStorage = new EnergyStorage(Integer.MAX_VALUE);
     }
 
     @Override
@@ -97,6 +104,10 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
         return new SPacketUpdateTileEntity(getPos(), this.getBlockMetadata(), tagCompound);
     }
 
+    /**
+     * この配列どうにかならないのか
+     * TODO 他のTileEntity作る時にどうにかする
+     * */
     @Override
     public int[] getSlotsForFace(EnumFacing side) {
         return new int[]{0,1,2,3,4,5,6,7,8,9
@@ -105,12 +116,20 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
                 ,30,31};
     }
 
+    /**
+     * アイテムが入れられるかの判定
+     * アップグレードだけ入る
+     * */
     @Override
     public boolean canInsertItem(int index, @Nullable ItemStack stack, EnumFacing direction) {
         //MMAULogger.log("canInsertItem called! Arguments:int index " + index + ", ItemStack stack " + stack == null?"null":(stack.getItem()) + ", EnumFacing direction" + direction.getName());
         return this.isItemValidForSlot(index, stack);
     }
 
+    /**
+     * アイテムが取り出せるかの判定
+     * 上の逆
+     * */
     @Override
     public boolean canExtractItem(int index, @Nullable ItemStack stack, EnumFacing direction) {
         //MMAULogger.log("canExtractItem called! Arguments:int index " + index + ", ItemStack itemStackIn " + stack == null?"null":(stack.getItem()) + ", EnumFacing direction" + direction.getName());
@@ -179,6 +198,9 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
 
     }
 
+    /**
+     * アップグレードのスロットかどうかの判定になってる
+     * */
     @Override
     public boolean isItemValidForSlot(int index, ItemStack stack) {
         if(index < 5 && stack.getItem() instanceof IUpgrade){
@@ -210,35 +232,45 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
     @Override
     public void update() {
         //MMAULogger.log("hoge"+this.energyStorage.getEnergyStored());
+        /**基本的な変数*/
         BlockPos pos = this.getPos();
         int x = pos.getX();
         int y = pos.getY();
         int z = pos.getZ();
         IBlockState b = worldObj.getBlockState(pos);
 
+        /**アップグレードの倍率*/
         int energyAmount = 0;
         int speedAmount = 0;
+
+        /**アップグレードが入ってるかの判定*/
         for(int i=0;i<5;i++){
             if(this.slot[i] != null) {
                 IUpgrade u = (IUpgrade) (this.slot[i].getItem());
 
                 switch (u.getType()) {
                     case "energy": {
-                        energyAmount += 4 ^ ((u.getGrade(this.slot[i]))) * this.slot[i].stackSize;
+                        energyAmount += Math.pow(4, u.getGrade(this.slot[i])) * this.slot[i].stackSize;
                     }
                     case "speed": {
-                        speedAmount += 4 ^ ((u.getGrade(this.slot[i]))) * this.slot[i].stackSize;
+                        speedAmount += Math.pow(4, u.getGrade(this.slot[i])) * this.slot[i].stackSize;
                     }
                 }
             }
         }
+        //MMAULogger.log(""+energyAmount);
+        /**アップグレードに合わせてRFの貯蔵量を変更*/
         this.energyStorage.setCapacity(this.defaultMaxRFAmount + energyAmount * 8192);
 
+        /**鯖蔵で同期*/
         this.markDirty();
         worldObj.notifyBlockUpdate(pos, b, b, 0);
         worldObj.scheduleBlockUpdate(pos, this.getBlockType(), 0, 0);
     }
 
+    /**
+     * RFの貯蔵量のパーセンテージを返す
+     * */
     public float getRFPercentage(int i) {
         return getRFAmount() * i / this.getMaxRFAmount();
     }
@@ -264,7 +296,10 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
     }
 
 
-
+    /**
+     * これがよくわからない
+     * 動いてるからいいけどさ
+     * */
     IItemHandler handler = new SidedInvWrapper(this, null);
 
     @Override
@@ -277,10 +312,16 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
         return super.getCapability(capability, facing);
     }
 
+    /**
+     * RFの量を返す
+     * */
     public int getRFAmount() {
         return this.energyStorage.getEnergyStored();
     }
 
+    /**
+     * RFの最大量を返す
+     * */
     public int getMaxRFAmount() {
         return this.energyStorage.getMaxEnergyStored();
     }
