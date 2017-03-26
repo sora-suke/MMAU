@@ -6,6 +6,7 @@ itemGroup.mmauutilstab=MMAUUtils
 
 text.negi.tooltip=This is inedible!ヾ(ﾟ□ﾟ＠)
 text.silver.tooltip=This is antibacterial!
+text.scp081jp.tooltip=Permanent cool cool swimwear.
 
 gui.mmau.rf=RF
 gui.mmau.upgrade=Upgrade
@@ -185,5 +186,7 @@ item.MMAU_coal_dust.name=Coal Dust
 
 item.MMAU_iron_mortar.name=Iron Mortar
 item.MMAU_button_explosion.name=Explosion Button
+
+item.MMAU_scp081jp.name=SCP-081-JP
 
 container.chicken_block=Chicken Block
