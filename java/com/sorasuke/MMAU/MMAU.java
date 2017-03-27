@@ -39,7 +39,6 @@ public class MMAU {
 
 
 
-
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         this.loadMetadata(metadata);
