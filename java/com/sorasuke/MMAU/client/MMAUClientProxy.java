@@ -9,8 +9,10 @@ import com.sorasuke.MMAU.items.IMMAUBaseItem;
 import com.sorasuke.MMAU.items.upgrades.IUpgrade;
 import com.sorasuke.MMAU.render.ChickenHeadItemRender;
 import com.sorasuke.MMAU.render.ChickenHeadSpecialRender;
+import com.sorasuke.MMAU.render.QuarrySpecialRender;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenHead;
 
+import com.sorasuke.MMAU.tileentities.TileEntityQuarry;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -39,6 +41,8 @@ public class MMAUClientProxy extends MMAUProxy {
         //ClientRegistry.bindTileEntitySpecialRenderer(TileEntityChickenHead.class, chickenHeadSpecialRender);
         //MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(MMAURegistry.ChickenHead), new ChickenHeadItemRender(chickenHeadSpecialRender, new TileEntityChickenHead()));
         //クソ仕様にしやがってゆるさんぞ
+        QuarrySpecialRender quarrySpecialRender = new QuarrySpecialRender();
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEntityQuarry.class, quarrySpecialRender);
     }
 
     @Override
