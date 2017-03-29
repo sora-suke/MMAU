@@ -5,9 +5,11 @@ import cofh.api.energy.IEnergyReceiver;
 import com.sorasuke.MMAU.MMAUConfig;
 import com.sorasuke.MMAU.MMAULogger;
 import com.sorasuke.MMAU.items.upgrades.IUpgrade;
+import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.ItemStackHelper;
@@ -17,10 +19,13 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityLockable;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -51,6 +56,24 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
         /**読み込む時に最初デフォルトの量になってしまうのでInteget.MAX_VALUEでゴリ押しする*/
         this.energyStorage = new EnergyStorage(Integer.MAX_VALUE);
     }
+
+    /**TESRの描画の時にどこまで描画されるかのやつ?*/
+    @SideOnly(Side.CLIENT)
+    public double getMaxRenderDistanceSquared()
+    {
+        return Double.POSITIVE_INFINITY;
+    }
+
+
+
+    public static final net.minecraft.util.math.AxisAlignedBB INFINITE_EXTENT_AABB = new net.minecraft.util.math.AxisAlignedBB(Double.NEGATIVE_INFINITY, Double.NEGATIVE_INFINITY, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY);
+
+    @SideOnly(Side.CLIENT)
+    public net.minecraft.util.math.AxisAlignedBB getRenderBoundingBox() {
+        AxisAlignedBB bb = new AxisAlignedBB(Double.NEGATIVE_INFINITY, Double.NEGATIVE_INFINITY, Double.NEGATIVE_INFINITY, Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY);
+        return bb;
+    }
+
 
     @Override
     public NBTTagCompound writeToNBT(NBTTagCompound nbt) {
@@ -261,6 +284,12 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
         //MMAULogger.log(""+energyAmount);
         /**アップグレードに合わせてRFの貯蔵量を変更*/
         this.energyStorage.setCapacity(this.defaultMaxRFAmount + energyAmount * 8192);
+
+        /**メインの採掘部分*/
+
+
+
+
 
         /**鯖蔵で同期*/
         this.markDirty();
