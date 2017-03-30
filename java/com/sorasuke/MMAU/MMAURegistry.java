@@ -7,6 +7,7 @@ import com.sorasuke.MMAU.items.upgrades.IUpgrade;
 import com.sorasuke.MMAU.items.upgrades.UpgradeBase;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenBlock;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenHead;
+import com.sorasuke.MMAU.tileentities.TileEntityGuidanceMarker;
 import com.sorasuke.MMAU.tileentities.TileEntityQuarry;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -404,7 +405,7 @@ public class MMAURegistry {
     public static final Block ChickenHead = new ChickenHead(Material.CLOTH, "chicken_head").setCreativeTab(MMAUUtilsTab).setHardness(1.0F).setResistance(1.0F);
 
     public static final Block Quarry = new QuarryBlock(Material.IRON, "quarry").setCreativeTab(MMAUUtilsTab).setHardness(5.0F).setResistance(5.0F);
-
+    public static final Block GuidanceMarker = new GuidanceMarker("guidance_marker");
 
     /**
      * IMMAUBaseItemを継承したアイテムを登録させる
@@ -671,10 +672,13 @@ public class MMAURegistry {
 
         registerBlock(Quarry);
 
+        registerBlock(GuidanceMarker);
+
 
         GameRegistry.registerTileEntity(TileEntityChickenBlock.class, "ChickenBlock");
         GameRegistry.registerTileEntity(TileEntityChickenHead.class, "ChickenHead");
         GameRegistry.registerTileEntity(TileEntityQuarry.class, "Quarry");
+        GameRegistry.registerTileEntity(TileEntityGuidanceMarker.class, "GuidanceMarker");
 
 
     }
