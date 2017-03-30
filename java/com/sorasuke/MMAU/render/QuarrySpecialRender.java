@@ -42,7 +42,7 @@ public class QuarrySpecialRender extends TileEntitySpecialRenderer<TileEntityQua
             this.bindTexture(texture);
             wr.begin(GL11.GL_TRIANGLES, DefaultVertexFormats.POSITION_TEX_COLOR_NORMAL);
 
-            int color = java.awt.Color.white.getRGB();
+            int color = java.awt.Color.yellow.getRGB();
             int r = color >> 16 & 255;
             int g = color >> 8 & 255;
             int b = color & 255;
@@ -60,7 +60,7 @@ public class QuarrySpecialRender extends TileEntitySpecialRenderer<TileEntityQua
 
     public boolean isGlobalRenderer(TileEntityQuarry te)
     {
-        return false;
+        return true;
     }
 
 }
