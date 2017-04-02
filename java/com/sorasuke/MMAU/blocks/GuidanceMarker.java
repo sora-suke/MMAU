@@ -9,9 +9,14 @@ import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 /**
@@ -31,6 +36,31 @@ public class GuidanceMarker extends Block implements IMMAUBaseBlock, ITileEntity
         setCreativeTab(MMAURegistry.MMAUUtilsTab);
         setHardness(0F);
         setResistance(0F);
+    }
+
+    @Override
+    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
+        return new AxisAlignedBB(6F / 16F, 6F / 16F, 6F / 16F, 10F / 16F, 10F / 16F, 10F / 16F);
+    }
+
+    public boolean isOpaqueCube(IBlockState state)
+    {
+        return false;
+    }
+
+    public boolean isFullCube(IBlockState state)
+    {
+        return false;
+    }
+
+    public boolean isPassable(IBlockAccess worldIn, BlockPos pos)
+    {
+        return false;
+    }
+
+    public EnumBlockRenderType getRenderType(IBlockState state)
+    {
+        return EnumBlockRenderType.ENTITYBLOCK_ANIMATED;
     }
 
     @Override

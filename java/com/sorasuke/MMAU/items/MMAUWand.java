@@ -22,6 +22,8 @@ public class MMAUWand extends Item implements IMMAUBaseItem {
         setCreativeTab(MMAURegistry.MMAUToolsTab);
         setUnlocalizedName("MMAU_" + this.name);
         this.location = new ResourceLocation(MMAU.MODID, this.name);
+        setFull3D();
+        setMaxStackSize(1);
     }
 
     @Override

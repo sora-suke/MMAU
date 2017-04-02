@@ -15,6 +15,7 @@ import java.util.List;
 
 /**
  * Created by sora_suke on 2017/03/08.
+ * 特殊じゃないただのアップグレードのベース
  */
 public class UpgradeBase extends Item implements IMMAUBaseItem, IUpgrade{
 
@@ -53,6 +54,9 @@ public class UpgradeBase extends Item implements IMMAUBaseItem, IUpgrade{
         return super.getUnlocalizedName() + (this.subtipes > 0 ? "." + i : "");
     }
 
+    /**
+     * メタデータ有りならそれをするやつ
+     * */
     @Override
     @SideOnly(Side.CLIENT)
     public void getSubItems(Item itemIn, CreativeTabs tab, List<ItemStack> subItems)

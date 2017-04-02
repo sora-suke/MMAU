@@ -22,13 +22,8 @@ public class QuarrySpecialRender extends TileEntitySpecialRenderer<TileEntityQua
 
     @Override
     public void renderTileEntityAt(TileEntityQuarry tileEntity, double x, double y, double z, float f, int destroyStage) {
-        MMAULogger.log("hoge");
-        /**とりあえずポリゴン1つ描画する*/
-        /*GL11.glBegin(GL11.GL_POLYGON);
-        GL11.glVertex3d(x,y+1,z);
-        GL11.glVertex3d(x,y+10,z);
-        GL11.glVertex3d(x+1,y,z);
-        GL11.glEnd();*/
+        //MMAULogger.log("hoge");
+
 
         if (0 < destroyStage) return;
         GlStateManager.pushMatrix();
