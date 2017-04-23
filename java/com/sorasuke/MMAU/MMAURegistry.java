@@ -614,7 +614,8 @@ public class MMAURegistry {
         registerItem(SteelLeggings);
         registerItem(SteelBoots);
 
-        registerItem(SCP081JP);
+        // ライセンスとかめんどくさそうなので今のところやめとく
+        // registerItem(SCP081JP);
 
         //工具
         registerItem(IronMortar);

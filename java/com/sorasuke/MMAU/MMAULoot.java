@@ -27,7 +27,7 @@ public class MMAULoot {
         LootPool lootPool = new LootPool(new LootEntry[0], new LootCondition[0], rvr(1, 3), rvr(0), MMAU.MODID);
 
         if(event.getName().equals(LootTableList.CHESTS_SIMPLE_DUNGEON)){
-            lootPool.addEntry(createLootEntry(MMAURegistry.SCP081JP, 0.01F));
+            //lootPool.addEntry(createLootEntry(MMAURegistry.SCP081JP, 0.01F));
         }
         lootTable.addPool(lootPool);
     }
