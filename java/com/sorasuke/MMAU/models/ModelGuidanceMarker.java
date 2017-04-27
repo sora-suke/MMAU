@@ -10,7 +10,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ModelGuidanceMarker extends ModelBase
 {
   //fields
-    ModelRenderer Shape1;
+  ModelRenderer Shape1;
+
   
   public ModelGuidanceMarker()
   {

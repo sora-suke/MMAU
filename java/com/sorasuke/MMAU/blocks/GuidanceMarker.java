@@ -26,12 +26,14 @@ public class GuidanceMarker extends Block implements IMMAUBaseBlock, ITileEntity
 
     String name;
     ResourceLocation location;
+    public ItemBlock itemBlock;
 
     public GuidanceMarker(String name) {
         super(Material.IRON);
         this.name = name;
         setUnlocalizedName("MMAU_" + name);
         this.location = new ResourceLocation(MMAU.MODID, this.name);
+        this.itemBlock = new ItemBlock(this);
         setSoundType(SoundType.METAL);
         setCreativeTab(MMAURegistry.MMAUUtilsTab);
         setHardness(0F);
@@ -75,7 +77,7 @@ public class GuidanceMarker extends Block implements IMMAUBaseBlock, ITileEntity
 
     @Override
     public ItemBlock getItemBlock() {
-        return new ItemBlock(this);
+        return this.itemBlock;
     }
 
     @Override
