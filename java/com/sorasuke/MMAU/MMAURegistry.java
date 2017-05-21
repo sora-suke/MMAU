@@ -673,7 +673,7 @@ public class MMAURegistry {
 
         registerBlock(Quarry);
 
-        registerBlock(GuidanceMarker);
+        registerBlock(GuidanceMarker, true);
 
 
         GameRegistry.registerTileEntity(TileEntityChickenBlock.class, "ChickenBlock");

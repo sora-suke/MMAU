@@ -16,6 +16,7 @@ import com.sorasuke.MMAU.tileentities.TileEntityChickenHead;
 import com.sorasuke.MMAU.tileentities.TileEntityGuidanceMarker;
 import com.sorasuke.MMAU.tileentities.TileEntityQuarry;
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -48,6 +49,7 @@ public class MMAUClientProxy extends MMAUProxy {
 
         GuidanceMarkerRender guidanceMarkerRender = new GuidanceMarkerRender();
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGuidanceMarker.class, guidanceMarkerRender);
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(((IMMAUBaseBlock)MMAURegistry.GuidanceMarker).getItemBlock(), 0, new ModelResourceLocation(((IMMAUBaseBlock)MMAURegistry.GuidanceMarker).getLocation(), "inventory"));
     }
 
     @Override
