@@ -1,0 +1,522 @@
+[20:57:31] [main/INFO]: username: ed6afcffd7214a6d8cb1f7456c7cbe12
+[20:57:31] [main/INFO]: Extra: []
+[20:57:31] [main/INFO]: Found and added coremod: codechicken.lib.asm.CCLCorePlugin
+[20:57:31] [main/INFO]: Running with arguments: [--userProperties, {}, --assetsDir, C:/Users/sora_suke/.gradle/caches/minecraft/assets, --assetIndex, 1.10, --accessToken{REDACTED}, --version, 1.10.2, --username, ed6afcffd7214a6d8cb1f7456c7cbe12, --tweakClass, net.minecraftforge.fml.common.launcher.FMLTweaker, --tweakClass, net.minecraftforge.gradle.tweakers.CoremodTweaker]
+[20:57:31] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
+[20:57:31] [main/INFO]: Using primary tweak class name net.minecraftforge.fml.common.launcher.FMLTweaker
+[20:57:31] [main/INFO]: Loading tweak class name net.minecraftforge.gradle.tweakers.CoremodTweaker
+[20:57:32] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLTweaker
+[20:57:32] [main/INFO]: Forge Mod Loader version 12.18.3.2254 for Minecraft 1.10.2 loading
+[20:57:32] [main/INFO]: Java is Java HotSpot(TM) 64-Bit Server VM, version 1.8.0_77, running on Windows 10:amd64:10.0, installed at C:\Program Files\Java\jdk1.8.0_77\jre
+[20:57:32] [main/INFO]: Managed to load a deobfuscated Minecraft name- we are in a deobfuscated environment. Skipping runtime deobfuscation
+[20:57:32] [main/INFO]: Found a command line coremod : codechicken.lib.asm.CCLCorePlugin
+[20:57:33] [main/WARN]: The coremod codechicken.lib.asm.CCLCorePlugin does not have a MCVersion annotation, it may cause issues with this version of Minecraft
+[20:57:33] [main/INFO]: Calling tweak class net.minecraftforge.gradle.tweakers.CoremodTweaker
+[20:57:33] [main/INFO]: Injecting location in coremod net.minecraftforge.fml.relauncher.FMLCorePlugin
+[20:57:33] [main/INFO]: Injecting location in coremod net.minecraftforge.classloading.FMLForgePlugin
+[20:57:33] [main/INFO]: Injecting location in coremod codechicken.lib.asm.CCLCorePlugin
+[20:57:33] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[20:57:33] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[20:57:33] [main/INFO]: Loading tweak class name net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[20:57:33] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[20:57:33] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLInjectionAndSortingTweaker
+[20:57:33] [main/INFO]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:57:33] [main/ERROR]: The binary patch set is missing. Either you are in a development environment, or things are not going to work!
+[20:57:34] [main/ERROR]: FML appears to be missing any signature data. This is not a good thing
+[20:57:34] [main/INFO]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:57:34] [main/INFO]: Calling tweak class net.minecraftforge.fml.relauncher.CoreModManager$FMLPluginWrapper
+[20:57:34] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.FMLDeobfTweaker
+[20:57:35] [main/INFO]: Calling tweak class net.minecraftforge.gradle.tweakers.AccessTransformerTweaker
+[20:57:35] [main/INFO]: Remapping AccessTransformer rules...
+[20:57:35] [main/INFO]: Loading tweak class name net.minecraftforge.fml.common.launcher.TerminalTweaker
+[20:57:35] [main/INFO]: Calling tweak class net.minecraftforge.fml.common.launcher.TerminalTweaker
+[20:57:35] [main/INFO]: Launching wrapped minecraft {net.minecraft.client.main.Main}
+[20:57:36] [Client thread/INFO]: Setting user: ed6afcffd7214a6d8cb1f7456c7cbe12
+[20:57:41] [Client thread/INFO]: LWJGL Version: 2.9.4
+[20:57:42] [Client thread/INFO]: Could not load splash.properties, will create a default one
+[20:57:42] [Client thread/INFO]: [net.minecraftforge.fml.client.SplashProgress:start:225]: ---- Minecraft Crash Report ----
+// Ooh. Shiny.
+
+Time: 17/05/21 20:57
+Description: Loading screen debug info
+
+This is just a prompt for computer specs to be printed. THIS IS NOT A ERROR
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.10.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_77, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 830515584 bytes (792 MB) / 1038876672 bytes (990 MB) up to 2112618496 bytes (2014 MB)
+	JVM Flags: 3 total; -Xincgc -Xmx2048M -Xms1024M
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: 
+	Loaded coremods (and transformers): 
+CCLCorePlugin (CodeChickenLib-1.10.2-2.5.7.241-deobf.jar)
+  codechicken.lib.asm.ClassHeirachyManager
+  codechicken.lib.asm.CCL_ASMTransformer
+	GL info: ' Vendor: 'Intel' Version: '4.4.0 - Build 21.20.16.4534' Renderer: 'Intel(R) HD Graphics 530'
+[20:57:42] [Client thread/INFO]: MinecraftForge v12.18.3.2254 Initialized
+[20:57:42] [Client thread/INFO]: Replaced 231 ore recipes
+[20:57:43] [Client thread/INFO]: Found 0 mods from the command line. Injecting into mod discoverer
+[20:57:43] [Client thread/INFO]: Searching C:\Users\sora_suke\Desktop\sorao\java\work\MMAU\run\mods for mods
+[20:57:45] [Thread-5/INFO]: Using sync timing. 200 frames of Display.update took 231139609 nanos
+[20:57:46] [Client thread/WARN]: ****************************************
+[20:57:46] [Client thread/WARN]: * The modid CodeChickenLib is not the same as it's lowercase version. Lowercasing will be enforced in 1.11
+[20:57:46] [Client thread/WARN]: *  at net.minecraftforge.fml.common.FMLModContainer.sanityCheckModId(FMLModContainer.java:145)
+[20:57:46] [Client thread/WARN]: *  at net.minecraftforge.fml.common.FMLModContainer.<init>(FMLModContainer.java:130)
+[20:57:46] [Client thread/WARN]: *  at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[20:57:46] [Client thread/WARN]: *  at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+[20:57:46] [Client thread/WARN]: *  at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[20:57:46] [Client thread/WARN]: *  at java.lang.reflect.Constructor.newInstance(Constructor.java:423)...
+[20:57:46] [Client thread/WARN]: ****************************************
+[20:57:46] [Client thread/WARN]: Mod CodeChickenLib is missing the required element 'version' and a version.properties file could not be found. Falling back to metadata version 2.5.7.241
+[20:57:46] [Client thread/INFO]: Mod ccl-entityhook is missing the required element 'name'. Substituting ccl-entityhook
+[20:57:46] [Client thread/WARN]: Mod ccl-entityhook is missing the required element 'version' and no fallback can be found. Substituting '1.0'.
+[20:57:47] [Client thread/WARN]: ****************************************
+[20:57:47] [Client thread/WARN]: * The modid JEI is not the same as it's lowercase version. Lowercasing will be enforced in 1.11
+[20:57:47] [Client thread/WARN]: *  at net.minecraftforge.fml.common.FMLModContainer.sanityCheckModId(FMLModContainer.java:145)
+[20:57:47] [Client thread/WARN]: *  at net.minecraftforge.fml.common.FMLModContainer.<init>(FMLModContainer.java:130)
+[20:57:47] [Client thread/WARN]: *  at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[20:57:47] [Client thread/WARN]: *  at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+[20:57:47] [Client thread/WARN]: *  at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[20:57:47] [Client thread/WARN]: *  at java.lang.reflect.Constructor.newInstance(Constructor.java:423)...
+[20:57:47] [Client thread/WARN]: ****************************************
+[20:57:47] [Client thread/WARN]: ****************************************
+[20:57:47] [Client thread/WARN]: * The modid ModListGenerator is not the same as it's lowercase version. Lowercasing will be enforced in 1.11
+[20:57:47] [Client thread/WARN]: *  at net.minecraftforge.fml.common.FMLModContainer.sanityCheckModId(FMLModContainer.java:145)
+[20:57:47] [Client thread/WARN]: *  at net.minecraftforge.fml.common.FMLModContainer.<init>(FMLModContainer.java:130)
+[20:57:47] [Client thread/WARN]: *  at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+[20:57:47] [Client thread/WARN]: *  at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+[20:57:47] [Client thread/WARN]: *  at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+[20:57:47] [Client thread/WARN]: *  at java.lang.reflect.Constructor.newInstance(Constructor.java:423)...
+[20:57:47] [Client thread/WARN]: ****************************************
+[20:57:48] [Client thread/INFO]: Forge Mod Loader has identified 8 mods to load
+[20:57:48] [Client thread/WARN]: ****************************************
+[20:57:48] [Client thread/WARN]: * The API JustEnoughItemsAPI from source C:\Users\sora_suke\.gradle\caches\modules-2\files-2.1\mezz.jei\jei_1.10.2\3.13.0.330\55e3e2167de36b77fc0eda0e21eb9a61506af8b8\jei_1.10.2-3.13.0.330.jar is loaded from an incompatible classloader. THIS WILL NOT WORK!
+[20:57:48] [Client thread/WARN]: *  at net.minecraftforge.fml.common.ModAPIManager$APIContainer.validate(ModAPIManager.java:113)
+[20:57:48] [Client thread/WARN]: *  at net.minecraftforge.fml.common.ModAPIManager.registerDataTableAndParseAPI(ModAPIManager.java:173)
+[20:57:48] [Client thread/WARN]: *  at net.minecraftforge.fml.common.ModAPIManager.manageAPI(ModAPIManager.java:231)
+[20:57:48] [Client thread/WARN]: *  at net.minecraftforge.fml.common.Loader.loadMods(Loader.java:532)
+[20:57:48] [Client thread/WARN]: *  at net.minecraftforge.fml.client.FMLClientHandler.beginMinecraftLoading(FMLClientHandler.java:220)
+[20:57:48] [Client thread/WARN]: *  at net.minecraft.client.Minecraft.startGame(Minecraft.java:477)...
+[20:57:48] [Client thread/WARN]: ****************************************
+[20:57:48] [Client thread/INFO]: Attempting connection with missing mods [mcp, FML, Forge, morematerialsandutilities, CodeChickenLib, ccl-entityhook, JEI, ModListGenerator] at CLIENT
+[20:57:48] [Client thread/INFO]: Attempting connection with missing mods [mcp, FML, Forge, morematerialsandutilities, CodeChickenLib, ccl-entityhook, JEI, ModListGenerator] at SERVER
+[20:57:50] [Client thread/ERROR]: The mod CodeChickenLib is expecting signature f1850c39b2516232a2108a7bd84d1cb5df93b261 for source CodeChickenLib-1.10.2-2.5.7.241-deobf.jar, however there is no signature matching that description
+[20:57:50] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:MoreMaterialsAndUtilities, FMLFileResourcePack:CodeChicken Lib, FMLFileResourcePack:ccl-entityhook, FMLFileResourcePack:Just Enough Items, FMLFileResourcePack:ModListGenerator
+[20:57:50] [Client thread/INFO]: Processing ObjectHolder annotations
+[20:57:50] [Client thread/INFO]: Found 423 ObjectHolder annotations
+[20:57:50] [Client thread/INFO]: Identifying ItemStackHolder annotations
+[20:57:50] [Client thread/INFO]: Found 0 ItemStackHolder annotations
+[20:57:50] [Client thread/INFO]: Applying holder lookups
+[20:57:50] [Client thread/INFO]: Holder lookups applied
+[20:57:50] [Client thread/INFO]: Applying holder lookups
+[20:57:50] [Client thread/INFO]: Holder lookups applied
+[20:57:50] [Client thread/INFO]: Applying holder lookups
+[20:57:50] [Client thread/INFO]: Holder lookups applied
+[20:57:50] [Client thread/INFO]: Configured a dormant chunk cache size of 0
+[20:57:50] [Client thread/OFF]: Load Config!
+[20:57:51] [Forge Version Check/INFO]: [Forge] Starting version check at http://files.minecraftforge.net/maven/net/minecraftforge/forge/promotions_slim.json
+[20:57:51] [Client thread/FATAL]: The fingerprint for mod CodeChickenLib is invalid! Expected: f1850c39b2516232a2108a7bd84d1cb5df93b261
+[20:57:51] [Forge Version Check/INFO]: [Forge] Found status: OUTDATED Target: 12.18.3.2297
+[20:57:52] [Client thread/INFO]: Applying holder lookups
+[20:57:52] [Client thread/INFO]: Holder lookups applied
+[20:57:52] [Client thread/INFO]: Injecting itemstacks
+[20:57:52] [Client thread/INFO]: Itemstack injection complete
+[20:58:20] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[20:58:20] [Thread-7/INFO]: Initializing LWJGL OpenAL
+[20:58:20] [Thread-7/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[20:58:21] [Thread-7/INFO]: OpenAL initialized.
+[20:58:21] [Sound Library Loader/INFO]: Sound engine started
+[20:58:29] [Client thread/INFO]: Max texture size: 16384
+[20:58:29] [Client thread/INFO]: Created: 16x16 textures-atlas
+[20:58:29] [Client thread/ERROR]: Exception loading model for variant morematerialsandutilities:quarry#facing=south for blockstate "morematerialsandutilities:quarry[facing=south]"
+net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model morematerialsandutilities:quarry#facing=south with loader VariantLoader.INSTANCE, skipping
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:153) ~[ModelLoaderRegistry.class:?]
+	at net.minecraftforge.client.model.ModelLoader.registerVariant(ModelLoader.java:252) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelBakery.loadBlock(ModelBakery.java:145) ~[ModelBakery.class:?]
+	at net.minecraftforge.client.model.ModelLoader.loadBlocks(ModelLoader.java:240) ~[ModelLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoader.setupModelRegistry(ModelLoader.java:147) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:28) [ModelManager.class:?]
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.registerReloadListener(SimpleReloadableResourceManager.java:122) [SimpleReloadableResourceManager.class:?]
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:540) [Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:386) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(Main.java:118) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97) [start/:?]
+	at GradleStart.main(GradleStart.java:26) [start/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147) [idea_rt.jar:?]
+Caused by: net.minecraft.client.renderer.block.model.ModelBlockDefinition$MissingVariantException
+	at net.minecraft.client.renderer.block.model.ModelBlockDefinition.getVariant(ModelBlockDefinition.java:78) ~[ModelBlockDefinition.class:?]
+	at net.minecraftforge.client.model.ModelLoader$VariantLoader.loadModel(ModelLoader.java:1195) ~[ModelLoader$VariantLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:149) ~[ModelLoaderRegistry.class:?]
+	... 26 more
+[20:58:29] [Client thread/ERROR]: Exception loading model for variant morematerialsandutilities:quarry#facing=north for blockstate "morematerialsandutilities:quarry[facing=north]"
+net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model morematerialsandutilities:quarry#facing=north with loader VariantLoader.INSTANCE, skipping
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:153) ~[ModelLoaderRegistry.class:?]
+	at net.minecraftforge.client.model.ModelLoader.registerVariant(ModelLoader.java:252) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelBakery.loadBlock(ModelBakery.java:145) ~[ModelBakery.class:?]
+	at net.minecraftforge.client.model.ModelLoader.loadBlocks(ModelLoader.java:240) ~[ModelLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoader.setupModelRegistry(ModelLoader.java:147) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:28) [ModelManager.class:?]
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.registerReloadListener(SimpleReloadableResourceManager.java:122) [SimpleReloadableResourceManager.class:?]
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:540) [Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:386) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(Main.java:118) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97) [start/:?]
+	at GradleStart.main(GradleStart.java:26) [start/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147) [idea_rt.jar:?]
+Caused by: net.minecraft.client.renderer.block.model.ModelBlockDefinition$MissingVariantException
+	at net.minecraft.client.renderer.block.model.ModelBlockDefinition.getVariant(ModelBlockDefinition.java:78) ~[ModelBlockDefinition.class:?]
+	at net.minecraftforge.client.model.ModelLoader$VariantLoader.loadModel(ModelLoader.java:1195) ~[ModelLoader$VariantLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:149) ~[ModelLoaderRegistry.class:?]
+	... 26 more
+[20:58:29] [Client thread/ERROR]: Exception loading model for variant morematerialsandutilities:quarry#facing=west for blockstate "morematerialsandutilities:quarry[facing=west]"
+net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model morematerialsandutilities:quarry#facing=west with loader VariantLoader.INSTANCE, skipping
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:153) ~[ModelLoaderRegistry.class:?]
+	at net.minecraftforge.client.model.ModelLoader.registerVariant(ModelLoader.java:252) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelBakery.loadBlock(ModelBakery.java:145) ~[ModelBakery.class:?]
+	at net.minecraftforge.client.model.ModelLoader.loadBlocks(ModelLoader.java:240) ~[ModelLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoader.setupModelRegistry(ModelLoader.java:147) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:28) [ModelManager.class:?]
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.registerReloadListener(SimpleReloadableResourceManager.java:122) [SimpleReloadableResourceManager.class:?]
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:540) [Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:386) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(Main.java:118) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97) [start/:?]
+	at GradleStart.main(GradleStart.java:26) [start/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147) [idea_rt.jar:?]
+Caused by: net.minecraft.client.renderer.block.model.ModelBlockDefinition$MissingVariantException
+	at net.minecraft.client.renderer.block.model.ModelBlockDefinition.getVariant(ModelBlockDefinition.java:78) ~[ModelBlockDefinition.class:?]
+	at net.minecraftforge.client.model.ModelLoader$VariantLoader.loadModel(ModelLoader.java:1195) ~[ModelLoader$VariantLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:149) ~[ModelLoaderRegistry.class:?]
+	... 26 more
+[20:58:29] [Client thread/ERROR]: Exception loading model for variant morematerialsandutilities:quarry#facing=east for blockstate "morematerialsandutilities:quarry[facing=east]"
+net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model morematerialsandutilities:quarry#facing=east with loader VariantLoader.INSTANCE, skipping
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:153) ~[ModelLoaderRegistry.class:?]
+	at net.minecraftforge.client.model.ModelLoader.registerVariant(ModelLoader.java:252) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelBakery.loadBlock(ModelBakery.java:145) ~[ModelBakery.class:?]
+	at net.minecraftforge.client.model.ModelLoader.loadBlocks(ModelLoader.java:240) ~[ModelLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoader.setupModelRegistry(ModelLoader.java:147) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:28) [ModelManager.class:?]
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.registerReloadListener(SimpleReloadableResourceManager.java:122) [SimpleReloadableResourceManager.class:?]
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:540) [Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:386) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(Main.java:118) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97) [start/:?]
+	at GradleStart.main(GradleStart.java:26) [start/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147) [idea_rt.jar:?]
+Caused by: net.minecraft.client.renderer.block.model.ModelBlockDefinition$MissingVariantException
+	at net.minecraft.client.renderer.block.model.ModelBlockDefinition.getVariant(ModelBlockDefinition.java:78) ~[ModelBlockDefinition.class:?]
+	at net.minecraftforge.client.model.ModelLoader$VariantLoader.loadModel(ModelLoader.java:1195) ~[ModelLoader$VariantLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:149) ~[ModelLoaderRegistry.class:?]
+	... 26 more
+[20:58:29] [Client thread/OFF]: Registry Recipes!
+[20:58:29] [Client thread/INFO]: Injecting itemstacks
+[20:58:29] [Client thread/INFO]: Itemstack injection complete
+[20:58:29] [Client thread/INFO]: Beginning postInit...
+[20:58:30] [Client thread/INFO]: Registering plugin: mezz.jei.plugins.vanilla.VanillaPlugin ...
+[20:58:30] [Client thread/INFO]: Registered  plugin: mezz.jei.plugins.vanilla.VanillaPlugin in 98 ms
+[20:58:30] [Client thread/INFO]: Registering plugin: mezz.jei.plugins.jei.JEIInternalPlugin ...
+[20:58:30] [Client thread/INFO]: Registered  plugin: mezz.jei.plugins.jei.JEIInternalPlugin in 4 ms
+[20:58:30] [Client thread/INFO]: Finished postInit in 263 ms
+[20:58:30] [Client thread/INFO]: Building recipe registry...
+[20:58:30] [Client thread/INFO]: Built    recipe registry in 71 ms
+[20:58:30] [Client thread/INFO]: Building runtime...
+[20:58:30] [Client thread/INFO]: Built    runtime in 84 ms
+[20:58:30] [Client thread/INFO]: Building item filter...
+[20:58:30] [Client thread/INFO]: Built    item filter in 99 ms
+[20:58:30] [Client thread/INFO]: Sending runtime to plugin: mezz.jei.plugins.vanilla.VanillaPlugin ...
+[20:58:30] [Client thread/INFO]: Sending runtime to plugin: mezz.jei.plugins.jei.JEIInternalPlugin ...
+[20:58:30] [Client thread/INFO]: Forge Mod Loader has successfully loaded 8 mods
+[20:58:30] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:MoreMaterialsAndUtilities, FMLFileResourcePack:CodeChicken Lib, FMLFileResourcePack:ccl-entityhook, FMLFileResourcePack:Just Enough Items, FMLFileResourcePack:ModListGenerator
+[20:58:34] [Client thread/INFO]: SoundSystem shutting down...
+[20:58:34] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[20:58:34] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[20:58:34] [Thread-9/INFO]: Initializing LWJGL OpenAL
+[20:58:34] [Thread-9/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[20:58:35] [Thread-9/INFO]: OpenAL initialized.
+[20:58:35] [Sound Library Loader/INFO]: Sound engine started
+[20:58:41] [Client thread/INFO]: Max texture size: 16384
+[20:58:41] [Client thread/INFO]: Created: 512x512 textures-atlas
+[20:58:42] [Client thread/WARN]: Unable to resolve texture due to upward reference: #0 in morematerialsandutilities:models/block/chicken_head
+[20:58:42] [Client thread/ERROR]: Exception loading model for variant morematerialsandutilities:quarry#facing=south for blockstate "morematerialsandutilities:quarry[facing=south]"
+net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model morematerialsandutilities:quarry#facing=south with loader VariantLoader.INSTANCE, skipping
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:153) ~[ModelLoaderRegistry.class:?]
+	at net.minecraftforge.client.model.ModelLoader.registerVariant(ModelLoader.java:252) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelBakery.loadBlock(ModelBakery.java:145) ~[ModelBakery.class:?]
+	at net.minecraftforge.client.model.ModelLoader.loadBlocks(ModelLoader.java:240) ~[ModelLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoader.setupModelRegistry(ModelLoader.java:147) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:28) [ModelManager.class:?]
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.notifyReloadListeners(SimpleReloadableResourceManager.java:132) [SimpleReloadableResourceManager.class:?]
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.reloadResources(SimpleReloadableResourceManager.java:113) [SimpleReloadableResourceManager.class:?]
+	at net.minecraft.client.Minecraft.refreshResources(Minecraft.java:799) [Minecraft.class:?]
+	at net.minecraftforge.fml.client.FMLClientHandler.finishMinecraftLoading(FMLClientHandler.java:350) [FMLClientHandler.class:?]
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:561) [Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:386) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(Main.java:118) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97) [start/:?]
+	at GradleStart.main(GradleStart.java:26) [start/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147) [idea_rt.jar:?]
+Caused by: net.minecraft.client.renderer.block.model.ModelBlockDefinition$MissingVariantException
+	at net.minecraft.client.renderer.block.model.ModelBlockDefinition.getVariant(ModelBlockDefinition.java:78) ~[ModelBlockDefinition.class:?]
+	at net.minecraftforge.client.model.ModelLoader$VariantLoader.loadModel(ModelLoader.java:1195) ~[ModelLoader$VariantLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:149) ~[ModelLoaderRegistry.class:?]
+	... 29 more
+[20:58:42] [Client thread/ERROR]: Exception loading model for variant morematerialsandutilities:quarry#facing=north for blockstate "morematerialsandutilities:quarry[facing=north]"
+net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model morematerialsandutilities:quarry#facing=north with loader VariantLoader.INSTANCE, skipping
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:153) ~[ModelLoaderRegistry.class:?]
+	at net.minecraftforge.client.model.ModelLoader.registerVariant(ModelLoader.java:252) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelBakery.loadBlock(ModelBakery.java:145) ~[ModelBakery.class:?]
+	at net.minecraftforge.client.model.ModelLoader.loadBlocks(ModelLoader.java:240) ~[ModelLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoader.setupModelRegistry(ModelLoader.java:147) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:28) [ModelManager.class:?]
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.notifyReloadListeners(SimpleReloadableResourceManager.java:132) [SimpleReloadableResourceManager.class:?]
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.reloadResources(SimpleReloadableResourceManager.java:113) [SimpleReloadableResourceManager.class:?]
+	at net.minecraft.client.Minecraft.refreshResources(Minecraft.java:799) [Minecraft.class:?]
+	at net.minecraftforge.fml.client.FMLClientHandler.finishMinecraftLoading(FMLClientHandler.java:350) [FMLClientHandler.class:?]
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:561) [Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:386) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(Main.java:118) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97) [start/:?]
+	at GradleStart.main(GradleStart.java:26) [start/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147) [idea_rt.jar:?]
+Caused by: net.minecraft.client.renderer.block.model.ModelBlockDefinition$MissingVariantException
+	at net.minecraft.client.renderer.block.model.ModelBlockDefinition.getVariant(ModelBlockDefinition.java:78) ~[ModelBlockDefinition.class:?]
+	at net.minecraftforge.client.model.ModelLoader$VariantLoader.loadModel(ModelLoader.java:1195) ~[ModelLoader$VariantLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:149) ~[ModelLoaderRegistry.class:?]
+	... 29 more
+[20:58:42] [Client thread/ERROR]: Exception loading model for variant morematerialsandutilities:quarry#facing=west for blockstate "morematerialsandutilities:quarry[facing=west]"
+net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model morematerialsandutilities:quarry#facing=west with loader VariantLoader.INSTANCE, skipping
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:153) ~[ModelLoaderRegistry.class:?]
+	at net.minecraftforge.client.model.ModelLoader.registerVariant(ModelLoader.java:252) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelBakery.loadBlock(ModelBakery.java:145) ~[ModelBakery.class:?]
+	at net.minecraftforge.client.model.ModelLoader.loadBlocks(ModelLoader.java:240) ~[ModelLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoader.setupModelRegistry(ModelLoader.java:147) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:28) [ModelManager.class:?]
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.notifyReloadListeners(SimpleReloadableResourceManager.java:132) [SimpleReloadableResourceManager.class:?]
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.reloadResources(SimpleReloadableResourceManager.java:113) [SimpleReloadableResourceManager.class:?]
+	at net.minecraft.client.Minecraft.refreshResources(Minecraft.java:799) [Minecraft.class:?]
+	at net.minecraftforge.fml.client.FMLClientHandler.finishMinecraftLoading(FMLClientHandler.java:350) [FMLClientHandler.class:?]
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:561) [Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:386) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(Main.java:118) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97) [start/:?]
+	at GradleStart.main(GradleStart.java:26) [start/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147) [idea_rt.jar:?]
+Caused by: net.minecraft.client.renderer.block.model.ModelBlockDefinition$MissingVariantException
+	at net.minecraft.client.renderer.block.model.ModelBlockDefinition.getVariant(ModelBlockDefinition.java:78) ~[ModelBlockDefinition.class:?]
+	at net.minecraftforge.client.model.ModelLoader$VariantLoader.loadModel(ModelLoader.java:1195) ~[ModelLoader$VariantLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:149) ~[ModelLoaderRegistry.class:?]
+	... 29 more
+[20:58:42] [Client thread/ERROR]: Exception loading model for variant morematerialsandutilities:quarry#facing=east for blockstate "morematerialsandutilities:quarry[facing=east]"
+net.minecraftforge.client.model.ModelLoaderRegistry$LoaderException: Exception loading model morematerialsandutilities:quarry#facing=east with loader VariantLoader.INSTANCE, skipping
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:153) ~[ModelLoaderRegistry.class:?]
+	at net.minecraftforge.client.model.ModelLoader.registerVariant(ModelLoader.java:252) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelBakery.loadBlock(ModelBakery.java:145) ~[ModelBakery.class:?]
+	at net.minecraftforge.client.model.ModelLoader.loadBlocks(ModelLoader.java:240) ~[ModelLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoader.setupModelRegistry(ModelLoader.java:147) ~[ModelLoader.class:?]
+	at net.minecraft.client.renderer.block.model.ModelManager.onResourceManagerReload(ModelManager.java:28) [ModelManager.class:?]
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.notifyReloadListeners(SimpleReloadableResourceManager.java:132) [SimpleReloadableResourceManager.class:?]
+	at net.minecraft.client.resources.SimpleReloadableResourceManager.reloadResources(SimpleReloadableResourceManager.java:113) [SimpleReloadableResourceManager.class:?]
+	at net.minecraft.client.Minecraft.refreshResources(Minecraft.java:799) [Minecraft.class:?]
+	at net.minecraftforge.fml.client.FMLClientHandler.finishMinecraftLoading(FMLClientHandler.java:350) [FMLClientHandler.class:?]
+	at net.minecraft.client.Minecraft.startGame(Minecraft.java:561) [Minecraft.class:?]
+	at net.minecraft.client.Minecraft.run(Minecraft.java:386) [Minecraft.class:?]
+	at net.minecraft.client.main.Main.main(Main.java:118) [Main.class:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135) [launchwrapper-1.12.jar:?]
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28) [launchwrapper-1.12.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at net.minecraftforge.gradle.GradleStartCommon.launch(GradleStartCommon.java:97) [start/:?]
+	at GradleStart.main(GradleStart.java:26) [start/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_77]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_77]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_77]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_77]
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:147) [idea_rt.jar:?]
+Caused by: net.minecraft.client.renderer.block.model.ModelBlockDefinition$MissingVariantException
+	at net.minecraft.client.renderer.block.model.ModelBlockDefinition.getVariant(ModelBlockDefinition.java:78) ~[ModelBlockDefinition.class:?]
+	at net.minecraftforge.client.model.ModelLoader$VariantLoader.loadModel(ModelLoader.java:1195) ~[ModelLoader$VariantLoader.class:?]
+	at net.minecraftforge.client.model.ModelLoaderRegistry.getModel(ModelLoaderRegistry.java:149) ~[ModelLoaderRegistry.class:?]
+	... 29 more
+[20:58:43] [Client thread/ERROR]: +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+[20:58:43] [Client thread/ERROR]: The following texture errors were found.
+[20:58:43] [Client thread/ERROR]: ==================================================
+[20:58:43] [Client thread/ERROR]:   DOMAIN morematerialsandutilities
+[20:58:43] [Client thread/ERROR]: --------------------------------------------------
+[20:58:43] [Client thread/ERROR]:   domain morematerialsandutilities is missing 1 texture
+[20:58:43] [Client thread/ERROR]:     domain morematerialsandutilities has 1 location:
+[20:58:43] [Client thread/ERROR]:       mod morematerialsandutilities resources at C:\Users\sora_suke\Desktop\sorao\java\work\out\production\MMAU
+[20:58:43] [Client thread/ERROR]: -------------------------
+[20:58:43] [Client thread/ERROR]:     The missing resources for domain morematerialsandutilities are:
+[20:58:43] [Client thread/ERROR]:       textures/blocks/quarry.png
+[20:58:43] [Client thread/ERROR]: -------------------------
+[20:58:43] [Client thread/ERROR]:     No other errors exist for domain morematerialsandutilities
+[20:58:43] [Client thread/ERROR]: ==================================================
+[20:58:43] [Client thread/ERROR]: +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+[20:58:44] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[20:59:00] [Server thread/INFO]: Starting integrated minecraft server version 1.10.2
+[20:59:00] [Server thread/INFO]: Generating keypair
+[20:59:00] [Server thread/INFO]: Injecting existing block and item data into this server instance
+[20:59:00] [Server thread/INFO]: Applying holder lookups
+[20:59:00] [Server thread/INFO]: Holder lookups applied
+[20:59:00] [Server thread/INFO]: Loading dimension 0 (New World) (net.minecraft.server.integrated.IntegratedServer@14332c75)
+[20:59:01] [Server thread/INFO]: Loading dimension 1 (New World) (net.minecraft.server.integrated.IntegratedServer@14332c75)
+[20:59:01] [Server thread/INFO]: Loading dimension -1 (New World) (net.minecraft.server.integrated.IntegratedServer@14332c75)
+[20:59:01] [Server thread/INFO]: Preparing start region for level 0
+[20:59:02] [Server thread/INFO]: Preparing spawn area: 8%
+[20:59:03] [Server thread/INFO]: Preparing spawn area: 19%
+[20:59:04] [Server thread/INFO]: Preparing spawn area: 29%
+[20:59:05] [Server thread/INFO]: Preparing spawn area: 40%
+[20:59:06] [Server thread/INFO]: Preparing spawn area: 49%
+[20:59:07] [Server thread/INFO]: Preparing spawn area: 59%
+[20:59:08] [Server thread/INFO]: Preparing spawn area: 72%
+[20:59:09] [Server thread/INFO]: Preparing spawn area: 84%
+[20:59:10] [Server thread/INFO]: Preparing spawn area: 99%
+[20:59:10] [Server thread/INFO]: Changing view distance to 12, from 10
+[20:59:12] [Netty Local Client IO #0/INFO]: Server protocol version 2
+[20:59:12] [Netty Server IO #1/INFO]: Client protocol version 2
+[20:59:12] [Netty Server IO #1/INFO]: Client attempting to join with 8 mods : CodeChickenLib@2.5.7.241,FML@8.0.99.99,Forge@12.18.3.2254,morematerialsandutilities@0.2.0,mcp@9.19,ModListGenerator@1.1,ccl-entityhook@1.0,JEI@3.13.0.330
+[20:59:12] [Netty Local Client IO #0/INFO]: [Netty Local Client IO #0] Client side modded connection established
+[20:59:12] [Server thread/INFO]: [Server thread] Server side modded connection established
+[20:59:12] [Server thread/INFO]: sora_suke[local:E:94ff1f4b] logged in with entity id 922 at (-242.5, 77.0, 230.5)
+[20:59:12] [Server thread/INFO]: sora_suke joined the game
+[20:59:15] [Server thread/INFO]: Saving and pausing game...
+[20:59:16] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[20:59:16] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[20:59:16] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[20:59:16] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 4025ms behind, skipping 80 tick(s)
+[20:59:33] [Server thread/INFO]: sora_suke has just earned the achievement [Taking Inventory]
+[20:59:34] [Client thread/INFO]: [CHAT] sora_suke has just earned the achievement [Taking Inventory]
+[21:02:56] [Server thread/INFO]: Saving and pausing game...
+[21:02:56] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[21:02:56] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[21:02:56] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[21:03:27] [Server thread/INFO]: Saving and pausing game...
+[21:03:27] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[21:03:27] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[21:03:27] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[21:05:54] [Server thread/INFO]: Stopping server
+[21:05:54] [Server thread/INFO]: Saving players
+[21:05:54] [Server thread/INFO]: Saving worlds
+[21:05:54] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[21:05:54] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[21:05:54] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[21:05:54] [Server thread/INFO]: Unloading dimension 0
+[21:05:54] [Server thread/INFO]: Unloading dimension -1
+[21:05:54] [Server thread/INFO]: Unloading dimension 1
+[21:05:54] [Server thread/INFO]: Applying holder lookups
+[21:05:54] [Server thread/INFO]: Holder lookups applied
+[21:05:56] [Client thread/INFO]: Stopping!
+[21:05:56] [Client thread/INFO]: SoundSystem shutting down...
+[21:05:56] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
