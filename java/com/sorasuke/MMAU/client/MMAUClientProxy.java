@@ -49,7 +49,7 @@ public class MMAUClientProxy extends MMAUProxy {
 
         GuidanceMarkerRender guidanceMarkerRender = new GuidanceMarkerRender();
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityGuidanceMarker.class, guidanceMarkerRender);
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(((IMMAUBaseBlock)MMAURegistry.GuidanceMarker).getItemBlock(), 0, new ModelResourceLocation(((IMMAUBaseBlock)MMAURegistry.GuidanceMarker).getLocation(), "inventory"));
+        //Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(((IMMAUBaseBlock)MMAURegistry.GuidanceMarker).getItemBlock(), 0, new ModelResourceLocation(((IMMAUBaseBlock)MMAURegistry.GuidanceMarker).getLocation(), "inventory"));
     }
 
     @Override
