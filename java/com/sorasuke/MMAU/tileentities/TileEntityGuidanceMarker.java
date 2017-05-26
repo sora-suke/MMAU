@@ -13,9 +13,9 @@ public class TileEntityGuidanceMarker extends TileEntity implements ITickable{
     public float rotationY = new Random().nextInt(359);
     public float rotationZ = new Random().nextInt(359);
 
-    public float speedX = ( new Random().nextInt(20) * 0.01F ) - 0.1F;
-    public float speedY = ( new Random().nextInt(20) * 0.01F ) - 0.1F;
-    public float speedZ = ( new Random().nextInt(20) * 0.01F ) - 0.1F;
+    public float speedX = ( new Random().nextInt(20) - 10) * 0.01F;
+    public float speedY = ( new Random().nextInt(20) - 10) * 0.01F;
+    public float speedZ = ( new Random().nextInt(20) - 10) * 0.01F;
 
     @Override
     public void update() {
