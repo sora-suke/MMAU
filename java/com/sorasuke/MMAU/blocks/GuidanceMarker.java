@@ -29,7 +29,7 @@ public class GuidanceMarker extends Block implements IMMAUBaseBlock, ITileEntity
     public ItemBlock itemBlock;
 
     public GuidanceMarker(String name) {
-        super(Material.IRON);
+        super(Material.CIRCUITS);
         this.name = name;
         setUnlocalizedName("MMAU_" + name);
         this.location = new ResourceLocation(MMAU.MODID, this.name);
@@ -38,6 +38,7 @@ public class GuidanceMarker extends Block implements IMMAUBaseBlock, ITileEntity
         setCreativeTab(MMAURegistry.MMAUUtilsTab);
         setHardness(0F);
         setResistance(0F);
+        setLightLevel(1);
     }
 
     @Override
