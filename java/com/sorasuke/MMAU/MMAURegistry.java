@@ -349,6 +349,8 @@ public class MMAURegistry {
     //工具
     public static final Item IronMortar = new MMAUBaseTool("iron", "mortar", 127);
 
+    public static final Item Wand = new MMAUWand("wand");
+
     //便利アイテム
     public static final Item ExplosionButton = new ExplosionButton();
 
@@ -622,6 +624,8 @@ public class MMAURegistry {
 
         //便利アイテム
         registerItem(ExplosionButton);
+
+        registerItem(Wand);
 
         registerItem(UpgradeBlank);
         registerItem(UpgradeVoid);
