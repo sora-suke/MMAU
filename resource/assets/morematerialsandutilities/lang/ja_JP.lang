@@ -3,6 +3,8 @@ itemGroup.mmautab=MMAU
 itemGroup.mmautoolstab=MMAUTools
 itemGroup.mmauutilstab=MMAUUtils
 
+message.wand.coordinate.registerd=座標が登録されました(%d,%d,%d)
+message.wand.coordinate.removed=座標が削除されました
 
 text.negi.tooltip=食べられないよ!ヾ(ﾟ□ﾟ＠)
 text.silver.tooltip=抗菌!

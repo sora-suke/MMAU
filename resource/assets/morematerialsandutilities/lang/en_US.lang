@@ -3,6 +3,8 @@ itemGroup.mmautab=MMAU
 itemGroup.mmautoolstab=MMAUTools
 itemGroup.mmauutilstab=MMAUUtils
 
+message.wand.coordinate.registerd=The coordinate is registered.(%d,%d,%d)
+message.wand.coordinate.removed=The coordinate is deleted.
 
 text.negi.tooltip=This is inedible!ヾ(ﾟ□ﾟ＠)
 text.silver.tooltip=This is antibacterial!
