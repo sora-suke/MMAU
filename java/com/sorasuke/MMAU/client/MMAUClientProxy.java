@@ -19,9 +19,13 @@ import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
@@ -71,6 +75,15 @@ public class MMAUClientProxy extends MMAUProxy {
             }
         } else {
             ModelLoader.setCustomModelResourceLocation(i, 0, new ModelResourceLocation(((IMMAUBaseItem) i).getLocation(), "inventory"));
+        }
+    }
+
+    @Override
+    public void chatCoordinateRegisterd(EntityPlayer p, BlockPos b, String s, boolean u){
+        if(u){
+            p.addChatComponentMessage(new TextComponentString(I18n.format(s, b.getX(), b.getY(), b.getZ())));
+        }else{
+            p.addChatComponentMessage(new TextComponentString(I18n.format(s, null)));
         }
     }
 }
