@@ -2,6 +2,7 @@ package com.sorasuke.MMAU.blocks;
 
 import com.sorasuke.MMAU.MMAU;
 import com.sorasuke.MMAU.MMAULogger;
+import com.sorasuke.MMAU.MMAURegistry;
 import com.sorasuke.MMAU.tileentities.TileEntityChickenBlock;
 import com.sorasuke.MMAU.tileentities.TileEntityQuarry;
 import net.minecraft.block.BlockHorizontal;
@@ -53,8 +54,21 @@ public class QuarryBlock extends BlockHorizontal implements IMMAUBaseBlock, ITil
 
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer entityPlayer, EnumHand hand, @Nullable ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
         //MMAULogger.log("onBlockActivated");
+        MMAULogger.log("hogehoge1");
         if (!world.isRemote) {
-            entityPlayer.openGui(MMAU.instance, MMAU.guiIdQuarry, world, pos.getX(), pos.getY(), pos.getZ());
+            MMAULogger.log("hogehoge2");
+            if(!entityPlayer.isSneaking()) {
+                MMAULogger.log("hogehoge3");
+                entityPlayer.openGui(MMAU.instance, MMAU.guiIdQuarry, world, pos.getX(), pos.getY(), pos.getZ());
+            }else{
+                MMAULogger.log("hogehoge4");
+                if(entityPlayer.getHeldItem(EnumHand.MAIN_HAND) != null) {
+                    MMAULogger.log("hogehoge5");
+                    if (entityPlayer.getHeldItem(EnumHand.MAIN_HAND).equals(new ItemStack(MMAURegistry.Wand))) {
+                        MMAULogger.log("hogehoge6");
+                    }
+                }
+            }
         }
         return true;
 
