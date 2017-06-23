@@ -30,6 +30,7 @@ public class UpgradeBase extends Item implements IMMAUBaseItem, IUpgrade{
         //MMAULogger.log("UpgradeBaseConstruct!!");
         this.setUnlocalizedName("MMAU_" + this.name);
         this.setMaxStackSize(8);
+        setMaxMetadata(subtipe);
         this.type = name;
         this.location = new ResourceLocation(MMAU.MODID, this.name);
     }
