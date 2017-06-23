@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
  * アップグレードかの判定とグレードとかの判定
  */
 public interface IUpgrade {
-    public int getGrade(ItemStack stack);
-    public String getType();
-    public int getMaxGrade();
+    int getGrade(ItemStack stack);
+    String getType();
+    int getMaxGrade();
 }
