@@ -63,9 +63,9 @@ public class MMAUClientProxy extends MMAUProxy {
 
     @Override
     public void registerItemModel(Item i){
-        if(i instanceof IUpgrade && i.getHasSubtypes()) {
-            //MMAULogger.log("length is "+rl.length);
-            for(int j = 0; j < ((IUpgrade) i).getMaxGrade(); ++j) {
+        if(i.getHasSubtypes()) {
+            MMAULogger.log("length is "+((IUpgrade) i).getMaxGrade());
+            for(int j = 0; j < ((IMMAUBaseItem) i).getMaxMetadata(); ++j) {
                 //MMAULogger.log("Loop "+j);
                 ModelLoader.setCustomModelResourceLocation(
                         i, j,
