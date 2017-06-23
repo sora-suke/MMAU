@@ -55,4 +55,14 @@ public class SCP081JP extends ItemArmor implements IMMAUBaseItem {
     public ResourceLocation getLocation() {
         return this.location;
     }
+
+    @Override
+    public int getMaxMetadata() {
+        return 0;
+    }
+
+    @Override
+    public void setMaxMetadata(int i) {
+
+    }
 }

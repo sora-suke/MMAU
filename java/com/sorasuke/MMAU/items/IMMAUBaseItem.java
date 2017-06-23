@@ -20,4 +20,17 @@ public interface IMMAUBaseItem {
      * 登録時などに使うResourceLocationを返す
      * */
     ResourceLocation getLocation();
+
+    /**
+     * 最大サブアイテム数を取得する
+     * ダメージ値ではない
+     * @return
+     */
+    int getMaxMetadata();
+
+    /**
+     * 最大サブアイテム数を設定する
+     * @param i
+     */
+    void setMaxMetadata(int i);
 }

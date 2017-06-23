@@ -37,4 +37,14 @@ public class MMAUBaseHoe extends ItemHoe implements IMMAUBaseItem {
         return this.location;
     }
 
+    @Override
+    public int getMaxMetadata() {
+        return 0;
+    }
+
+    @Override
+    public void setMaxMetadata(int i) {
+
+    }
+
 }

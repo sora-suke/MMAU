@@ -37,4 +37,14 @@ public class MMAUBaseAxe extends ItemAxe implements IMMAUBaseItem {
         return this.location;
     }
 
+    @Override
+    public int getMaxMetadata() {
+        return 0;
+    }
+
+    @Override
+    public void setMaxMetadata(int i) {
+
+    }
+
 }

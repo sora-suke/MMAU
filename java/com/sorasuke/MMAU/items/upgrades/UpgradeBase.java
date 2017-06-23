@@ -29,9 +29,7 @@ public class UpgradeBase extends Item implements IMMAUBaseItem, IUpgrade{
         this.setCreativeTab(MMAURegistry.MMAUUtilsTab);
         //MMAULogger.log("UpgradeBaseConstruct!!");
         this.setUnlocalizedName("MMAU_" + this.name);
-        this.setHasSubtypes(subtipe > 0);
         this.setMaxStackSize(8);
-        this.subtipes = subtipe;
         this.type = name;
         this.location = new ResourceLocation(MMAU.MODID, this.name);
     }
@@ -48,10 +46,21 @@ public class UpgradeBase extends Item implements IMMAUBaseItem, IUpgrade{
     }
 
     @Override
+    public int getMaxMetadata() {
+        return subtipes;
+    }
+
+    @Override
+    public void setMaxMetadata(int i) {
+        this.setHasSubtypes(i > 0);
+        this.subtipes = i;
+    }
+
+    @Override
     public String getUnlocalizedName(ItemStack stack)
     {
         int i = stack.getMetadata();
-        return super.getUnlocalizedName() + (this.subtipes > 0 ? "." + i : "");
+        return super.getUnlocalizedName() + (this.subtipes > 0 ? "_" + i : "");
     }
 
     /**

@@ -11,6 +11,7 @@ import net.minecraft.util.ResourceLocation;
 public class MMAUBaseItem extends Item implements IMMAUBaseItem {
     private String name;
     private ResourceLocation location;
+    private int subtipes;
 
     public MMAUBaseItem(String name) {
         this.name = name;
@@ -25,5 +26,16 @@ public class MMAUBaseItem extends Item implements IMMAUBaseItem {
     @Override
     public ResourceLocation getLocation() {
         return this.location;
+    }
+
+    @Override
+    public int getMaxMetadata() {
+        return subtipes;
+    }
+
+    @Override
+    public void setMaxMetadata(int i) {
+        this.setHasSubtypes(i > 0);
+        this.subtipes = i;
     }
 }
