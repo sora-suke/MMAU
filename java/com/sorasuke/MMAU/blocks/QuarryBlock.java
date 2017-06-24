@@ -55,18 +55,24 @@ public class QuarryBlock extends BlockHorizontal implements IMMAUBaseBlock, ITil
 
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer entityPlayer, EnumHand hand, @Nullable ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
         //MMAULogger.log("onBlockActivated");
-        MMAULogger.log("hogehoge1");
+        //MMAULogger.log("hogehoge1");
         if (!world.isRemote) {
-            MMAULogger.log("hogehoge2");
-            if(entityPlayer.getHeldItem(EnumHand.MAIN_HAND) != null) {
-                MMAULogger.log("hogehoge3");
-                if (entityPlayer.getHeldItem(EnumHand.MAIN_HAND).getItem() instanceof MMAUWand) {
-                    MMAULogger.log("hogehoge4");
+            //MMAULogger.log("hogehoge2");
+            if(heldItem != null) {
+                //MMAULogger.log("hogehoge3");
+                if (heldItem.getItem() instanceof MMAUWand) {
+                    //MMAULogger.log("hogehoge4");
+                    TileEntityQuarry tile = (TileEntityQuarry)world.getTileEntity(pos);
+                    heldItem.setTagCompound(MMAUWand.checkNBT(heldItem.getTagCompound()));
+
+                    if(heldItem.getTagCompound().getBoolean("isRemembering")) {
+                        tile.setCoordinate(MMAUWand.getPos(heldItem));
+                    }
 
                     return true;
                 }
             }
-            MMAULogger.log("hogehoge5");
+            //MMAULogger.log("hogehoge5");
             entityPlayer.openGui(MMAU.instance, MMAU.guiIdQuarry, world, pos.getX(), pos.getY(), pos.getZ());
         }
 

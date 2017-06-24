@@ -45,6 +45,14 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
     private final ItemStack[] slot = new ItemStack[32];
     /**名前*/
     private String localizedName;
+    private BlockPos herePos = this.getPos();
+    private int hereX = pos.getX();
+    private int hereY = pos.getY();
+    private int hereZ = pos.getZ();
+    /**対角の座標*/
+    private int diagonalX;
+    private int diagonalY;
+    private int diagonalZ;
 
     /** デフォルトのRF貯蔵量 コンフィグで変えられる */
     private int defaultMaxRFAmount = MMAUConfig.quarryDefaultMaxRFAmount;
@@ -91,6 +99,9 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
         if (this.hasCustomName()) {
             nbt.setString("CustomName", this.localizedName);
         }
+        nbt.setInteger("diagonalX", this.diagonalX);
+        nbt.setInteger("diagonalY", this.diagonalY);
+        nbt.setInteger("diagonalZ", this.diagonalZ);
         this.energyStorage.writeToNBT(nbt);
         return nbt;
     }
@@ -257,9 +268,9 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
         //MMAULogger.log("hoge"+this.energyStorage.getEnergyStored());
         /**基本的な変数*/
         BlockPos pos = this.getPos();
-        int x = pos.getX();
-        int y = pos.getY();
-        int z = pos.getZ();
+        hereX = pos.getX();
+        hereY = pos.getY();
+        hereZ = pos.getZ();
         IBlockState b = worldObj.getBlockState(pos);
 
         /**アップグレードの倍率*/
@@ -322,6 +333,14 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
     @Override
     public boolean hasCustomName() {
         return this.localizedName != null && this.localizedName.length() > 0;
+    }
+
+
+    public void setCoordinate(BlockPos pos){
+        this.diagonalX = pos.getX();
+        this.diagonalY = pos.getY();
+        this.diagonalZ = pos.getZ();
+
     }
 
 
