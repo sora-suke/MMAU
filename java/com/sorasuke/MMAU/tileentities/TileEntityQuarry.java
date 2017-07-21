@@ -3,29 +3,23 @@ package com.sorasuke.MMAU.tileentities;
 import cofh.api.energy.EnergyStorage;
 import cofh.api.energy.IEnergyReceiver;
 import com.sorasuke.MMAU.MMAUConfig;
-import com.sorasuke.MMAU.MMAULogger;
 import com.sorasuke.MMAU.items.upgrades.IUpgrade;
-import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.ItemStackHelper;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityLockable;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -45,10 +39,10 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
     private final ItemStack[] slot = new ItemStack[32];
     /**名前*/
     private String localizedName;
-    private BlockPos herePos = this.getPos();
-    private int hereX = pos.getX();
-    private int hereY = pos.getY();
-    private int hereZ = pos.getZ();
+
+    private int coordX = pos.getX();
+    private int coordY = pos.getY();
+    private int coordZ = pos.getZ();
     /**対角の座標*/
     private int diagonalX;
     private int diagonalY;
@@ -266,11 +260,7 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
     @Override
     public void update() {
         //MMAULogger.log("hoge"+this.energyStorage.getEnergyStored());
-        /**基本的な変数*/
-        BlockPos pos = this.getPos();
-        hereX = pos.getX();
-        hereY = pos.getY();
-        hereZ = pos.getZ();
+
         IBlockState b = worldObj.getBlockState(pos);
 
         /**アップグレードの倍率*/
