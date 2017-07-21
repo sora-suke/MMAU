@@ -12,10 +12,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
@@ -44,30 +41,23 @@ public class MMAUWand extends Item implements IMMAUBaseItem {
         setMaxStackSize(1);
     }
 
-    public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+    public ActionResult<ItemStack> onItemRightClick(ItemStack stack, World worldIn, EntityPlayer playerIn, EnumHand hand) {
         if(!worldIn.isRemote) {
-
             NBTTagCompound NBT = stack.getTagCompound();
-            NBT = checkNBT(NBT);
+            NBT = MMAUWand.checkNBT(NBT);
 
-            if(MMAUGetter.getBlock(worldIn, pos) instanceof GuidanceMarker) {
-
-                NBT.setInteger("memoryX", pos.getX());
-                NBT.setInteger("memoryY", pos.getY());
-                NBT.setInteger("memoryZ", pos.getZ());
-                NBT.setBoolean("isRemembering", true);
-
-                stack.setTagCompound(NBT);
-                MMAU.proxy.chatCoordinateRegisterd(playerIn, pos, "message.wand.coordinate.registerd", true);
-
-            }else if(NBT.getBoolean("isRemembering")){
+            if (playerIn.isSneaking() && NBT.getBoolean("isRemembering")) {
 
                 NBT.setBoolean("isRemembering", false);
                 stack.setTagCompound(NBT);
-                MMAU.proxy.chatCoordinateRegisterd(playerIn, pos, "message.wand.coordinate.removed", false);
+                MMAU.proxy.chatCoordinateRegisterd(playerIn, null, "message.wand.coordinate.removed", false);
 
             }
         }
+        return new ActionResult(EnumActionResult.SUCCESS, stack);
+    }
+
+    public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         return EnumActionResult.SUCCESS;
     }
 
@@ -88,13 +78,19 @@ public class MMAUWand extends Item implements IMMAUBaseItem {
 
 
 
-    private NBTTagCompound checkNBT(NBTTagCompound nbt){
+    public static NBTTagCompound checkNBT(NBTTagCompound nbt){
         if(nbt == null) nbt = new NBTTagCompound();
         if(!nbt.hasKey("isRemembering")) nbt.setBoolean("isRemembering", false);
         if(!nbt.hasKey("memoryX")) nbt.setInteger("memoryX", 0);
         if(!nbt.hasKey("memoryY")) nbt.setInteger("memoryY", 0);
         if(!nbt.hasKey("memoryZ")) nbt.setInteger("memoryZ", 0);
         return nbt;
+    }
+
+    public static BlockPos getPos(ItemStack i){
+
+        NBTTagCompound n = checkNBT(i.getTagCompound());
+        return new BlockPos(n.getInteger("memoryX"), n.getInteger("memoryY"), n.getInteger("memoryZ"));
     }
 
     @Override
