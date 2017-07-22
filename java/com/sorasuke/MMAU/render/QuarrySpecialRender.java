@@ -33,10 +33,10 @@ public class QuarrySpecialRender extends TileEntitySpecialRenderer<TileEntityQua
         //GL11.glDisable(GL11.GL_LIGHTING);
         GlStateManager.pushMatrix();
         GlStateManager.disableCull();
-        GlStateManager.disableLighting();
+        GlStateManager.disableLighting();//ここやるとむっちゃ明るくなる あかるくするかくらくするか...
         GlStateManager.disableDepth();
         GlStateManager.translate(x + 0.5F, y, z + 0.5F);
-        GlStateManager.enableBlend();
+        //GlStateManager.enableBlend();
 
         //GlStateManager.enableLight(1);
 
@@ -60,7 +60,7 @@ public class QuarrySpecialRender extends TileEntitySpecialRenderer<TileEntityQua
 
         tessellator.draw();
 
-        GlStateManager.disableBlend();
+        //GlStateManager.disableBlend();
         GlStateManager.enableDepth();
         GlStateManager.enableLighting();
         GlStateManager.enableCull();
