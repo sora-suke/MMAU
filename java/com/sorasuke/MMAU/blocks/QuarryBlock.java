@@ -109,6 +109,16 @@ public class QuarryBlock extends BlockHorizontal implements IMMAUBaseBlock, ITil
         return ((EnumFacing) state.getValue(FACING)).getHorizontalIndex();
     }
 
+    public boolean isOpaqueCube(IBlockState state)
+    {
+        return false;
+    }
+
+    public boolean isBlockNormalCube(IBlockState state)
+    {
+        return false;
+    }
+
     protected BlockStateContainer createBlockState() {
         return new BlockStateContainer(this, new IProperty[]{FACING});
     }
