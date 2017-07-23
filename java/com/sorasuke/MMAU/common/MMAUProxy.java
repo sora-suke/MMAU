@@ -38,4 +38,6 @@ public class MMAUProxy {
      */
     public void chatCoordinateRegisterd(EntityPlayer p, BlockPos b, String s, boolean u){
     }
+
+    public EntityPlayer getEntityPlayerInstance() {return null;}
 }

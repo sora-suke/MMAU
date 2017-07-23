@@ -86,4 +86,9 @@ public class MMAUClientProxy extends MMAUProxy {
             p.addChatComponentMessage(new TextComponentString(I18n.format(s, null)));
         }
     }
+
+    @Override
+    public EntityPlayer getEntityPlayerInstance() {
+        return Minecraft.getMinecraft().thePlayer;
+    }
 }
