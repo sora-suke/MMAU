@@ -3,6 +3,8 @@ package com.sorasuke.MMAU.gui;
 import com.sorasuke.MMAU.MMAU;
 import com.sorasuke.MMAU.MMAULogger;
 import com.sorasuke.MMAU.container.ContainerQuarry;
+import com.sorasuke.MMAU.network.MessageQuarryMode;
+import com.sorasuke.MMAU.network.PacketHandler;
 import com.sorasuke.MMAU.tileentities.TileEntityQuarry;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.SoundHandler;
@@ -39,6 +41,8 @@ public class GuiQuarry extends GuiContainer {
     public void initGui(){
         super.initGui();
         this.buttonList.add(new PanelRFAmount(0, this.guiLeft + 9, this.guiTop + 8, this.tileEntity));
+        this.buttonList.add(new GuiButton(1, this.guiLeft + 20, this.guiTop + 48, 20, 8, "Start"));
+        this.buttonList.add(new GuiButton(2, this.guiLeft + 50, this.guiTop + 48, 20, 8, "Stop"));
     }
 
     @Override
@@ -65,6 +69,16 @@ public class GuiQuarry extends GuiContainer {
         int l = (this.height - this.ySize) / 2;
         this.drawTexturedModalRect(k, l, 0, 0, this.xSize, this.ySize);
         this.drawTexturedModalRect(k + 9, l + 8, 176, 0, (int) (tileEntity.getRFPercentage(53)), 16);
+    }
+
+    @Override
+    protected void actionPerformed(GuiButton guiButton){
+        if(!guiButton.enabled){
+            return;
+        }
+
+        if(guiButton.id == 1)PacketHandler.INSTANCE.sendToServer(new MessageQuarryMode(true, tileEntity.getPos()));
+        if(guiButton.id == 2)PacketHandler.INSTANCE.sendToServer(new MessageQuarryMode(false, tileEntity.getPos()));
     }
 
     /**
