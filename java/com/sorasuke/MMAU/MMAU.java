@@ -6,6 +6,7 @@ import com.sorasuke.MMAU.gens.MMAUGens;
 
 
 import com.sorasuke.MMAU.items.MMAUBaseTool;
+import com.sorasuke.MMAU.network.PacketHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.storage.loot.LootTable;
@@ -19,6 +20,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 
 @Mod(modid = MMAU.MODID, version = MMAU.VERSION, name = MMAU.MODNAME)
 public class MMAU {
@@ -33,6 +35,7 @@ public class MMAU {
     @SidedProxy(clientSide = "com.sorasuke.MMAU.client.MMAUClientProxy", serverSide = "com.sorasuke.MMAU.common.MMAUProxy")
     public static MMAUProxy proxy;
 
+
     //GUIのID
     public static final int guiIdChickenBlock = 0;
     public static final int guiIdQuarry = 1;
@@ -42,6 +45,8 @@ public class MMAU {
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         this.loadMetadata(metadata);
+
+        PacketHandler.init();
 
         MMAULogger.registry(event);//ロガーを生成
 
