@@ -48,6 +48,14 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
     private int diagonalY;
     private int diagonalZ;
 
+    public boolean isRemembering = false;
+
+    /**採掘範囲の情報*/
+    private int mineX;
+    private int mineY;
+    private int mineZ;
+    private boolean mining = false;
+
     /** デフォルトのRF貯蔵量 コンフィグで変えられる */
     private int defaultMaxRFAmount = MMAUConfig.quarryDefaultMaxRFAmount;
 
@@ -96,7 +104,15 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
         nbt.setInteger("diagonalX", this.diagonalX);
         nbt.setInteger("diagonalY", this.diagonalY);
         nbt.setInteger("diagonalZ", this.diagonalZ);
+        nbt.setBoolean("isRemembering", this.isRemembering);
+
+        nbt.setInteger("mineX", this.mineX);
+        nbt.setInteger("mineY", this.mineY);
+        nbt.setInteger("mineZ", this.mineZ);
+        nbt.setBoolean("mining", this.mining);
+
         this.energyStorage.writeToNBT(nbt);
+
         return nbt;
     }
 
@@ -115,6 +131,14 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
             this.localizedName = nbt.getString("CustomName");
         }
         this.energyStorage.readFromNBT(nbt);
+        this.diagonalX = nbt.getInteger("diagonalX");
+        this.diagonalY = nbt.getInteger("diagonalY");
+        this.diagonalZ = nbt.getInteger("diagonalZ");
+        this.isRemembering = nbt.getBoolean("isRemembering");
+        this.mineX = nbt.getInteger("mineX");
+        this.mineY = nbt.getInteger("mineY");
+        this.mineZ = nbt.getInteger("mineZ");
+        this.mining = nbt.getBoolean("mining");
     }
 
     @Override
@@ -288,6 +312,13 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
 
         /**メインの採掘部分*/
 
+        if(mining){
+
+
+
+
+
+        }
 
 
 
@@ -327,12 +358,33 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
 
 
     public void setCoordinate(BlockPos pos){
+        this.coordX = pos.getX();
+        this.coordY = pos.getY();
+        this.coordZ = pos.getZ();
+
+    }
+    public void setDiagonal(BlockPos pos){
         this.diagonalX = pos.getX();
         this.diagonalY = pos.getY();
         this.diagonalZ = pos.getZ();
+        this.isRemembering = true;
 
     }
 
+    public void setMode(boolean b){
+        this.mining = b;
+    }
+
+    public BlockPos getDiagonalPos(){
+        return new BlockPos(diagonalX, diagonalY, diagonalZ);
+    }
+
+    public void resetProgress() {
+        this.mineX = 0;
+        this.mineY = 0;
+        this.mineZ = 0;
+        this.mining = false;
+    }
 
     /**
      * これがよくわからない
@@ -383,4 +435,6 @@ public class TileEntityQuarry extends TileEntityLockable implements ISidedInvent
     public int receiveEnergy(EnumFacing from, int maxReceive, boolean simulate) {
         return energyStorage.receiveEnergy(maxReceive, simulate);
     }
+
+
 }
