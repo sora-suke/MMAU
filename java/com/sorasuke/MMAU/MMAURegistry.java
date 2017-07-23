@@ -363,6 +363,10 @@ public class MMAURegistry {
             ("SCP081JP", MMAU.MODID + ":scp081jp", 32000, new int[]{0, 0, 0, 0}, 0, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
     public static final Item SCP081JP = new SCP081JP(SCP081Jp, 2, "scp081jp");
 
+    public static final ArmorMaterial INFOGOGGLES = EnumHelper.addArmorMaterial
+            ("InformationGoggles", MMAU.MODID + ":information_goggles", 0, new int[]{2, 0, 0, 0}, 0, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, 0);
+    public static final Item InformationGoggles = new InformationGoggles(INFOGOGGLES, 1, "information_goggles");
+
 
     //ブロック
     public static final Block NegiOre = new MMAUBaseGemOre("negi_ore", new ItemStack(Negi), 3).setCreativeTab(MMAUTab).setHardness(3.0F).setResistance(5.0F);
@@ -631,6 +635,8 @@ public class MMAURegistry {
         registerItem(UpgradeVoid);
         registerItem(UpgradeSpeed);
         registerItem(UpgradeEnergy);
+
+        registerItem(InformationGoggles);
 
 
         //ブロック
